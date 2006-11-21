@@ -4,7 +4,7 @@ Copyright: various copyright holders, all patches are compatible to the
            GPL version 2.
 
 It was downloaded from:
-	%PATCH_LIST"
+	%PATCH_LIST%
 
 License:
 

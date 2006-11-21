@@ -1,8 +1,14 @@
+kanotix-kernelhacking (2.6.18.8) unstable; urgency=low
+
+  * fix-typo.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 21 Nov 2006 22:49:08 +0100
+
 kanotix-kernelhacking (2.6.18.7) unstable; urgency=low
 
   * use gspca-source instead of spca5xx.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 12 Nov 2006 18:03:52 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 21 Nov 2006 22:49:03 +0100
 
 kanotix-kernelhacking (2.6.18.6) unstable; urgency=low
 
