@@ -1,0 +1,19 @@
+#!/bin/sh
+
+KERNEL=$(uname -r)
+HEADER=""
+
+[ -d /usr/src/linux-headers-$KERNEL ] && HEADER=linux-headers
+[ -d /usr/src/kernel-headers-$KERNEL ] && HEADER=kernel-headers
+[ -z "$HEADER" ] && exit 1
+rm -rf /usr/src/linux /usr/src/linux-$KERNEL /lib/modules/$KERNEL/build /lib/modules/$KERNEL/source
+
+if [ ! -d /usr/src/$HEADER-$KERNEL/scripts ]; then
+	rm -f /usr/src/$HEADER-$KERNEL/scripts
+	ln -s ../kernel-kbuild-2.6-3/scripts /usr/src/$HEADER-$KERNEL
+fi
+
+ln -s $HEADER-$KERNEL /usr/src/linux-$KERNEL
+ln -s /usr/src/linux-$KERNEL /lib/modules/$KERNEL/build
+ln -s /usr/src/linux-$KERNEL /lib/modules/$KERNEL/source
+

@@ -1,0 +1,71 @@
+#!/bin/bash
+
+KTX_MODFILE="/etc/kanotix-modules"
+
+while getopts vd: opt
+do
+        case $opt in
+		v)
+			set -x
+			;;
+		d)
+			BASE_DIR=$OPTARG
+			;;
+                \?)
+                        echo "Unknown option: \"$opt\""
+			exit 1
+                        ;;
+        esac
+done
+
+if ((UID)); then
+	# not root
+	if [[ ! $BASE_DIR ]]
+	then
+		BASE_DIR="$PWD"
+		[[ -e $BASE_DIR/Makefile && -e /usr/src/Makefile ]] || ln -s /usr/src/Makefile ${BASE_DIR}/
+	fi
+
+	if [[ ! -s $KTX_MODFILE ]]
+	then
+		echo "$KTX_MODFILE is missing!"
+		exit 2
+	fi
+	
+	# dir must exist and be writeable
+	if [[ ! -d $BASE_DIR ]]
+	then
+		mkdir -p "$BASE_DIR" || {
+			echo "Cannot create directory: \"$BASE_DIR\""
+			exit 3
+		}
+	elif [[ -d $BASE_DIR ]]
+	then
+		touch "$BASE_DIR" || {
+			echo "Cannot write to directory: \"$BASE_DIR\""
+			exit 4
+		}
+	fi
+else
+	# root
+	BASE_DIR="/usr/src"
+fi
+
+# clear out existing modules dir
+function rm_modules_dir () {
+	pushd "$BASE_DIR" >/dev/null
+		rm -rf modules
+	popd >/dev/null
+}
+
+function pop_modules_dir () {
+	pushd "$BASE_DIR" >/dev/null
+		awk -f /usr/share/kanotix-modules/unp_kanotix_modules.awk $KTX_MODFILE
+	popd >/dev/null
+}
+
+# dont leave partially unpacked module source trees
+trap "{ rm_modules_dir; exit 255; }" SIGINT SIGTERM
+
+rm_modules_dir || exit 4
+pop_modules_dir || exit 5

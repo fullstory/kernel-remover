@@ -1,0 +1,25 @@
+Source: kanotix-kernelhacking
+Section: misc
+Priority: extra
+Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
+Uploaders: Kel Modderman <kelrin@tpg.com.au>
+Build-Depends: cdbs (>= 0.4.23-1.1), debhelper (>= 5.0.0)
+Standards-Version: 3.7.2
+
+Package: kanotix-kernelhacking
+Architecture: all
+Recommends: kanotix-modules, dpatch, dpkg-dev, fakeroot
+Replaces: kanotix-modules (<<2.6.13.6)
+Description: various tools for kernel hacking
+ These tools script common tasks while testing kernels, like creating kbuild 
+ symlinks, removal of deprecated kernel images and associated drivers or a 
+ custom Makefile for /usr/src/.
+
+Package: kanotix-modules
+Architecture: all
+Depends: bzip2, kanotix-su, unp, zip, gawk, acx-source, acer-acpi-source, adm8211-source, at76c503a-source, btsco-source, cloop-src, fsam7400-source, gspca-source, ibdriver-source, ipw3945-source, ivtv-source, linux-wlan-ng-source, lirc-modules-source, ndiswrapper-source, qc-usb-source, rt2400-source, rt2500-source, rt2570-source, rt61-source, rfswitch-source, rtl8180-sa2400-source, squashfs-source, unionfs-source, usbvision-source
+Recommends: acerhk-source
+Suggests: kanotix-kernelhacking
+Description: meta package for KANOTIX kernel modules
+ Depend on commonly used kernel module sources for easy kernel hacking and
+ provide easy scripts to unpack those or remove older kernels.

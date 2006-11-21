@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+DEB_COMPRESS_EXCLUDE := .sh
+
+build/kanotix-modules::
+	awk -f mk_kanotix_modules_conffile.awk debian/control > kanotix-modules
+
+clean::
+	-rm -f kanotix-modules
+	

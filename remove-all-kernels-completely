@@ -1,0 +1,16 @@
+#!/bin/bash
+pushd /boot
+	for v in vmlinuz-*; do 
+		KERNEL=$(echo $v|sed s/vmlinuz-//)
+		if [ "$KERNEL" != "$(uname -r)" ]; then
+			apt-get remove --purge $(COLUMNS=200 dpkg -l|awk '{print $2}'|grep $KERNEL)
+			if [ ! -e "/boot/vmlinuz-$KERNEL" ]; then
+				rm -rf /lib/modules/$KERNEL
+				rm -rf /usr/src/kernel-headers-$KERNEL
+				rm -rf /usr/src/linux-headers-$KERNEL
+				rm -rf /usr/src/linux-$KERNEL
+			fi
+		fi
+	done
+popd
+[ -r /boot/grub/menu.lst -a -x /usr/sbin/update-grub ] && /usr/sbin/update-grub

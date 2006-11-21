@@ -1,0 +1,619 @@
+kanotix-kernelhacking (2.6.18.7) unstable; urgency=low
+
+  * use gspca-source instead of spca5xx.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 12 Nov 2006 18:03:52 +0100
+
+kanotix-kernelhacking (2.6.18.6) unstable; urgency=low
+
+  * add support for %PATCH_LIST%.
+  * install linux-custom-patches.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 12 Nov 2006 16:06:19 +0100
+
+kanotix-kernelhacking (2.6.18.5) unstable; urgency=low
+
+  * re- add qc-usb, which has been fixed in the mean time.
+  * add fakeroot and dpkg-dev to Recommends.
+  * add initial packaging framework for linux-custom-patches.
+  * add gawk to kanotix-modules' depends.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 25 Oct 2006 14:46:30 +0200
+
+kanotix-kernelhacking (2.6.18.4) unstable; urgency=low
+
+  * add ibdriver-source.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 12 Oct 2006 01:37:19 +0200
+
+kanotix-kernelhacking (2.6.18.3) unstable; urgency=low
+
+  * drop r1000-source, we patch r8169 accordingly.
+  * change the Makefile for top STATIC_VERSION handling.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 12 Oct 2006 00:06:42 +0200
+
+kanotix-kernelhacking (2.6.18.2) unstable; urgency=low
+
+  * move package to main, which means removing dependencies on avm-source and
+    madwifi-source.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  3 Oct 2006 15:30:33 +0200
+
+kanotix-kernelhacking (2.6.18.1) unstable; urgency=low
+
+  * obsolete modules with kernel 2.6.18:
+    - pwc
+    - qc-usb-messenger
+    - zd1211
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 25 Sep 2006 18:30:23 +0200
+
+kanotix-kernelhacking (2.6.18) unstable; urgency=low
+
+  * drop the following modules for now:
+    - qc-usb
+    - shfs
+    - sqcam
+  * install gcc-4.1 instead of gcc-4.0 by using the install scripts.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 23 Sep 2006 00:25:36 +0200
+
+kanotix-kernelhacking (2.6.17.19) unstable; urgency=low
+
+  * Update kernel remove scripts.
+
+ -- Joerg Schirottke <master@kanotix.com>  Mon, 18 Sep 2006 00:03:41 +0200
+
+kanotix-kernelhacking (2.6.17.18) unstable; urgency=low
+
+  * Fix oldconfig Makefile target for 2.6.18+, when 'make oldconfig' is
+    essential before running a config UI.
+
+ -- Kel Modderman <kelrin@tpg.com.au>  Tue,  5 Sep 2006 10:55:53 +1000
+
+kanotix-kernelhacking (2.6.17.17) unstable; urgency=low
+
+  * grub has changed FHS again.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri,  1 Sep 2006 02:48:54 +0200
+
+kanotix-kernelhacking (2.6.17.16) unstable; urgency=low
+
+  * fix make-kernel-links.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri,  1 Sep 2006 01:40:42 +0200
+
+kanotix-kernelhacking (2.6.17.15) unstable; urgency=low
+
+  * re- add btsco-source.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 30 Aug 2006 23:00:18 +0200
+
+kanotix-kernelhacking (2.6.17.14) unstable; urgency=low
+
+  * re- add ivtv-source.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 26 Aug 2006 15:43:30 +0200
+
+kanotix-kernelhacking (2.6.17.13) unstable; urgency=low
+
+  * remove old symlinks first, so linux-image postinst updates menu.lst/ lilo
+    through /etc/kernel-img.conf's postinst hooks on its own.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 25 Aug 2006 11:37:57 +0200
+
+kanotix-kernelhacking (2.6.17.12) unstable; urgency=low
+
+  * don't link kernels anymore.
+  * remove obsolete scripts.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Aug 2006 01:19:45 +0200
+
+kanotix-kernelhacking (2.6.17.11) unstable; urgency=low
+
+  * add cloop-src.
+  * add pwc-source.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 22 Aug 2006 15:46:16 +0200
+
+kanotix-kernelhacking (2.6.17.10) unstable; urgency=low
+
+  * add r1000-source.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 19 Aug 2006 01:18:07 +0200
+
+kanotix-kernelhacking (2.6.17.9) unstable; urgency=low
+
+  * set static kernel version in source scripts.
+  * support kernel-$VER-custom-patches.zip.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri,  4 Aug 2006 14:12:45 +0200
+
+kanotix-kernelhacking (2.6.17.8) unstable; urgency=low
+
+  * re- add adm8211-source.
+  * re- add zd1211-source.
+  * cloop-src has beedn fixed, add it again.
+  * test ivtv-source again.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  3 Aug 2006 02:01:08 +0200
+
+kanotix-kernelhacking (2.6.17.7) unstable; urgency=low
+
+  * linux-wlan-ng-source claims to support 2.6.17 now, lets test it.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 16 Jul 2006 01:39:29 +0200
+
+kanotix-kernelhacking (2.6.17.6) unstable; urgency=low
+
+  * kill off pwc, the in-kernel implementation has been reported working.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 15 Jul 2006 13:40:18 +0200
+
+kanotix-kernelhacking (2.6.17.5) unstable; urgency=low
+
+  * add:
+    - squashfs-source
+    - fsam7400-source
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 15 Jul 2006 12:38:13 +0200
+
+kanotix-kernelhacking (2.6.17.4) unstable; urgency=low
+
+  * fix ugly typo in dependencies.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon,  3 Jul 2006 16:27:59 +0200
+
+kanotix-kernelhacking (2.6.17.3) unstable; urgency=low
+
+  * remove broken module packages for the time being:
+    - cloop-src
+    - fsam7400-source
+    - ivtv-source
+    - linux-wlan-ng-source
+    - omnibook-source
+    - ppscsi-source
+    - ltmodem-source
+  * no longer needed, prefer in-kernel version:
+    - pwc-source
+    - qc-usb-messenger
+  * arch=any
+    - at76c503a-source
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon,  3 Jul 2006 10:39:56 +0200
+
+kanotix-kernelhacking (2.6.17.2) unstable; urgency=low
+
+  * Remove duplicate rt2500-source dep/rec.
+  * Improve kanotix-modules by creating a conffile at build time, and parsing
+    that when unpacking.
+
+ -- Kel Modderman <kelrin@tpg.com.au>  Mon, 19 Jun 2006 22:11:18 +1000
+
+kanotix-kernelhacking (2.6.17.1) unstable; urgency=low
+
+  * fix typo concerning ipw3945-source.
+  * re- add rt2500-source.
+  * remove adm80211 and zd1211 handled by kernelpatches.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 18 Jun 2006 18:39:24 +0200
+
+kanotix-kernelhacking (2.6.17.0) unstable; urgency=low
+
+  * Base on new linux release.
+  * Add usbvision, ipw3495 and rt61 modules.
+  * madwifi-ng => madwifi
+  * Bump Standards version.
+
+ -- Kel Modderman <kelrin@tpg.com.au>  Mon, 19 Jun 2006 00:17:00 +1000
+
+kanotix-kernelhacking (2.6.16.14) unstable; urgency=low
+
+  * /proc/config.gz doesn't necessarily exist.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 27 May 2006 01:08:32 +0200
+
+kanotix-kernelhacking (2.6.16.13) unstable; urgency=low
+
+  * change section to contrib/misc.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 24 May 2006 19:08:09 +0200
+
+kanotix-kernelhacking (2.6.16.12) unstable; urgency=low
+
+  * finally add lirc-modules-source again. 
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 18 May 2006 15:11:08 +0200
+
+kanotix-kernelhacking (2.6.16.11) unstable; urgency=low
+
+  * re- add linux-wlan-ng-source to dependencies.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  2 May 2006 01:43:09 +0200
+
+kanotix-kernelhacking (2.6.16.10) unstable; urgency=low
+
+  [ Kel Modderman ]
+  * Use PWD built-in in unp-kernel-modules.
+  * Don't quote shell command in Makefile.
+  * Split clean into two parts:
+    clean: for linux source
+    clean-modules: for external module packages
+    NB: It is clear that fakeroot is not used properly as the ROOTCMD when a user
+    attempts to clean the module packages.
+  * Add prep-kanotix-modules and kanotix-modules targets to Makefile.
+  * Make modules target depends on clean-modules.
+  * Use BASE_DIR as locational index for MODULE_LOC.
+  * Exclude shell scripts from compression in debian/rules.
+  * Don't link to /usr/src/Makefile in an essentially non-essential script ;-)
+
+  [ Stefan Lippers-Hollmann ]
+  * only delete kernel remains conditionally if vmlinuz-$KERNEL has already
+    been purged.
+  * re- add convenience hack to link Makefile to unp-kernel-modules.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 30 Apr 2006 12:45:25 +0200
+
+kanotix-kernelhacking (2.6.16.9) unstable; urgency=low
+
+  * The ugly hack, fix me before anyone starts looking, release.
+  * don't run modules_clean as user, this is necessary (so take care of that
+    manually --> clean sheets approach), but kernel-packages doesn't seem to
+    behave here.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 29 Apr 2006 19:38:32 +0200
+
+kanotix-kernelhacking (2.6.16.8) unstable; urgency=low
+
+  * fix zip target.
+  * try to fix module building.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 29 Apr 2006 17:14:47 +0200
+
+kanotix-kernelhacking (2.6.16.7) unstable; urgency=low
+
+  * use --rootcmd fakeroot for make-kpkg.
+  * minor clean up.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 29 Apr 2006 16:17:37 +0200
+
+kanotix-kernelhacking (2.6.16.6) unstable; urgency=low
+
+  * make Makefile compatible to pure user space.
+  * move unp-kernel-modules to /usr/bin instead of /usr/sbin/, we can build
+    kernels in userspace now.
+  * get install-kernel-kanotix.sh below 4096 byte, otherwise it will be
+    compressed by dh_installdocs.
+    - additionally move to /usr/share/kanotix-kernelhacking now.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 29 Apr 2006 14:35:05 +0200
+
+kanotix-kernelhacking (2.6.16.5) unstable; urgency=low
+
+  * include current kernel install scripts.
+  * switch to next generation unp-kernel-modules, thanks to kelmo - slightly
+    adapted.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 29 Apr 2006 00:12:02 +0200
+
+kanotix-kernelhacking (2.6.16.4) unstable; urgency=low
+
+  * add pwc-source to dependencies.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 25 Apr 2006 16:23:39 +0200
+
+kanotix-kernelhacking (2.6.16.3) unstable; urgency=low
+
+  * move to madwifi-ng instead of madwifi.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 25 Apr 2006 01:27:26 +0200
+
+kanotix-kernelhacking (2.6.16.2) unstable; urgency=low
+
+  * add shfs-source again.
+  * add zip target for kernel Makefile.
+  * add release target for kernel Makefile.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 19 Apr 2006 15:52:51 +0200
+
+kanotix-kernelhacking (2.6.16.1) unstable; urgency=low
+
+  * add avm-source again after the build problems have been fixed.
+  * zd1211-source pukes over dpkg-genchanges, but nevertheless builds the
+    binary packages.
+  * we build cloop externally from now on.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  6 Apr 2006 20:26:45 +0200
+
+kanotix-kernelhacking (2.6.16) unstable; urgency=low
+
+  * bump to 2.6.16.
+  * add sl-modem again.
+  * drop lufs-source.
+  * drop eagle-usb-source.
+  * the following drivers aren't compiling yet:
+    - avm-source
+    - ibdriver-source
+    - linux-wlan-ng-source
+    - shfs-source
+    - zd1211-source
+    - sl-modem-source
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon,  3 Apr 2006 22:30:57 +0200
+
+kanotix-kernelhacking (2.6.15.6) unstable; urgency=low
+
+  * remove sl-modem.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 26 Feb 2006 00:35:54 +0000
+
+kanotix-kernelhacking (2.6.15.5) unstable; urgency=low
+
+  * Bugfix: don't attempt to clean up modules in a directory that does not
+    exist. [unp-kernel-modules] 
+
+ -- Kel Modderman <kelrin@tpg.com.au>  Sun, 15 Jan 2006 22:46:03 +1000
+
+kanotix-kernelhacking (2.6.15.4) unstable; urgency=low
+
+  * Drop btsco, its broken with current alsa
+  * Reinstate sl-modem, new upstream fixed it for linux (>=2.6.13) 
+
+ -- Kel Modderman <kelrin@tpg.com.au>  Sun, 15 Jan 2006 01:13:19 +1000
+
+kanotix-kernelhacking (2.6.15.3) unstable; urgency=low
+
+  [ Kel Modderman ]
+  * Depend on zd1211-source and also include it in the amd64 module pool.
+
+ -- Kel Modderman <kelrin@tpg.com.au>  Sat, 14 Jan 2006 00:09:55 +1000
+
+kanotix-kernelhacking (2.6.15.2) unstable; urgency=low
+
+  [ Kel Modderman ]
+  * Add ivtv and sqcam
+  * Small tweak to unp-kernel-modules script
+
+  [ Stefan Lippers-Hollmann ]
+  * merge both branches.
+  * re- add linux-wlan-ng, the new upstream release is supposed to fix kernel
+    2.6.15 issues.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun,  8 Jan 2006 14:09:54 +0100
+
+kanotix-kernelhacking (2.6.15.1) unstable; urgency=low
+
+  * remove hostap-source, it is now usable as in kernel module.
+  * temporarily remove linux-wlan-ng as it is broken with 2.6.15.
+  * includes Kel Modderman's latest changes to unp-kernel-modules.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat,  7 Jan 2006 14:08:51 +0100
+
+kanotix-kernelhacking (2.6.14.9) unstable; urgency=low
+
+  * remove cdbs auto update feature.
+  * bump compat level to 5.
+  * really remove sl-modem.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 28 Dec 2005 11:31:17 +0100
+
+kanotix-kernelhacking (2.6.14.8) unstable; urgency=low
+
+  * Rewrote unp-kernel-modules
+    - now arch specific modules are handled correctly
+    - removed sl-modem (broken upstream)
+
+ -- Kel Modderman <kelrin@tpg.com.au>  Wed, 28 Dec 2005 00:33:37 +1000
+
+kanotix-kernelhacking (2.6.14.7) unstable; urgency=low
+
+  * define debian revision to get saner defaults.
+  * adapt make-kernel-links for linux-headers.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 10 Dec 2005 15:23:29 +0100
+
+kanotix-kernelhacking (2.6.14.6) unstable; urgency=low
+
+  * Add btsco; depend on btsco
+  * Fix typo in last changelog entry
+
+ -- Kel Modderman <kelrin@tpg.com.au>  Sun, 13 Nov 2005 18:04:06 +1000
+
+kanotix-kernelhacking (2.6.14.5) unstable; urgency=low
+
+  * remove lirc from the dependencies, because the debian package is utterly
+    broken.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 11 Nov 2005 00:45:33 +0100
+
+kanotix-kernelhacking (2.6.14.4) unstable; urgency=low
+
+  * switch to debian linux-wlan-ng.
+  * depend on ibdriver.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon,  7 Nov 2005 12:19:37 +0100
+
+kanotix-kernelhacking (2.6.14.3) unstable; urgency=low
+
+  * Addition of ibdriver.
+
+ -- Kel Modderman <kelrin@tpg.com.au>  Wed,  2 Nov 2005 23:18:55 +1000
+
+kanotix-kernelhacking (2.6.14.2) unstable; urgency=low
+
+  * don't depend on kernel-kbuild-2.6-3 any longer.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 31 Oct 2005 01:00:22 +0100
+
+kanotix-kernelhacking (2.6.14.1) unstable; urgency=low
+
+  * adapt for kernel 2.6.14.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 31 Oct 2005 00:25:33 +0100
+
+kanotix-kernelhacking (2.6.13.23) unstable; urgency=low
+
+  * fix unp-kernel-modules also for i386 only modules.
+  * make unp-kernel-modules less chatty (increase the VERBOSITY level, if you
+    want).
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 24 Oct 2005 14:55:30 +0200
+
+kanotix-kernelhacking (2.6.13.22) unstable; urgency=low
+
+  * fix unp-kernel-modules for brutal clean-ups.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 21 Oct 2005 17:37:06 +0200
+
+kanotix-kernelhacking (2.6.13.21) unstable; urgency=low
+
+  * add ppscsi.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 15 Oct 2005 00:51:12 +0200
+
+kanotix-kernelhacking (2.6.13.20) unstable; urgency=low
+
+  * zd1211 is i386 only.
+  * drop ath-driver, it's effectively unusable and conflicts with upcoming
+    madwifi development.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 10 Oct 2005 15:45:32 +0200
+
+kanotix-kernelhacking (2.6.13.19) unstable; urgency=low
+
+  [ Kel Modderman ]
+  * Add ath-driver and sl-modem to unp-kernel-modules.
+  * Update kanotix-modules depends.
+
+  [ Stefan Lippers-Hollmann ]
+  * sponsor upload.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun,  2 Oct 2005 15:38:23 +0200
+
+kanotix-kernelhacking (2.6.13.18) unstable; urgency=low
+
+  * use -maxdepth 1 for find, to counter the massive performance decrease.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 29 Sep 2005 16:02:49 +0200
+
+kanotix-kernelhacking (2.6.13.17) unstable; urgency=low
+
+  * fix acer-acpi-source.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 29 Sep 2005 15:32:45 +0200
+
+kanotix-kernelhacking (2.6.13.16) unstable; urgency=low
+
+  [ Kel Modderman ]
+  * add acer-acpi to module depends.
+  * update unp-kernel-modules script to allow auto
+    detection of compression.
+
+  [ Stefan Lippers-Hollmann ]
+  * sponsor upload.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 29 Sep 2005 01:10:18 +0200
+
+kanotix-kernelhacking (2.6.13.15) unstable; urgency=low
+
+  * switch spca5xx to bzip2.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 22 Sep 2005 21:15:23 +0200
+
+kanotix-kernelhacking (2.6.13.14) unstable; urgency=low
+
+  * remove pwc again.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 22 Sep 2005 01:25:36 +0200
+
+kanotix-kernelhacking (2.6.13.13) unstable; urgency=low
+
+  * add pwc.
+  * remove make_driver, make_addon.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 19 Sep 2005 02:46:03 +0200
+
+kanotix-kernelhacking (2.6.13.12) unstable; urgency=low
+
+  * really add spca5xx.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed,  7 Sep 2005 23:27:50 +0200
+
+kanotix-kernelhacking (2.6.13.11) unstable; urgency=low
+
+  * fix hostap-source.tar.*gz*.
+  * add fuse-source.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  6 Sep 2005 02:34:01 +0200
+
+kanotix-kernelhacking (2.6.13.10) unstable; urgency=low
+
+  * add avm-source, lufs-source to dependencies.
+  * add make_driver.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 19 Aug 2005 18:53:36 +0200
+
+kanotix-kernelhacking (2.6.13.9) unstable; urgency=low
+
+  * NMU - fix Makefile targets (menuconfig, config).
+
+ -- Kel Modderman <kelrin@tpg.com.au>  Thu, 18 Aug 2005 16:30:38 +1000
+
+kanotix-kernelhacking (2.6.13.8) unstable; urgency=low
+
+  * remove hpt3xx-source dependency.
+  * add mk_dpatch.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 18 Aug 2005 01:31:45 +0200
+
+kanotix-kernelhacking (2.6.13.7) unstable; urgency=low
+
+  * fix amd64 compatibility.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 17 Aug 2005 03:44:11 +0200
+
+kanotix-kernelhacking (2.6.13.6) unstable; urgency=low
+
+  * update /usr/src/Makefile.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 15 Aug 2005 15:27:04 +0200
+
+kanotix-kernelhacking (2.6.13.5) unstable; urgency=low
+
+  * rename package.
+  * add cli tools
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 15 Aug 2005 15:11:53 +0200
+
+kanotix-modules (2.6.13.4) unstable; urgency=low
+
+  * fix lirc exceptions.
+  * sanitize output to stdout.
+  * add remove-all-kernels-completely.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 12 Aug 2005 18:47:30 +0200
+
+kanotix-modules (2.6.13.3) unstable; urgency=low
+
+  * remove ieee80211, ipw2100, ipw2200, those are handled by kernel patches
+    right now.
+  * add acx, adm8211, qc-usb, qc-usb-messenger, zd1211.
+  * add very ugly workaround for linux-wlan-ng.:wq
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 12 Aug 2005 14:42:34 +0200
+
+kanotix-modules (2.6.13.2) unstable; urgency=low
+
+  * fix unpack.
+  * clean /usr/src/modules more thoroughly.
+  * move acerhk-source to Recommends:.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun,  7 Aug 2005 01:56:11 +0200
+
+kanotix-modules (2.6.13.1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat,  6 Aug 2005 13:30:47 +0200
+

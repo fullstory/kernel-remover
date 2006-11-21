@@ -1,0 +1,14 @@
+#!/bin/bash
+create_zip () {
+	rm -f $1-$(uname -r).zip
+	zip $1-$(uname -r).zip $(modinfo $1|awk '/filename:/{print $2}')
+}
+
+create_zip fglrx
+#create_zip nvidia
+
+chmod 755 /lib/modules/$(uname -r)/kernel/fs/lufs/
+rm -f /lib/modules/$(uname -r)/kernel/fs/lufs/lufs.ko
+cp /var/lib/lufs/lufs.ko /lib/modules/$(uname -r)/kernel/fs/lufs/
+
+create_zip lufs
