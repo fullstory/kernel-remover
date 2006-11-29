@@ -1,0 +1,3 @@
+sidux-modules	etc/
+unp-kernel-modules usr/bin/
+unp_sidux_modules.awk usr/share/sidux-modules

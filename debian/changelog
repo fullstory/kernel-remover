@@ -1,8 +1,16 @@
-kanotix-kernelhacking (2.6.18.9) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.19.0) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * first sidux release.
+  * remove the following external modules for now, they're still broken:
+    - cloop-src
+    - ibdriver-source
+    - rtl8180-sa2400-source
+    - unionfs-source
+    - rt2400-source
+    - rt61-source
+    - usbvision-source
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 21 Nov 2006 22:50:51 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 30 Nov 2006 00:07:21 +0100
 
 kanotix-kernelhacking (2.6.18.8) unstable; urgency=low
 

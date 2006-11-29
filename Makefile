@@ -83,25 +83,25 @@ gconfig: oldconfig
 		make gconfig && \
 		make-kpkg --rootcmd fakeroot --revision ${REV} configure
 
-.PHONY: prep-kanotix-modules
-prep-kanotix-modules:
+.PHONY: prep-sidux-modules
+prep-sidux-modules:
 	[ -x /usr/bin/unp-kernel-modules ] && \
 		cd ${BASE_DIR} && \
 			/usr/bin/unp-kernel-modules
 
-.PHONY: kanotix-modules
-kanotix-modules: prep-kanotix-modules modules
+.PHONY: sidux-modules
+sidux-modules: prep-sidux-modules modules
 
 .PHONY: zip
 zip:
 	cd ${BASE_DIR}/ && \
 		rm -f kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`.zip
-		for i in /usr/share/kanotix-kernelhacking/scripts/*.sh; do \
+		for i in /usr/share/sidux-kernelhacking/scripts/*.sh; do \
 			sed s/\%KERNEL_VERSION\%/`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`/g $$i > ${BASE_DIR}/`basename $$i` && \
 			chmod +x ${BASE_DIR}/`basename $$i`; \
 		done && \
 		sed -i s/^\#\%STATIC_VERSION\%/STATIC_VERSION=\"`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`\"\\t\#\%STATIC_VERSION\%/ *-source.sh; \
-		zip kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`.zip *`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`*.deb *-source.sh kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`-custom-patches.zip `find /usr/share/kanotix-kernelhacking/scripts/*.sh -exec basename {} \; | xargs`
+		zip kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`.zip *`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`*.deb *-source.sh kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`-custom-patches.zip `find /usr/share/sidux-kernelhacking/scripts/*.sh -exec basename {} \; | xargs`
 
 .PHONY: release
 release: all zip

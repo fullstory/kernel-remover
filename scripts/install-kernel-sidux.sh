@@ -64,15 +64,7 @@ fi
 # hints for fglrx
 if grep -q '"fglrx"' "/etc/X11/$X_CONF"; then
 	echo "ATI RADEON 3D acceleraction will NOT work with the new kernel until"
-	echo "the driver is reinstalled. Use latest script:"
-	echo "http://kanotix.com/files/install-fglrx-debian.sh"
-	echo
-fi
-
-if grep -q -E '"fglrx"|"radeon"' "/etc/X11/$X_CONF"; then
-	echo "If you don't get 3D acceleraction with the new kernel try the included"
-	echo "AGP testing script - best use runlevel 3 for this. Start it with:"
-	echo "./install-agp-modules.sh"
+	echo "the driver is reinstalled."
 	echo
 fi
 
@@ -80,14 +72,12 @@ fi
 if grep -q '"nvidia"' /etc/X11/$X_CONF; then
 	perl -pi -e 's/^([\s]*Driver\s*)"nvidia"/\1"nv"/g' "/etc/X11/$X_CONF"
 	grep -q ^nvidia /etc/modules || echo nvidia >> /etc/modules
-	echo "NVIDIA driver has been DISABLED! To enable it again use"
-	echo "latest script:"
-	echo "http://kanotix.com/files/install-nvidia-debian.sh"
+	echo "NVIDIA driver has been DISABLED!"
 	echo
 fi
 
 # eepro100 fix
-perl -pi -e s/eepro100/e100/ /etc/modules
+sed -i s/eepro100/e100/ /etc/modules
 
 # psmouse fix
 grep -q ^psmouse /etc/modules || echo psmouse >> /etc/modules

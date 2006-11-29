@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KTX_MODFILE="/etc/kanotix-modules"
+KTX_MODFILE="/etc/sidux-modules"
 
 while getopts vd: opt
 do
@@ -60,7 +60,7 @@ function rm_modules_dir () {
 
 function pop_modules_dir () {
 	pushd "$BASE_DIR" >/dev/null
-		awk -f /usr/share/kanotix-modules/unp_kanotix_modules.awk $KTX_MODFILE
+		awk -f /usr/share/sidux-modules/unp_sidux_modules.awk $KTX_MODFILE
 	popd >/dev/null
 }
 

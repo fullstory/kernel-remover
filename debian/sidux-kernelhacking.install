@@ -3,5 +3,5 @@ Makefile			usr/src/
 make-kernel-links		usr/sbin/
 remove-all-kernels-completely	usr/sbin/
 remove-kernel-completely	usr/sbin/
-scripts				usr/share/kanotix-kernelhacking/
-linux-custom-patches		usr/share/kanotix-kernelhacking/
+scripts				usr/share/sidux-kernelhacking/
+linux-custom-patches		usr/share/sidux-kernelhacking/
