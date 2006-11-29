@@ -17,7 +17,7 @@ Description: various tools for kernel hacking
 
 Package: sidux-modules
 Architecture: all
-Depends: bzip2, sidux-su, unp, zip, gawk, acx-source, acer-acpi-source, adm8211-source, at76c503a-source, btsco-source, fsam7400-source, gspca-source, ipw3945-source, ivtv-source, linux-wlan-ng-source, lirc-modules-source, ndiswrapper-source, qc-usb-source, rt2500-source, rt2570-source, rfswitch-source, squashfs-source
+Depends: bzip2, unp, zip, gawk, acx-source, acer-acpi-source, adm8211-source, at76c503a-source, btsco-source, fsam7400-source, gspca-source, ipw3945-source, ivtv-source, linux-wlan-ng-source, lirc-modules-source, ndiswrapper-source, qc-usb-source, rt2500-source, rt2570-source, rfswitch-source, squashfs-source
 Recommends: acerhk-source
 Suggests: sidux-kernelhacking
 Conflicts: kanotix-modules

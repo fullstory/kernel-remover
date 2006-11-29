@@ -9,6 +9,7 @@ sidux-kernelhacking (2.6.19.0) unstable; urgency=low
     - rt2400-source
     - rt61-source
     - usbvision-source
+  * we don't need kanotix-su/ su-me.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 30 Nov 2006 00:07:21 +0100
 
