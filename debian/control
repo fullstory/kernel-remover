@@ -3,7 +3,7 @@ Section: misc
 Priority: extra
 Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Uploaders: Kel Modderman <kelrin@tpg.com.au>
-Build-Depends: cdbs (>= 0.4.23-1.1), debhelper (>= 5.0.0)
+Build-Depends: cdbs, debhelper (>= 5)
 Standards-Version: 3.7.2
 
 Package: sidux-kernelhacking
@@ -17,7 +17,7 @@ Description: various tools for kernel hacking
 
 Package: sidux-modules
 Architecture: all
-Depends: bzip2, unp, zip, gawk, acx-source, acer-acpi-source, adm8211-source, at76c503a-source, btsco-source, fsam7400-source, gspca-source, ipw3945-source, ivtv-source, linux-wlan-ng-source, lirc-modules-source, ndiswrapper-source, qc-usb-source, rt2500-source, rt2570-source, rfswitch-source, squashfs-source
+Depends: bzip2, unp, zip, gawk, acx-source, acer-acpi-source, adm8211-source, at76c503a-source (>= 0.14~beta1-3), btsco-source, cloop-src (>= 2.05~20060829), fsam7400-source, gspca-source, ipw3945-source, ivtv-source, linux-wlan-ng-source (>= 0.2.6+svn20061108-1), lirc-modules-source (>= 0.8.0-9+c0.sidux.1), ndiswrapper-source, qc-usb-source (>= 0.6.6-1+c0.sidux.1), rt2500-source, rt2570-source, rfswitch-source
 Recommends: acerhk-source
 Suggests: sidux-kernelhacking
 Conflicts: kanotix-modules
