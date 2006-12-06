@@ -34,13 +34,11 @@ fi
 # install important dependencies
 [ -x /usr/bin/gcc-4.1 ] || apt-get install gcc-4.1
 dpkg -l module-init-tools &>/dev/null || apt-get -y install module-init-tools
-dpkg -l kernel-kbuild-2.6-3 &>/dev/null || apt-get -y install kernel-kbuild-2.6-3
 update-rc.d module-init-tools start 20 S . >/dev/null
 
 rm -rf /usr/src/linux /usr/src/linux-$VER /lib/modules/$VER/build
 if [ ! -d /usr/src/linux-headers-$VER/scripts ]; then
 	rm -f /usr/src/linux-headers-$VER/scripts
-	ln -s ../kernel-kbuild-2.6-3/scripts /usr/src/linux-headers-$VER
 fi
 
 ln -s linux-headers-$VER /usr/src/linux-$VER
