@@ -1,8 +1,8 @@
-sidux-kernelhacking (2.6.19.3) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.19.3) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * re- add rt2400-source.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed,  6 Dec 2006 16:18:17 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 10 Dec 2006 16:04:36 +0100
 
 sidux-kernelhacking (2.6.19.2) unstable; urgency=low
 
