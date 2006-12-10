@@ -1,8 +1,8 @@
-sidux-kernelhacking (2.6.19.4) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.19.4) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * we need an initrd for the time being.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 10 Dec 2006 16:06:41 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 10 Dec 2006 16:10:57 +0100
 
 sidux-kernelhacking (2.6.19.3) unstable; urgency=low
 

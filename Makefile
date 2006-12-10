@@ -1,5 +1,6 @@
 REV=1
 LANG=C
+INITRD="--initrd"
 ifeq ($(shell id -u),0)
 	BASE_DIR="/usr/src"
 	MODULE_LOC="/usr/src/modules"
@@ -30,22 +31,22 @@ clean: clean-modules
 .PHONY: source
 source: clean oldconfig
 	cd ${BASE_DIR}/linux && \
-		make-kpkg --rootcmd fakeroot --revision ${REV} --us --uc buildpackage modules
+		make-kpkg --rootcmd fakeroot --revision ${REV} ${INITRD} --us --uc buildpackage modules
 
 .PHONY: fast
 fast: clean oldconfig
 	cd ${BASE_DIR}/linux && \
-		make-kpkg --rootcmd fakeroot --revision ${REV} --us --uc kernel_image kernel_headers kernel_doc modules
+		make-kpkg --rootcmd fakeroot --revision ${REV} ${INITRD} --us --uc kernel_image kernel_headers kernel_doc modules
 
 .PHONY: realfast
 realfast: clean oldconfig
 	cd ${BASE_DIR}/linux && \
-		make-kpkg --rootcmd fakeroot --revision ${REV} --us --uc kernel_image modules
+		make-kpkg --rootcmd fakeroot --revision ${REV} ${INITRD} --us --uc kernel_image modules
 
 .PHONY: no-doc
 no-doc: clean oldconfig
 	cd ${BASE_DIR}/linux && \
-		make-kpkg --rootcmd fakeroot --revision ${REV} --us --uc kernel_image kernel_headers modules kernel_source
+		make-kpkg --rootcmd fakeroot --revision ${REV} ${INITRD} --us --uc kernel_image kernel_headers modules kernel_source
 
 .PHONY: modules
 modules: clean-modules
