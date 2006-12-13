@@ -1,12 +1,8 @@
 sidux-kernelhacking (2.6.19.6) UNRELEASED; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
-  [ Kel Modderman ]
-  * Drop acx-source for now.
-
- -- Kel Modderman <kel@otaku42.de>  Wed, 13 Dec 2006 00:08:40 +1000
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 10 Dec 2006 19:53:39 +0100
 
 sidux-kernelhacking (2.6.19.5) unstable; urgency=low
 
