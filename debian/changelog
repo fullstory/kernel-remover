@@ -1,3 +1,9 @@
+sidux-kernelhacking (2.6.19.7) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 30 Dec 2006 19:14:58 +0100
+
 sidux-kernelhacking (2.6.19.6) unstable; urgency=low
 
   * fix bashisms in kernel install-/ remove scripts.
