@@ -1,3 +1,9 @@
+sidux-kernelhacking (2.6.19.8) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat,  6 Jan 2007 22:15:37 +0100
+
 sidux-kernelhacking (2.6.19.7) unstable; urgency=low
 
   * take care to set /etc/kernel-img.conf correctly.
