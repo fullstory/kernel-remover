@@ -16,7 +16,15 @@ rm -f	/boot/System.map \
 	/boot/vmlinuz \
 	initrd.img
 
-grep -q '  */sbin/update-grub$' /etc/kernel-img.conf 2> /dev/null && sed -i 's%=.*sbin/update-grub%= update-grub%' /etc/kernel-img.conf 2> /dev/null
+# fix /etc/kernel-img.conf
+sed -i	-e s/postinst_hook.*/postinst_hook\ \=\ \\/usr\\/sbin\\/update-grub/ \
+	-e s/postrm_hook.*/postrm_hook\ \=\ \\/usr\\/sbin\\/update-grub/ \
+	-e s/do_initrd.*/do_initrd\ \=\ Yes/ \
+	-e /ramdisk.*mkinitrd\\.yaird/d \
+		/etc/kernel-img.conf
+grep -q do_initrd /etc/kernel-img.conf 2> /dev/null || \
+	echo "do_initrd = Yes" >> /etc/kernel-img.conf
+
 
 # install important dependencies
 [ -x /usr/bin/gcc-4.1 ]      || apt-get install gcc-4.1
