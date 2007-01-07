@@ -1,8 +1,9 @@
-sidux-kernelhacking (2.6.19.8) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.19.8) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * misdn breaks with 2.6.19, remove it again.
+  * add unionfs again, we ship our own svn snapshot.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat,  6 Jan 2007 22:15:37 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun,  7 Jan 2007 02:40:08 +0100
 
 sidux-kernelhacking (2.6.19.7) unstable; urgency=low
 
