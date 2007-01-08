@@ -27,8 +27,19 @@ grep -q do_initrd /etc/kernel-img.conf 2> /dev/null || \
 
 
 # install important dependencies
-[ -x /usr/bin/gcc-4.1 ]      || apt-get install gcc-4.1
-[ -x /usr/sbin/mkinitramfs ] || apt-get install initramfs-tools
+[ -x /usr/bin/gcc-4.1 ]		|| apt-get install gcc-4.1
+[ -x /usr/sbin/mkinitramfs ]	|| apt-get install initramfs-tools
+if [ ! -x /usr/sbin/scanpartitions] && dpkg --compare-versions "$(dpkg -l | awk '/^ii\ \ scanpartitions[[:space:]]/{ print $3 }')" lt "0.7.3"; then
+	if dpkg --compare-versions "$(LANG= apt-cache policy scanpartitions | awk '/^\ \ Candidate\:/{print $2}')" lt "0.7.3"; then
+		apt-get update
+	fi
+	apt-get install scanpartitions
+fi
+
+# convert fstab to uuid/ labels, this is mandatory for libata
+#for i in $(grep -e ^/dev/[hs]d[a-z][1-9] ^/dev/[hs]d[a-z][1-9][0-5] /etc/fstab | awk '{print $1}'); do
+#	sed -i s/$i/UUID=$(scanpartitions $i | awk '{print $i}')/
+#done
 
 # install kernel, headers and our patches to the vanilla tree
 dpkg -i linux-image-"$VER"_"$SUB"_$(dpkg-architecture -qDEB_BUILD_ARCH).deb
