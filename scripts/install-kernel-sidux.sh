@@ -29,7 +29,7 @@ grep -q do_initrd /etc/kernel-img.conf 2> /dev/null || \
 # install important dependencies
 [ -x /usr/bin/gcc-4.1 ]		|| apt-get install gcc-4.1
 [ -x /usr/sbin/mkinitramfs ]	|| apt-get install initramfs-tools
-if [ ! -x /usr/sbin/scanpartitions] && dpkg --compare-versions "$(dpkg -l | awk '/^ii\ \ scanpartitions[[:space:]]/{ print $3 }')" lt "0.7.3"; then
+if [ ! -x /usr/sbin/scanpartitions] || dpkg --compare-versions "$(dpkg -l | awk '/^ii\ \ scanpartitions[[:space:]]/{ print $3 }')" lt "0.7.3"; then
 	if dpkg --compare-versions "$(LANG= apt-cache policy scanpartitions | awk '/^\ \ Candidate\:/{print $2}')" lt "0.7.3"; then
 		apt-get update
 	fi
