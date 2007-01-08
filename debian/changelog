@@ -1,8 +1,9 @@
 sidux-kernelhacking (2.6.19.9) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * use UUIDs in /etc/fstab.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun,  7 Jan 2007 02:42:48 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  9 Jan 2007 00:04:24 +0100
 
 sidux-kernelhacking (2.6.19.8) unstable; urgency=low
 

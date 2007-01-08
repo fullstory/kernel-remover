@@ -37,9 +37,9 @@ if [ ! -x /usr/sbin/scanpartitions] && dpkg --compare-versions "$(dpkg -l | awk 
 fi
 
 # convert fstab to uuid/ labels, this is mandatory for libata
-#for i in $(grep -e ^/dev/[hs]d[a-z][1-9] ^/dev/[hs]d[a-z][1-9][0-5] /etc/fstab | awk '{print $1}'); do
-#	sed -i s/$i/UUID=$(scanpartitions $i | awk '{print $i}')/
-#done
+for i in $(awk '/^\/dev\/[hs]d[a-z][1-9][0-9]?\ /{print $1}' /etc/fstab); do
+	sed -i "s%^$i[[:space:]]%$(scanpartitions -v uuids=1 $i | awk '{print $1}')\t%" /etc/fstab
+done
 
 # install kernel, headers and our patches to the vanilla tree
 dpkg -i linux-image-"$VER"_"$SUB"_$(dpkg-architecture -qDEB_BUILD_ARCH).deb
