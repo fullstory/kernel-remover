@@ -41,6 +41,12 @@ for i in $(awk '/^\/dev\/[hs]d[a-z][1-9][0-9]?\ /{print $1}' /etc/fstab); do
 	sed -i "s%^$i[[:space:]]%$(scanpartitions -v uuids=1 $i | awk '{print $1}')\t%" /etc/fstab
 done
 
+# convert /boot/grub/menu.lst
+# XXX: we need to move root=... in /boot/grub/menu.lst, only change old school 
+#      entries (/dev/hda1, /dev/sda1) for our / partition, don't touch / for
+#      other partitions/ distributions, those might now allow boot by-uuid,
+#      perhaps because they're initrd-less or still use yaid.
+
 # install kernel, headers and our patches to the vanilla tree
 dpkg -i linux-image-"$VER"_"$SUB"_$(dpkg-architecture -qDEB_BUILD_ARCH).deb
 dpkg -i linux-headers-"$VER"_"$SUB"_$(dpkg-architecture -qDEB_BUILD_ARCH).deb
