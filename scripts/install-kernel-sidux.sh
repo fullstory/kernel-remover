@@ -37,9 +37,26 @@ if [ ! -x /usr/sbin/scanpartitions] || dpkg --compare-versions "$(dpkg -l | awk 
 fi
 
 # convert fstab to uuid/ labels, this is mandatory for libata
-for i in $(awk '/^\/dev\/[hs]d[a-z][1-9][0-9]?\ /{print $1}' /etc/fstab); do
-	sed -i "s%^$i[[:space:]]%$(scanpartitions -v uuids=1 $i | awk '{print $1}')\t%" /etc/fstab
+if grep -q ^\\/dev\\/[hs]d[a-z][1-9][0-9]\\?[[:space:]] /etc/fstab; then
+	BACKUP="$(mktemp -p /tmp/ fstab.XXXXXXXXXX)"
+	cat /etc/fstab > "$BACKUP"
+
+	for i in $(awk '/^\/dev\/[hs]d[a-z][1-9][0-9]?[[:space:]]/{print $1}' /etc/fstab); do
+		TMP="$(scanpartitions -v uuids=1 $i | awk '{print $1}')"
+		if [ -n "$TMP" ]; then
+			sed -i "s%^${i}[[:space:]]%${TMP}\t%" /etc/fstab
+		else
+			# XXX:	comment out this fstab line, we're talking about
+			#	removable media which isn't currently attached and
+			#	will lead to namespace collisions!
+			echo "FIXME: comment out not attached removable media!"
+		fi
+
+		MESSAGE="Your /etc/fstab was changed to allow mount by-uuid, this change is necessary
+to allow libata vs. IDE switches in this and newer kernels.
+A backup of your old fstab has been saved under $BACKUP."
 done
+fi
 
 # convert /boot/grub/menu.lst
 # XXX:	we need to move root=... in /boot/grub/menu.lst to root=UUID=..., only
@@ -104,5 +121,8 @@ echo use "alsactl store" as root to save it after checking the volumes.
 # grub notice
 echo 'Now you can simply reboot when using GRUB (default). In case you use'
 echo 'LILO you have to do the mentioned changes manually.'
+
+echo "$MESSAGE"
+
 echo Have fun!
 
