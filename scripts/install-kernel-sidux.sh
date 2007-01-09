@@ -45,7 +45,7 @@ if grep -q ^\\/dev\\/[hs]d[a-z][1-9][0-9]\\?[[:space:]] /etc/fstab; then
 	cat /etc/fstab > "$BACKUP"
 
 	for i in $(awk '/^\/dev\/[hs]d[a-z][1-9][0-9]?[[:space:]]/{print $1}' /etc/fstab); do
-		TMP="$(scanpartitions -v uuids=1 $i | awk '{print $1}')"
+		TMP="$(/lib/udev/vol_id -u $i)"
 		if [ -n "$TMP" ]; then
 			sed -i "s%^${i}[[:space:]]%${TMP}\t%" /etc/fstab
 		else
@@ -89,7 +89,7 @@ if grep -q root\=\\/dev\\/[hs]d[a-z][1-9][0-9]\\? /boot/grub/menu.lst; then
 	BACKUP="$(mktemp -p /boot/grub/ menu.lst.XXXXXXXXXX)"
 	cat /boot/grub/menu.lst > "$BACKUP"
 	
-	sed -i "s%root\=$ROOT_PARTITION%root\=$(/lib/udev/vol_id -u /dev/sda2)%" /boot/grub/menu.lst
+	sed -i "s%root\=$ROOT_PARTITION%root\=$(/lib/udev/vol_id -u $ROOT_PARTITION)%" /boot/grub/menu.lst
 
 	MESSAGE="$MESSAGE
 
