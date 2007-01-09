@@ -89,7 +89,7 @@ if grep -q root\=\\/dev\\/[hs]d[a-z][1-9][0-9]\\? /boot/grub/menu.lst; then
 	BACKUP="$(mktemp -p /boot/grub/ menu.lst.XXXXXXXXXX)"
 	cat /boot/grub/menu.lst > "$BACKUP"
 	
-	sed -i "s%root\=$ROOT_PARTITION%root\=$(/lib/udev/vol_id -u $ROOT_PARTITION)%" /boot/grub/menu.lst
+	sed -i "s%root\=$ROOT_PARTITION%root\=UUID\=$(/lib/udev/vol_id -u $ROOT_PARTITION)%" /boot/grub/menu.lst
 
 	MESSAGE="$MESSAGE
 
