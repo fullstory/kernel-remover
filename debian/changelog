@@ -2,8 +2,9 @@ sidux-kernelhacking (2.6.19.9) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
   * use UUIDs in /etc/fstab.
+  * use UUIDs in /boot/grub/menu.lst.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  9 Jan 2007 00:04:24 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  9 Jan 2007 18:23:55 +0100
 
 sidux-kernelhacking (2.6.19.8) unstable; urgency=low
 

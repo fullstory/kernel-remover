@@ -36,9 +36,12 @@ if [ ! -x /usr/sbin/scanpartitions] || dpkg --compare-versions "$(dpkg -l | awk 
 	apt-get install scanpartitions
 fi
 
+## DEBUGGING-ONLY!
+exit 666
+
 # convert fstab to uuid/ labels, this is mandatory for libata
 if grep -q ^\\/dev\\/[hs]d[a-z][1-9][0-9]\\?[[:space:]] /etc/fstab; then
-	BACKUP="$(mktemp -p /tmp/ fstab.XXXXXXXXXX)"
+	BACKUP="$(mktemp -p /etc/ fstab.XXXXXXXXXX)"
 	cat /etc/fstab > "$BACKUP"
 
 	for i in $(awk '/^\/dev\/[hs]d[a-z][1-9][0-9]?[[:space:]]/{print $1}' /etc/fstab); do
@@ -65,6 +68,35 @@ fi
 #	allow boot by-uuid, perhaps because they're initrd-less or still use 
 #	yaird. /proc/cmdline is not reliable, think of chroot systems and bind
 #	mounted procfs.
+ROOT_PARTITION="$(grep -v ^[[:space:]]\\?\# /etc/fstab | cut -d\# -f1 | grep [[:space:]]\\/[[:space:]] | awk '{print $1}')"
+case $ROOT_PARTITION in
+	LABEL\=*)
+		ROOT_PARTITION="$(readlink /dev/disk/by-label/`echo $ROOT_PARTITION | cut -d\= -f2` | sed s/.*\\//\\/dev\\//)"
+		;;
+	UUID\=*)
+		ROOT_PARTITION="$(readlink /dev/disk/by-uuid/`echo $ROOT_PARTITION | cut -d\= -f2` | sed s/.*\\//\\/dev\\//)"
+		;;
+	\\/dev\\/[hs]d[a-z][1-9][0-9]\\?)
+		ROOT_PARTITION="$ROOT_PARTITION"
+		;;
+	*)
+		echo "ERROR: can't determine / partition for grub, take care to adapt /boot/grub/menu.lst on your own"
+		exit 999
+		;;
+esac
+
+if grep -q root\=\\/dev\\/[hs]d[a-z][1-9][0-9]\\? /boot/grub/menu.lst; then
+	BACKUP="$(mktemp -p /boot/grub/ menu.lst.XXXXXXXXXX)"
+	cat /boot/grub/menu.lst > "$BACKUP"
+	
+	sed -i "s%root\=$ROOT_PARTITION%root\=$(/lib/udev/vol_id -u /dev/sda2)%" /boot/grub/menu.lst
+
+	MESSAGE="$MESSAGE
+
+Your /boot/grub/menu.lst was changed to identify / by-uuid, this change is 
+necessary to allow libata vs. IDE switches in this and newer kernels.
+A backup of your old fstab has been saved under $BACKUP."
+fi
 
 # install kernel, headers and our patches to the vanilla tree
 dpkg -i linux-image-"$VER"_"$SUB"_$(dpkg-architecture -qDEB_BUILD_ARCH).deb
