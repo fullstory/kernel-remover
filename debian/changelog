@@ -4,8 +4,9 @@ sidux-kernelhacking (2.6.19.9) unstable; urgency=low
   * use UUIDs in /boot/grub/menu.lst.
   * fix up inital draft, thank to x-un-i for testing.
   * comment out not currently attached removable and optical media.
+  * add squashfs-source again, we ship our own svn snapshot.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 10 Jan 2007 22:46:05 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 10 Jan 2007 22:47:26 +0100
 
 sidux-kernelhacking (2.6.19.8) unstable; urgency=low
 
