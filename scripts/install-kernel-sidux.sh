@@ -36,10 +36,6 @@ if [ ! -x /usr/sbin/scanpartitions] || dpkg --compare-versions "$(dpkg -l | awk 
 	apt-get install scanpartitions
 fi
 
-## DEBUGGING-ONLY!
-echo "DEBUGGING-ONLY!"
-exit 666
-
 # ensure that swap partitions do have a uuid
 for i in $(awk '/^\/dev\//{print $1}' /proc/swaps); do
 	if [ -z "$(/lib/udev/vol_id -u $i 2>/dev/null)" ]; then
@@ -50,7 +46,7 @@ for i in $(awk '/^\/dev\//{print $1}' /proc/swaps); do
 done
 
 # convert fstab to uuid/ labels, this is mandatory for libata
-if grep -q ^\\/dev\\/[hs]d[a-z][1-9][0-9]\\?[[:space:]] /etc/fstab; then
+if grep -q ^\\/dev\\/[hs]d[a-z] /etc/fstab; then
 	BACKUP="$(mktemp -p /etc/ fstab.XXXXXXXXXX)"
 	cat /etc/fstab > "$BACKUP"
 
@@ -62,13 +58,15 @@ if grep -q ^\\/dev\\/[hs]d[a-z][1-9][0-9]\\?[[:space:]] /etc/fstab; then
 			# XXX:	comment out this fstab line, we're talking about
 			#	removable media which isn't currently attached and
 			#	will lead to namespace collisions!
-			echo "FIXME: comment out not attached removable media!"
+			perl -pi -e "s%(^${i}[[:space:]].*)%\#\1%g" /etc/fstab
 		fi
 
 		MESSAGE="Your /etc/fstab was changed to allow mount by-uuid, this change is necessary
 to allow libata vs. IDE switches in this and newer kernels.
 A backup of your old fstab has been saved under $BACKUP."
 done
+	# manage optical media only through hal
+	perl -pi -e 's%(^/dev/[hs]d[a-z][[:space:]].*)%\#\1%g' /etc/fstab
 fi
 
 # convert /boot/grub/menu.lst
