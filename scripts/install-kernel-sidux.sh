@@ -105,7 +105,7 @@ if grep -q root\=\\/dev\\/[hs]d[a-z][1-9][0-9]\\? /boot/grub/menu.lst; then
 
 Your /boot/grub/menu.lst was changed to identify / by-uuid, this change is 
 necessary to allow libata vs. IDE switches in this and newer kernels.
-A backup of your old fstab has been saved under $BACKUP."
+A backup of your old menu.lst has been saved under $BACKUP."
 fi
 
 # install kernel, headers and our patches to the vanilla tree
