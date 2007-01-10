@@ -55,7 +55,7 @@ if grep -q ^\\/dev\\/[hs]d[a-z][1-9][0-9]\\?[[:space:]] /etc/fstab; then
 	cat /etc/fstab > "$BACKUP"
 
 	for i in $(awk '/^\/dev\/[hs]d[a-z][1-9][0-9]?[[:space:]]/{print $1}' /etc/fstab); do
-		TMP="$(/lib/udev/vol_id -u $i)"
+		TMP="$(scanpartitions -v uuids=1 $i | awk '{print $1}')"
 		if [ -n "$TMP" ]; then
 			sed -i "s%^${i}[[:space:]]%${TMP}\t%" /etc/fstab
 		else
