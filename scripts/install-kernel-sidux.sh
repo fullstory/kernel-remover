@@ -37,7 +37,17 @@ if [ ! -x /usr/sbin/scanpartitions] || dpkg --compare-versions "$(dpkg -l | awk 
 fi
 
 ## DEBUGGING-ONLY!
+echo "DEBUGGING-ONLY!"
 exit 666
+
+# ensure that swap partitions do have a uuid
+for i in $(awk '/^\/dev\//{print $1}' /proc/swaps); do
+	if [ -z "$(/lib/udev/vol_id -u $i 2>/dev/null)" ]; then
+		swapoff "$i"
+		mkswap -L swap "$i"
+		swapon "$i"
+	fi
+done
 
 # convert fstab to uuid/ labels, this is mandatory for libata
 if grep -q ^\\/dev\\/[hs]d[a-z][1-9][0-9]\\?[[:space:]] /etc/fstab; then
