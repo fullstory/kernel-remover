@@ -53,6 +53,7 @@ if [ "$force" -eq 0 ]; then
     if [ -f /usr/sbin/ssft.sh ]; then
         . /usr/bin/ssft.sh || exit 1
     else
+         echo "Please install the package \"ssft\"."
          exit 1
     fi
 fi

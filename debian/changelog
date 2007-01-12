@@ -3,8 +3,9 @@ sidux-kernelhacking (2.6.19.10) UNRELEASED; urgency=low
   * NOT RELEASED YET
   * kernel-remover allow choice of kernels that should be removed
   * removed script remove-all-kernels-completely
+  * give a message if user wants to use the frontend and ssft is not installed
 
- -- Joaquim Boura <x-un-i@sidux.com>  Fri, 12 Jan 2007 23:06:26 +0100
+ -- Joaquim Boura <x-un-i@sidux.com>  Fri, 12 Jan 2007 23:11:01 +0100
 
 sidux-kernelhacking (2.6.19.9) unstable; urgency=low
 
