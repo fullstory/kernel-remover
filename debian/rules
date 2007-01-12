@@ -7,6 +7,10 @@ DEB_COMPRESS_EXCLUDE := .sh
 build/sidux-modules::
 	awk -f mk_sidux_modules_conffile.awk debian/control > sidux-modules
 
+sidux-kernelhacking::
+	# Gettext Internationalisation (i18n)
+	DESTDIR=$(CURDIR)/debian/kernel-remover po/make_po.sh kernel-remover.mo
+
 clean::
 	-rm -f sidux-modules
 	

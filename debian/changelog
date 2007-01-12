@@ -1,8 +1,10 @@
 sidux-kernelhacking (2.6.19.10) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * kernel-remover allow choice of kernels that should be removed
+  * removed script remove-all-kernels-completely
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 10 Jan 2007 23:30:10 +0100
+ -- Joaquim Boura <x-un-i@sidux.com>  Fri, 12 Jan 2007 23:06:26 +0100
 
 sidux-kernelhacking (2.6.19.9) unstable; urgency=low
 
