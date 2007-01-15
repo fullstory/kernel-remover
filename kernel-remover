@@ -50,7 +50,7 @@ shift $(($OPTIND - 1))
 
 if [ "$force" -eq 0 ]; then
     # we need ssft 
-    if [ -f /usr/sbin/ssft.sh ]; then
+    if [ -f /usr/bin/ssft.sh ]; then
         . /usr/bin/ssft.sh || exit 1
     else
          echo "Please install the package \"ssft\"."

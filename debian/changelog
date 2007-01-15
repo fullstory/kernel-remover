@@ -1,8 +1,9 @@
 sidux-kernelhacking (2.6.19.11) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * fixed typo
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 14 Jan 2007 15:49:11 +0100
+ -- Joaquim Boura <x-un-i@sidux.com>  Mon, 15 Jan 2007 07:21:25 +0100
 
 sidux-kernelhacking (2.6.19.10) unstable; urgency=low
 
