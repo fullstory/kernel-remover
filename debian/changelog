@@ -1,8 +1,8 @@
-sidux-kernelhacking (2.6.19.12) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.19.12) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * we do depend on ssft now.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 15 Jan 2007 18:41:15 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 15 Jan 2007 21:55:00 +0100
 
 sidux-kernelhacking (2.6.19.11) unstable; urgency=low
 

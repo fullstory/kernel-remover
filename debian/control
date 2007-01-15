@@ -8,7 +8,8 @@ Standards-Version: 3.7.2
 
 Package: sidux-kernelhacking
 Architecture: all
-Recommends: sidux-modules, dpatch, dpkg-dev, fakeroot, ssft
+Depends: ssft
+Recommends: sidux-modules, dpatch, dpkg-dev, fakeroot
 Conflicts: kanotix-kernelhacking
 Description: various tools for kernel hacking
  These tools script common tasks while testing kernels, like creating kbuild 
