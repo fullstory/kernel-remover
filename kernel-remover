@@ -191,11 +191,11 @@ if [ "${force}" -eq 1 ]; then
     for i in  ${KernelList} ; do
         removing="$(eval_gettext "removing kernel ${i}")"
         echo $removing
-        # echo  remove_one_kernel "$i"
+        remove_one_kernel "$i"
     done
     MSG="$(eval_gettext "the following kernels were removed: \"${KernelList}\"")"
     echo $MSG
-
+    actualize_the_grub
 else
     select_more "${TITLE}" "${CURRENT}" ${KernelList} 
     if [ "$?" -ne 0 ]; then
@@ -205,16 +205,20 @@ else
         exit 12
     fi
 
+    one_removed=false
     for i in ${SSFT_RESULT}; do
         MSG="$i : $(gettext "Should I remove this kernel?") "
         yesno "${TITLE}" "${MSG}"
 
-        # changing the comment here will let it the real job...
         if [ "$?" -eq 0 ]; then
-            echo remove_one_kernel "$i"
+            remove_one_kernel "$i"
+            one_removed=true
         else
             msgbox "${TiTLE}" "$(gettext "Kernel not removed:") $i"
         fi
     done
+    if [ "$one_removed" = "true" ]; then
+        actualize_the_grub
+    fi
 fi
 exit 0

@@ -1,8 +1,9 @@
 sidux-kernelhacking (2.6.19.13) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
-
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 15 Jan 2007 21:58:40 +0100
+  * removed debug messages, 
+  * update-the grub if some kernel is removed
+ -- Joaquim Boura <x-un-i@sidux.com>  Wed, 17 Jan 2007 22:46:57 +0100
 
 sidux-kernelhacking (2.6.19.12) unstable; urgency=low
 
