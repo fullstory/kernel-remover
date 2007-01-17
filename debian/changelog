@@ -1,8 +1,8 @@
-sidux-kernelhacking (2.6.19.13) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.19.13) unstable; urgency=low
 
-  * NOT RELEASED YET
   * removed debug messages, 
   * update-the grub if some kernel is removed
+
  -- Joaquim Boura <x-un-i@sidux.com>  Wed, 17 Jan 2007 22:46:57 +0100
 
 sidux-kernelhacking (2.6.19.12) unstable; urgency=low
