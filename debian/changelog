@@ -1,8 +1,13 @@
-sidux-kernelhacking (2.6.19.14) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.20.1) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * drop not yet 2.6.20 compatible modules for the time being:
+    - adm8211-source
+    - ivtv-source
+  * drop packages handled by kernel patches for now:
+    - squashfs-source
+    - unionfs-source
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 18 Jan 2007 00:20:54 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon,  5 Feb 2007 00:33:45 +0100
 
 sidux-kernelhacking (2.6.19.13) unstable; urgency=low
 
