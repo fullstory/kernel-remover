@@ -4,8 +4,9 @@ sidux-kernelhacking (2.6.20.2) unstable; urgency=low
     - squashfs-source
     - unionfs-source
   * add kernel-$VER-custom-modules.zip to zip: target.
+  * add pack, pack-patches, pack-modules targets, rework zip: target.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon,  5 Feb 2007 21:47:22 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon,  5 Feb 2007 22:03:00 +0100
 
 sidux-kernelhacking (2.6.20.1) unstable; urgency=low
 

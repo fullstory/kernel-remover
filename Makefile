@@ -93,6 +93,23 @@ prep-sidux-modules:
 .PHONY: sidux-modules
 sidux-modules: prep-sidux-modules modules
 
+.PHONY: pack-modules
+pack-modules: clean-modules
+	[ -d ${BASE_DIR}/modules ] && \
+		cd ${BASE_DIR} && \
+			rm -f kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`-custom-modules.tar.bz2 && \
+			tar -cjf kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`-custom-modules.tar.bz2 modules/
+
+.PHONY: pack-patches
+pack-patches:
+	[ -d ${BASE_DIR}/patches ] && \
+		cd ${BASE_DIR} && \
+			rm -f kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`-custom-patches.tar.bz2 && \
+			tar -cjf kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`-custom-patches.tar.bz2 patches
+
+.PHONY: pack
+pack: pack-patches pack-modules
+
 .PHONY: zip
 zip:
 	cd ${BASE_DIR}/ && \
@@ -102,7 +119,11 @@ zip:
 			chmod +x ${BASE_DIR}/`basename $$i`; \
 		done && \
 		sed -i s/^\#\%STATIC_VERSION\%/STATIC_VERSION=\"`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`\"\\t\#\%STATIC_VERSION\%/ *-source.sh; \
-		zip kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`.zip *`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`*.deb *-source.sh kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`-custom-patches.zip kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`-custom-modules.zip `find /usr/share/sidux-kernelhacking/scripts/*.sh -exec basename {} \; | xargs`
+		zip	kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`.zip \
+				*`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`*.deb \
+				*-source.sh kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`-custom-patches.{zip,tar\.gz,tar\.bz2} \
+				kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`-custom-modules.{zip,tar\.gz,tar\.bz2} \
+				`find /usr/share/sidux-kernelhacking/scripts/*.sh -exec basename {} \; | xargs`
 
 .PHONY: release
 release: all zip
