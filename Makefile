@@ -102,7 +102,7 @@ zip:
 			chmod +x ${BASE_DIR}/`basename $$i`; \
 		done && \
 		sed -i s/^\#\%STATIC_VERSION\%/STATIC_VERSION=\"`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`\"\\t\#\%STATIC_VERSION\%/ *-source.sh; \
-		zip kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`.zip *`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`*.deb *-source.sh kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`-custom-patches.zip `find /usr/share/sidux-kernelhacking/scripts/*.sh -exec basename {} \; | xargs`
+		zip kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`.zip *`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`*.deb *-source.sh kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`-custom-patches.zip kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`-custom-modules.zip `find /usr/share/sidux-kernelhacking/scripts/*.sh -exec basename {} \; | xargs`
 
 .PHONY: release
 release: all zip
