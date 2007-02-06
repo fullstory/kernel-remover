@@ -68,8 +68,12 @@ if [ -n "${frontend}" ]; then
     esac
 fi
 
-[ -z "$DISPLAY" ] && SSFT_FRONTEND=${SSFT_FRONTEND:-"dialog"} || \
+if [ -z "$DISPLAY" ]; then
+    [ -x /usr/bin/dialog ] && SSFT_FRONTEND=${SSFT_FRONTEND:-"dialog"} || \
+        SSFT_FRONTEND=${SSFT_FRONTEND:-"text"}
+else
     SSFT_FRONTEND=${SSFT_FRONTEND:-"zenity"}
+fi
 
 #---------------------------------------------------------------------
 # some useful functions
@@ -135,7 +139,7 @@ function remove_one_kernel
     local Kernel
     Kernel=$1 
     if [ "${Kernel}" != "${actual}" ]; then
-    apt-get remove --purge $(dpkg -l|awk '{print $2}'|grep ${Kernel})
+    apt-get remove --purge --yes $(dpkg -l|awk '{print $2}'|grep ${Kernel})
         if [ ! -e "/boot/vmlinuz-${Kernel}" ]; then
             rm -rf /lib/modules/${Kernel}
             rm -rf /usr/src/kernel-headers-${Kernel}

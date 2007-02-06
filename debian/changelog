@@ -1,8 +1,9 @@
-sidux-kernelhacking (2.6.20.3) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.20.3) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * add kqemu-source, now it's GPL2.
+  * add fallback to kernel-remover for systems without dialog.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon,  5 Feb 2007 22:05:55 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  6 Feb 2007 16:30:31 +0100
 
 sidux-kernelhacking (2.6.20.2) unstable; urgency=low
 
