@@ -1,3 +1,9 @@
+sidux-kernelhacking (2.6.20.4) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  6 Feb 2007 16:35:53 +0100
+
 sidux-kernelhacking (2.6.20.3) unstable; urgency=low
 
   * add kqemu-source, now it's GPL2.
