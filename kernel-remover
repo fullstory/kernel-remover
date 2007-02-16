@@ -72,7 +72,12 @@ if [ -z "$DISPLAY" ]; then
     [ -x /usr/bin/dialog ] && SSFT_FRONTEND=${SSFT_FRONTEND:-"dialog"} || \
         SSFT_FRONTEND=${SSFT_FRONTEND:-"text"}
 else
-    SSFT_FRONTEND=${SSFT_FRONTEND:-"zenity"}
+	if [ -n "$DISPLAY" ] && [ ! -x /usr/bin/zenity ]; then
+		SSFT_FRONTEND="dialog"
+		DISPLAY=""
+	else
+		SSFT_FRONTEND=${SSFT_FRONTEND:-"zenity"}
+	fi
 fi
 
 #---------------------------------------------------------------------
