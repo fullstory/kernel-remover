@@ -1,7 +1,6 @@
-mk_dpatch			usr/bin/
-Makefile			usr/src/
-make-kernel-links		usr/sbin/
-remove-kernel-completely	usr/sbin/
-scripts				usr/share/sidux-kernelhacking/
-linux-custom-patches		usr/share/sidux-kernelhacking/
-kernel-remover          usr/sbin
+mk_dpatch		usr/bin/
+Makefile		usr/src/
+make-kernel-links	usr/sbin/
+scripts			usr/share/sidux-kernelhacking/
+linux-custom-patches	usr/share/sidux-kernelhacking/
+kernel-remover		usr/sbin
