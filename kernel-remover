@@ -14,10 +14,10 @@ VERSION="0.1"
 #---------------------------------------------------------------------
 SU_ME=$(type -p su-me)  || SU_ME="/usr/bin/su-me"
 if [ "$UID" -ne 0 ]; then
-        [ -x "$SU_ME" ] && exec "$SU_ME" "$0" "$@"
+	[ -x "$SU_ME" ] && exec "$SU_ME" "$0" "$@"
 
-        echo "Error: You must be root to run this script!"
-        exit 1
+	echo "Error: You must be root to run this script!"
+	exit 1
 fi
 
 TEXTDOMAIN="kernel-remover"
@@ -27,107 +27,112 @@ export TEXTDOMAINDIR
 
 #---------------------------------------------------------------------
 function usage {
-    echo  "$(basename $0), version ${VERSION}"
-    echo  "     -F parameter    use parameter as the graphical frontend"
-    echo  "                     one of text | dialog | kdialog | zenity "
-    echo  "     -f              do it withou asking anything"
-    echo  "     -h              show this usage"
-    exit 1
+	echo  "$(basename $0), version ${VERSION}"
+	echo  "     -F parameter    use parameter as the graphical frontend"
+	echo  "                     one of text | dialog | kdialog | zenity "
+	echo  "     -f              do it withou asking anything"
+	echo  "     -h              show this usage"
+	exit 1
 }
 #---------------------------------------------------------------------
 force=0
+xtra=0
 unset frontend
-while getopts fhF: name
+while getopts fhxF: name
 do
-    case $name in
-    f)  force=1;;
-    F)  frontend="$OPTARG";;
-    h)  usage;;
-    *)  usage;;
-    esac
+case $name in
+	f)  force=1;;
+	F)  frontend="$OPTARG";;
+	h)  usage;;
+	x)	xtra=1;;
+	*)  usage;;
+esac
 done
 shift $(($OPTIND - 1))
 
-if [ "$force" -eq 0 ]; then
-    # we need ssft 
-    if [ -f /usr/bin/ssft.sh ]; then
-        . /usr/bin/ssft.sh || exit 1
-    else
-         echo "Please install the package \"ssft\"."
-         exit 1
-    fi
-fi
-
-if [ -n "${frontend}" ]; then
-    case $frontend in
-        text)  SSFT_FRONTEND="${frontend}";;
-        dialog)  SSFT_FRONTEND="${frontend}";;
-        kdialog)  SSFT_FRONTEND="${frontend}";;
-        zenity) SSFT_FRONTEND="${frontend}";;
-        *)  ;;
-    esac
-fi
-
-if [ -z "$DISPLAY" ]; then
-    [ -x /usr/bin/dialog ] && SSFT_FRONTEND=${SSFT_FRONTEND:-"dialog"} || \
-        SSFT_FRONTEND=${SSFT_FRONTEND:-"text"}
-else
-	if [ -n "$DISPLAY" ] && [ ! -x /usr/bin/zenity ]; then
-		SSFT_FRONTEND="dialog"
-		DISPLAY=""
-	else
-		SSFT_FRONTEND=${SSFT_FRONTEND:-"zenity"}
+#---------------------------------------------------------------------
+function prepare()
+{
+	if [ "$force" -eq 0 ]; then
+		# we need ssft 
+		if [ -f /usr/bin/ssft.sh ]; then
+			. /usr/bin/ssft.sh || exit 1
+		else
+			 echo "Please install the package \"ssft\"."
+			 exit 1
+		fi
 	fi
-fi
 
+	if [ -n "${frontend}" ]; then
+		case $frontend in
+			text)  SSFT_FRONTEND="${frontend}";;
+			dialog)  SSFT_FRONTEND="${frontend}";;
+			kdialog)  SSFT_FRONTEND="${frontend}";;
+			zenity) SSFT_FRONTEND="${frontend}";;
+			*)  ;;
+		esac
+	fi
+
+	if [ -z "$DISPLAY" ]; then
+		[ -x /usr/bin/dialog ] && SSFT_FRONTEND=${SSFT_FRONTEND:-"dialog"} || \
+			SSFT_FRONTEND=${SSFT_FRONTEND:-"text"}
+	else
+		if [ -n "$DISPLAY" ] && [ ! -x /usr/bin/zenity ]; then
+			SSFT_FRONTEND="dialog"
+			DISPLAY=""
+		else
+			SSFT_FRONTEND=${SSFT_FRONTEND:-"zenity"}
+		fi
+	fi
+}
 #---------------------------------------------------------------------
 # some useful functions
 #---------------------------------------------------------------------
 function inputbox {
-    local Title
-    local Text
-    # inputbox Title Text dummy default
-    Title="$1"
-    Text="$2"
-    # $3 not used
-    # The default value if used
-    SSFT_DEFAULT=$4
-    ssft_read_string "${Title}" "${Text}";
+	local Title
+	local Text
+	# inputbox Title Text dummy default
+	Title="$1"
+	Text="$2"
+	# $3 not used
+	# The default value if used
+	SSFT_DEFAULT=$4
+	ssft_read_string "${Title}" "${Text}";
 }
 
 #---------------------------------------------------------------------
 function msgbox {
-    local Title
-    local Text
-    # msgbox title text
-    Title="$1"
-    Text="$2"
-    ssft_display_message "${Title}" "${Text}"
+	local Title
+	local Text
+	# msgbox title text
+	Title="$1"
+	Text="$2"
+	ssft_display_message "${Title}" "${Text}"
 }
 #---------------------------------------------------------------------
 function select_more {
-    local Title
-    local Text
-    # select one of a list
-    Title=$1
-    Text=$2
-    shift 2
-    if ssft_select_multiple "$Title" "$Text" $@ ; then
-        Selected=$SSFT_RESULT
-        return 0
-    else
-       return 1 
-    fi
+	local Title
+	local Text
+	# select one of a list
+	Title=$1
+	Text=$2
+	shift 2
+	if ssft_select_multiple "$Title" "$Text" $@ ; then
+		Selected=$SSFT_RESULT
+		return 0
+	else
+		return 1 
+	fi
 }
 #---------------------------------------------------------------------
 function yesno {
-    local Title
-    local Text
-    # yesno title text width
-    Title=$1
-    Text=$2
-    ssft_yesno "${Title}" "${Text}"
-    return $?
+	local Title
+	local Text
+	# yesno title text width
+	Title=$1
+	Text=$2
+	ssft_yesno "${Title}" "${Text}"
+	return $?
 }
 
 #---------------------------------------------------------------------
@@ -141,62 +146,52 @@ CURRENT="$(eval_gettext "The actual (active) kernel is $(uname -r)")"
 #---------------------------------------------------------------------
 function remove_one_kernel 
 {
-    local Kernel
-    Kernel=$1 
-    if [ "${Kernel}" != "${actual}" ]; then
-    apt-get remove --purge --yes $(dpkg -l|awk '{print $2}'|grep ${Kernel})
-        if [ ! -e "/boot/vmlinuz-${Kernel}" ]; then
-            rm -rf /lib/modules/${Kernel}
-            rm -rf /usr/src/kernel-headers-${Kernel}
-            rm -rf /usr/src/linux-headers-${Kernel}
-            rm -rf /usr/src/linux-${Kernel}
-        fi
-    else
-        # do not remove activ kernel
-        :
-    fi
+	local Kernel
+	Kernel=$1 
+	if [ "${Kernel}" != "${ACTUAL}" ]; then
+		apt-get remove --purge --yes $(dpkg -l|awk '{print $2}'|grep ${Kernel})
+		if [ ! -e "/boot/vmlinuz-${Kernel}" ]; then
+			rm -rf /lib/modules/${Kernel}
+			rm -rf /usr/src/kernel-headers-${Kernel}
+			rm -rf /usr/src/linux-headers-${Kernel}
+			rm -rf /usr/src/linux-${Kernel}
+		fi
+	else
+		# do not remove activ kernel
+		:
+	fi
 }
 
 #---------------------------------------------------------------------
 function get_KernelList
 {
-    local Kernel
-    pushd /boot 2>&1 >>/dev/null
-	    for v in vmlinuz-*; do 
-		    Kernel=$(echo $v|sed s/vmlinuz-//)
-		    if [ "${Kernel}" != "${ACTUAL}" ]; then
-                [ -z "${KernelList}" ] && KernelList="${Kernel}" ||\
-                KernelList="${KernelList} ${Kernel}"
-                # echo KernelList="$KernelList"
-            else
-                :
-                # echo $Kernel
-		    fi
-	    done
-    popd 2>&1 >> /dev/null
+	local Kernel
+	pushd /boot 2>&1 >>/dev/null
+	for v in vmlinuz-*; do 
+		Kernel=$(echo $v|sed s/vmlinuz-//)
+		if [ "${Kernel}" != "${ACTUAL}" ]; then
+			[ -z "${KernelList}" ] && KernelList="${Kernel}" ||\
+			KernelList="${KernelList} ${Kernel}"
+			# echo KernelList="$KernelList"
+		else
+			:
+			# echo $Kernel
+		fi
+	done
+	popd 2>&1 >> /dev/null
 }
 
 #---------------------------------------------------------------------
 function actualize_the_grub
 {
-    [ -r /boot/grub/menu.lst -a -x /usr/sbin/update-grub ] && /usr/sbin/update-grub
+	[ -r /boot/grub/menu.lst -a -x /usr/sbin/update-grub ] && /usr/sbin/update-grub
 }
 
 #---------------------------------------------------------------------
 # Main
 #---------------------------------------------------------------------
-
-get_KernelList
-
-if [ -z "${KernelList}" ]; then
-    MSG="$(gettext "There is only one kernel installed on this system. Nothing to be done!")"
-    msgbox "${TITLE}" "${MSG}"
-    exit 0
-fi
-
-if [ "${force}" -eq 1 ]; then
-    current="$(eval_gettext "The actual (active) kernel is $(uname -r)")"
-    echo ${current}
+if [ "${xtra} -eq 1 ]; then
+	KernelList="$@"
     for i in  ${KernelList} ; do
         removing="$(eval_gettext "removing kernel ${i}")"
         echo $removing
@@ -205,29 +200,54 @@ if [ "${force}" -eq 1 ]; then
     MSG="$(eval_gettext "the following kernels were removed: \"${KernelList}\"")"
     echo $MSG
     actualize_the_grub
+	exit 0
+fi
+
+prepare
+
+get_KernelList
+
+if [ -z "${KernelList}" ]; then
+	MSG="$(gettext "There is only one kernel installed on this system. Nothing to be done!")"
+	msgbox "${TITLE}" "${MSG}"
+	exit 0
+fi
+
+if [ "${force}" -eq 1 ]; then
+	current="$(eval_gettext "The actual (active) kernel is $(uname -r)")"
+	echo ${current}
+	for i in  ${KernelList} ; do
+		removing="$(eval_gettext "removing kernel ${i}")"
+		echo $removing
+		remove_one_kernel "$i"
+	done
+	MSG="$(eval_gettext "the following kernels were removed: \"${KernelList}\"")"
+	echo $MSG
+	actualize_the_grub
 else
-    select_more "${TITLE}" "${CURRENT}" ${KernelList} 
-    if [ "$?" -ne 0 ]; then
-        exit 10
-    fi
-    if [ -z "${SSFT_RESULT}" ]; then
-        exit 12
-    fi
+	select_more "${TITLE}" "${CURRENT}" ${KernelList} 
+	if [ "$?" -ne 0 ]; then
+		exit 10
+	fi
+	if [ -z "${SSFT_RESULT}" ]; then
+		exit 12
+	fi
 
-    one_removed=false
-    for i in ${SSFT_RESULT}; do
-        MSG="$i : $(gettext "Should I remove this kernel?") "
-        yesno "${TITLE}" "${MSG}"
+	one_removed=false
+	for i in ${SSFT_RESULT}; do
+		MSG="$i : $(gettext "Should I remove this kernel?") "
+		yesno "${TITLE}" "${MSG}"
 
-        if [ "$?" -eq 0 ]; then
-            remove_one_kernel "$i"
-            one_removed=true
-        else
-            msgbox "${TiTLE}" "$(gettext "Kernel not removed:") $i"
-        fi
-    done
-    if [ "$one_removed" = "true" ]; then
-        actualize_the_grub
-    fi
+		if [ "$?" -eq 0 ]; then
+			remove_one_kernel "$i"
+			one_removed=true
+		else
+			msgbox "${TiTLE}" "$(gettext "Kernel not removed:") $i"
+		fi
+	done
+	if [ "$one_removed" = "true" ]; then
+		actualize_the_grub
+	fi
 fi
 exit 0
+
