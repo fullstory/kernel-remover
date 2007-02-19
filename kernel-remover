@@ -190,7 +190,7 @@ function actualize_the_grub
 #---------------------------------------------------------------------
 # Main
 #---------------------------------------------------------------------
-if [ "${xtra} -eq 1 ]; then
+if [ "${xtra}" -eq 1 ]; then
 	KernelList="$@"
     for i in  ${KernelList} ; do
         removing="$(eval_gettext "removing kernel ${i}")"
