@@ -4,11 +4,11 @@
 VERSION="0.1"
 #
 # we need gettext (is loaded in ssft.sh or cloned...)
-# if [ -f /usr/bin/gettext.sh ]; then
-#     . /usr/bin/gettext.sh || exit 1
-# else
-#     exit 1
-# fi
+if [ -f /usr/bin/gettext.sh ]; then
+	. /usr/bin/gettext.sh || exit 1
+else
+	exit 1
+fi
 #---------------------------------------------------------------------
 # we need root rights
 #---------------------------------------------------------------------
