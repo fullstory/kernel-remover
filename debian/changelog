@@ -1,6 +1,5 @@
-sidux-kernelhacking (2.6.20.8) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.20.8) unstable; urgency=low
 
-  * NOT RELEASED YET
   * we need to "read" the gettext otherwise we get an missing error
 
  -- Joaquim Boura <x-un-i@sidux.com>  Sun, 25 Feb 2007 13:41:20 +0100
