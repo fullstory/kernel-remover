@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 $self = "Fstab2uuid";
-$ARGV[0] = "/etc/fstab.test";
+#$ARGV[0] = "/etc/fstab.test";
 $^I=".sidux-orig";
 while(<>) { 
 	if (m|^(/dev/[hs]d[a-z][1-9][0-9]?)\s|) { 

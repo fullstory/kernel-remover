@@ -29,82 +29,6 @@ grep -q do_initrd /etc/kernel-img.conf 2> /dev/null || \
 # install important dependencies
 [ -x /usr/bin/gcc-4.1 ]		|| apt-get install gcc-4.1
 [ -x /usr/sbin/mkinitramfs ]	|| apt-get install initramfs-tools
-if [ ! -x /usr/sbin/scanpartitions ] || dpkg --compare-versions "$(dpkg -l | awk '/^ii\ \ scanpartitions[[:space:]]/{ print $3 }')" lt "0.7.3"; then
-	if dpkg --compare-versions "$(LANG= apt-cache policy scanpartitions | awk '/^\ \ Candidate\:/{print $2}')" lt "0.7.3"; then
-		apt-get update
-	fi
-	apt-get install scanpartitions
-fi
-
-# ensure that swap partitions do have a uuid
-for i in $(awk '/^\/dev\//{print $1}' /proc/swaps); do
-	if [ -z "$(/lib/udev/vol_id -u $i 2>/dev/null)" ]; then
-		swapoff "$i"
-		mkswap -L swap "$i"
-		swapon "$i"
-	fi
-done
-
-# convert fstab to uuid/ labels, this is mandatory for libata
-if grep -q ^\\/dev\\/[hs]d[a-z] /etc/fstab; then
-	BACKUP="$(mktemp -p /etc/ fstab.XXXXXXXXXX)"
-	cat /etc/fstab > "$BACKUP"
-
-	for i in $(awk '/^\/dev\/[hs]d[a-z][1-9][0-9]?[[:space:]]/{print $1}' /etc/fstab); do
-		TMP="$(scanpartitions -v uuids=1 $i | awk '{print $1}')"
-		if [ -n "$TMP" ]; then
-			sed -i "s%^${i}[[:space:]]%${TMP}\t%" /etc/fstab
-		else
-			# XXX:	comment out this fstab line, we're talking about
-			#	removable media which isn't currently attached and
-			#	will lead to namespace collisions!
-			perl -pi -e "s%(^${i}[[:space:]].*)%\#\1%g" /etc/fstab
-		fi
-
-		MESSAGE="Your /etc/fstab was changed to allow mount by-uuid, this change is necessary
-to allow libata vs. IDE switches in this and newer kernels.
-A backup of your old fstab has been saved under $BACKUP."
-done
-	# manage optical media only through hal
-	perl -pi -e 's%(^/dev/[hs]d[a-z][[:space:]].*)%\#\1%g' /etc/fstab
-fi
-
-# convert /boot/grub/menu.lst
-# XXX:	we need to move root=... in /boot/grub/menu.lst to root=UUID=..., only
-#	change old school entries (/dev/hda1, /dev/sda1) for our / partition, 
-#	don't touch / for other partitions/ distributions, those might now 
-#	allow boot by-uuid, perhaps because they're initrd-less or still use 
-#	yaird. /proc/cmdline is not reliable, think of chroot systems and bind
-#	mounted procfs.
-ROOT_PARTITION="$(grep -v ^[[:space:]]\\?\# /etc/fstab | cut -d\# -f1 | grep [[:space:]]\\/[[:space:]] | awk '{print $1}')"
-case $ROOT_PARTITION in
-	LABEL\=*)
-		ROOT_PARTITION="$(readlink /dev/disk/by-label/`echo $ROOT_PARTITION | cut -d\= -f2` | sed s/.*\\//\\/dev\\//)"
-		;;
-	UUID\=*)
-		ROOT_PARTITION="$(readlink /dev/disk/by-uuid/`echo $ROOT_PARTITION | cut -d\= -f2` | sed s/.*\\//\\/dev\\//)"
-		;;
-	\\/dev\\/[hs]d[a-z][1-9][0-9]\\?)
-		ROOT_PARTITION="$ROOT_PARTITION"
-		;;
-	*)
-		echo "ERROR: can't determine / partition for grub, take care to adapt /boot/grub/menu.lst on your own"
-		exit 999
-		;;
-esac
-
-if grep -q root\=\\/dev\\/[hs]d[a-z][1-9][0-9]\\? /boot/grub/menu.lst; then
-	BACKUP="$(mktemp -p /boot/grub/ menu.lst.XXXXXXXXXX)"
-	cat /boot/grub/menu.lst > "$BACKUP"
-	
-	sed -i "s%root\=$ROOT_PARTITION%root\=UUID\=$(/lib/udev/vol_id -u $ROOT_PARTITION)%" /boot/grub/menu.lst
-
-	MESSAGE="$MESSAGE
-
-Your /boot/grub/menu.lst was changed to identify / by-uuid, this change is 
-necessary to allow libata vs. IDE switches in this and newer kernels.
-A backup of your old menu.lst has been saved under $BACKUP."
-fi
 
 # install kernel, headers and our patches to the vanilla tree
 dpkg -i linux-image-"$VER"_"$SUB"_$(dpkg-architecture -qDEB_BUILD_ARCH).deb
@@ -161,8 +85,9 @@ echo use "alsactl store" as root to save it after checking the volumes.
 # grub notice
 echo 'Now you can simply reboot when using GRUB (default). In case you use'
 echo 'LILO you have to do the mentioned changes manually.'
-
-echo "$MESSAGE"
+echo ""
+echo "Make sure that /etc/fstab and /boot/grub/menu.lst use UUID- or LABEL-"
+echo "based mounting, which is required for classic IDE vs. lib(p)ata changes!"
 
 echo Have fun!
 
