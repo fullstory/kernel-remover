@@ -6,8 +6,9 @@ sidux-kernelhacking (2.6.20.9) unstable; urgency=low
     used UUID based mounting and each kernel within the last 3 months shipped
     it as well, needlessly modifying crucial user configurations is more
     dangerous than the casual breakage for not UUID using systems.
+  * strip extension from fstab2uuid.pl and ship it as part of the kernel zip.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  1 Mar 2007 18:40:05 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  1 Mar 2007 18:43:27 +0100
 
 sidux-kernelhacking (2.6.20.8) unstable; urgency=low
 
