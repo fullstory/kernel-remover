@@ -1,3 +1,9 @@
+sidux-kernelhacking (2.6.20.11) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed,  7 Mar 2007 20:47:00 +0100
+
 sidux-kernelhacking (2.6.20.10) unstable; urgency=low
 
   * drop at76c503a-source for now and implement it as kernel patch, upstream
