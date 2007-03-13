@@ -1,3 +1,9 @@
+sidux-kernelhacking (2.6.20.12) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 13 Mar 2007 02:46:15 +0100
+
 sidux-kernelhacking (2.6.20.11) unstable; urgency=low
 
   * Fix my maintainer email address.
