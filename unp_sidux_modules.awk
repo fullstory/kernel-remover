@@ -9,5 +9,4 @@
 			close("/bin/sh")
 		}
 	}
-			
 }
