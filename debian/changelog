@@ -1,9 +1,5 @@
-sidux-kernelhacking (2.6.20.11) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.20.11) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Kel Modderman ]
   * Fix my maintainer email address.
   * Remove spurious whitespace from awk script.
 
