@@ -10,12 +10,14 @@ WGET_OPTIONS="-qNc"
 #WGET_OPTIONS="-Nc"
 PATCH_VERBOSITY="--silent"
 KERNELMIRROR="http://zeus2.kernel.org/pub/linux/kernel"
+#KERNELMIRROR="http://www.de.kernel.org/pub/linux/kernel"
+#KERNELMIRROR="http://www.uk.kernel.org/sites/ftp.kernel.org/pub/linux/kernel"
 NAME="`getent passwd $(id -u) | cut -d\: -f1`"
 #DEF_CPU="-up"
 VER="$(wget -qO- http://zeus2.kernel.org/kdist/finger_banner | grep "^The latest stable version of the Linux kernel is:" | cut -d\: -f2 | sed s/[[:space:]]//g)"		# let's be boring and stable
 #VER="$(wget -qO- http://zeus2.kernel.org/kdist/finger_banner | grep "^The latest snapshot for the stable Linux kernel tree is:" | cut -d\: -f2 | sed s/[[:space:]]//g)"	# -git nostrum quotidianum da nobis hodie
 #VER="2.6.20.2"
-#VER="2.6.20.3-rc1"
+#VER="2.6.20.4-rc1"
 #VER="2.6.20-rc7-git4"
 REVISION="1"
 
@@ -182,12 +184,21 @@ fetch_and_apply_upstream_patches()
 	[[ -n $STABLE && ! $STABLE = 0 ]] &&            UPSTREAM_PATCHES="$UPSTREAM_PATCHES $KERNELMIRROR/v$KV/patch-$MV.$STABLE.bz2"
 
 	if [[ -n $STABLE && -n $RC ]]; then
-		if wget --spider -q "$KERNELMIRROR/people/chrisw/stable/patch-$MV.$(($STABLE + 1))-$RC.bz2"; then
-			UPSTREAM_PATCHES="$UPSTREAM_PATCHES $KERNELMIRROR/people/chrisw/stable/patch-$MV.$(($STABLE + 1))-$RC.bz2"
-		elif wget --spider -q "$KERNELMIRROR/people/gregkh/stable/patch-$MV.$(($STABLE + 1))-$RC.bz2"; then
-			UPSTREAM_PATCHES="$UPSTREAM_PATCHES $KERNELMIRROR/people/gregkh/stable/patch-$MV.$(($STABLE + 1))-$RC.bz2"
-		elif wget --spider -q "$KERNELMIRROR/v$KV/testing/patch-$MV.$(($STABLE + 1))-$RC.bz2"; then
-			UPSTREAM_PATCHES="$UPSTREAM_PATCHES $KERNELMIRROR/v$KV/testing/patch-$MV.$(($STABLE + 1))-$RC.bz2"
+		STABLERC_PATCH=""
+		for i in "$KERNELMIRROR/people/chrisw/stable/" "$KERNELMIRROR/people/gregkh/stable/" "$KERNELMIRROR/v$KV/testing/"; do
+			for j in bz2 gz; do
+				if wget --spider -q "$i/patch-$MV.$(($STABLE + 1))-$RC.$j"; then
+					STABLERC_PATCH="$i/patch-$MV.$(($STABLE + 1))-$RC.$j"
+					break
+				fi
+			done
+			[ -n "$STABLERC_PATCH" ] && break
+		done
+
+		if [ -n "$STABLERC_PATCH" ]; then
+			UPSTREAM_PATCHES="$UPSTREAM_PATCHES $STABLERC_PATCH"
+			STABLERC_PATCH=""
+			unset STABLERC_PATCH
 		else
 			echo "ERROR: no -stable patch available!"
 			exit 99
