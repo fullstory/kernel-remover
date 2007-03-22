@@ -34,6 +34,26 @@ patches_for_kernel() {
 	esac
 }
 
+finger_latest_kernel() {
+	local TYPE ENAM KERN
+	
+	# Example: latest-stable-$name-$rev
+	if [[ $1 =~ '^latest-(stable|prepatch|snapshot|mm)(-.*)?' ]]; then
+		TYPE=${BASH_REMATCH[1]}
+		ENAM=${BASH_REMATCH[2]}
+		KERN=$(wget -qO- ${MIRROR//\/pub\/linux\/kernel/\/kdist\/finger_banner} | \
+			sed -n '/latest -\?'$TYPE'/s/.*:[ \t]\+//p' | head -n1)
+		
+		if [[ $KERN ]]; then
+			echo ${KERN}${ENAM}
+		else
+			: # error msg
+		fi
+	else
+		: # error msg
+	fi
+}
+
 #=============================================================================#
 #	process cli args
 #=============================================================================#
@@ -47,7 +67,14 @@ while getopts b:dk:p opt; do
 			set -x
 			;;
 		k)	# kernel version override
-			KERNEL=$OPTARG
+			case $OPTARG in
+				latest-*)
+					KERNEL=$(finger_latest_kernel $OPTARG)
+					;;
+				*)
+					KERNEL=$OPTARG
+					;;
+			esac
 			;;
 		m)	# mirror
 			MIRROR=$OPTARG
