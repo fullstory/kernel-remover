@@ -45,16 +45,12 @@ finger_latest_kernel() {
 		TYPE=${BASH_REMATCH[1]}
 		ENAM=${BASH_REMATCH[2]}
 		KERN=$(wget -qO- ${MIRROR//\/pub\/linux\/kernel/\/kdist\/finger_banner} | \
-			sed -n '/latest -\?'$TYPE'/s/.*:[ \t]\+//p' | head -n1)
+			awk '/latest -?'$TYPE'/{ print $NF; exit }')
 		
 		if [[ $KERN ]]; then
 			echo ${KERN}${ENAM}
-			return 0
 		fi
 	fi
-
-	printf "E: ${RED}Unable to finger kernel version for $1${NORM}\n"
-	exit 1
 }
 
 #=============================================================================#
@@ -73,6 +69,10 @@ while getopts b:dk:p opt; do
 			case $OPTARG in
 				latest-*)
 					KERNEL=$(finger_latest_kernel $OPTARG)
+					if [[ ! $KERNEL ]]; then
+						printf "E: ${RED}Unable to finger kernel version${NORM}\n"
+						exit 1
+					fi
 					;;
 				*)
 					KERNEL=$OPTARG
