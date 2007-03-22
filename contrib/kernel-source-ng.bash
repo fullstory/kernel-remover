@@ -13,6 +13,17 @@ SRCDIR=~/src
 MIRROR="http://www.kernel.org/pub/linux/kernel"
 
 #=============================================================================#
+#	kernel patch urls
+#=============================================================================#
+patches_for_kernel() {
+	case "$1" in
+		2.6.20.3*)
+			PATCH+=( http://ck.kolivas.org/patches/staircase-deadline/2.6.20.3-rsdl-0.31.patch )
+			;;
+	esac
+}
+
+#=============================================================================#
 #	colours
 #=============================================================================#
 if [[ -x $(type -p tput) ]]; then
@@ -24,16 +35,8 @@ if [[ -x $(type -p tput) ]]; then
 fi
 
 #=============================================================================#
-#	kernel patch urls
+#	give linux the finger
 #=============================================================================#
-patches_for_kernel() {
-	case "$1" in
-		2.6.20.3*)
-			PATCH+=( http://ck.kolivas.org/patches/staircase-deadline/2.6.20.3-rsdl-0.31.patch )
-			;;
-	esac
-}
-
 finger_latest_kernel() {
 	local TYPE ENAM KERN
 	
