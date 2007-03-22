@@ -1,4 +1,7 @@
 #!/bin/bash -e
+#
+# License: GPL2
+#
 
 # kernel version
 KERNEL=2.6.20.3-kel-1
