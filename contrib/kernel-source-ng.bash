@@ -109,7 +109,7 @@ fi
 #	upstream kernel && patch urls
 #=============================================================================#
 
-if [[ $KRC ]]; then
+if [[ $KRC && ! $KSV ]]; then
 	TARBALL=$MIRROR/v$KMV/linux-$KMV.$[$KRV-1].tar.bz2
 else
 	TARBALL=$MIRROR/v$KMV/linux-$KMV.$KRV.tar.bz2
@@ -238,7 +238,11 @@ apply_patches() {
 
 if [[ -d $SRCDIR/linux-$KERNEL || -d $SRCDIR/linux-$KMV ]]; then
 	rm -rf $SRCDIR/linux-$KERNEL
-	rm -rf $SRCDIR/linux-$KMV.$KRV
+	if [[ $KRC && ! $KSV ]]; then
+		rm -rf $SRCDIR/linux-$KMV.$[$KRV-1]
+	else
+		rm -rf $SRCDIR/linux-$KMV.$KRV
+	fi
 fi
 
 printf "${CYAN}Downloading ${YELLOW}${TARBALL##*/}${NORM}..."
@@ -264,7 +268,7 @@ printf "\n"
 
 printf "${CYAN}Unpacking ${YELLOW}${TARBALL##*/}${NORM}..."
 if tar -C $SRCDIR -xjf $SRCDIR/${TARBALL##*/}; then
-	if [[ $KRC ]]; then
+	if [[ $KRC && ! $KSV ]]; then
 		mv $SRCDIR/linux-$KMV.$[$KRV-1] $SRCDIR/linux-$KERNEL
 	else
 		mv $SRCDIR/linux-$KMV.$KRV $SRCDIR/linux-$KERNEL
