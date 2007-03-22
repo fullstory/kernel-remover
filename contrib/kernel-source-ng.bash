@@ -46,12 +46,12 @@ finger_latest_kernel() {
 		
 		if [[ $KERN ]]; then
 			echo ${KERN}${ENAM}
-		else
-			: # error msg
+			return 0
 		fi
-	else
-		: # error msg
 	fi
+
+	printf "E: ${RED}Unable to finger kernel version for $1${NORM}\n"
+	exit 1
 }
 
 #=============================================================================#
