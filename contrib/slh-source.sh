@@ -19,7 +19,7 @@ VER="$(wget -qO- http://zeus2.kernel.org/kdist/finger_banner | grep "^The latest
 #VER="2.6.20.2"
 #VER="2.6.20.4-rc1"
 #VER="2.6.20-rc7-git4"
-REVISION="1"
+REVISION="2"
 
 #%STATIC_VERSION%
 
