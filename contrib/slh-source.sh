@@ -89,12 +89,12 @@ fi
 if [[ $(id -u) != 0 ]]; then
 	BASE_DIR="$(pwd)"
 	PATCH_DIR="${BASE_DIR}/patches"
-	DPKG_PATCH_DIR="${BASE_DIR}/linux-custom-patches-${VER}-1"
 else
 	BASE_DIR="/usr/src"
 	PATCH_DIR=${BASE_DIR}
-	DPKG_PATCH_DIR="${BASE_DIR}/linux-custom-patches-${VER}-1"
 fi
+
+DPKG_PATCH_DIR="${BASE_DIR}/linux-custom-patches-${VER}-1"
 
 # purely debugging purposes
 debug_parser()
@@ -189,10 +189,9 @@ fetch_and_apply_upstream_patches()
 			for j in bz2 gz; do
 				if wget --spider -q "$i/patch-$MV.$(($STABLE + 1))-$RC.$j"; then
 					STABLERC_PATCH="$i/patch-$MV.$(($STABLE + 1))-$RC.$j"
-					break
+					break 2
 				fi
 			done
-			[ -n "$STABLERC_PATCH" ] && break
 		done
 
 		if [ -n "$STABLERC_PATCH" ]; then
