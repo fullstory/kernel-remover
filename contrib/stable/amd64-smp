@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.20.4-rc1-slh64-smp-1
-# Tue Mar 20 00:09:43 2007
+# Linux kernel version: 2.6.20.4-slh64-smp-1
+# Fri Mar 23 22:22:46 2007
 #
 CONFIG_X86_64=y
 CONFIG_64BIT=y
