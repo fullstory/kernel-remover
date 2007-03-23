@@ -240,7 +240,7 @@ apply_patches() {
 			return 1
 		fi
 		
-		printf "%-70s [" "  * ${YELLOW}$PATCH${NORM}"
+		printf "%-70s [" "  * ${YELLOW}${PATCH#*/}${NORM}"
 		
 		# try until --dry-run succeeds, then really patch it
 		until [[ $RETVAL == 0 ]] || [[ $PATCH_LEVEL -lt 0 ]]; do
