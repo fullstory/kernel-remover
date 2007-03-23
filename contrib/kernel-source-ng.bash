@@ -38,17 +38,17 @@ fi
 #	give linux the finger
 #=============================================================================#
 finger_latest_kernel() {
-	local TYPE ENAM KERN
+	local TYPE NAME KERN
 	
 	# Example: latest-stable-$name-$rev
 	if [[ $1 =~ '^latest-(stable|prepatch|snapshot|mm)(-.*)?' ]]; then
 		TYPE=${BASH_REMATCH[1]}
-		ENAM=${BASH_REMATCH[2]}
+		NAME=${BASH_REMATCH[2]}
 		KERN=$(wget -qO- ${MIRROR//\/pub\/linux\/kernel/\/kdist\/finger_banner} | \
 			awk '/latest -?'$TYPE'/{ print $NF; exit }')
 		
 		if [[ $KERN ]]; then
-			echo ${KERN}${ENAM}
+			echo ${KERN}${NAME}
 		fi
 	fi
 }
@@ -132,7 +132,7 @@ if [[ $KERNEL =~ '^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9
 	# reform (possibly) name modified kernel version
 	KERNEL=$KMV.${KRV}${KEV}
 
-	KER=( KERNEL KMV KRV KSV KRC KGV KMM KEV NAM REV )
+	KERNEL_VARS=( KERNEL KMV KRV KSV KRC KGV KMM KEV NAM REV )
 else
 	printf "E: ${RED}Unable to process ${YELLOW}$KERNEL${NORM}${RED} version string!${NORM}\n"
 	exit 1
@@ -190,7 +190,7 @@ fi
 patches_for_kernel $KERNEL
 
 if [[ $NOACT ]]; then
-	for i in ${KER[@]}; do
+	for i in ${KERNEL_VARS[@]}; do
 		eval printf "$i=\$$i\ "
 	done
 	printf "\nTARBALL=$TARBALL\n"
@@ -235,17 +235,17 @@ apply_patches() {
 		PATCH_LEVEL=1
 		PATCH=../${patch##*/}
 		
-		if [[ ! -f ../${patch##*/} ]]; then
+		if [[ ! -f $PATCH ]]; then
 			printf "\n\tE: ${RED}patch not found!${NORM}\n"
 			return 1
 		fi
 		
-		printf "%-70s [" "  * ${YELLOW}${patch##*/}${NORM}"
+		printf "%-70s [" "  * ${YELLOW}$PATCH${NORM}"
 		
 		# try until --dry-run succeeds, then really patch it
 		until [[ $RETVAL == 0 ]] || [[ $PATCH_LEVEL -lt 0 ]]; do
-			if patch_it ../${patch##*/} $PATCH_LEVEL --force --dry-run --silent; then
-				patch_it ../${patch##*/} $PATCH_LEVEL --silent
+			if patch_it $PATCH $PATCH_LEVEL --force --dry-run --silent; then
+				patch_it $PATCH $PATCH_LEVEL --silent
 				RETVAL=$?
 				break
 			fi
