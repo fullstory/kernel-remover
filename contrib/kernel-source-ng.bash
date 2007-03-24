@@ -17,8 +17,8 @@ MIRROR="http://www.kernel.org/pub/linux/kernel"
 #=============================================================================#
 patches_for_kernel() {
 	case "$1" in
-		2.6.20.3*)
-			PATCH+=( http://ck.kolivas.org/patches/staircase-deadline/2.6.20.3-rsdl-0.31.patch )
+		2.6.20.4*)
+			PATCH+=( http://ck.kolivas.org/patches/staircase-deadline/2.6.20.4/2.6.20.4-rsdl-0.33.patch )
 			;;
 	esac
 }
@@ -108,7 +108,7 @@ if [[ $KERNEL =~ '^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9
 	REV=${BASH_REMATCH[8]} # Revision
 	
 	# Extra Version
-	if [[ $KERNEL =~ '^[0-9]+\.[0-9]+\.[0-9]+(\.?[0-9]*-.*)-'$NAM'-'$REV'$' ]]; then
+	if [[ $KERNEL =~ '^[0-9]+\.[0-9]+\.[0-9]+(\.?[0-9]*-?.*)?-'$NAM'-'$REV'$' ]]; then
 		# cpu based name modifier
 		CPU=$(uname -m)
 		case $CPU in
