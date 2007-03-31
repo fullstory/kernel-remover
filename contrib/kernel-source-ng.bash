@@ -216,7 +216,7 @@ fi
 #=============================================================================#
 #	GPL compliance
 #=============================================================================#
-DPKG_PATCH_DIR=${SRCDIR}/linux-custom-patches-${KERNEL}-1
+DPKG_PATCH_DIR=$SRCDIR/linux-custom-patches-${KERNEL}-1
 
 dpkg_patches() {
 	[[ -x $(type -p fakeroot) && -x $(type -p dpkg-buildpackage) ]] || return
@@ -229,7 +229,8 @@ dpkg_patches() {
 		cp $SRCDIR/${patch##*/} $DPKG_PATCH_DIR/patches
 	done
 
-	cp -r /usr/share/sidux-kernelhacking/linux-custom-patches/* $DPKG_PATCH_DIR
+	cp -r /usr/share/sidux-kernelhacking/linux-custom-patches/* \
+		$DPKG_PATCH_DIR
 	
 	for file in $DPKG_PATCH_DIR/debian/*; do
 		sed -i "s/\%VER\%/${KERNEL}/g;\
@@ -248,7 +249,7 @@ dpkg_patches() {
 	install -m 0755 $0 $DPKG_PATCH_DIR/linux-source-${KERNEL}.sh
 	
 	pushd $DPKG_PATCH_DIR &>/dev/null
-		if fakeroot dpkg-buildpackage -uc -us &> /dev/null; then
+		if fakeroot dpkg-buildpackage -uc -us &>/dev/null; then
 			printf "${GREEN}Ok${NORM}]\n"
 		else
 			printf "${RED}Failed!${NORM}]\n"
