@@ -149,9 +149,8 @@ else
 fi
 
 if [[ $KSV ]]; then
-	if [[ ! $KRC ]]; then
-		KPATCH+=( $MIRROR/v$KMV/patch-$KMV.$KRV.$KSV.bz2 )
-	else
+	KPATCH+=( $MIRROR/v$KMV/patch-$KMV.$KRV.$KSV.bz2 )
+	if [[ $KRC ]]; then
 		for location in $MIRROR/people/chrisw/stable $MIRROR/people/gregkh/stable $MIRROR/v$KMV/testing; do
 			for suf in bz2 gz; do
 				if wget --spider -q $location/patch-$KMV.$KRV.$KSV-$KRC.$suf; then
