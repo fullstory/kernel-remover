@@ -248,13 +248,16 @@ dpkg_patches() {
 	install -m 0755 $0 $DPKG_PATCH_DIR/linux-source-${KERNEL}.sh
 	
 	pushd $DPKG_PATCH_DIR &>/dev/null
-		fakeroot dpkg-buildpackage -uc -us &> /dev/null
-		rm -f ../linux-custom-patches-${KERNEL}*.{dsc,changes,tar.gz}
+		if fakeroot dpkg-buildpackage -uc -us &> /dev/null; then
+			printf "${GREEN}Ok${NORM}]\n"
+		else
+			printf "${RED}Failed!${NORM}]\n"
+			return 1
+		fi
 	popd &>/dev/null
 
 	rm -rf $DPKG_PATCH_DIR
-
-	return 0
+	rm -f $SRCDIR/linux-custom-patches-${KERNEL}*.{dsc,changes,tar.gz}
 }
 
 #=============================================================================#
@@ -375,7 +378,6 @@ printf "\n"
 
 printf "${CYAN}Preserving custom patches in debian archive${NORM}...\n"
 dpkg_patches ${KPATCH[@]} ${PATCH[@]}
-printf "${GREEN}Ok${NORM}]\n"
 
 sed -i 's/^\(EXTRAVERSION\).*/\1 = '$KEV'/' $SRCDIR/linux-$KERNEL/Makefile
 if [[ -f "/boot/config-$KERNEL" ]]; then
