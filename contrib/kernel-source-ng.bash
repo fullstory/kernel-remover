@@ -4,7 +4,7 @@
 #
 
 # kernel version
-KERNEL=2.6.20.3-kel-1
+KERNEL=2.6.20.4-kel-1
 
 # staging directory
 SRCDIR=~/src
@@ -17,8 +17,8 @@ MIRROR="http://www.kernel.org/pub/linux/kernel"
 #=============================================================================#
 patches_for_kernel() {
 	case "$1" in
-		2.6.20.4*)
-			PATCH+=( http://ck.kolivas.org/patches/staircase-deadline/2.6.20.4/2.6.20.4-rsdl-0.33.patch )
+		*)
+			#PATCH+=( )
 			;;
 	esac
 }
@@ -166,7 +166,7 @@ if [[ $KSV ]]; then
 		fi
 	fi
 else
-	if [[ $KRC && ! $KGV ]]; then
+	if [[ $KRC ]]; then
 		KPATCH+=( $MIRROR/v$KMV/testing/patch-$KMV.$KRV-$KRC.bz2 )
 	fi
 	if [[ $KRC && $KMM ]]; then
