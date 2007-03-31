@@ -11,11 +11,11 @@ MIRROR="http://www.kernel.org/pub/linux/kernel"
 
 # staging directory
 if ((UID)); then
-	# root
-	SRCDIR=/usr/src
-else
 	# user
 	SRCDIR=~/src
+else
+	# root
+	SRCDIR=/usr/src
 fi
 
 # local config
@@ -214,6 +214,46 @@ if [[ $NOACT ]]; then
 fi
 
 #=============================================================================#
+#	GPL compliance
+#=============================================================================#
+DPKG_PATCH_DIR=${SRCDIR}/linux-custom-patches-${KERNEL}-1
+
+dpkg_patches() {
+	[[ -x $(type -p fakeroot) && -x $(type -p dpkg-buildpackage) ]] || return
+
+	mkdir -p $DPKG_PATCH_DIR/patches
+
+	for patch in $@; do
+		cp $SRCDIR/${patch##*/} $DPKG_PATCH_DIR/patches
+	done
+
+	cp -r /usr/share/sidux-kernelhacking/linux-custom-patches/* $DPKG_PATCH_DIR
+	
+	for file in $DPKG_PATCH_DIR/debian/*; do
+		sed -i "s/\%VER\%/${KERNEL}/g;\
+			s/\%REVISION\%/1/g;\
+			s/\%DEBFULLNAME\%/${DEBFULLNAME}/g;\
+			s/\%DEBEMAIL\%/${DEBEMAIL}/g;\
+			s/\%DATE\%/$(date --rfc-2822)/g" "$file"
+	done
+
+	for url in $TARBALL $@; do
+		sed -i "s|\%PATCH_LIST\%|${url}\\n\\t\%PATCH_LIST\%|" \
+			$DPKG_PATCH_DIR/debian/copyright
+	done
+	sed -i '/\%PATCH_LIST\%/d' $DPKG_PATCH_DIR/debian/copyright
+
+	install -m 0755 $0 $DPKG_PATCH_DIR/linux-source-${KERNEL}.sh
+	
+	pushd $DPKG_PATCH_DIR &>/dev/null
+		fakeroot dpkg-buildpackage -uc -us &> /dev/null
+		rm -f ../linux-custom-patches-${KERNEL}*.{dsc,changes,tar.gz}
+	popd &>/dev/null
+
+	rm -rf $DPKG_PATCH_DIR
+}
+
+#=============================================================================#
 #	patch functions
 #=============================================================================#
 
@@ -280,7 +320,7 @@ apply_patches() {
 #=============================================================================#
 
 if [[ -d $SRCDIR/linux-$KERNEL || -d $SRCDIR/linux-$KMV ]]; then
-	rm -rf $SRCDIR/linux-$KERNEL
+	rm -rf $SRCDIR/linux-$KERNEL $SRCDIR/$DPKG_PATCH_DIR
 	if [[ $KRC && ! $KSV ]]; then
 		rm -rf $SRCDIR/linux-$KMV.$[$KRV-1]
 	else
@@ -327,6 +367,10 @@ printf "${CYAN}Applying patches${NORM}...\n"
 pushd $SRCDIR/linux-$KERNEL &>/dev/null
 	apply_patches ${KPATCH[@]} ${PATCH[@]}
 popd &>/dev/null
+printf "\n"
+
+printf "${CYAN}Preserving custom patches in debian archive${NORM}...\n"
+dpkg_patches ${KPATCH[@]} ${PATCH[@]}
 printf "\n"
 
 sed -i 's/^\(EXTRAVERSION\).*/\1 = '$KEV'/' $SRCDIR/linux-$KERNEL/Makefile
