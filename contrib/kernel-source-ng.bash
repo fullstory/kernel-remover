@@ -220,7 +220,9 @@ DPKG_PATCH_DIR=$SRCDIR/linux-custom-patches-${KERNEL}-1
 
 dpkg_patches() {
 	[[ -x $(type -p fakeroot) && -x $(type -p dpkg-buildpackage) ]] || return
+	[[ -d /usr/share/sidux-kernelhacking/linux-custom-patches ]] || return
 
+	printf "${CYAN}Preserving custom patches in debian archive${NORM}...\n"
 	printf "%-70s [" "  * ${YELLOW}linux-custom-patches-${KERNEL}${NORM}"
 
 	mkdir -p $DPKG_PATCH_DIR/patches
@@ -377,7 +379,6 @@ pushd $SRCDIR/linux-$KERNEL &>/dev/null
 popd &>/dev/null
 printf "\n"
 
-printf "${CYAN}Preserving custom patches in debian archive${NORM}...\n"
 dpkg_patches ${KPATCH[@]} ${PATCH[@]}
 
 sed -i 's/^\(EXTRAVERSION\).*/\1 = '$KEV'/' $SRCDIR/linux-$KERNEL/Makefile
