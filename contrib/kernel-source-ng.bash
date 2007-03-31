@@ -221,6 +221,8 @@ DPKG_PATCH_DIR=${SRCDIR}/linux-custom-patches-${KERNEL}-1
 dpkg_patches() {
 	[[ -x $(type -p fakeroot) && -x $(type -p dpkg-buildpackage) ]] || return
 
+	printf "%-70s [" "  * ${YELLOW}linux-custom-patches-${KERNEL}${NORM}"
+
 	mkdir -p $DPKG_PATCH_DIR/patches
 
 	for patch in $@; do
@@ -251,6 +253,8 @@ dpkg_patches() {
 	popd &>/dev/null
 
 	rm -rf $DPKG_PATCH_DIR
+
+	return 0
 }
 
 #=============================================================================#
@@ -371,7 +375,7 @@ printf "\n"
 
 printf "${CYAN}Preserving custom patches in debian archive${NORM}...\n"
 dpkg_patches ${KPATCH[@]} ${PATCH[@]}
-printf "\n"
+printf "${GREEN}Ok${NORM}]\n"
 
 sed -i 's/^\(EXTRAVERSION\).*/\1 = '$KEV'/' $SRCDIR/linux-$KERNEL/Makefile
 if [[ -f "/boot/config-$KERNEL" ]]; then
@@ -379,4 +383,4 @@ if [[ -f "/boot/config-$KERNEL" ]]; then
 fi
 rm -f $SRCDIR/linux
 ln -s linux-$KERNEL $SRCDIR/linux
-printf "${CYAN}Prepared ${YELLOW}linux-$KERNEL${NORM} @ ${CYAN}$SRCDIR${NORM}\n"
+printf "\n${CYAN}Prepared ${YELLOW}linux-$KERNEL${NORM} @ ${CYAN}$SRCDIR${NORM}\n"
