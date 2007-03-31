@@ -6,11 +6,17 @@
 # kernel version
 KERNEL=2.6.20.4-kel-1
 
-# staging directory
-SRCDIR=~/src
-
 # kernel.org mirror
 MIRROR="http://www.kernel.org/pub/linux/kernel"
+
+# staging directory
+if ((UID)); then
+	# root
+	SRCDIR=/usr/src
+else
+	# user
+	SRCDIR=~/src
+fi
 
 #=============================================================================#
 #	kernel patch urls
