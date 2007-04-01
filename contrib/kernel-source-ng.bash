@@ -44,8 +44,9 @@ patches_for_kernel() {
 		2.6.21*slh*)
 			PATCH+=( http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch )
 			PATCH+=( http://sidux.com/files/patches/t-sinus_111card-2.6.16.diff )
-			PATCH+=( http://sidux.com/files/patches/2.6.20-at76c503a20070307.diff.bz2 )
+			PATCH+=( http://sidux.com/files/patches/2.6.21-at76_usb20070401.diff.bz2 )
 			PATCH+=( http://sidux.com/files/patches/unionfs-2.x-linux-2.6.21-rc5-u1.diff.gz )
+			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.21-rc5/2.6.21-rc5-mm3/broken-out/gregkh-driver-nozomi.patch )
 			;;
 		*)
 			#PATCH+=( )
