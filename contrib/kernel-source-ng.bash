@@ -7,8 +7,7 @@
 MIRROR="http://zeus2.kernel.org/pub/linux/kernel"
 
 # kernel version
-REVISION="1"
-KERNEL="latest-stable-${USER}-${REVISION}"
+KERNEL="latest-stable-${USER}-1"
 
 # staging directory
 if ((UID)); then
@@ -108,7 +107,7 @@ finger_latest_kernel() {
 
 case $KERNEL in
 	latest-*)
-		KERNEL="$(finger_latest_kernel $KERNEL)-${USER}-${REVISION}"
+		KERNEL=$(finger_latest_kernel $KERNEL)
 		if [[ ! $KERNEL ]]; then
 			printf "E: ${COLOR_FAILURE}Unable to finger kernel version${COLOR_NORM}\n"
 			exit 1
