@@ -184,8 +184,8 @@ else
 fi
 
 if [[ $KSV ]]; then
-	KPATCH+=( $MIRROR/v$KMV/patch-$KMV.$KRV.$KSV.bz2 )
 	if [[ $KRC ]]; then
+		[[ ! $KSV = 1 ]] && KPATCH+=( $MIRROR/v$KMV/patch-$KMV.$KRV.$(($KSV - 1)).bz2 )
 		for location in $MIRROR/people/chrisw/stable $MIRROR/people/gregkh/stable $MIRROR/v$KMV/testing; do
 			for suf in bz2 gz; do
 				if wget --spider -q $location/patch-$KMV.$KRV.$KSV-$KRC.$suf; then
@@ -198,6 +198,8 @@ if [[ $KSV ]]; then
 			printf "E: ${COLOR_FAILURE}Unable to determine origin of stable rc patch!${COLOR_NORM}\n"
 			exit 1
 		fi
+	else
+		KPATCH+=( $MIRROR/v$KMV/patch-$KMV.$KRV.$KSV.bz2 )
 	fi
 else
 	if [[ $KRC ]]; then
