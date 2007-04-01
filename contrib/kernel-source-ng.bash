@@ -380,7 +380,9 @@ if tar -C $SRCDIR -xjf $SRCDIR/${TARBALL##*/}; then
 	if [[ $KRC && ! $KSV ]]; then
 		mv $SRCDIR/linux-$KMV.$[$KRV-1] $SRCDIR/linux-$KERNEL
 	else
-		mv $SRCDIR/linux-$KMV.$KRV $SRCDIR/linux-$KERNEL
+		if [[ $KMV.$KRV != $KERNEL ]]; then
+			mv $SRCDIR/linux-$KMV.$KRV $SRCDIR/linux-$KERNEL
+		fi
 	fi
 	printf "\n"
 else
