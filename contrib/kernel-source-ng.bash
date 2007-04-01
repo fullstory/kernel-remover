@@ -7,7 +7,7 @@
 MIRROR="http://zeus2.kernel.org/pub/linux/kernel"
 
 # kernel version
-KERNEL="$(wget -qO- ${MIRROR//\/pub\/linux\/kernel/\/kdist\/finger_banner} | awk '/latest -?'stable'/{ print $NF; exit }')-$(getent passwd $(id -u) | cut -d\: -f1)-1"
+KERNEL="latest-stable-${USER}-1"
 
 # staging directory
 if ((UID)); then
@@ -59,6 +59,33 @@ if [[ -x $(type -p tput) ]]; then
 fi
 
 #=============================================================================#
+#	process cli args
+#=============================================================================#
+
+while getopts b:dk:p opt; do
+	case $opt in
+		b)	# source directory
+			SRCDIR=$OPTARG
+			;;
+		d)	# debug it
+			set -x
+			;;
+		k)	# kernel version override
+			KERNEL=$OPTARG
+			;;
+		m)	# mirror
+			MIRROR=$OPTARG
+			;;
+		p)	# do nothing
+			((NOACT++))
+			;;
+		\?)	# unknown option
+			exit 1
+			;;
+	esac
+done
+
+#=============================================================================#
 #	give linux the finger
 #=============================================================================#
 finger_latest_kernel() {
@@ -77,45 +104,17 @@ finger_latest_kernel() {
 	fi
 }
 
-#=============================================================================#
-#	process cli args
-#=============================================================================#
-
-while getopts b:dk:p opt; do
-	case $opt in
-		b)	# source directory
-			SRCDIR=$OPTARG
-			;;
-		d)	# debug it
-			set -x
-			;;
-		k)	# kernel version override
-			case $OPTARG in
-				latest-*)
-					KERNEL=$(finger_latest_kernel $OPTARG)
-					if [[ ! $KERNEL ]]; then
-						printf "E: ${COLOR_FAILURE}Unable to finger kernel version${COLOR_NORM}\n"
-						exit 1
-					fi
-					;;
-				*)
-					KERNEL=$OPTARG
-					;;
-			esac
-			;;
-		m)	# mirror
-			MIRROR=$OPTARG
-			;;
-		p)	# do nothing
-			((NOACT++))
-			;;
-		\?)	# unknown option
+case $KERNEL in
+	latest-*)
+		KERNEL=$(finger_latest_kernel $KERNEL)
+		if [[ ! $KERNEL ]]; then
+			printf "E: ${COLOR_FAILURE}Unable to finger kernel version${COLOR_NORM}\n"
 			exit 1
-			;;
-	esac
-done
-
-mkdir -p $SRCDIR || exit 1
+		fi
+		;;
+	*)
+		;;
+esac
 
 #=============================================================================#
 #	breakdown kernel string with regexp group matching
@@ -341,6 +340,8 @@ apply_patches() {
 #=============================================================================#
 #	do it
 #=============================================================================#
+
+mkdir -p $SRCDIR
 
 printf "${COLOR_ACTION}Create ${COLOR_INFO}linux-$KERNEL${COLOR_NORM} @ ${COLOR_ACTION}$SRCDIR${COLOR_NORM}\n\n"
 
