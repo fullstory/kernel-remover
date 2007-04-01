@@ -7,7 +7,7 @@
 KERNEL=2.6.20.4-kel-1
 
 # kernel.org mirror
-MIRROR="http://www.kernel.org/pub/linux/kernel"
+MIRROR="http://zeus2.kernel.org/pub/linux/kernel"
 
 # staging directory
 if ((UID)); then
@@ -38,11 +38,11 @@ patches_for_kernel() {
 #	colours
 #=============================================================================#
 if [[ -x $(type -p tput) ]]; then
-	CYAN=$(tput setaf 6)			# action
-	YELLOW=$(tput bold ; tput setaf 3)	# info
-	GREEN=$(tput setaf 2)			# success
-	RED=$(tput setaf 1)			# failure
-	NORM=$(tput sgr0)			# no colour
+	COLOR_ACTION=$(tput setaf 6)		# action	(cyan)
+	COLOR_INFO=$(tput bold ; tput setaf 5)	# info		(pink)
+	COLOR_SUCCESS=$(tput setaf 2)		# success	(green)
+	COLOR_FAILURE=$(tput setaf 1)		# failure	(red)
+	COLOR_NORM=$(tput sgr0)			# no colour	(reset to defaults)
 fi
 
 #=============================================================================#
@@ -81,7 +81,7 @@ while getopts b:dk:p opt; do
 				latest-*)
 					KERNEL=$(finger_latest_kernel $OPTARG)
 					if [[ ! $KERNEL ]]; then
-						printf "E: ${RED}Unable to finger kernel version${NORM}\n"
+						printf "E: ${COLOR_FAILURE}Unable to finger kernel version${COLOR_NORM}\n"
 						exit 1
 					fi
 					;;
@@ -145,7 +145,7 @@ if [[ $KERNEL =~ '^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9
 
 	KERNEL_VARS=( KERNEL KMV KRV KSV KRC KGV KMM KEV NAM REV )
 else
-	printf "E: ${RED}Unable to process ${YELLOW}$KERNEL${NORM}${RED} version string!${NORM}\n"
+	printf "E: ${COLOR_FAILURE}Unable to process ${COLOR_INFO}$KERNEL${COLOR_NORM}${COLOR_FAILURE} version string!${COLOR_NORM}\n"
 	exit 1
 fi
 
@@ -171,7 +171,7 @@ if [[ $KSV ]]; then
 			done
 		done
 		if [[ ! ${KPATCH[@]} ]]; then
-			printf "E: ${RED}Unable to determine origin of stable rc patch!${NORM}\n"
+			printf "E: ${COLOR_FAILURE}Unable to determine origin of stable rc patch!${COLOR_NORM}\n"
 			exit 1
 		fi
 	fi
@@ -222,8 +222,8 @@ dpkg_patches() {
 	[[ -x $(type -p fakeroot) && -x $(type -p dpkg-buildpackage) ]] || return
 	[[ -d /usr/share/sidux-kernelhacking/linux-custom-patches ]] || return
 
-	printf "${CYAN}Preserving custom patches in debian archive${NORM}...\n"
-	printf "%-70s [" "  * ${YELLOW}linux-custom-patches-${KERNEL}${NORM}"
+	printf "${COLOR_ACTION}Preserving custom patches in debian archive${COLOR_NORM}...\n"
+	printf "%-70s [" "  * ${COLOR_INFO}linux-custom-patches-${KERNEL}${COLOR_NORM}"
 
 	mkdir -p $DPKG_PATCH_DIR/patches
 
@@ -252,9 +252,9 @@ dpkg_patches() {
 	
 	pushd $DPKG_PATCH_DIR &>/dev/null
 		if fakeroot dpkg-buildpackage -uc -us &>/dev/null; then
-			printf "${GREEN}Ok${NORM}]\n"
+			printf "${COLOR_SUCCESS}Ok${COLOR_NORM}]\n"
 		else
-			printf "${RED}Failed!${NORM}]\n"
+			printf "${COLOR_FAILURE}Failed!${COLOR_NORM}]\n"
 			return 1
 		fi
 	popd &>/dev/null
@@ -296,11 +296,11 @@ apply_patches() {
 		PATCH=../${patch##*/}
 		
 		if [[ ! -f $PATCH ]]; then
-			printf "\n\tE: ${RED}patch not found!${NORM}\n"
+			printf "\n\tE: ${COLOR_FAILURE}patch not found!${COLOR_NORM}\n"
 			return 1
 		fi
 		
-		printf "%-70s [" "  * ${YELLOW}${PATCH#*/}${NORM}"
+		printf "%-70s [" "  * ${COLOR_INFO}${PATCH#*/}${COLOR_NORM}"
 		
 		# try until --dry-run succeeds, then really patch it
 		until [[ $RETVAL == 0 ]] || [[ $PATCH_LEVEL -lt 0 ]]; do
@@ -313,10 +313,10 @@ apply_patches() {
 		done
 
 		if [[ $RETVAL == 0 ]]; then
-			printf "${GREEN}Ok${NORM}]\n"
+			printf "${COLOR_SUCCESS}Ok${COLOR_NORM}]\n"
 			continue
 		else
-			printf "${RED}Failed!${NORM}]\n"
+			printf "${COLOR_FAILURE}Failed!${COLOR_NORM}]\n"
 		fi
 		
 		return $RETVAL
@@ -338,28 +338,28 @@ if [[ -d $SRCDIR/linux-$KERNEL || -d $SRCDIR/linux-$KMV ]]; then
 	fi
 fi
 
-printf "${CYAN}Downloading ${YELLOW}${TARBALL##*/}${NORM}..."
+printf "${COLOR_ACTION}Downloading ${COLOR_INFO}${TARBALL##*/}${COLOR_NORM}..."
 if wget -Ncq -O $SRCDIR/${TARBALL##*/} $TARBALL; then
 	printf "\n"
 else
-	printf " ${RED}Failed!${NORM}\n"
+	printf " ${COLOR_FAILURE}Failed!${COLOR_NORM}\n"
 	exit 1
 fi
 printf "\n"
 
-printf "${CYAN}Downloading patches${NORM}...\n"
+printf "${COLOR_ACTION}Downloading patches${COLOR_NORM}...\n"
 for patch in ${KPATCH[@]} ${PATCH[@]}; do
-	printf "%-70s [" "  * ${YELLOW}${patch##*/}${NORM}"
+	printf "%-70s [" "  * ${COLOR_INFO}${patch##*/}${COLOR_NORM}"
 	if wget -Ncq -O $SRCDIR/${patch##*/} $patch; then
-		printf "${GREEN}Ok${NORM}]\n"
+		printf "${COLOR_SUCCESS}Ok${COLOR_NORM}]\n"
 	else
-		printf "${RED}Failed!${NORM}]\n"
+		printf "${COLOR_FAILURE}Failed!${COLOR_NORM}]\n"
 		exit 1
 	fi
 done
 printf "\n"
 
-printf "${CYAN}Unpacking ${YELLOW}${TARBALL##*/}${NORM}..."
+printf "${COLOR_ACTION}Unpacking ${COLOR_INFO}${TARBALL##*/}${COLOR_NORM}..."
 if tar -C $SRCDIR -xjf $SRCDIR/${TARBALL##*/}; then
 	if [[ $KRC && ! $KSV ]]; then
 		mv $SRCDIR/linux-$KMV.$[$KRV-1] $SRCDIR/linux-$KERNEL
@@ -368,12 +368,12 @@ if tar -C $SRCDIR -xjf $SRCDIR/${TARBALL##*/}; then
 	fi
 	printf "\n"
 else
-	printf " ${RED}Failed!${NORM}\n"
+	printf " ${COLOR_FAILURE}Failed!${COLOR_NORM}\n"
 	exit 1
 fi
 printf "\n"
 
-printf "${CYAN}Applying patches${NORM}...\n"
+printf "${COLOR_ACTION}Applying patches${COLOR_NORM}...\n"
 pushd $SRCDIR/linux-$KERNEL &>/dev/null
 	apply_patches ${KPATCH[@]} ${PATCH[@]}
 popd &>/dev/null
@@ -387,4 +387,4 @@ if [[ -f "/boot/config-$KERNEL" ]]; then
 fi
 rm -f $SRCDIR/linux
 ln -s linux-$KERNEL $SRCDIR/linux
-printf "\n${CYAN}Prepared ${YELLOW}linux-$KERNEL${NORM} @ ${CYAN}$SRCDIR${NORM}\n"
+printf "\n${COLOR_ACTION}Prepared ${COLOR_INFO}linux-$KERNEL${COLOR_NORM} @ ${COLOR_ACTION}$SRCDIR${COLOR_NORM}\n"
