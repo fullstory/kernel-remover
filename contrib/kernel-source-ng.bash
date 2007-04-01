@@ -7,7 +7,7 @@
 MIRROR="http://zeus2.kernel.org/pub/linux/kernel"
 
 # kernel version
-REVISION="1"
+REVISION="2"
 #DEF_CPU="up"
 KERNEL="latest-stable-${USER}-${DEF_CPU}-${REVISION}"
 
