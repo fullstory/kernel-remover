@@ -118,10 +118,10 @@ zip:
 			sed s/\%KERNEL_VERSION\%/`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`/g $$i > ${BASE_DIR}/`basename $$i` && \
 			chmod +x ${BASE_DIR}/`basename $$i`; \
 		done && \
-		sed -i s/^\#\%STATIC_VERSION\%/STATIC_VERSION=\"`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`\"\\t\#\%STATIC_VERSION\%/ *-source.sh; \
+		sed -i s/^\#\%STATIC_VERSION\%/STATIC_VERSION=\"`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`\"\\t\#\%STATIC_VERSION\%/ *-source*sh; \
 		zip	kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`.zip \
 				*`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`*.deb \
-				*-source.sh kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`-custom-patches.{zip,tar\.gz,tar\.bz2} \
+				*-source*sh kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`-custom-patches.{zip,tar\.gz,tar\.bz2} \
 				kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`-custom-modules.{zip,tar\.gz,tar\.bz2} \
 				`find /usr/share/sidux-kernelhacking/scripts/*.sh -exec basename {} \; | xargs`
 
