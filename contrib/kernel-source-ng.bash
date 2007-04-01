@@ -7,7 +7,8 @@
 MIRROR="http://zeus2.kernel.org/pub/linux/kernel"
 
 # kernel version
-KERNEL="latest-stable-${USER}-1"
+REVISION="1"
+KERNEL="latest-stable-${USER}-${REVISION}"
 
 # staging directory
 if ((UID)); then
@@ -63,7 +64,7 @@ fi
 #	process cli args
 #=============================================================================#
 
-while getopts b:dk:p opt; do
+while getopts b:dk:dl:p opt; do
 	case $opt in
 		b)	# source directory
 			SRCDIR=$OPTARG
@@ -72,7 +73,12 @@ while getopts b:dk:p opt; do
 			set -x
 			;;
 		k)	# kernel version override
+			unset LAZY
 			KERNEL=$OPTARG
+			;;
+		l)
+			KERNEL=$OPTARG
+			LAZY="-${USER}-${REVISION}"
 			;;
 		m)	# mirror
 			MIRROR=$OPTARG
@@ -107,7 +113,7 @@ finger_latest_kernel() {
 
 case $KERNEL in
 	latest-*)
-		KERNEL=$(finger_latest_kernel $KERNEL)
+		KERNEL=$(finger_latest_kernel $KERNEL)${LAZY}
 		if [[ ! $KERNEL ]]; then
 			printf "E: ${COLOR_FAILURE}Unable to finger kernel version${COLOR_NORM}\n"
 			exit 1
