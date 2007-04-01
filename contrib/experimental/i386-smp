@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # Linux kernel version: 2.6.21-rc5-git7-slh-smp-1
-# Sun Apr  1 18:24:25 2007
+# Sun Apr  1 18:52:38 2007
 #
 CONFIG_X86_32=y
 CONFIG_GENERIC_TIME=y
@@ -220,10 +220,10 @@ CONFIG_IRQBALANCE=y
 CONFIG_BOOT_IOREMAP=y
 CONFIG_SECCOMP=y
 # CONFIG_HZ_100 is not set
-CONFIG_HZ_250=y
+# CONFIG_HZ_250 is not set
 # CONFIG_HZ_300 is not set
-# CONFIG_HZ_1000 is not set
-CONFIG_HZ=250
+CONFIG_HZ_1000=y
+CONFIG_HZ=1000
 CONFIG_KEXEC=y
 # CONFIG_CRASH_DUMP is not set
 CONFIG_PHYSICAL_START=0x100000
