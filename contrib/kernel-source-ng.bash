@@ -116,7 +116,7 @@ finger_latest_kernel() {
 
 case $KERNEL in
 	latest-*)
-		KERNEL=$(finger_latest_kernel $KERNEL)${LAZY}
+		KERNEL=$(finger_latest_kernel $KERNEL)
 		if [[ ! $KERNEL ]]; then
 			printf "E: ${COLOR_FAILURE}Unable to finger kernel version${COLOR_NORM}\n"
 			exit 1
@@ -125,6 +125,8 @@ case $KERNEL in
 	*)
 		;;
 esac
+
+KERNEL=${KERNEL}${LAZY}
 
 #=============================================================================#
 #	breakdown kernel string with regexp group matching
