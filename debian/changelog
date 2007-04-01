@@ -1,3 +1,9 @@
+sidux-kernelhacking (2.6.20.13) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 01 Apr 2007 02:35:38 +0200
+
 sidux-kernelhacking (2.6.20.12) unstable; urgency=low
 
   * add ivtv-source (>= 0.10.1-1) again.
