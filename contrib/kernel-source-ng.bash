@@ -4,7 +4,7 @@
 #
 
 # kernel version
-KERNEL=2.6.20.4-kel-1
+KERNEL="$(wget -qO- http://zeus2.kernel.org/kdist/finger_banner | grep "^The latest stable version of the Linux kernel is:" | cut -d\: -f2 | sed s/[[:space:]]//g)-$(getent passwd $(id -u) | cut -d\: -f1)-1"
 
 # kernel.org mirror
 MIRROR="http://zeus2.kernel.org/pub/linux/kernel"
