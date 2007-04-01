@@ -8,7 +8,8 @@ MIRROR="http://zeus2.kernel.org/pub/linux/kernel"
 
 # kernel version
 REVISION="1"
-KERNEL="latest-stable-${USER}-${REVISION}"
+#DEF_CPU="up"
+KERNEL="latest-stable-${USER}-${DEF_CPU}-${REVISION}"
 
 #%STATIC_VERSION%
 [[ $STATIC_VERSION ]] && KERNEL="$STATIC_VERSION"
@@ -81,7 +82,7 @@ while getopts b:dk:l:p opt; do
 			;;
 		l)
 			KERNEL=$OPTARG
-			LAZY="-${USER}-${REVISION}"
+			LAZY="-${USER}-${DEF_CPU}-${REVISION}"
 			;;
 		m)	# mirror
 			MIRROR=$OPTARG
@@ -132,7 +133,7 @@ KERNEL=${KERNEL}${LAZY}
 #	breakdown kernel string with regexp group matching
 #=============================================================================#
 
-if [[ $KERNEL =~ '^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9]+)?-?(mm[0-9]+)?-?([a-zA-Z]+[a-zA-Z0-9\._]*)?-?([0-9]+)?$' ]]; then
+if [[ $KERNEL =~ '^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9]+)?-?(mm[0-9]+)?-?([a-zA-Z]+[a-zA-Z0-9\._]*)?-?([a-zA-Z]+[a-zA-Z]*)?-?([0-9]+)?$' ]]; then
 	KMV=${BASH_REMATCH[1]} # Major Version
 	KRV=${BASH_REMATCH[2]} # Release Version
 	KSV=${BASH_REMATCH[3]} # Stable Version
@@ -140,25 +141,29 @@ if [[ $KERNEL =~ '^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9
 	KGV=${BASH_REMATCH[5]} # Git Version
 	KMM=${BASH_REMATCH[6]} # MM Version
 	NAM=${BASH_REMATCH[7]} # Name
-	REV=${BASH_REMATCH[8]} # Revision
+	MCP=${BASH_REMATCH[8]} # smp/ up
+	REV=${BASH_REMATCH[9]} # Revision
 	
 	# Extra Version
-	if [[ $KERNEL =~ '^[0-9]+\.[0-9]+\.[0-9]+(\.?[0-9]*-?.*)?-'$NAM'-'$REV'$' ]]; then
+	if [[ $KERNEL =~ '^[0-9]+\.[0-9]+\.[0-9]+(\.?[0-9]*-?.*)?-'$NAM'-'$MCP'-'$REV'$' ]]; then
 		# cpu based name modifier
 		CPU=$(uname -m)
 		case $CPU in
 			i?86)
 				# no-op
+				[[ $MCP ]] || MCP="smp"
 				;;
 			x86_64)
 				[[ $NAM == *64 ]] || NAM=${NAM}64
+				[[ $MCP ]] || MCP="smp"
 				;;
 			*)
 				[[ $NAM == *${CPU} ]] || NAM=${NAM}${CPU}
+				[[ $MCP ]] || MCP="smp"
 				;;
 		esac
 		# reform name modified KEV
-		KEV=${BASH_REMATCH[1]}-$NAM-$REV
+		KEV=${BASH_REMATCH[1]}-$NAM-$MCP-$REV
 	elif [[ $KERNEL =~ '^[0-9]+\.[0-9]+\.[0-9]+(\.?[0-9]*-.*)' ]]; then
 		# generic/unamed kernel
 		KEV=${BASH_REMATCH[1]}
@@ -167,7 +172,7 @@ if [[ $KERNEL =~ '^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9
 	# reform (possibly) name modified kernel version
 	KERNEL=$KMV.${KRV}${KEV}
 
-	KERNEL_VARS=( KERNEL KMV KRV KSV KRC KGV KMM KEV NAM REV )
+	KERNEL_VARS=( KERNEL KMV KRV KSV KRC KGV KMM KEV NAM MCP REV )
 else
 	printf "E: ${COLOR_FAILURE}Unable to process ${COLOR_INFO}$KERNEL${COLOR_NORM}${COLOR_FAILURE} version string!${COLOR_NORM}\n"
 	exit 1
