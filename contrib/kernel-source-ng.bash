@@ -64,7 +64,7 @@ fi
 #	process cli args
 #=============================================================================#
 
-while getopts b:dk:dl:p opt; do
+while getopts b:dk:l:p opt; do
 	case $opt in
 		b)	# source directory
 			SRCDIR=$OPTARG
