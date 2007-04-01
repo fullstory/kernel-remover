@@ -7,7 +7,8 @@
 MIRROR="http://zeus2.kernel.org/pub/linux/kernel"
 
 # kernel version
-KERNEL="latest-stable-${USER}-1"
+REVISION="1"
+KERNEL="latest-stable-${USER}-${REVISION}"
 
 # staging directory
 if ((UID)); then
@@ -37,9 +38,10 @@ patches_for_kernel() {
 			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.21-rc3/2.6.21-rc3-mm2/broken-out/gregkh-driver-nozomi.patch )
 			;;
 		2.6.21*slh*)
-			PATCH+=( http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.3-2.6.20.patch )
+			PATCH+=( http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch )
 			PATCH+=( http://sidux.com/files/patches/t-sinus_111card-2.6.16.diff )
 			PATCH+=( http://sidux.com/files/patches/2.6.20-at76c503a20070307.diff.bz2 )
+			PATCH+=( http://sidux.com/files/patches/unionfs-2.x-linux-2.6.21-rc5-u1.diff.gz )
 			;;
 		*)
 			#PATCH+=( )
@@ -106,7 +108,7 @@ finger_latest_kernel() {
 
 case $KERNEL in
 	latest-*)
-		KERNEL=$(finger_latest_kernel $KERNEL)
+		KERNEL="$(finger_latest_kernel $KERNEL)-${USER}-${REVISION}"
 		if [[ ! $KERNEL ]]; then
 			printf "E: ${COLOR_FAILURE}Unable to finger kernel version${COLOR_NORM}\n"
 			exit 1
