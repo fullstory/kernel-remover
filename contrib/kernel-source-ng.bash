@@ -3,11 +3,11 @@
 # License: GPL2
 #
 
-# kernel version
-KERNEL="$(wget -qO- http://zeus2.kernel.org/kdist/finger_banner | grep "^The latest stable version of the Linux kernel is:" | cut -d\: -f2 | sed s/[[:space:]]//g)-$(getent passwd $(id -u) | cut -d\: -f1)-1"
-
 # kernel.org mirror
 MIRROR="http://zeus2.kernel.org/pub/linux/kernel"
+
+# kernel version
+KERNEL="$(wget -qO- ${MIRROR//\/pub\/linux\/kernel/\/kdist\/finger_banner} | awk '/latest -?'stable'/{ print $NF; exit }')-$(getent passwd $(id -u) | cut -d\: -f1)-1"
 
 # staging directory
 if ((UID)); then
@@ -28,6 +28,19 @@ fi
 #=============================================================================#
 patches_for_kernel() {
 	case "$1" in
+		2.6.20*slh*)
+			PATCH+=( http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.3-2.6.20.patch )
+			PATCH+=( http://sidux.com/files/patches/t-sinus_111card-2.6.16.diff )
+			PATCH+=( http://sidux.com/files/patches/2.6.20-at76c503a20070307.diff.bz2 )
+			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.20-rc6/2.6.20-rc6-mm3/broken-out/2.6-sony_acpi4.patch )
+			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.20-rc6/2.6.20-rc6-mm3/broken-out/pl2303-willcom-ws002in-support.patch )
+			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.21-rc3/2.6.21-rc3-mm2/broken-out/gregkh-driver-nozomi.patch )
+			;;
+		2.6.21*slh*)
+			PATCH+=( http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.3-2.6.20.patch )
+			PATCH+=( http://sidux.com/files/patches/t-sinus_111card-2.6.16.diff )
+			PATCH+=( http://sidux.com/files/patches/2.6.20-at76c503a20070307.diff.bz2 )
+			;;
 		*)
 			#PATCH+=( )
 			;;
@@ -329,6 +342,8 @@ apply_patches() {
 #	do it
 #=============================================================================#
 
+printf "${COLOR_ACTION}Create ${COLOR_INFO}linux-$KERNEL${COLOR_NORM} @ ${COLOR_ACTION}$SRCDIR${COLOR_NORM}\n\n"
+
 if [[ -d $SRCDIR/linux-$KERNEL || -d $SRCDIR/linux-$KMV ]]; then
 	rm -rf $SRCDIR/linux-$KERNEL $SRCDIR/$DPKG_PATCH_DIR
 	if [[ $KRC && ! $KSV ]]; then
@@ -388,3 +403,4 @@ fi
 rm -f $SRCDIR/linux
 ln -s linux-$KERNEL $SRCDIR/linux
 printf "\n${COLOR_ACTION}Prepared ${COLOR_INFO}linux-$KERNEL${COLOR_NORM} @ ${COLOR_ACTION}$SRCDIR${COLOR_NORM}\n"
+
