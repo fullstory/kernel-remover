@@ -11,7 +11,7 @@ REVISION="1"
 KERNEL="latest-stable-${USER}-${REVISION}"
 
 #%STATIC_VERSION%
-[[ -n "$STATIC_VERSION" ]] && KERNEL="$STATIC_VERSION"
+[[ $STATIC_VERSION ]] && KERNEL="$STATIC_VERSION"
 
 # staging directory
 if ((UID)); then
