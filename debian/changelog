@@ -1,3 +1,9 @@
+sidux-kernelhacking (2.6.20.15) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 05 Apr 2007 14:48:58 +0200
+
 sidux-kernelhacking (2.6.20.14) unstable; urgency=low
 
   * drop btsco from dependencies, headsetd + alsa-lib plugin are supposed to
