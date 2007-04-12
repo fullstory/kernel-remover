@@ -146,7 +146,7 @@ if [[ $KERNEL =~ '^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9
 	REV=${BASH_REMATCH[9]} # Revision
 	
 	# Extra Version
-	if [[ $KERNEL =~ '^[0-9]+\.[0-9]+\.[0-9]+(\.?[0-9]*-?.*)?-'$NAM'-'$MCP'-'$REV'$' ]]; then
+	if [[ $KERNEL =~ '^[0-9]+\.[0-9]+\.[0-9]+(\.?[0-9]*-?.*)?-'$NAM'-?('$MCP')?-'$REV'$' ]]; then
 		# cpu based name modifier
 		CPU=$(uname -m)
 		case $CPU in
