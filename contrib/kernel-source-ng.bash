@@ -33,7 +33,7 @@ fi
 #=============================================================================#
 patches_for_kernel() {
 	case "$1" in
-		2.6.20*slh*)
+		2.6.20*)
 			PATCH+=( http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.3-2.6.20.patch )
 			PATCH+=( http://sidux.com/files/patches/t-sinus_111card-2.6.16.diff )
 			PATCH+=( http://sidux.com/files/patches/2.6.20-at76c503a20070307.diff.bz2 )
@@ -41,7 +41,7 @@ patches_for_kernel() {
 			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.20-rc6/2.6.20-rc6-mm3/broken-out/pl2303-willcom-ws002in-support.patch )
 			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.21-rc3/2.6.21-rc3-mm2/broken-out/gregkh-driver-nozomi.patch )
 			;;
-		2.6.21*slh*)
+		2.6.21*)
 			PATCH+=( http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch )
 			PATCH+=( http://sidux.com/files/patches/t-sinus_111card-2.6.16.diff )
 			PATCH+=( http://sidux.com/files/patches/2.6.21-at76_usb20070401.diff.bz2 )
@@ -192,7 +192,7 @@ fi
 if [[ $KSV ]]; then
 	if [[ $KRC ]]; then
 		[[ $KSV != 1 ]] && KPATCH+=( $MIRROR/v$KMV/patch-$KMV.$KRV.$[$KSV-1].bz2 )
-		for location in $MIRROR/people/chrisw/stable $MIRROR/people/gregkh/stable $MIRROR/v$KMV/testing; do
+		for location in $MIRROR/v$KMV/stable-review $MIRROR/people/chrisw/stable $MIRROR/people/gregkh/stable $MIRROR/v$KMV/testing; do
 			for suf in bz2 gz; do
 				if wget --spider -q $location/patch-$KMV.$KRV.$KSV-$KRC.$suf; then
 					KPATCH+=( $location/patch-$KMV.$KRV.$KSV-$KRC.$suf )
