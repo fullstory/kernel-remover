@@ -9,6 +9,12 @@ MIRROR="http://zeus2.kernel.org/pub/linux/kernel"
 # kernel version
 REVISION="1"
 #DEF_CPU="up"
+
+# local config
+if [[ -s ~/.kernel-sourcerc ]]; then
+	source ~/.kernel-sourcerc
+fi
+
 KERNEL="latest-stable-${USER}-${DEF_CPU}-${REVISION}"
 
 #%STATIC_VERSION%
@@ -23,11 +29,6 @@ else
 	SRCDIR=/usr/src
 fi
 
-# local config
-if [[ -s ~/.kernel-sourcerc ]]; then
-	source ~/.kernel-sourcerc
-fi
-
 #=============================================================================#
 #	kernel patch urls
 #=============================================================================#
@@ -37,6 +38,7 @@ patches_for_kernel() {
 			PATCH+=( http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.3-2.6.20.patch )
 			PATCH+=( http://sidux.com/files/patches/t-sinus_111card-2.6.16.diff )
 			PATCH+=( http://sidux.com/files/patches/2.6.20-at76c503a20070307.diff.bz2 )
+			PATCH+=( http://sidux.com/files/patches/unionfs-2.x-linux-2.6.20-u1.diff.gz )
 			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.20-rc6/2.6.20-rc6-mm3/broken-out/2.6-sony_acpi4.patch )
 			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.20-rc6/2.6.20-rc6-mm3/broken-out/pl2303-willcom-ws002in-support.patch )
 			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.21-rc3/2.6.21-rc3-mm2/broken-out/gregkh-driver-nozomi.patch )
@@ -45,8 +47,8 @@ patches_for_kernel() {
 			PATCH+=( http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch )
 			PATCH+=( http://sidux.com/files/patches/t-sinus_111card-2.6.16.diff )
 			PATCH+=( http://sidux.com/files/patches/2.6.21-at76_usb20070401.diff.bz2 )
-			PATCH+=( http://sidux.com/files/patches/unionfs-2.x-linux-2.6.21-rc5-u1.diff.gz )
-			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.21-rc5/2.6.21-rc5-mm3/broken-out/gregkh-driver-nozomi.patch )
+			PATCH+=( http://sidux.com/files/patches/unionfs-2.x-linux-2.6.21-rc6-u1.diff.gz )
+			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.21-rc6/2.6.21-rc6-mm1/broken-out/gregkh-driver-nozomi.patch )
 			;;
 		*)
 			#PATCH+=( )
