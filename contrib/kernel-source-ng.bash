@@ -10,6 +10,15 @@ MIRROR="http://zeus2.kernel.org/pub/linux/kernel"
 REVISION="1"
 #DEF_CPU="up"
 
+# staging directory
+if ((UID)); then
+	# user
+	SRCDIR=~/src
+else
+	# root
+	SRCDIR=/usr/src
+fi
+
 # local config
 if [[ -s ~/.kernel-sourcerc ]]; then
 	source ~/.kernel-sourcerc
@@ -19,15 +28,6 @@ KERNEL="latest-stable-${USER}-${DEF_CPU}-${REVISION}"
 
 #%STATIC_VERSION%
 [[ $STATIC_VERSION ]] && KERNEL="$STATIC_VERSION"
-
-# staging directory
-if ((UID)); then
-	# user
-	SRCDIR=~/src
-else
-	# root
-	SRCDIR=/usr/src
-fi
 
 #=============================================================================#
 #	kernel patch urls
