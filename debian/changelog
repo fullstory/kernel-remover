@@ -1,3 +1,9 @@
+sidux-kernelhacking (2.6.20.16) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 14 Apr 2007 01:35:05 +0200
+
 sidux-kernelhacking (2.6.20.15) unstable; urgency=low
 
   * no longer depend on unionfs-source, we're using it as kernel patch since
