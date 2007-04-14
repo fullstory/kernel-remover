@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.20.6-slh-smp-1
-# Fri Apr  6 22:58:02 2007
+# Linux kernel version: 2.6.20.7-slh-smp-1
+# Sat Apr 14 14:13:03 2007
 #
 CONFIG_X86_32=y
 CONFIG_GENERIC_TIME=y
@@ -3557,6 +3557,8 @@ CONFIG_SYSV_FS=m
 CONFIG_UFS_FS=m
 CONFIG_UFS_FS_WRITE=y
 # CONFIG_UFS_DEBUG is not set
+CONFIG_UNION_FS=m
+CONFIG_UNION_FS_XATTR=y
 
 #
 # Network File Systems
