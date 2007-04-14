@@ -100,15 +100,8 @@ pack-modules: clean-modules
 			rm -f kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`-custom-modules.tar.bz2 && \
 			tar -cjf kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`-custom-modules.tar.bz2 modules/
 
-.PHONY: pack-patches
-pack-patches:
-	[ -d ${BASE_DIR}/patches ] && \
-		cd ${BASE_DIR} && \
-			rm -f kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`-custom-patches.tar.bz2 && \
-			tar -cjf kernel-`ls -ld ${BASE_DIR}/linux | sed s/.*linux-//`-custom-patches.tar.bz2 patches
-
 .PHONY: pack
-pack: pack-patches pack-modules
+pack: pack-modules
 
 .PHONY: zip
 zip:
