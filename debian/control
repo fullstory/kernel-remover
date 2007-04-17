@@ -9,7 +9,7 @@ Standards-Version: 3.7.2
 Package: sidux-kernelhacking
 Architecture: all
 Depends: ssft
-Recommends: sidux-modules, dpatch, dpkg-dev, fakeroot
+Recommends: sidux-modules, dpatch, dpkg-dev, fakeroot, kernel-package
 Description: various tools for kernel hacking
  These tools script common tasks while testing kernels, like creating kbuild 
  symlinks, removal of deprecated kernel images and associated drivers or a 
