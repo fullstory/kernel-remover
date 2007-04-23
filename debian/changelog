@@ -1,8 +1,9 @@
-sidux-kernelhacking (2.6.20.17) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.21.0) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * drop ivtv-source for the time being, as it doesn't compile against kernel
+    2.6.21.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 17 Apr 2007 19:02:04 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 23 Apr 2007 21:40:29 +0200
 
 sidux-kernelhacking (2.6.20.16) unstable; urgency=low
 
