@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.21-rc7-git1-slh-smp-2
-# Tue Apr 17 20:55:17 2007
+# Linux kernel version: 2.6.21.1-slh-smp-1
+# Sat Apr 28 01:07:50 2007
 #
 CONFIG_X86_32=y
 CONFIG_GENERIC_TIME=y
@@ -2432,7 +2432,6 @@ CONFIG_I2C_NFORCE2=m
 CONFIG_I2C_OCORES=m
 CONFIG_I2C_PARPORT=m
 CONFIG_I2C_PARPORT_LIGHT=m
-CONFIG_I2C_PASEMI=m
 CONFIG_I2C_PROSAVAGE=m
 CONFIG_I2C_SAVAGE4=m
 CONFIG_SCx200_I2C=m
@@ -2850,7 +2849,7 @@ CONFIG_FB_MODE_HELPERS=y
 CONFIG_FB_TILEBLITTING=y
 
 #
-# Frambuffer hardware drivers
+# Frame buffer hardware drivers
 #
 CONFIG_FB_CIRRUS=m
 CONFIG_FB_PM2=m
