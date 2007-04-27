@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.21-rc7-git6-slh-up-1
-# Mon Apr 23 22:34:08 2007
+# Linux kernel version: 2.6.21-slh-up-1
+# Thu Apr 26 14:06:46 2007
 #
 CONFIG_X86_32=y
 CONFIG_GENERIC_TIME=y
@@ -2865,7 +2865,7 @@ CONFIG_FB_MODE_HELPERS=y
 CONFIG_FB_TILEBLITTING=y
 
 #
-# Frambuffer hardware drivers
+# Frame buffer hardware drivers
 #
 CONFIG_FB_CIRRUS=m
 CONFIG_FB_PM2=m
