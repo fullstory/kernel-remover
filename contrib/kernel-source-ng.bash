@@ -48,6 +48,7 @@ patches_for_kernel() {
 			PATCH+=( http://sidux.com/files/patches/t-sinus_111card-2.6.16.diff )
 			PATCH+=( http://sidux.com/files/patches/2.6.21-at76_usb20070423.diff.bz2 )
 			PATCH+=( http://sidux.com/files/patches/unionfs-2.x-linux-2.6.21-u2.diff.gz )
+			PATCH+=( http://sidux.com/files/patches/2.6.21.1-net_driver_fixes.diff )
 			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.21-rc6/2.6.21-rc6-mm1/broken-out/gregkh-driver-nozomi.patch )
 			;;
 		*)
