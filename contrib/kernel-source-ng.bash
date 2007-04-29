@@ -46,6 +46,7 @@ patches_for_kernel() {
 		2.6.21*)
 			PATCH+=( http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch )
 			PATCH+=( http://sidux.com/files/patches/t-sinus_111card-2.6.16.diff )
+			PATCH+=( http://sidux.com/files/patches/zd1211rw-asus-2.6.21.diff )
 			PATCH+=( http://sidux.com/files/patches/2.6.21-at76_usb20070423.diff.bz2 )
 			PATCH+=( http://sidux.com/files/patches/unionfs-2.x-linux-2.6.21-u2.diff.gz )
 			PATCH+=( http://sidux.com/files/patches/2.6.21.1-net_driver_fixes.diff )
