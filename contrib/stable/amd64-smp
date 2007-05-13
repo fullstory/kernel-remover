@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.21.1-slh64-smp-6
-# Sun May 13 16:03:55 2007
+# Linux kernel version: 2.6.21.1-slh64-smp-7
+# Sun May 13 21:56:15 2007
 #
 CONFIG_X86_64=y
 CONFIG_64BIT=y
@@ -257,7 +257,7 @@ CONFIG_CPU_FREQ_GOV_CONSERVATIVE=m
 #
 CONFIG_X86_POWERNOW_K8=m
 CONFIG_X86_POWERNOW_K8_ACPI=y
-# CONFIG_X86_SPEEDSTEP_CENTRINO is not set
+CONFIG_X86_SPEEDSTEP_CENTRINO=m
 CONFIG_X86_ACPI_CPUFREQ=m
 
 #
