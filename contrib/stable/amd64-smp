@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # Linux kernel version: 2.6.21.1-slh64-smp-6
-# Sun May 13 14:23:38 2007
+# Sun May 13 16:03:55 2007
 #
 CONFIG_X86_64=y
 CONFIG_64BIT=y
@@ -837,7 +837,7 @@ CONFIG_FIB_RULES=y
 # Wireless
 #
 CONFIG_CFG80211=m
-CONFIG_NL80211=y
+# CONFIG_NL80211 is not set
 CONFIG_WIRELESS_EXT=y
 CONFIG_MAC80211=m
 CONFIG_MAC80211_LEDS=y
