@@ -173,6 +173,10 @@ if [[ $KERNEL =~ '^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9
 				[[ $NAM == *64 ]] || NAM=${NAM}64
 				[[ $MCP ]] || MCP="smp"
 				;;
+			sparc)
+				[[ $NAM == *32 ]] || NAM=${NAM}${CPU}32
+				[[ $MCP ]] || MCP="up"
+				;;
 			*)
 				[[ $NAM == *${CPU} ]] || NAM=${NAM}${CPU}
 				[[ $MCP ]] || MCP="smp"
