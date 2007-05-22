@@ -1,8 +1,12 @@
-sidux-kernelhacking (2.6.21.2) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.21.2) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * rt2x00 has not proven itself to be stable, activate legacy modules again:
+    - rt2400-source
+    - rt2500-source
+    - rt2570-source
+    - rt61-source
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 11 May 2007 15:12:50 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 22 May 2007 14:32:46 +0200
 
 sidux-kernelhacking (2.6.21.1) unstable; urgency=low
 
