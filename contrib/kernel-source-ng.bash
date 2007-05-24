@@ -4,7 +4,7 @@
 #
 
 # kernel.org mirror
-MIRROR="http://zeus2.kernel.org/pub/linux/kernel"
+MIRROR="http://kernel.org/pub/linux/kernel"
 
 # kernel version
 REVISION="1"
