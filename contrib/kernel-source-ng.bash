@@ -56,9 +56,10 @@ patches_for_kernel() {
 			PATCH+=( http://sidux.com/files/patches/2.6.21-1.3175_iwlwifi-preferred_rate_control.patch )
 			PATCH+=( http://sidux.com/files/patches/at76_usb-mac80211.diff )
 			PATCH+=( http://sidux.com/files/patches/zd1211rw-asus-2.6.21.diff )
+			PATCH+=( http://sidux.com/files/patches/2.6.21_nohz-limit_local_softirq_warning.diff )
 			;;
 		*)
-			#PATCH+=( )
+			#PATCH+=(  )
 			;;
 	esac
 }
