@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.21.3-slh64-smp-1
-# Fri May 25 01:22:18 2007
+# Linux kernel version: 2.6.21.3-slh64-smp-2
+# Fri May 25 16:04:14 2007
 #
 CONFIG_X86_64=y
 CONFIG_64BIT=y
@@ -138,8 +138,8 @@ CONFIG_SMP=y
 CONFIG_SCHED_SMT=y
 CONFIG_SCHED_MC=y
 # CONFIG_PREEMPT_NONE is not set
-CONFIG_PREEMPT_VOLUNTARY=y
-# CONFIG_PREEMPT is not set
+# CONFIG_PREEMPT_VOLUNTARY is not set
+CONFIG_PREEMPT=y
 CONFIG_PREEMPT_BKL=y
 CONFIG_NUMA=y
 # CONFIG_K8_NUMA is not set
