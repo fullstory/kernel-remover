@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.21.3-slh-smp-2
-# Fri May 25 16:04:27 2007
+# Linux kernel version: 2.6.21.3-slh-smp-3
+# Sun May 27 14:18:26 2007
 #
 CONFIG_X86_32=y
 CONFIG_GENERIC_TIME=y
@@ -1827,6 +1827,7 @@ CONFIG_RTL818X=y
 CONFIG_RTL8187=m
 CONFIG_IWLWIFI=y
 # CONFIG_IWLWIFI_DEBUG is not set
+CONFIG_IWL4965=m
 CONFIG_IWL3945=m
 
 #
