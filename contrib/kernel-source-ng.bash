@@ -55,8 +55,6 @@ patches_for_kernel() {
 			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_sysfs-inode-allocator-oops.patch )
 			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_xfs-umount-fix.patch )
 			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_dvb-spinlock.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_singlethread-freezable-workqueues.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_prevent-idle-softirq.patch )
 			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_i82875-edac-pci-setup.patch )
 			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_defaults-fat-utf8.patch )
 			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_defaults-unicode-vt.patch )
