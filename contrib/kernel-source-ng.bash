@@ -76,6 +76,7 @@ patches_for_kernel() {
 			PATCH+=( $PATCH_MIRROR/at76_usb-mac80211.diff )
 			PATCH+=( $PATCH_MIRROR/zd1211rw-asus-2.6.21.diff )
 			PATCH+=( $PATCH_MIRROR/2.6.21.4_futex.diff )
+			PATCH+=( $PATCH_MIRROR/2.6.21.5-rc1_aacraid-revert-snafu.diff )
 			;;
 		*)
 			#PATCH+=(  )
