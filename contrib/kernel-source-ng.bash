@@ -77,6 +77,7 @@ patches_for_kernel() {
 			PATCH+=( $PATCH_MIRROR/zd1211rw-asus-2.6.21.diff )
 			PATCH+=( $PATCH_MIRROR/2.6.21.4_futex.diff )
 			PATCH+=( $PATCH_MIRROR/2.6.21.5-rc1_aacraid-revert-snafu.diff )
+			PATCH+=( $PATCH_MIRROR/2.6.15-rc1_aacraid_take2.diff )
 			;;
 		*)
 			#PATCH+=(  )
