@@ -88,6 +88,7 @@ patches_for_kernel() {
 			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.22-rc4/2.6.22-rc4-mm2/broken-out/gregkh-usb-usb-oti6858-usb-serial-driver.patch )
 			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_defaults-fat-utf8.patch )
 			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_input-kill-stupid-messages.patch )
+			PATCH+=( $PATCH_MIRROR/2.6.22-squashfs3.2-r2.patch.bz2 )
 			;;
 		*)
 			#PATCH+=(  )
