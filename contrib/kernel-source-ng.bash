@@ -77,6 +77,18 @@ patches_for_kernel() {
 			PATCH+=( $PATCH_MIRROR/zd1211rw-asus-2.6.21.diff )
 			PATCH+=( $PATCH_MIRROR/2.6.21.4_futex.diff )
 			;;
+		2.6.22*)
+			PATCH+=( http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch )
+			PATCH+=( $PATCH_MIRROR/t-sinus_111card-2.6.16.diff )
+			PATCH+=( ftp://ftp.filesystems.org/pub/unionfs/unionfs-2.x/linux-2.6.22-rc5-u1.diff.gz )
+			PATCH+=( $PATCH_MIRROR/2.6.22-at76_usb20070621.diff.bz2 )
+			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.22-rc4/2.6.22-rc4-mm2/broken-out/git-wireless.patch )
+			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.22-rc4/2.6.22-rc4-mm2/broken-out/git-ipwireless_cs.patch )
+			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.22-rc4/2.6.22-rc4-mm2/broken-out/gregkh-driver-nozomi.patch )
+			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.22-rc4/2.6.22-rc4-mm2/broken-out/gregkh-usb-usb-oti6858-usb-serial-driver.patch )
+			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_defaults-fat-utf8.patch )
+			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_input-kill-stupid-messages.patch )
+			;;
 		*)
 			#PATCH+=(  )
 			;;
