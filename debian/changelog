@@ -1,3 +1,9 @@
+sidux-kernelhacking (2.6.22.1) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 27 Jun 2007 23:35:06 +0200
+
 sidux-kernelhacking (2.6.22.0) unstable; urgency=low
 
   * remove /etc/initramfs-tools/conf.d/resume on install.
