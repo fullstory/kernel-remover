@@ -1,3 +1,9 @@
+sidux-kernelhacking (2.6.23) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 27 Jun 2007 02:09:08 +0200
+
 sidux-kernelhacking (2.6.22) unstable; urgency=low
 
   * move over to kernel 2.6.22.
