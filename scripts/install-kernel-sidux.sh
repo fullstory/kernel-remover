@@ -14,7 +14,8 @@ X_CONF="/etc/X11/xorg.conf"
 
 rm -f	/boot/System.map \
 	/boot/vmlinuz \
-	initrd.img
+	/boot/initrd.img \
+	/etc/initramfs-tools/conf.d/resume
 
 # fix /etc/kernel-img.conf
 sed -i	-e s/postinst_hook.*/postinst_hook\ \=\ \\/usr\\/sbin\\/update-grub/ \
