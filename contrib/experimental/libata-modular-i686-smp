@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.22-rc6-git1-slh-smp-1
-# Wed Jun 27 10:45:38 2007
+# Linux kernel version: 2.6.22-rc6-git4-slh-smp-1
+# Sat Jun 30 15:02:47 2007
 #
 CONFIG_X86_32=y
 CONFIG_GENERIC_TIME=y
