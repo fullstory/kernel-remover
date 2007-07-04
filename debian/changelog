@@ -1,3 +1,9 @@
+sidux-kernelhacking (2.6.22.2) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 05 Jul 2007 00:59:02 +0200
+
 sidux-kernelhacking (2.6.22.1) unstable; urgency=low
 
   * Add et131x-source to sidux-modules depends. It at least compiles with
