@@ -382,6 +382,8 @@ apply_patches() {
 		fi
 		
 		printf "%-70s [" "  * ${COLOR_INFO}${PATCH#*/}${COLOR_NORM}"
+
+		set +e
 		
 		# try until --dry-run succeeds, then really patch it
 		until [[ $RETVAL == 0 ]] || [[ $PATCH_LEVEL -lt 0 ]]; do
@@ -392,6 +394,8 @@ apply_patches() {
 			fi
 			((PATCH_LEVEL--))
 		done
+
+		set -e
 
 		if [[ $RETVAL == 0 ]]; then
 			printf "${COLOR_SUCCESS}Ok${COLOR_NORM}]\n"
