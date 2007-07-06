@@ -4,7 +4,7 @@
 #
 
 # kernel.org mirror
-MIRROR="http://kernel.org/pub/linux/kernel"
+MIRROR="http://eu.kernel.org/pub/linux/kernel"
 PATCH_MIRROR="http://sidux.com/files/patches"
 
 # kernel version
@@ -80,7 +80,7 @@ patches_for_kernel() {
 		2.6.22*)
 			PATCH+=( http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch )
 			PATCH+=( $PATCH_MIRROR/t-sinus_111card-2.6.16.diff )
-			PATCH+=( ftp://ftp.filesystems.org/pub/unionfs/unionfs-2.x/linux-2.6.22-rc6-u1.diff.gz )
+			PATCH+=( ftp://ftp.filesystems.org/pub/unionfs/unionfs-2.x/linux-2.6.22-rc7-u1.diff.gz )
 			PATCH+=( $PATCH_MIRROR/2.6.22-at76_usb20070621.diff.bz2 )
 			PATCH+=( $PATCH_MIRROR/2.6.22-1.3242_git-wireless-dev.patch.bz2 )
 			PATCH+=( $PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2 )
