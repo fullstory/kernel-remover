@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.22-rc7-slh64-smp-1
-# Mon Jul  2 00:37:25 2007
+# Linux kernel version: 2.6.22-rc7-git6-slh64-smp-1
+# Sat Jul  7 09:38:23 2007
 #
 CONFIG_X86_64=y
 CONFIG_64BIT=y
@@ -1075,7 +1075,6 @@ CONFIG_SONYPI_COMPAT=y
 CONFIG_THINKPAD_ACPI=m
 # CONFIG_THINKPAD_ACPI_DEBUG is not set
 CONFIG_THINKPAD_ACPI_BAY=y
-# CONFIG_BLINK is not set
 CONFIG_EEPROM_93CX6=m
 CONFIG_IDE=m
 CONFIG_BLK_DEV_IDE=m
