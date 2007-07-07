@@ -39,7 +39,7 @@ patches_for_kernel() {
 			PATCH+=( http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch )
 			PATCH+=( $PATCH_MIRROR/t-sinus_111card-2.6.16.diff )
 			PATCH+=( $PATCH_MIRROR/2.6.21-at76_usb20070511.diff.bz2 )
-			PATCH+=( $PATCH_MIRROR/unionfs-2.x-linux-2.6.21-u2.diff.gz )
+			PATCH+=( ftp://ftp.filesystems.org/pub/unionfs/unionfs-2.x/linux-2.6.21.5-u3.diff.gz )
 			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.21-rc6/2.6.21-rc6-mm1/broken-out/gregkh-driver-nozomi.patch )
 			PATCH+=( $PATCH_MIRROR/2.6.21-zr364xx.diff.bz2 )
 			PATCH+=( $PATCH_MIRROR/2.6.21_drivers-ata-ata_piix-postpone-pata.patch )
