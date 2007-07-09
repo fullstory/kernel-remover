@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KTX_MODFILE="/etc/sidux-modules"
+KMODFILE="/etc/sidux-modules"
 
 while getopts vd: opt
 do
@@ -18,7 +18,8 @@ do
         esac
 done
 
-if ((UID)); then
+if ((UID))
+then
 	# not root
 	if [[ ! $BASE_DIR ]]
 	then
@@ -26,9 +27,9 @@ if ((UID)); then
 		[[ -e $BASE_DIR/Makefile && -e /usr/src/Makefile ]] || ln -s /usr/src/Makefile ${BASE_DIR}/
 	fi
 
-	if [[ ! -s $KTX_MODFILE ]]
+	if [[ ! -s $KMODFILE ]]
 	then
-		echo "$KTX_MODFILE is missing!"
+		echo "$KMODFILE is missing!"
 		exit 2
 	fi
 	
@@ -60,7 +61,7 @@ function rm_modules_dir () {
 
 function pop_modules_dir () {
 	pushd "$BASE_DIR" >/dev/null
-		awk -f /usr/share/sidux-modules/unp_sidux_modules.awk $KTX_MODFILE
+		awk -f /usr/share/sidux-modules/unp_sidux_modules.awk $KMODFILE
 	popd >/dev/null
 }
 
