@@ -1,8 +1,10 @@
 sidux-kernelhacking (2.6.22.6) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * add actual check for cdbs.
+  * add Recommends/ Suggests for linux-custom-patches-$(uname -r).
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 10 Jul 2007 03:51:38 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 10 Jul 2007 04:34:10 +0200
 
 sidux-kernelhacking (2.6.22.5) unstable; urgency=low
 
