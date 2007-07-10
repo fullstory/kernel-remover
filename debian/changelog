@@ -1,10 +1,10 @@
-sidux-kernelhacking (2.6.22.6) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.22.6) unstable; urgency=low
 
-  * NOT RELEASED YET
   * add actual check for cdbs.
   * add Recommends/ Suggests for linux-custom-patches-$(uname -r).
+  * update to kernel 2.6.22.1.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 10 Jul 2007 04:34:10 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 11 Jul 2007 01:22:12 +0200
 
 sidux-kernelhacking (2.6.22.5) unstable; urgency=low
 
