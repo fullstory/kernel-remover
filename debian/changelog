@@ -1,8 +1,9 @@
 sidux-kernelhacking (2.6.22.7) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * add 2.6.22_cfg80211_netdev_security.diff.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 11 Jul 2007 01:24:08 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 11 Jul 2007 01:31:40 +0200
 
 sidux-kernelhacking (2.6.22.6) unstable; urgency=low
 
