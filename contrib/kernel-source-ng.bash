@@ -102,7 +102,7 @@ patches_for_kernel() {
 #=============================================================================#
 #	colours
 #=============================================================================#
-if [[ -x $(type -p tput) ]]; then
+if [[ -x $(which tput) ]]; then
 	COLOR_ACTION=$(tput setaf 6)		# action	(cyan)
 	COLOR_INFO=$(tput bold ; tput setaf 5)	# info		(pink)
 	COLOR_SUCCESS=$(tput setaf 2)		# success	(green)
@@ -300,11 +300,14 @@ fi
 DPKG_PATCH_DIR=$SRCDIR/linux-custom-patches-${KERNEL}-1
 
 dpkg_patches() {
-	[[ -x $(type -p fakeroot) && -x $(type -p dpkg-buildpackage) ]] || return
-	[[ -d /usr/share/sidux-kernelhacking/linux-custom-patches ]] || return
 
 	printf "${COLOR_ACTION}Preserving custom patches in debian archive${COLOR_NORM}...\n"
 	printf "%-70s [" "  * ${COLOR_INFO}linux-custom-patches-${KERNEL}${COLOR_NORM}"
+	if [[ ! -d /usr/share/sidux-kernelhacking/linux-custom-patches ]] || [[ ! -x $(which fakeroot) ]] || [[ ! -x $(which dpkg-dev) ]]; then
+		printf "${COLOR_FAILURE}Skipped!${COLOR_NORM}]\n"
+		printf "    ${COLOR_FAILURE}Ensure to have dpkg-dev, fakeroot and sidux-kernelhacking installed.${COLOR_NORM}\n"
+		return 0
+	fi
 
 	mkdir -p $DPKG_PATCH_DIR/patches
 
