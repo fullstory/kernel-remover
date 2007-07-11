@@ -308,7 +308,7 @@ dpkg_patches() {
 	printf "%-70s [" "  * ${COLOR_INFO}linux-custom-patches-${KERNEL}${COLOR_NORM}"
 	if [[ ! -d /usr/share/sidux-kernelhacking/linux-custom-patches ]] || \
 	   [[ ! -x $(which fakeroot) ]] || \
-	   [[ ! -x $(which /usr/bin/dpkg-buildpackage) ]] || \
+	   [[ ! -x $(which dpkg-buildpackage) ]] || \
 	   [[ ! -r /usr/share/cdbs/1/rules/debhelper.mk ]]; then
 		printf "${COLOR_FAILURE}Skipped!${COLOR_NORM}]\n"
 		printf "    ${COLOR_FAILURE}Ensure to have the following packages installed:${COLOR_NORM}\n"
