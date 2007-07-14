@@ -98,8 +98,6 @@ patches_for_kernel() {
 				$PATCH_MIRROR/t-sinus_111card-2.6.16.diff
 				ftp://ftp.filesystems.org/pub/unionfs/unionfs-2.x/linux-2.6.22.1-u1.diff.gz
 				$PATCH_MIRROR/2.6.22-at76_usb20070621.diff.bz2
-				$PATCH_MIRROR/2.6.22-8_git-wireless-dev.patch.gz
-				$PATCH_MIRROR/2.6.22-8_rtl8187.patch.gz
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-unicode-vt.patch.bz2
 				#$PATCH_MIRROR/2.6.22-1.3242_input-kill-stupid-messages.patch.bz2
@@ -110,7 +108,11 @@ patches_for_kernel() {
 				$MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/gregkh-usb-usb-oti6858-status.patch
 				$PATCH_MIRROR/2.6.22-squashfs3.2-r2.patch.bz2
 				$PATCH_MIRROR/2.6.22.1_aacraid_security.patch
-				$PATCH_MIRROR/2.6.22_cfg80211_netdev_security.diff
+				$PATCH_MIRROR/2.6.22_softmac-set-essid-state-fix.patch
+				$MIRROR/people/linville/wireless-2.6/upstream-merged/0001-mac80211-Add-support-for-SIOCGIWRATE-ioctl-to-pro.patch
+				$MIRROR/people/linville/wireless-2.6/upstream-merged/0002-mac80211-Set-low-initial-rate-in-rc80211_simple.patch
+				$PATCH_MIRROR/2.6.22.1_2.6.22-8_rtl8187.patch.gz
+				http://sidux.net/kelmo/tmp/patches/2.6.22.1-iwlwifi-0.1.1-patch_kernel.patch.gz
 			)
 			;;
 		*)
