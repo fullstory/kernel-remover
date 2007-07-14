@@ -132,7 +132,7 @@ while getopts b:c:dk:l:m:n:pr:vx opt; do
 			SRCDIR=$OPTARG
 			;;
 		c)	# cpu type
-			DEF_CPU=$OPTARG
+			MCP=$OPTARG
 			;;
 		d|x)	# debug it
 			set -x
@@ -207,10 +207,6 @@ if [[ $KERNEL =~ '^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9
 	KGV=${BASH_REMATCH[5]} # Git Version
 	KMM=${BASH_REMATCH[6]} # MM Version
 
-	: ${NAM:=$NAME}
-	: ${MCP:=$DEF_CPU}
-	: ${REV:=$REVISION}
-	
 	# Extra Version
 	if [[ $LAZY && $KERNEL =~ '^[0-9]+\.[0-9]+\.[0-9]+(\.?[0-9]*-?.*)?$' ]]; then
 		# cpu based name modifier
@@ -221,25 +217,23 @@ if [[ $KERNEL =~ '^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9
 				: ${MCP:="smp"}
 				;;
 			x86_64)
-				[[ $NAM == *64 ]] || NAM=${NAM}64
+				[[ $NAME == *64 ]] || NAM=${NAME}64
 				: ${MCP:="smp"}
 				;;
 			sparc)
-				[[ $NAM == *32 ]] || NAM=${NAM}${CPU}32
+				[[ $NAME == *32 ]] || NAM=${NAME}${CPU}32
 				: ${MCP:="up"}
 				;;
 			*)
-				[[ $NAM == *${CPU} ]] || NAM=${NAM}${CPU}
+				[[ $NAME == *${CPU} ]] || NAM=${NAME}${CPU}
 				: ${MCP:="smp"}
 				;;
 		esac
 		# reform with name modified KEV
-		KERNEL=${KMV}.${KRV}${BASH_REMATCH[1]}-${NAM}-${MCP}-${REV}
+		KERNEL=${KMV}.${KRV}${BASH_REMATCH[1]}-${NAME}-${MCP}-${REVISION}
 	else
-		KERNEL=${KERNEL}-${NAM}-${REV}
+		KERNEL=${KERNEL}-${NAME}-${REVISION}
 	fi
-
-	KERNEL_VARS=( KERNEL KMV KRV KSV KRC KGV KMM KEV NAM MCP REV )
 else
 	printf "E: ${F}Unable to process ${I}$KERNEL${N}${F} version string!${N}\n"
 	exit 1
@@ -298,7 +292,7 @@ fi
 patches_for_kernel $KERNEL
 
 if [[ $NOACT || $VERBOSITY ]]; then
-	for i in ${KERNEL_VARS[@]}; do
+	for i in KERNEL KMV KRV KSV KRC KGV KMM KEV NAM MCP REV; do
 		eval printf "$i=\$$i\ "
 	done
 	printf "\nTARBALL=$TARBALL\n"
