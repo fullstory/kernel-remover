@@ -12,7 +12,7 @@ MIRROR="http://eu.kernel.org/pub/linux/kernel"
 PATCH_MIRROR="http://sidux.com/files/patches"
 
 # extra version string components
-KERNEL=latest-stable
+KERNEL=stable
 NAME="${USER:0:3}"
 REVISION="1"
 
@@ -178,7 +178,7 @@ finger_latest_kernel() {
 }
 
 case $KERNEL in
-	latest-stable|latest-prepatch|latest-snapshot|latest-mm)
+	latest-stable|latest-prepatch|latest-snapshot|latest-mm|stable|prepatch|snapshot|mm)
 		KERNEL=$(finger_latest_kernel ${KERNEL#latest-} $MIRROR)
 		if [[ ! $KERNEL ]]; then
 			printf "E: ${F}Unable to finger kernel version${N}\n"
