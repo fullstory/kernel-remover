@@ -186,7 +186,7 @@ case $KERNEL in
 		fi
 		;;
 	*)
-		if [[ ! $KERNEL =~ '^[0-9]+\.[0-9]+\.[0-9]+(\.[0-9]+)?$' ]]; then
+		if [[ ! $KERNEL =~ '^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9]+)?-?(mm[0-9]+)?$' ]]; then
 			#print_help()
 			printf "${F}Invalid kernel version string!${N}\n"
 			printf "${I}You need help, but i haven't written any yet!${N}\n"
