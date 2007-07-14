@@ -206,9 +206,6 @@ if [[ $KERNEL =~ '^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9
 	KRC=${BASH_REMATCH[4]} # Release Candidate
 	KGV=${BASH_REMATCH[5]} # Git Version
 	KMM=${BASH_REMATCH[6]} # MM Version
-	NAM=${BASH_REMATCH[7]} # Name
-	MCP=${BASH_REMATCH[8]} # CPU smp/up
-	REV=${BASH_REMATCH[9]} # Revision
 
 	: ${NAM:=$NAME}
 	: ${MCP:=$DEF_CPU}
