@@ -414,7 +414,7 @@ dpkg_patches() {
 	install -m 0755 $0 $DPKG_PATCH_DIR/linux-source-${KERNEL}.sh
 	
 	pushd $DPKG_PATCH_DIR &>/dev/null
-		if fakeroot dpkg-buildpackage -uc -us &>/dev/null; then
+		if dpkg-buildpackage -rfakeroot -uc -us &>/dev/null; then
 			printf "${S}Ok${N}]\n"
 		else
 			printf "${F}Failed!${N}]\n"
