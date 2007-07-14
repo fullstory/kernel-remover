@@ -3,13 +3,18 @@
 # License: GPL2
 #
 
+LANG=C
+LC_ALL=C
+export LANG LC_ALL
+
 # kernel.org mirror
 MIRROR="http://eu.kernel.org/pub/linux/kernel"
 PATCH_MIRROR="http://sidux.com/files/patches"
 
-# kernel version
+# extra version string components
+KERNEL=latest-stable
+NAME="${USER:0:3}"
 REVISION="1"
-#DEF_CPU="up"
 
 # staging directory
 if ((UID)); then
@@ -19,13 +24,6 @@ else
 	# root
 	SRCDIR=/usr/src
 fi
-
-# local config
-if [[ -s ~/.kernel-sourcerc ]]; then
-	source ~/.kernel-sourcerc
-fi
-
-KERNEL="latest-stable-${USER}-${DEF_CPU}-${REVISION}"
 
 #%STATIC_VERSION%
 [[ $STATIC_VERSION ]] && KERNEL="$STATIC_VERSION"
@@ -123,27 +121,35 @@ fi
 #	process cli args
 #=============================================================================#
 
-while getopts b:dk:l:m:p opt; do
+while getopts b:c:dk:l:m:n:pr:x opt; do
 	case $opt in
 		b)	# source directory
 			SRCDIR=$OPTARG
 			;;
-		d)	# debug it
+		c)
+			DEF_CPU=$OPTARG
+			;;
+		d|x)	# debug it
 			set -x
 			;;
-		k)	# kernel version override
-			unset LAZY
+		k)	# kernel flavour
 			KERNEL=$OPTARG
 			;;
-		l)
+		l)	# kernel flavour, append name
 			KERNEL=$OPTARG
-			LAZY="-${USER:0:3}-${DEF_CPU}-${REVISION}"
+			((LAZY++))
 			;;
 		m)	# mirror
 			MIRROR=$OPTARG
 			;;
+		n)	# name
+			NAME=$OPTARG
+			;;
 		p)	# do nothing
 			((NOACT++))
+			;;
+		r)
+			REVISION=$OPTARG
 			;;
 		\?)	# unknown option
 			exit 1
@@ -155,17 +161,17 @@ done
 #	give linux the finger
 #=============================================================================#
 finger_latest_kernel() {
-	local TYPE NAME KERN
+	local TYPE KERN EXTRA
 	
 	# Example: latest-stable-$name-$rev
 	if [[ $1 =~ '^latest-(stable|prepatch|snapshot|mm)(-.*)?' ]]; then
 		TYPE=${BASH_REMATCH[1]}
-		NAME=${BASH_REMATCH[2]}
+		EXTRA=${BASH_REMATCH[2]}
 		KERN=$(wget -qO- ${MIRROR//\/pub\/linux\/kernel/\/kdist\/finger_banner} | \
-			awk '/latest -?'$TYPE'/{ print $NF; exit }')
+			awk '/^The latest -?'$TYPE'/{ print $NF; exit }')
 		
 		if [[ $KERN ]]; then
-			echo ${KERN}${NAME}
+			echo ${KERN}${EXTRA}
 		fi
 	fi
 }
@@ -182,8 +188,6 @@ case $KERNEL in
 		;;
 esac
 
-KERNEL=${KERNEL}${LAZY}
-
 #=============================================================================#
 #	breakdown kernel string with regexp group matching
 #=============================================================================#
@@ -198,38 +202,38 @@ if [[ $KERNEL =~ '^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9
 	NAM=${BASH_REMATCH[7]} # Name
 	MCP=${BASH_REMATCH[8]} # smp/ up
 	REV=${BASH_REMATCH[9]} # Revision
+
+	: ${NAM:=$NAME}
+	: ${MCP:=$DEF_CPU}
+	: ${REV:=$REVISION}
 	
 	# Extra Version
-	if [[ $KERNEL =~ '^[0-9]+\.[0-9]+\.[0-9]+(\.?[0-9]*-?.*)?-'$NAM'-?('$MCP')?-'$REV'$' ]]; then
+	if [[ $LAZY && $KERNEL =~ '^[0-9]+\.[0-9]+\.[0-9]+(\.?[0-9]*-?.*)?-?('$NAM')?-?('$MCP')?-?('$REV')?$' ]]; then
 		# cpu based name modifier
 		CPU=$(uname -m)
 		case $CPU in
 			i?86)
 				# no-op
-				[[ $MCP ]] || MCP="smp"
+				: ${MCP:="smp"}
 				;;
 			x86_64)
 				[[ $NAM == *64 ]] || NAM=${NAM}64
-				[[ $MCP ]] || MCP="smp"
+				: ${MCP:="smp"}
 				;;
 			sparc)
 				[[ $NAM == *32 ]] || NAM=${NAM}${CPU}32
-				[[ $MCP ]] || MCP="up"
+				: ${MCP:="up"}
 				;;
 			*)
 				[[ $NAM == *${CPU} ]] || NAM=${NAM}${CPU}
-				[[ $MCP ]] || MCP="smp"
+				: ${MCP:="smp"}
 				;;
 		esac
-		# reform name modified KEV
-		KEV=${BASH_REMATCH[1]}-$NAM-$MCP-$REV
-	elif [[ $KERNEL =~ '^[0-9]+\.[0-9]+\.[0-9]+(\.?[0-9]*-.*)' ]]; then
-		# generic/unamed kernel
-		KEV=${BASH_REMATCH[1]}
+		# reform with name modified KEV
+		KERNEL=${KMV}.${KRV}${BASH_REMATCH[1]}-${NAM}-${MCP}-${REV}
+	else
+		KERNEL=${KERNEL}-${NAM}-${REV}
 	fi
-
-	# reform (possibly) name modified kernel version
-	KERNEL=$KMV.${KRV}${KEV}
 
 	KERNEL_VARS=( KERNEL KMV KRV KSV KRC KGV KMM KEV NAM MCP REV )
 else
@@ -375,13 +379,13 @@ patch_it() {
 
 	case ${PATCH_FILE} in
 		*.gz)
-			zcat $PATCH_FILE | patch -p$PATCH_LEVEL $@ &>/dev/null
+			zcat $PATCH_FILE | patch -p$PATCH_LEVEL $@
 			;;
 		*.bz2)
-			bzcat $PATCH_FILE | patch -p$PATCH_LEVEL $@ &>/dev/null
+			bzcat $PATCH_FILE | patch -p$PATCH_LEVEL $@
 			;;
 		*)
-			patch -i $PATCH_FILE -p$PATCH_LEVEL $@ &>/dev/null
+			patch -i $PATCH_FILE -p$PATCH_LEVEL $@
 			;;
 	esac
 
@@ -392,7 +396,7 @@ apply_patches() {
 	local RETVAL PATCH PATCH_LEVEL
 	
 	for patch in $@; do
-		RETVAL=1
+		RETVAL=999
 		PATCH_LEVEL=1
 		PATCH=../${patch##*/}
 		
@@ -406,24 +410,40 @@ apply_patches() {
 		set +e
 		
 		# try until --dry-run succeeds, then really patch it
-		until [[ $RETVAL == 0 ]] || [[ $PATCH_LEVEL -lt 0 ]]; do
-			if patch_it $PATCH $PATCH_LEVEL --force --dry-run --silent; then
-				patch_it $PATCH $PATCH_LEVEL --silent
-				RETVAL=$?
-				break
-			fi
-			((PATCH_LEVEL--))
+		until [[ $PATCH_LEVEL -lt 0 ]]; do
+			patch_it $PATCH $PATCH_LEVEL --force --dry-run &>/dev/null
+			# process return codes as per patch(1)
+			case "$?" in
+				2)
+					# more serious trouble
+					;;
+				1)
+					if patch_it $PATCH $PATCH_LEVEL --force --dry-run | head -n 1 | \
+						grep -q "^can't find file to patch"; then
+						((PATCH_LEVEL--)) && continue
+					fi
+					# some hunks cannot be applied
+					printf "${COLOR_FAILURE}Failed!${COLOR_NORM}]\n"
+					printf "${COLOR_FAILURE}--------------------------${COLOR_NORM}\n"
+					# verbose dump of patch failure
+					patch_it $PATCH $PATCH_LEVEL --force --dry-run
+					printf "${COLOR_FAILURE}--------------------------${COLOR_NORM}\n"
+					;;
+				0)
+					# all hunks are applied successfully
+					patch_it $PATCH $PATCH_LEVEL --silent
+					RETVAL=$?
+					printf "${COLOR_SUCCESS}Ok${COLOR_NORM}]\n"
+					;;
+			esac
+			break
 		done
 
 		set -e
 
-		if [[ $RETVAL == 0 ]]; then
-			printf "${COLOR_SUCCESS}Ok${COLOR_NORM}]\n"
-			continue
-		else
-			printf "${COLOR_FAILURE}Failed!${COLOR_NORM}]\n"
-		fi
+		[[ $RETVAL == 0 ]] && continue
 		
+		printf "${COLOR_FAILURE}${patch##*/} failed to apply!${COLOR_NORM}\n"
 		return $RETVAL
 	done
 
