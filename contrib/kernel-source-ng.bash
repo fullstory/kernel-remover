@@ -36,68 +36,74 @@ KERNEL="latest-stable-${USER}-${DEF_CPU}-${REVISION}"
 patches_for_kernel() {
 	case "$1" in
 		2.6.21*)
-			PATCH+=( http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch )
-			PATCH+=( $PATCH_MIRROR/t-sinus_111card-2.6.16.diff )
-			PATCH+=( $PATCH_MIRROR/2.6.21-at76_usb20070511.diff.bz2 )
-			PATCH+=( ftp://ftp.filesystems.org/pub/unionfs/unionfs-2.x/linux-2.6.21.5-u3.diff.gz )
-			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.21-rc6/2.6.21-rc6-mm1/broken-out/gregkh-driver-nozomi.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-zr364xx.diff.bz2 )
-			PATCH+=( $PATCH_MIRROR/2.6.21_drivers-ata-ata_piix-postpone-pata.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_x86_64-silence-up-apic-errors.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_x86-dont-delete-cpu_devs-data.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_x86-fix-oprofile.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_x86-fsc-interrupt-controller-quirk.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_mpc52xx-sdma.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_mpc52xx-fec.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_input-kill-stupid-messages.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_kvm-19.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_mm-udf-fixes.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_sysfs-inode-allocator-oops.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_xfs-umount-fix.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_dvb-spinlock.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_i82875-edac-pci-setup.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_defaults-fat-utf8.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_defaults-unicode-vt.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_libata-hpa.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_libata-sata_nv-adma.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_libata-ali-atapi-dma.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_libata-sata_nv-wildcard-removal.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_libata-pata-pcmcia-new-ident.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_libata-pata-hpt3x2n-correct-revision-boundary.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_libata-pata-sis-fix-timing.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_wireless.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_git-wireless-dev.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_git-iwlwifi.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_mac80211-fixes.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_acpi-keep-tsc-stable-when-lapic-timer-c2-ok-is-set.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_clockevents-fix-resume-logic.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21-1.3194_acpi-dock-oops.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.21_ati-sb700.diff )
-			PATCH+=( $PATCH_MIRROR/at76_usb-mac80211.diff )
-			PATCH+=( $PATCH_MIRROR/zd1211rw-asus-2.6.21.diff )
-			PATCH+=( $PATCH_MIRROR/2.6.21.4_futex.diff )
+			PATCH+=( 
+				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
+				$PATCH_MIRROR/t-sinus_111card-2.6.16.diff
+				$PATCH_MIRROR/2.6.21-at76_usb20070511.diff.bz2
+				ftp://ftp.filesystems.org/pub/unionfs/unionfs-2.x/linux-2.6.21.5-u3.diff.gz
+				$MIRROR/people/akpm/patches/2.6/2.6.21-rc6/2.6.21-rc6-mm1/broken-out/gregkh-driver-nozomi.patch
+				$PATCH_MIRROR/2.6.21-zr364xx.diff.bz2
+				$PATCH_MIRROR/2.6.21_drivers-ata-ata_piix-postpone-pata.patch
+				$PATCH_MIRROR/2.6.21-1.3194_x86_64-silence-up-apic-errors.patch
+				$PATCH_MIRROR/2.6.21-1.3194_x86-dont-delete-cpu_devs-data.patch
+				$PATCH_MIRROR/2.6.21-1.3194_x86-fix-oprofile.patch
+				$PATCH_MIRROR/2.6.21-1.3194_x86-fsc-interrupt-controller-quirk.patch
+				$PATCH_MIRROR/2.6.21-1.3194_mpc52xx-sdma.patch
+				$PATCH_MIRROR/2.6.21-1.3194_mpc52xx-fec.patch
+				$PATCH_MIRROR/2.6.21-1.3194_input-kill-stupid-messages.patch
+				$PATCH_MIRROR/2.6.21-1.3194_kvm-19.patch
+				$PATCH_MIRROR/2.6.21-1.3194_mm-udf-fixes.patch
+				$PATCH_MIRROR/2.6.21-1.3194_sysfs-inode-allocator-oops.patch
+				$PATCH_MIRROR/2.6.21-1.3194_xfs-umount-fix.patch
+				$PATCH_MIRROR/2.6.21-1.3194_dvb-spinlock.patch
+				$PATCH_MIRROR/2.6.21-1.3194_i82875-edac-pci-setup.patch
+				$PATCH_MIRROR/2.6.21-1.3194_defaults-fat-utf8.patch
+				$PATCH_MIRROR/2.6.21-1.3194_defaults-unicode-vt.patch
+				$PATCH_MIRROR/2.6.21-1.3194_libata-hpa.patch
+				$PATCH_MIRROR/2.6.21-1.3194_libata-sata_nv-adma.patch
+				$PATCH_MIRROR/2.6.21-1.3194_libata-ali-atapi-dma.patch
+				$PATCH_MIRROR/2.6.21-1.3194_libata-sata_nv-wildcard-removal.patch
+				$PATCH_MIRROR/2.6.21-1.3194_libata-pata-pcmcia-new-ident.patch
+				$PATCH_MIRROR/2.6.21-1.3194_libata-pata-hpt3x2n-correct-revision-boundary.patch
+				$PATCH_MIRROR/2.6.21-1.3194_libata-pata-sis-fix-timing.patch
+				$PATCH_MIRROR/2.6.21-1.3194_wireless.patch
+				$PATCH_MIRROR/2.6.21-1.3194_git-wireless-dev.patch
+				$PATCH_MIRROR/2.6.21-1.3194_git-iwlwifi.patch
+				$PATCH_MIRROR/2.6.21-1.3194_mac80211-fixes.patch
+				$PATCH_MIRROR/2.6.21-1.3194_acpi-keep-tsc-stable-when-lapic-timer-c2-ok-is-set.patch
+				$PATCH_MIRROR/2.6.21-1.3194_clockevents-fix-resume-logic.patch
+				$PATCH_MIRROR/2.6.21-1.3194_acpi-dock-oops.patch
+				$PATCH_MIRROR/2.6.21_ati-sb700.diff
+				$PATCH_MIRROR/at76_usb-mac80211.diff
+				$PATCH_MIRROR/zd1211rw-asus-2.6.21.diff
+				$PATCH_MIRROR/2.6.21.4_futex.diff
+			)
 			;;
 		2.6.22*)
-			PATCH+=( http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch )
-			PATCH+=( $PATCH_MIRROR/t-sinus_111card-2.6.16.diff )
-			PATCH+=( ftp://ftp.filesystems.org/pub/unionfs/unionfs-2.x/linux-2.6.22.1-u1.diff.gz )
-			PATCH+=( $PATCH_MIRROR/2.6.22-at76_usb20070621.diff.bz2 )
-			PATCH+=( $PATCH_MIRROR/2.6.22-8_git-wireless-dev.patch.gz )
-			PATCH+=( $PATCH_MIRROR/2.6.22-8_rtl8187.patch.gz )
-			PATCH+=( $PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2 )
-			PATCH+=( $PATCH_MIRROR/2.6.22-1.3242_defaults-unicode-vt.patch.bz2 )
-			#PATCH+=( $PATCH_MIRROR/2.6.22-1.3242_input-kill-stupid-messages.patch.bz2 )
-			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/git-ipwireless_cs.patch )
-			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/gregkh-driver-nozomi.patch )
-			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/fix-gregkh-driver-nozomi.patch )
-			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/gregkh-usb-usb-oti6858-usb-serial-driver.patch )
-			PATCH+=( $MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/gregkh-usb-usb-oti6858-status.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.22-squashfs3.2-r2.patch.bz2 )
-			PATCH+=( $PATCH_MIRROR/2.6.22.1_aacraid_security.patch )
-			PATCH+=( $PATCH_MIRROR/2.6.22_cfg80211_netdev_security.diff )
+			PATCH+=(
+				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
+				$PATCH_MIRROR/t-sinus_111card-2.6.16.diff
+				ftp://ftp.filesystems.org/pub/unionfs/unionfs-2.x/linux-2.6.22.1-u1.diff.gz
+				$PATCH_MIRROR/2.6.22-at76_usb20070621.diff.bz2
+				$PATCH_MIRROR/2.6.22-8_git-wireless-dev.patch.gz
+				$PATCH_MIRROR/2.6.22-8_rtl8187.patch.gz
+				$PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2
+				$PATCH_MIRROR/2.6.22-1.3242_defaults-unicode-vt.patch.bz2
+				#$PATCH_MIRROR/2.6.22-1.3242_input-kill-stupid-messages.patch.bz2
+				$MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/git-ipwireless_cs.patch
+				$MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/gregkh-driver-nozomi.patch
+				$MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/fix-gregkh-driver-nozomi.patch
+				$MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/gregkh-usb-usb-oti6858-usb-serial-driver.patch
+				$MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/gregkh-usb-usb-oti6858-status.patch
+				$PATCH_MIRROR/2.6.22-squashfs3.2-r2.patch.bz2
+				$PATCH_MIRROR/2.6.22.1_aacraid_security.patch
+				$PATCH_MIRROR/2.6.22_cfg80211_netdev_security.diff
+			)
 			;;
 		*)
-			#PATCH+=(  )
+			#PATCH+=(
+			#	insert patch URLs here
+			#)
 			;;
 	esac
 }
@@ -105,7 +111,7 @@ patches_for_kernel() {
 #=============================================================================#
 #	colours
 #=============================================================================#
-if [[ -x $(which tput) ]]; then
+if [[ -x $(which tput 2>/dev/null) ]]; then
 	COLOR_ACTION=$(tput setaf 6)		# action	(cyan)
 	COLOR_INFO=$(tput bold ; tput setaf 5)	# info		(pink)
 	COLOR_SUCCESS=$(tput setaf 2)		# success	(green)
@@ -131,7 +137,7 @@ while getopts b:dk:l:m:p opt; do
 			;;
 		l)
 			KERNEL=$OPTARG
-			LAZY="-${USER}-${DEF_CPU}-${REVISION}"
+			LAZY="-${USER:0:3}-${DEF_CPU}-${REVISION}"
 			;;
 		m)	# mirror
 			MIRROR=$OPTARG
