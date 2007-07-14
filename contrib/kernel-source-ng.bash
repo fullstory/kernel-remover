@@ -112,7 +112,8 @@ patches_for_kernel() {
 				$MIRROR/people/linville/wireless-2.6/upstream-merged/0001-mac80211-Add-support-for-SIOCGIWRATE-ioctl-to-pro.patch
 				$MIRROR/people/linville/wireless-2.6/upstream-merged/0002-mac80211-Set-low-initial-rate-in-rc80211_simple.patch
 				$PATCH_MIRROR/2.6.22.1_2.6.22-8_rtl8187.patch.gz
-				http://sidux.net/kelmo/tmp/patches/2.6.22.1-iwlwifi-0.1.1-patch_kernel.patch.gz
+				#http://sidux.net/kelmo/tmp/patches/2.6.22.1-iwlwifi-0.1.1-patch_kernel.patch.gz
+				http://sidux.net/kelmo/tmp/patches/2.6.22.1-iwlwifi-0.0.38-patch_kernel.patch.gz
 			)
 			;;
 		*)

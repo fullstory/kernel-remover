@@ -41,8 +41,9 @@ sidux-kernelhacking (2.6.22.8) UNRELEASED; urgency=low
     - add 0001-mac80211-Add-support-for-SIOCGIWRATE-ioctl-to-pro.patch
     - add 0002-mac80211-Set-low-initial-rate-in-rc80211_simple.patch
     - add intel hack patch, 2.6.22.1-iwlwifi-0.1.1-patch_kernel.patch.gz
+    - add snapshot alternative for iwlwifi hack patch_kernel attempt. 
 
- -- Kel Modderman <kel@otaku42.de>  Sun, 15 Jul 2007 01:19:26 +1000
+ -- Kel Modderman <kel@otaku42.de>  Sun, 15 Jul 2007 01:31:16 +1000
 
 sidux-kernelhacking (2.6.22.7) unstable; urgency=low
 
