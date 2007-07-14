@@ -121,12 +121,12 @@ fi
 #	process cli args
 #=============================================================================#
 
-while getopts b:c:dk:l:m:n:pr:x opt; do
+while getopts b:c:dk:l:m:n:pr:vx opt; do
 	case $opt in
 		b)	# source directory
 			SRCDIR=$OPTARG
 			;;
-		c)
+		c)	# cpu type
 			DEF_CPU=$OPTARG
 			;;
 		d|x)	# debug it
@@ -145,11 +145,14 @@ while getopts b:c:dk:l:m:n:pr:x opt; do
 		n)	# name
 			NAME=$OPTARG
 			;;
-		p)	# do nothing
+		p)	# do nothing, print only
 			((NOACT++))
 			;;
-		r)
+		r)	# revision number
 			REVISION=$OPTARG
+			;;
+		v)	# verbosity
+			((VERBOSITY++))
 			;;
 		\?)	# unknown option
 			exit 1
@@ -293,7 +296,7 @@ fi
 
 patches_for_kernel $KERNEL
 
-if [[ $NOACT ]]; then
+if [[ $NOACT || $VERBOSITY ]]; then
 	for i in ${KERNEL_VARS[@]}; do
 		eval printf "$i=\$$i\ "
 	done
@@ -304,8 +307,9 @@ if [[ $NOACT ]]; then
 	for ((i = 0; i < ${#PATCH[@]}; i++)); do
 		printf "PATCH[$i]=${PATCH[$i]}\n"
 	done
-	exit 0
 fi
+
+[[ $NOACT ]] && exit 0
 
 #=============================================================================#
 #	GPL compliance
@@ -368,6 +372,37 @@ dpkg_patches() {
 	rm -f $SRCDIR/linux-custom-patches-${KERNEL}*.{dsc,changes,tar.gz}
 }
 
+download_patches() {
+	local WGET_OPTS
+
+	if [[ $VERBOSITY ]]; then
+		WGET_OPTS=( -N -c -v )
+	else
+		WGET_OPTS=( -N -c -q )
+	fi
+
+	for patch in ${@}; do
+		printf "%-70s [" "  * ${I}${patch##*/}${N}"
+		[[ $VERBOSITY ]] && printf "${I}downloading...${N}]\n"
+		
+		wget -T 10 ${WGET_OPTS[@]} $patch
+
+		case $? in
+			0)
+				[[ $VERBOSITY ]] && printf "%-70s [" "  * ${I}${patch##*/}${N}"
+				printf "${S}Ok${N}]\n"
+				continue
+				;;
+			*)
+				printf "${F}Failed!${N}]\n"
+				return $?
+				;;
+		esac
+	done
+
+	return 0
+}
+
 #=============================================================================#
 #	patch functions
 #=============================================================================#
@@ -414,15 +449,15 @@ apply_patches() {
 			patch_it $PATCH $PATCH_LEVEL --force --dry-run &>/dev/null
 			# process return codes as per patch(1)
 			case "$?" in
-				2)
-					# more serious trouble
+				2)	# more serious trouble
 					;;
-				1)
+				1)	# some hunks cannot be applied
 					if patch_it $PATCH $PATCH_LEVEL --force --dry-run | head -n 1 | \
 						grep -q "^can't find file to patch"; then
+						# wrong -p or --strip option
 						((PATCH_LEVEL--)) && continue
 					fi
-					# some hunks cannot be applied
+					# hunks really cannot be applied
 					printf "${F}Failed!${N}]\n"
 					printf "${F}--------------------------${N}\n"
 					# verbose dump of patch failure
@@ -430,9 +465,16 @@ apply_patches() {
 					printf "${F}--------------------------${N}\n"
 					;;
 				0)
-					# all hunks are applied successfully
-					patch_it $PATCH $PATCH_LEVEL --silent
-					RETVAL=$?
+					if [[ $VERBOSITY ]]; then
+						printf "${I}patching...${N}]\n"
+						patch_it $PATCH $PATCH_LEVEL
+						RETVAL=$?
+						printf "%-70s [" "  * ${I}${PATCH#*/}${N}"
+					else
+						# all hunks are applied successfully
+						patch_it $PATCH $PATCH_LEVEL --silent
+						RETVAL=$?
+					fi
 					printf "${S}Ok${N}]\n"
 					;;
 			esac
@@ -477,15 +519,9 @@ fi
 printf "\n"
 
 printf "${A}Downloading patches${N}...\n"
-for patch in ${KPATCH[@]} ${PATCH[@]}; do
-	printf "%-70s [" "  * ${I}${patch##*/}${N}"
-	if wget -Ncq -O $SRCDIR/${patch##*/} $patch; then
-		printf "${S}Ok${N}]\n"
-	else
-		printf "${F}Failed!${N}]\n"
-		exit 1
-	fi
-done
+pushd $SRCDIR &>/dev/null
+	download_patches ${KPATCH[@]} ${PATCH[@]}
+popd &>/dev/null
 printf "\n"
 
 printf "${A}Unpacking ${I}${TARBALL##*/}${N}..."
