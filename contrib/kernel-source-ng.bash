@@ -164,30 +164,29 @@ done
 #	give linux the finger
 #=============================================================================#
 finger_latest_kernel() {
-	local TYPE KERN EXTRA
+	local KERN
 	
-	# Example: latest-stable-$name-$rev
-	if [[ $1 =~ '^latest-(stable|prepatch|snapshot|mm)(-.*)?' ]]; then
-		TYPE=${BASH_REMATCH[1]}
-		EXTRA=${BASH_REMATCH[2]}
-		KERN=$(wget -qO- ${MIRROR//\/pub\/linux\/kernel/\/kdist\/finger_banner} | \
-			awk '/^The latest -?'$TYPE'/{ print $NF; exit }')
+	KERN=$(wget -qO- ${2//\/pub\/linux\/kernel/\/kdist\/finger_banner} | \
+		awk '/^The latest -?'$1'/{ print $NF; exit }')
 		
-		if [[ $KERN ]]; then
-			echo ${KERN}${EXTRA}
-		fi
-	fi
+	[[ $KERN ]] && echo ${KERN}
 }
 
 case $KERNEL in
-	latest-*)
-		KERNEL=$(finger_latest_kernel $KERNEL)
+	latest-stable|latest-prepatch|latest-snapshot|latest-mm)
+		KERNEL=$(finger_latest_kernel ${KERNEL#latest-} $MIRROR)
 		if [[ ! $KERNEL ]]; then
 			printf "E: ${F}Unable to finger kernel version${N}\n"
 			exit 1
 		fi
 		;;
 	*)
+		if [[ ! $KERNEL =~ '^[0-9]+\.[0-9]+\.[0-9]+(\.[0-9]+)?$' ]]; then
+			#print_help()
+			printf "${F}Invalid kernel version string!${N}\n"
+			printf "${I}You need help, but i haven't written any yet!${N}\n"
+			exit 1
+		fi
 		;;
 esac
 
