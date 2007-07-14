@@ -253,6 +253,10 @@ if [[ $KERNEL =~ $KREGEXP ]]; then
 	else
 		KERNEL=${KERNEL}-${NAME}-${REVISION}
 	fi
+
+	if [[ $KERNEL =~ '^[0-9]+\.[0-9]+\.[0-9]+(\.?[0-9]*-?.*)?$' ]]; then
+		KEV=${BASH_REMATCH[1]}
+	fi
 else
 	printf "E: ${F}Unable to process ${I}$KERNEL${N}${F} version string!${N}\n"
 	exit 1
