@@ -33,6 +33,16 @@ fi
 #%STATIC_VERSION%
 [[ $STATIC_VERSION ]] && KERNEL="$STATIC_VERSION"
 
+# regular expression use to match kernel string
+KREGEXP="^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9]+)?-?(mm[0-9]+)?$"
+# ${BASH_REMATCH[1]} # Major Version
+# ${BASH_REMATCH[2]} # Release Version
+# ${BASH_REMATCH[3]} # Stable Version
+# ${BASH_REMATCH[4]} # Release Candidate
+# ${BASH_REMATCH[5]} # Git Version
+# ${BASH_REMATCH[6]} # MM Version
+
+
 #=============================================================================#
 #	kernel patch urls
 #=============================================================================#
@@ -123,10 +133,59 @@ if [[ -x $(which tput 2>/dev/null) ]]; then
 fi
 
 #=============================================================================#
+#	help
+#=============================================================================#
+print_help() {
+	cat \
+<<EOF
+
+    kernel-source-ng - download and patch a kernel tree
+  =======================================================
+
+  -b <build dir>        - staging area for linux source tree
+                          Defaults: ~/src (user) or /usr/src (root user)
+
+  -k <kernel string>    - target kernel version
+                          
+			  Special strings "stable" "prepatch" "snapshot" "mm"
+			  can be given and the script will try its hardest to
+			  lookup those kernel versions as listed at:
+			    ${MIRROR//\/pub\/linux\/kernel//kdist/finger_banner}
+
+			  Otherwise, the given string must match with the
+			  following regular expression:
+			    $KREGEXP
+
+			  Examples:
+			        2.6.22
+				2.6.21.1
+                                2.6.23-rc1-git5
+                          
+  -m <mirror url>       - kernel.org mirror
+                          Defaults: $MIRROR
+
+  -n <name string>      - name or label to put in extraversion string
+                          Defaults: $NAME
+
+  -p                    - print only, don't actually do anything
+
+  -r <revision #>       - revision number
+                          Defaults: $REVISION
+
+  -v                    - verbose mode
+
+  -d or -x              - debug bash shell execution (set -x)
+
+  -h                    - this help information ;-)
+
+EOF
+}
+
+#=============================================================================#
 #	process cli args
 #=============================================================================#
 
-while getopts b:c:dk:l:m:n:pr:vx opt; do
+while getopts b:c:dhk:l:m:n:pr:vx opt; do
 	case $opt in
 		b)	# source directory
 			SRCDIR=$OPTARG
@@ -159,7 +218,8 @@ while getopts b:c:dk:l:m:n:pr:vx opt; do
 		v)	# verbosity
 			((VERBOSITY++))
 			;;
-		\?)	# unknown option
+		h|\?)	# unknown option
+			print_help
 			exit 1
 			;;
 	esac
@@ -171,7 +231,7 @@ done
 finger_latest_kernel() {
 	local KERN
 	
-	KERN=$(wget -qO- ${2//\/pub\/linux\/kernel/\/kdist\/finger_banner} | \
+	KERN=$(wget -qO- ${2//\/pub\/linux\/kernel//kdist/finger_banner} | \
 		awk '/^The latest -?'$1'/{ print $NF; exit }')
 		
 	[[ $KERN ]] && echo ${KERN}
@@ -186,10 +246,9 @@ case $KERNEL in
 		fi
 		;;
 	*)
-		if [[ ! $KERNEL =~ '^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9]+)?-?(mm[0-9]+)?$' ]]; then
-			#print_help()
+		if [[ ! $KERNEL =~ $KREGEXP ]]; then
+			print_help
 			printf "${F}Invalid kernel version string!${N}\n"
-			printf "${I}You need help, but i haven't written any yet!${N}\n"
 			exit 1
 		fi
 		;;
@@ -199,7 +258,7 @@ esac
 #	breakdown kernel string with regexp group matching
 #=============================================================================#
 
-if [[ $KERNEL =~ '^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9]+)?-?(mm[0-9]+)?$' ]]; then
+if [[ $KERNEL =~ $KREGEXP ]]; then
 	KMV=${BASH_REMATCH[1]} # Major Version
 	KRV=${BASH_REMATCH[2]} # Release Version
 	KSV=${BASH_REMATCH[3]} # Stable Version
