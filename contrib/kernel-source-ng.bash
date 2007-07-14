@@ -199,7 +199,7 @@ esac
 #	breakdown kernel string with regexp group matching
 #=============================================================================#
 
-if [[ $KERNEL =~ '^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9]+)?-?(mm[0-9]+)?-?([a-zA-Z]+[a-zA-Z0-9\._]*)?-?([a-zA-Z]+[a-zA-Z]*)?-?([0-9]+)?$' ]]; then
+if [[ $KERNEL =~ '^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9]+)?-?(mm[0-9]+)?$' ]]; then
 	KMV=${BASH_REMATCH[1]} # Major Version
 	KRV=${BASH_REMATCH[2]} # Release Version
 	KSV=${BASH_REMATCH[3]} # Stable Version
@@ -207,7 +207,7 @@ if [[ $KERNEL =~ '^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9
 	KGV=${BASH_REMATCH[5]} # Git Version
 	KMM=${BASH_REMATCH[6]} # MM Version
 	NAM=${BASH_REMATCH[7]} # Name
-	MCP=${BASH_REMATCH[8]} # smp/ up
+	MCP=${BASH_REMATCH[8]} # CPU smp/up
 	REV=${BASH_REMATCH[9]} # Revision
 
 	: ${NAM:=$NAME}
@@ -215,7 +215,7 @@ if [[ $KERNEL =~ '^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9
 	: ${REV:=$REVISION}
 	
 	# Extra Version
-	if [[ $LAZY && $KERNEL =~ '^[0-9]+\.[0-9]+\.[0-9]+(\.?[0-9]*-?.*)?-?('$NAM')?-?('$MCP')?-?('$REV')?$' ]]; then
+	if [[ $LAZY && $KERNEL =~ '^[0-9]+\.[0-9]+\.[0-9]+(\.?[0-9]*-?.*)?$' ]]; then
 		# cpu based name modifier
 		CPU=$(uname -m)
 		case $CPU in
