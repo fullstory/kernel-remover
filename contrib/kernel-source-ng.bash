@@ -114,6 +114,7 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.22.1_2.6.22-8_rtl8187.patch.gz
 				#http://sidux.net/kelmo/tmp/patches/2.6.22.1-iwlwifi-0.1.1-patch_kernel.patch.gz
 				http://sidux.net/kelmo/tmp/patches/2.6.22.1-iwlwifi-0.0.38-patch_kernel.patch.gz
+				http://sidux.net/kelmo/tmp/patches/iwlwifi-csa-compat-fix.patch
 			)
 			;;
 		*)
