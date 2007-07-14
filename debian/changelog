@@ -10,7 +10,6 @@ sidux-kernelhacking (2.6.22.8) UNRELEASED; urgency=low
       rather than individual appendage
     - slice the first 3 characters of $USER when using the lazy naming scheme
     - export LC_ALL=C LANG=C to remove chance of language influence
-    - forget about sourcing config file
     - a c,n,r and x cli options
     - always include a name and revision in KERNEL string
     - special case slh "lazy" stuff where cpu and arch strings are mangled
@@ -22,9 +21,9 @@ sidux-kernelhacking (2.6.22.8) UNRELEASED; urgency=low
     - make color_foo variables one letter long
     - add verbosity
     - simplify finger_latest_kernel()
-    - stronger saniy checking of KERNEL string input
+    - stronger sanity checking of KERNEL string input
 
- -- Kel Modderman <kel@otaku42.de>  Sat, 14 Jul 2007 20:45:29 +1000
+ -- Kel Modderman <kel@otaku42.de>  Sat, 14 Jul 2007 20:57:07 +1000
 
 sidux-kernelhacking (2.6.22.7) unstable; urgency=low
 

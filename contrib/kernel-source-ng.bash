@@ -25,6 +25,11 @@ else
 	SRCDIR=/usr/src
 fi
 
+# source personal config
+if [[ -s $HOME/.kernel-sourcerc ]]; then
+	source $HOME/.kernel-sourcerc
+fi
+
 #%STATIC_VERSION%
 [[ $STATIC_VERSION ]] && KERNEL="$STATIC_VERSION"
 
