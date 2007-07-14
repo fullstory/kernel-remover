@@ -48,50 +48,6 @@ KREGEXP="^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9]+)?-?(mm
 #=============================================================================#
 patches_for_kernel() {
 	case "$1" in
-		2.6.21*)
-			PATCH+=( 
-				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
-				$PATCH_MIRROR/t-sinus_111card-2.6.16.diff
-				$PATCH_MIRROR/2.6.21-at76_usb20070511.diff.bz2
-				ftp://ftp.filesystems.org/pub/unionfs/unionfs-2.x/linux-2.6.21.5-u3.diff.gz
-				$MIRROR/people/akpm/patches/2.6/2.6.21-rc6/2.6.21-rc6-mm1/broken-out/gregkh-driver-nozomi.patch
-				$PATCH_MIRROR/2.6.21-zr364xx.diff.bz2
-				$PATCH_MIRROR/2.6.21_drivers-ata-ata_piix-postpone-pata.patch
-				$PATCH_MIRROR/2.6.21-1.3194_x86_64-silence-up-apic-errors.patch
-				$PATCH_MIRROR/2.6.21-1.3194_x86-dont-delete-cpu_devs-data.patch
-				$PATCH_MIRROR/2.6.21-1.3194_x86-fix-oprofile.patch
-				$PATCH_MIRROR/2.6.21-1.3194_x86-fsc-interrupt-controller-quirk.patch
-				$PATCH_MIRROR/2.6.21-1.3194_mpc52xx-sdma.patch
-				$PATCH_MIRROR/2.6.21-1.3194_mpc52xx-fec.patch
-				$PATCH_MIRROR/2.6.21-1.3194_input-kill-stupid-messages.patch
-				$PATCH_MIRROR/2.6.21-1.3194_kvm-19.patch
-				$PATCH_MIRROR/2.6.21-1.3194_mm-udf-fixes.patch
-				$PATCH_MIRROR/2.6.21-1.3194_sysfs-inode-allocator-oops.patch
-				$PATCH_MIRROR/2.6.21-1.3194_xfs-umount-fix.patch
-				$PATCH_MIRROR/2.6.21-1.3194_dvb-spinlock.patch
-				$PATCH_MIRROR/2.6.21-1.3194_i82875-edac-pci-setup.patch
-				$PATCH_MIRROR/2.6.21-1.3194_defaults-fat-utf8.patch
-				$PATCH_MIRROR/2.6.21-1.3194_defaults-unicode-vt.patch
-				$PATCH_MIRROR/2.6.21-1.3194_libata-hpa.patch
-				$PATCH_MIRROR/2.6.21-1.3194_libata-sata_nv-adma.patch
-				$PATCH_MIRROR/2.6.21-1.3194_libata-ali-atapi-dma.patch
-				$PATCH_MIRROR/2.6.21-1.3194_libata-sata_nv-wildcard-removal.patch
-				$PATCH_MIRROR/2.6.21-1.3194_libata-pata-pcmcia-new-ident.patch
-				$PATCH_MIRROR/2.6.21-1.3194_libata-pata-hpt3x2n-correct-revision-boundary.patch
-				$PATCH_MIRROR/2.6.21-1.3194_libata-pata-sis-fix-timing.patch
-				$PATCH_MIRROR/2.6.21-1.3194_wireless.patch
-				$PATCH_MIRROR/2.6.21-1.3194_git-wireless-dev.patch
-				$PATCH_MIRROR/2.6.21-1.3194_git-iwlwifi.patch
-				$PATCH_MIRROR/2.6.21-1.3194_mac80211-fixes.patch
-				$PATCH_MIRROR/2.6.21-1.3194_acpi-keep-tsc-stable-when-lapic-timer-c2-ok-is-set.patch
-				$PATCH_MIRROR/2.6.21-1.3194_clockevents-fix-resume-logic.patch
-				$PATCH_MIRROR/2.6.21-1.3194_acpi-dock-oops.patch
-				$PATCH_MIRROR/2.6.21_ati-sb700.diff
-				$PATCH_MIRROR/at76_usb-mac80211.diff
-				$PATCH_MIRROR/zd1211rw-asus-2.6.21.diff
-				$PATCH_MIRROR/2.6.21.4_futex.diff
-			)
-			;;
 		2.6.22*)
 			PATCH+=(
 				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
@@ -113,8 +69,8 @@ patches_for_kernel() {
 				$MIRROR/people/linville/wireless-2.6/upstream-merged/0002-mac80211-Set-low-initial-rate-in-rc80211_simple.patch
 				$PATCH_MIRROR/2.6.22.1_2.6.22-8_rtl8187.patch.gz
 				#http://sidux.net/kelmo/tmp/patches/2.6.22.1-iwlwifi-0.1.1-patch_kernel.patch.gz
-				http://sidux.net/kelmo/tmp/patches/2.6.22.1-iwlwifi-0.0.38-patch_kernel.patch.gz
-				http://sidux.net/kelmo/tmp/patches/iwlwifi-csa-compat-fix.patch
+				$PATCH_MIRROR/2.6.22.1-iwlwifi-0.0.38-patch_kernel.patch.gz
+				$PATCH_MIRROR/iwlwifi-csa-compat-fix.patch
 			)
 			;;
 		*)
