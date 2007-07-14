@@ -217,15 +217,15 @@ if [[ $KERNEL =~ '^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9
 				: ${MCP:="smp"}
 				;;
 			x86_64)
-				[[ $NAME == *64 ]] || NAM=${NAME}64
+				[[ $NAME == *64 ]] || NAME=${NAME}64
 				: ${MCP:="smp"}
 				;;
 			sparc)
-				[[ $NAME == *32 ]] || NAM=${NAME}${CPU}32
+				[[ $NAME == *32 ]] || NAME=${NAME}${CPU}32
 				: ${MCP:="up"}
 				;;
 			*)
-				[[ $NAME == *${CPU} ]] || NAM=${NAME}${CPU}
+				[[ $NAME == *${CPU} ]] || NAME=${NAME}${CPU}
 				: ${MCP:="smp"}
 				;;
 		esac
@@ -292,7 +292,7 @@ fi
 patches_for_kernel $KERNEL
 
 if [[ $NOACT || $VERBOSITY ]]; then
-	for i in KERNEL KMV KRV KSV KRC KGV KMM KEV NAM MCP REV; do
+	for i in KERNEL KMV KRV KSV KRC KGV KMM KEV NAME MCP REVISION; do
 		eval printf "$i=\$$i\ "
 	done
 	printf "\nTARBALL=$TARBALL\n"
