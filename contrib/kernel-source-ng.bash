@@ -399,6 +399,8 @@ download_patches() {
 		WGET_OPTS=( -N -c -q )
 	fi
 
+	set +e
+
 	for patch in ${@}; do
 		printf "%-70s [" "  * ${I}${patch##*/}${N}"
 		[[ $VERBOSITY ]] && printf "${I}downloading...${N}]\n"
@@ -417,6 +419,8 @@ download_patches() {
 				;;
 		esac
 	done
+
+	set -e
 
 	return 0
 }
