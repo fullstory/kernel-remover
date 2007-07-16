@@ -406,7 +406,7 @@ download_patches() {
 		set +e
 		
 		wget -T 10 ${WGET_OPTS[@]} $patch
-		WGET_RETVAL=$
+		WGET_RETVAL=$?
 		
 		set -e
 
