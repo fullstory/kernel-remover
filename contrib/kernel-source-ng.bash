@@ -391,7 +391,7 @@ dpkg_patches() {
 }
 
 download_patches() {
-	local WGET_OPTS
+	local WGET_OPTS WGET_RETVAL
 
 	if [[ $VERBOSITY ]]; then
 		WGET_OPTS=( -N -c -v )
@@ -399,28 +399,28 @@ download_patches() {
 		WGET_OPTS=( -N -c -q )
 	fi
 
-	set +e
-
 	for patch in ${@}; do
 		printf "%-70s [" "  * ${I}${patch##*/}${N}"
 		[[ $VERBOSITY ]] && printf "${I}downloading...${N}]\n"
 		
+		set +e
+		
 		wget -T 10 ${WGET_OPTS[@]} $patch
+		WGET_RETVAL=$
+		
+		set -e
 
-		case $? in
+		case $WGET_RETVAL in
 			0)
 				[[ $VERBOSITY ]] && printf "%-70s [" "  * ${I}${patch##*/}${N}"
 				printf "${S}Ok${N}]\n"
-				continue
 				;;
 			*)
 				printf "${F}Failed!${N}]\n"
-				return $?
+				return $WGET_RETVAL
 				;;
 		esac
 	done
-
-	set -e
 
 	return 0
 }
