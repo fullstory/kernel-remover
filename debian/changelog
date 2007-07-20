@@ -11,6 +11,7 @@ sidux-kernelhacking (2.6.22.8) UNRELEASED; urgency=low
     - add rt2x00.
     - add sky2 workarounds.
   * Update config for 2.6.22.1-slh64-smp-5.
+  * Update config for 2.6.22.1-slh-smp-5.
 
   [ Kel Modderman ]
   * contrib/kernel-source-ng.bash:
@@ -57,7 +58,7 @@ sidux-kernelhacking (2.6.22.8) UNRELEASED; urgency=low
     - bump iwlwifi to 0.0.42 snapshot
     - get mac80211 sta excess lock removal bugfix
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 20 Jul 2007 15:44:09 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 20 Jul 2007 15:45:11 +0200
 
 sidux-kernelhacking (2.6.22.7) unstable; urgency=low
 
