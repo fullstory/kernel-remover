@@ -66,7 +66,7 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.22_softmac-set-essid-state-fix.patch
 				$PATCH_MIRROR/2.6.22.1_0001-mac80211-Add-support-for-SIOCGIWRATE-ioctl-to-pro.patch
 				$PATCH_MIRROR/2.6.22.1_0002-mac80211-Set-low-initial-rate-in-rc80211_simple.patch
-				$MIRROR/people/linville/wireless-2.6/upstream-davem/0005-mac80211-remove-rtnl-locking-in-ieee80211_sta.c.patch
+				$PATCH_MIRROR/0005-mac80211-remove-rtnl-locking-in-ieee80211_sta.c.patch
 				$PATCH_MIRROR/2.6.22.1_2.6.22-8_rtl8187.patch.gz
 				$PATCH_MIRROR/2.6.22.1-iwlwifi-0.0.42-patch_kernel.patch.gz
 				$PATCH_MIRROR/iwlwifi-csa-compat-fix.patch
