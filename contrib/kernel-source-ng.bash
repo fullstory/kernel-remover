@@ -53,10 +53,9 @@ patches_for_kernel() {
 				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
 				$PATCH_MIRROR/t-sinus_111card-2.6.16.diff
 				ftp://ftp.filesystems.org/pub/unionfs/unionfs-2.x/linux-2.6.22.1-u1.diff.gz
-				$PATCH_MIRROR/2.6.22-at76_usb20070621.diff.bz2
+				$PATCH_MIRROR/2.6.22.1-at76_usb20070720.diff.bz2
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-unicode-vt.patch.bz2
-				#$PATCH_MIRROR/2.6.22-1.3242_input-kill-stupid-messages.patch.bz2
 				$MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/git-ipwireless_cs.patch
 				$MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/gregkh-driver-nozomi.patch
 				$MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/fix-gregkh-driver-nozomi.patch
@@ -65,12 +64,14 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.22-squashfs3.2-r2.patch.bz2
 				$PATCH_MIRROR/2.6.22.1_aacraid_security.patch
 				$PATCH_MIRROR/2.6.22_softmac-set-essid-state-fix.patch
-				http://sidux.net/kelmo/tmp/patches/0001-mac80211-Add-support-for-SIOCGIWRATE-ioctl-to-pro.patch
-				http://sidux.net/kelmo/tmp/patches/0002-mac80211-Set-low-initial-rate-in-rc80211_simple.patch
+				$PATCH_MIRROR/2.6.22.1_0001-mac80211-Add-support-for-SIOCGIWRATE-ioctl-to-pro.patch
+				$PATCH_MIRROR/2.6.22.1_0002-mac80211-Set-low-initial-rate-in-rc80211_simple.patch
 				$MIRROR/people/linville/wireless-2.6/upstream-davem/0005-mac80211-remove-rtnl-locking-in-ieee80211_sta.c.patch
 				$PATCH_MIRROR/2.6.22.1_2.6.22-8_rtl8187.patch.gz
-				http://sidux.net/kelmo/tmp/patches/2.6.22.1-iwlwifi-0.0.42-patch_kernel.patch.gz
+				$PATCH_MIRROR/2.6.22.1-iwlwifi-0.0.42-patch_kernel.patch.gz
 				$PATCH_MIRROR/iwlwifi-csa-compat-fix.patch
+				$PATCH_MIRROR/2.6.22.1_rt2x00_2.0.3.diff.bz2
+				$PATCH_MIRROR/2.6.22.1_sky2_restore-workarounds-for-lost-interrupts.diff
 			)
 			;;
 		*)
