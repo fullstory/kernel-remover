@@ -68,9 +68,7 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.22.1_0002-mac80211-Set-low-initial-rate-in-rc80211_simple.patch
 				$PATCH_MIRROR/0005-mac80211-remove-rtnl-locking-in-ieee80211_sta.c.patch
 				$PATCH_MIRROR/2.6.22.1_2.6.22-8_rtl8187.patch.gz
-				#$PATCH_MIRROR/2.6.22.1-iwlwifi-0.0.42-patch_kernel.patch.gz
-				#$PATCH_MIRROR/iwlwifi-csa-compat-fix.patch
-				http://sidux.net/kelmo/tmp/patches/2.6.22.1-iwlwifi-0.1.2-patch_kernel.patch.gz
+				$PATCH_MIRROR/2.6.22.1-iwlwifi-0.1.2-patch_kernel.patch.gz
 				$PATCH_MIRROR/2.6.22.1_rt2x00_2.0.3.diff.bz2
 				$PATCH_MIRROR/2.6.22.1_sky2_restore-workarounds-for-lost-interrupts.diff
 			)
