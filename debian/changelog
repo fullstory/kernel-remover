@@ -15,6 +15,7 @@ sidux-kernelhacking (2.6.22.8) UNRELEASED; urgency=low
   * pull 0005-mac80211-remove-rtnl-locking-in-ieee80211_sta.c.patch to our
     server.
   * move 2.6.22.1-iwlwifi-0.1.2-patch_kernel.patch.gz to our server.
+  * update to unionfs 2.x 2.6.22.1-u2.
 
   [ Kel Modderman ]
   * contrib/kernel-source-ng.bash:
@@ -62,7 +63,7 @@ sidux-kernelhacking (2.6.22.8) UNRELEASED; urgency=low
     - get mac80211 sta excess lock removal bugfix
   * Update iwlwifi from 0.0.42 -> 0.1.2
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 22 Jul 2007 12:12:19 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 22 Jul 2007 12:25:29 +0200
 
 sidux-kernelhacking (2.6.22.7) unstable; urgency=low
 
