@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # Linux kernel version: 2.6.22.1-slh64-smp-6
-# Sun Jul 22 12:33:29 2007
+# Mon Jul 23 10:17:25 2007
 #
 CONFIG_X86_64=y
 CONFIG_64BIT=y
@@ -2848,7 +2848,7 @@ CONFIG_USB=m
 # Miscellaneous USB options
 #
 CONFIG_USB_DEVICEFS=y
-# CONFIG_USB_DEVICE_CLASS is not set
+CONFIG_USB_DEVICE_CLASS=y
 # CONFIG_USB_DYNAMIC_MINORS is not set
 # CONFIG_USB_SUSPEND is not set
 # CONFIG_USB_OTG is not set

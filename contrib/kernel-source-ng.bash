@@ -52,7 +52,7 @@ patches_for_kernel() {
 			PATCH+=(
 				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
 				$PATCH_MIRROR/t-sinus_111card-2.6.16.diff
-				ftp://ftp.filesystems.org/pub/unionfs/unionfs-2.x/linux-2.6.22.1-u2.diff.gz
+				ftp://ftp.filesystems.org/pub/unionfs/unionfs-2.x/linux-2.6.22.1-u3.diff.gz
 				$PATCH_MIRROR/2.6.22.1-at76_usb20070720.diff.bz2
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-unicode-vt.patch.bz2
@@ -67,6 +67,7 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.22.1_0001-mac80211-Add-support-for-SIOCGIWRATE-ioctl-to-pro.patch
 				$PATCH_MIRROR/2.6.22.1_0002-mac80211-Set-low-initial-rate-in-rc80211_simple.patch
 				$PATCH_MIRROR/0005-mac80211-remove-rtnl-locking-in-ieee80211_sta.c.patch
+				$PATCH_MIRROR/2.6.22.1_mac80211_missing-dev_put-in-ieee80211_master_start_xmit.diff
 				$PATCH_MIRROR/2.6.22.1_2.6.22-8_rtl8187.patch.gz
 				$PATCH_MIRROR/2.6.22.1-iwlwifi-0.1.2-patch_kernel.patch.gz
 				$PATCH_MIRROR/2.6.22.1_rt2x00_2.0.3.diff.bz2
