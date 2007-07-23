@@ -21,7 +21,7 @@ sidux-kernelhacking (2.6.22.8) UNRELEASED; urgency=low
   * update unionfs to 2.6.22.1-u3.
   * fix reference leak in mac80211.
   * add workaround to make scanners work with old udev versions (0.105).
-  * Update config for 2.6.22.1-slh64-smp-6.
+  * Update config for 2.6.22.1-slh64-smp-7.
   * Update config for 2.6.22.1-slh-smp-7.
 
   [ Kel Modderman ]
