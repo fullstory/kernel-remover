@@ -22,6 +22,7 @@ sidux-kernelhacking (2.6.22.8) UNRELEASED; urgency=low
   * fix reference leak in mac80211.
   * add workaround to make scanners work with old udev versions (0.105).
   * Update config for 2.6.22.1-slh64-smp-6.
+  * Update config for 2.6.22.1-slh-smp-7.
 
   [ Kel Modderman ]
   * contrib/kernel-source-ng.bash:
@@ -69,7 +70,7 @@ sidux-kernelhacking (2.6.22.8) UNRELEASED; urgency=low
     - get mac80211 sta excess lock removal bugfix
   * Update iwlwifi from 0.0.42 -> 0.1.2
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 23 Jul 2007 10:17:05 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 23 Jul 2007 10:25:33 +0200
 
 sidux-kernelhacking (2.6.22.7) unstable; urgency=low
 
