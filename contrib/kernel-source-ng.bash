@@ -68,10 +68,8 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.22.1_0002-mac80211-Set-low-initial-rate-in-rc80211_simple.patch
 				$PATCH_MIRROR/0005-mac80211-remove-rtnl-locking-in-ieee80211_sta.c.patch
 				$PATCH_MIRROR/2.6.22.1_mac80211_missing-dev_put-in-ieee80211_master_start_xmit.diff
-				$PATCH_MIRROR/2.6.22.1_2.6.22-8_rtl8187.patch.gz
-				$PATCH_MIRROR/2.6.22.1-iwlwifi-0.1.2-patch_kernel.patch.gz
-				$PATCH_MIRROR/2.6.22.1_rt2x00_2.0.3.diff.bz2
 				$PATCH_MIRROR/2.6.22.1_sky2_restore-workarounds-for-lost-interrupts.diff
+				$PATCH_MIRROR/2.6.22.1_adm80211-rtl8187-20070731_iwlwifi-0.1.6_rt2x00-2.0.4+20070731.diff.bz2
 			)
 			;;
 		*)

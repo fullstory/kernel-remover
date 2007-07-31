@@ -1,6 +1,4 @@
-sidux-kernelhacking (2.6.22.8) UNRELEASED; urgency=low
-
-  * NOT RELEASED YET
+sidux-kernelhacking (2.6.22.8) unstable; urgency=low
 
   [ Stefan Lippers-Hollmann ]
   * update unionfs patches for 2.6.22.
@@ -23,6 +21,11 @@ sidux-kernelhacking (2.6.22.8) UNRELEASED; urgency=low
   * add workaround to make scanners work with old udev versions (0.105).
   * Update config for 2.6.22.1-slh64-smp-7.
   * Update config for 2.6.22.1-slh-smp-7.
+  * add rt73-legacy-source to dependencies even though it doesn't work yet.
+  * update/ add mac80211 based amd8211/ rtl8187 based drivers from
+    wireless-dev 20070731.
+  * update/ add rt2x00 2.0.4+20070731 from rt2x00.git.
+  * update/ add iwlwifi 0.1.6.
 
   [ Kel Modderman ]
   * contrib/kernel-source-ng.bash:
@@ -71,7 +74,7 @@ sidux-kernelhacking (2.6.22.8) UNRELEASED; urgency=low
   * Update iwlwifi from 0.0.42 -> 0.1.2
   * mk_dpatch: use dpatch patch-template, drop env var guessing.
 
- -- Kel Modderman <foo@bar>  Tue, 24 Jul 2007 23:12:42 +1000
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 31 Jul 2007 17:14:47 +0200
 
 sidux-kernelhacking (2.6.22.7) unstable; urgency=low
 
