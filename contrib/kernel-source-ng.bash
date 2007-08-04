@@ -53,7 +53,7 @@ patches_for_kernel() {
 				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
 				$PATCH_MIRROR/t-sinus_111card-2.6.16.diff
 				ftp://ftp.filesystems.org/pub/unionfs/unionfs-2.x/linux-2.6.22.1-u4.diff.gz
-				$PATCH_MIRROR/2.6.22.1-at76_usb20070720.diff.bz2
+				$PATCH_MIRROR/2.6.21.1_at76_usb20070804.diff.bz2
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-unicode-vt.patch.bz2
 				$MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/git-ipwireless_cs.patch
