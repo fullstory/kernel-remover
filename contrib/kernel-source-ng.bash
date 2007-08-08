@@ -52,7 +52,7 @@ patches_for_kernel() {
 			PATCH+=(
 				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
 				$PATCH_MIRROR/t-sinus_111card-2.6.16.diff
-				ftp://ftp.filesystems.org/pub/unionfs/unionfs-2.x/linux-2.6.22.1-u4.diff.gz
+				ftp://ftp.filesystems.org/pub/unionfs/unionfs-2.1/unionfs-2.1_for_2.6.22.1.diff.gz
 				$PATCH_MIRROR/2.6.22.1_at76_usb20070804.diff.bz2
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-unicode-vt.patch.bz2
@@ -61,8 +61,6 @@ patches_for_kernel() {
 				$MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/fix-gregkh-driver-nozomi.patch
 				$MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/gregkh-usb-usb-oti6858-usb-serial-driver.patch
 				$MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/gregkh-usb-usb-oti6858-status.patch
-				$PATCH_MIRROR/2.6.22-squashfs3.2-r2.patch.bz2
-				$PATCH_MIRROR/2.6.22.1_aacraid_security.patch
 				$PATCH_MIRROR/2.6.22_softmac-set-essid-state-fix.patch
 				$PATCH_MIRROR/2.6.22.1_0001-mac80211-Add-support-for-SIOCGIWRATE-ioctl-to-pro.patch
 				$PATCH_MIRROR/2.6.22.1_0002-mac80211-Set-low-initial-rate-in-rc80211_simple.patch

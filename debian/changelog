@@ -1,6 +1,5 @@
-sidux-kernelhacking (2.6.22.10) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.22.10) unstable; urgency=low
 
-  * NOT RELEASED YET
   * update unionfs 2.x to 2.6.22.1-u4.
   * update at76_usb.
   * update iwlwifi to 0.1.8, disable 802.11n as it would require significant
@@ -8,8 +7,11 @@ sidux-kernelhacking (2.6.22.10) UNRELEASED; urgency=low
   * update rt2x00 to 1.0.6 (+git20060804), fix API differences im mac80211.
   * update default config for 2.6.22.1-slh-smp-12.
   * update default config for 2.6.22.1-slh64-smp-12.
+  * update unionfs to 2.1.
+  * drop aacraid security fix as it is included in 2.6.22.2.
+  * switch to external squashfs again.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 05 Aug 2007 13:09:23 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 09 Aug 2007 01:57:40 +0200
 
 sidux-kernelhacking (2.6.22.9) unstable; urgency=low
 
