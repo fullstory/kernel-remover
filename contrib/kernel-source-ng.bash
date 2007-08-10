@@ -53,7 +53,7 @@ patches_for_kernel() {
 				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
 				$PATCH_MIRROR/t-sinus_111card-2.6.16.diff
 				ftp://ftp.filesystems.org/pub/unionfs/unionfs-2.1/unionfs-2.1_for_2.6.22.1.diff.gz
-				$PATCH_MIRROR/2.6.22.1_at76_usb20070804.diff.bz2
+				$PATCH_MIRROR/2.6.22.2-at76_usb20070810.diff.bz2
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-unicode-vt.patch.bz2
 				$MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/git-ipwireless_cs.patch
@@ -68,8 +68,12 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.22.1_mac80211_missing-dev_put-in-ieee80211_master_start_xmit.diff
 				$PATCH_MIRROR/2.6.22.1_2.6.22-8_rtl8187.patch.gz
 				$PATCH_MIRROR/2.6.22.1_sky2_restore-workarounds-for-lost-interrupts.diff
-				$PATCH_MIRROR/2.6.22.1_iwlwifi-0.1.8_20070805_noieee80211n.diff.bz2
-				$PATCH_MIRROR/2.6.22.1_rt2x00-1.0.6_20060804.diff.bz2
+				$PATCH_MIRROR/2.6.22.2-iwlwifi-1.0.0-1.diff.bz2
+				$PATCH_MIRROR/2.6.22.2-rt2x00-2.0.6_20060810.diff.bz2
+				$PATCH_MIRROR/2.6.22.2_ata_piix-update-map-10b-for-ich8m.diff
+				$PATCH_MIRROR/2.6.22.2_fix-oops-in-__audit_signal_info.diff
+				$PATCH_MIRROR/2.6.22.2_softmac-fix-deadlock-of-wx_set_essid-with-assoc-work.diff
+				$PATCH_MIRROR/2.6.22.2_random-fix-bound-check-ordering.diff
 			)
 			;;
 		*)
