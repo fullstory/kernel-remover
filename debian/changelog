@@ -9,8 +9,9 @@ sidux-kernelhacking (2.6.22.11) UNRELEASED; urgency=low
   * add 2.6.22.2_softmac-fix-deadlock-of-wx_set_essid-with-assoc-work.diff.
   * add 2.6.22.2_random-fix-bound-check-ordering.diff.
   * update default config for 2.6.22.2-slh64-smp-1.
+  * update default config for 2.6.22.2-slh-smp-1.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 10 Aug 2007 16:23:28 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 10 Aug 2007 16:24:17 +0200
 
 sidux-kernelhacking (2.6.22.10) unstable; urgency=low
 
