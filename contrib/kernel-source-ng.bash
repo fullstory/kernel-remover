@@ -53,6 +53,7 @@ patches_for_kernel() {
 				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
 				$PATCH_MIRROR/t-sinus_111card-2.6.16.diff
 				ftp://ftp.filesystems.org/pub/unionfs/unionfs-2.1/unionfs-2.1_for_2.6.22.1.diff.gz
+				$PATCH_MIRROR/2.6.22-squashfs3.2-r2.patch.bz2
 				$PATCH_MIRROR/2.6.22.2-at76_usb20070810.diff.bz2
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-unicode-vt.patch.bz2
