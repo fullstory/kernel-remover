@@ -3,12 +3,8 @@ sidux-kernelhacking (2.6.22.12) UNRELEASED; urgency=low
   * NOT RELEASED YET
   * update config for 2.6.22.3-slh64-smp-1
   * update config for 2.6.22.3-slh-smp-1
-  * update rt2x00 to 2.0.7, take Michael Buesch's comments regarding
-    rt2x00lib_free_firmware() into account.
-  * update config for 2.6.22.3-slh64-smp-2.
-  * update config for 2.6.22.3-slh-smp-2.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 19 Aug 2007 22:45:34 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 16 Aug 2007 15:47:21 +0200
 
 sidux-kernelhacking (2.6.22.11) unstable; urgency=low
 
