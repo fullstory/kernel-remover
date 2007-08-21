@@ -67,7 +67,6 @@ patches_for_kernel() {
 				$PATCH_MIRROR/0005-mac80211-remove-rtnl-locking-in-ieee80211_sta.c.patch
 				$PATCH_MIRROR/2.6.22.1_mac80211_missing-dev_put-in-ieee80211_master_start_xmit.diff
 				$PATCH_MIRROR/2.6.22.1_2.6.22-8_rtl8187.patch.gz
-				$PATCH_MIRROR/2.6.22.1_sky2_restore-workarounds-for-lost-interrupts.diff
 				$PATCH_MIRROR/2.6.22.2-iwlwifi-1.0.0-1.diff.bz2
 				$PATCH_MIRROR/2.6.22.3-rt2x00-2.0.6_20060814.bz2
 			)

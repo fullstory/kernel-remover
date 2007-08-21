@@ -4,8 +4,9 @@ sidux-kernelhacking (2.6.22.12) UNRELEASED; urgency=low
   * update config for 2.6.22.3-slh64-smp-1
   * update config for 2.6.22.3-slh-smp-1
   * update unionfs to 2.1.1.
+  * remove sky2 hotfixes, merged upstream (-stable).
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 20 Aug 2007 19:07:22 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 21 Aug 2007 11:13:29 +0200
 
 sidux-kernelhacking (2.6.22.11) unstable; urgency=low
 
