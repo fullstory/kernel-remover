@@ -8,8 +8,9 @@ sidux-kernelhacking (2.6.22.12) UNRELEASED; urgency=low
   * update unionfs to 2.1.2.
   * update default config for 2.6.22.5-slh64-smp-1.
   * update default config for 2.6.22.5-slh-smp-1.
+  * update default config for 2.6.22.6-rc1-slh64-smp-1.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 23 Aug 2007 13:48:22 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 24 Aug 2007 00:57:14 +0200
 
 sidux-kernelhacking (2.6.22.11) unstable; urgency=low
 
