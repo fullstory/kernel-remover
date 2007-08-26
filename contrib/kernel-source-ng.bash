@@ -69,6 +69,9 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.22.1_2.6.22-8_rtl8187.patch.gz
 				$PATCH_MIRROR/2.6.22.2-iwlwifi-1.0.0-1.diff.bz2
 				$PATCH_MIRROR/2.6.22.3-rt2x00-2.0.6_20060814.bz2
+				$PATCH_MIRROR/2.6.22_zd1211rw_add-id-for-zyxel-g-200v2.diff
+				$PATCH_MIRROR/2.6.22_zd1211rw_extend-rf-layer.diff
+				$PATCH_MIRROR/2.6.22_zd1211rw_add-uw2453-rf-support.diff
 			)
 			;;
 		*)
