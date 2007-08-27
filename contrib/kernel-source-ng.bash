@@ -78,6 +78,7 @@ patches_for_kernel() {
 			PATCH+=(
 				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
 				$PATCH_MIRROR/t-sinus_111card-2.6.16.diff
+				http://download.filesystems.org/unionfs/unionfs-2.1/unionfs-2.1.2_for_2.6.23-rc3.diff.gz
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-unicode-vt.patch.bz2
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc3/2.6.23-rc3-mm1/broken-out/git-ipwireless_cs.patch
