@@ -74,6 +74,16 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.22_zd1211rw_add-uw2453-rf-support.diff
 			)
 			;;
+		2.6.23*)
+			PATCH+=(
+				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
+				$PATCH_MIRROR/t-sinus_111card-2.6.16.diff
+				$PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2
+				$PATCH_MIRROR/2.6.22-1.3242_defaults-unicode-vt.patch.bz2
+				$MIRROR/people/akpm/patches/2.6/2.6.23-rc3/2.6.23-rc3-mm1/broken-out/git-ipwireless_cs.patch
+				$MIRROR/people/akpm/patches/2.6/2.6.23-rc3/2.6.23-rc3-mm1/broken-out/gregkh-driver-nozomi.patch 
+			)
+			;;
 		*)
 			#PATCH+=(
 			#	insert patch URLs here
