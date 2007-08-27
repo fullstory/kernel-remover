@@ -82,6 +82,8 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-unicode-vt.patch.bz2
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc3/2.6.23-rc3-mm1/broken-out/git-ipwireless_cs.patch
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc3/2.6.23-rc3-mm1/broken-out/gregkh-driver-nozomi.patch 
+				$PATCH_MIRROR/2.6.23-rc3_wireless-dev_20070827.diff.bz2
+				$PATCH_MIRROR/2.6.23-rc3_wireless-dev_20070827_update_rt2x00.diff.bz2
 			)
 			;;
 		*)
