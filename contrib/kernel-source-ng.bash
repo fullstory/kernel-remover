@@ -85,6 +85,8 @@ patches_for_kernel() {
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc3/2.6.23-rc3-mm1/broken-out/gregkh-driver-nozomi.patch 
 				$PATCH_MIRROR/2.6.23-rc3_wireless-dev_20070827.diff.bz2
 				$PATCH_MIRROR/2.6.23-rc3_wireless-dev_20070827_update_rt2x00.diff.bz2
+				http://johannes.sipsolutions.net/patches/kernel/all/2007-08-29-12:08/023-rework-hardware-crypto-flags.patch
+				$PATCH_MIRROR/023-rework-hardware-crypto-flags_fixup.diff
 			)
 			;;
 		*)
