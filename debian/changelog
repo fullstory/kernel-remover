@@ -15,8 +15,11 @@ sidux-kernelhacking (2.6.22.13) UNRELEASED; urgency=low
   * update default config for 2.6.23-rc4-slh64-smp-2.
   * update stable default config for 2.6.22.6-slh-smp-1.
   * update stable default config for 2.6.22.6-slh64-smp-1.
+  * add copyright header to kernel-source-ng.
+  * add -u parameter to kernel-source-ng, which omits local patches and
+    creates a pure vanilla kernel tree (usefull for diff'ing).
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 31 Aug 2007 12:29:36 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 01 Sep 2007 14:19:41 +0200
 
 sidux-kernelhacking (2.6.22.12) unstable; urgency=low
 

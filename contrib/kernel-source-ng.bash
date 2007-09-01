@@ -83,10 +83,12 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-unicode-vt.patch.bz2
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc3/2.6.23-rc3-mm1/broken-out/git-ipwireless_cs.patch
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc3/2.6.23-rc3-mm1/broken-out/gregkh-driver-nozomi.patch 
-				$PATCH_MIRROR/2.6.23-rc3_wireless-dev_20070827.diff.bz2
+				$PATCH_MIRROR/2.6.23-rc5_wireless-dev_20070827.diff.bz2
 				$PATCH_MIRROR/2.6.23-rc3_wireless-dev_20070827_update_rt2x00.diff.bz2
 				http://johannes.sipsolutions.net/patches/kernel/all/2007-08-29-12:08/023-rework-hardware-crypto-flags.patch
 				$PATCH_MIRROR/023-rework-hardware-crypto-flags_fixup.diff
+				$PATCH_MIRROR/2.6.23-rc5_sata_via_write-errors-on-pata-drive-connected-to-vt6421.diff
+				$PATCH_MIRROR/2.6.23-rc5_ata_piix_fix-oops.diff
 			)
 			;;
 		*)
@@ -121,6 +123,8 @@ print_help() {
   -b <build dir>        - staging area for linux source tree
                           Defaults: ~/src (user) or /usr/src (root user)
 
+  -i                    - copyright information
+
   -k <kernel string>    - target kernel version
                           
 			  Special strings "stable" "prepatch" "snapshot" "mm"
@@ -148,6 +152,9 @@ print_help() {
   -r <revision #>       - revision number
                           Defaults: $REVISION
 
+  -u                    - omit local patches and just create an upstream/ 
+                          vanilla kernel tree
+
   -v                    - verbose mode
 
   -d or -x              - debug bash shell execution (set -x)
@@ -157,11 +164,49 @@ print_help() {
 EOF
 }
 
+print_copyright() {
+	cat \
+<<EOF
+
+Copyright (C) 2006-2007 F.U.L.L.S.T.O.R.Y Project
+Copyright (C) 2006-2007 Kel Modderman <kel@otaku42.de>
+Copyright (C) 2006-2007 Stefan Lippers-Hollmann <s.l-h@gmx.de>
+
+F.U.L.L.S.T.O.R.Y Project Homepage:
+http://developer.berlios.de/projects/fullstory
+
+F.U.L.L.S.T.O.R.Y Subversion Archive:
+svn://svn.berlios.de/fullstory/trunk
+http://svn.berlios.de/svnroot/repos/fullstory
+http://svn.berlios.de/viewcvs/fullstory (viewcvs)
+http://svn.berlios.de/wsvn/fullstory (websvn)
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; version 2 of the 
+License only.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this package; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+MA 02110-1301, USA.
+
+On Debian GNU/Linux systems, the text of the GPL license can be
+found in /usr/share/common-licenses/GPL.
+
+EOF
+}
+
 #=============================================================================#
 #	process cli args
 #=============================================================================#
 
-while getopts b:c:dhk:l:m:n:pr:vx opt; do
+while getopts b:c:dhik:l:m:n:pr:vux opt; do
 	case $opt in
 		b)	# source directory
 			SRCDIR=$OPTARG
@@ -171,6 +216,10 @@ while getopts b:c:dhk:l:m:n:pr:vx opt; do
 			;;
 		d|x)	# debug it
 			set -x
+			;;
+		i)	# display copyright information
+			print_copyright
+			exit 0
 			;;
 		k)	# kernel flavour
 			KERNEL=$OPTARG
@@ -190,6 +239,9 @@ while getopts b:c:dhk:l:m:n:pr:vx opt; do
 			;;
 		r)	# revision number
 			REVISION=$OPTARG
+			;;
+		u)	# vanilla upstream kernel, don't apply private patches
+			((VANILLA++))
 			;;
 		v)	# verbosity
 			((VERBOSITY++))
@@ -328,7 +380,7 @@ fi
 #	select & debug patch selection
 #=============================================================================#
 
-patches_for_kernel $KERNEL
+[[ ! $VANILLA ]] && patches_for_kernel $KERNEL
 
 if [[ $NOACT || $VERBOSITY ]]; then
 	for i in KERNEL KMV KRV KSV KRC KGV KMM KEV NAME MCP REVISION; do
