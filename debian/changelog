@@ -2,8 +2,9 @@ sidux-kernelhacking (2.6.22.15) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
   * revert to using blkdev for VIA and ALi.
+  * tighten squashfs-source dependency for 2.6.23 compatibility.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 03 Sep 2007 22:27:52 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 03 Sep 2007 23:02:36 +0200
 
 sidux-kernelhacking (2.6.22.14) unstable; urgency=low
 
