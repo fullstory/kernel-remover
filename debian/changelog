@@ -1,3 +1,9 @@
+sidux-kernelhacking (2.6.22.15) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 03 Sep 2007 21:24:14 +0200
+
 sidux-kernelhacking (2.6.22.14) unstable; urgency=low
 
   * update experimental default config to 2.6.23-rc5-slh64-smp-3.
