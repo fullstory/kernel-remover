@@ -1,3 +1,9 @@
+sidux-kernelhacking (2.6.22.16) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 04 Sep 2007 00:45:52 +0200
+
 sidux-kernelhacking (2.6.22.15) unstable; urgency=low
 
   * revert to using blkdev for VIA and ALi.
