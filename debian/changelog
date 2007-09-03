@@ -1,6 +1,5 @@
-sidux-kernelhacking (2.6.22.13) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.22.13) unstable; urgency=low
 
-  * NOT RELEASED YET
   * add experimental default config for 2.6.23-rc3-git10-slh64-smp-1.
   * add experimental default config for 2.6.23-rc3-git10-slh-smp-1.
   * update wireless-dev/ everything.
@@ -18,8 +17,10 @@ sidux-kernelhacking (2.6.22.13) UNRELEASED; urgency=low
   * add copyright header to kernel-source-ng.
   * add -u parameter to kernel-source-ng, which omits local patches and
     creates a pure vanilla kernel tree (usefull for diff'ing).
+  * fix kernel panic in 2.6.23-rc5.
+  * add virtualbox-source to standard external modules.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 01 Sep 2007 14:19:41 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 03 Sep 2007 17:55:00 +0200
 
 sidux-kernelhacking (2.6.22.12) unstable; urgency=low
 

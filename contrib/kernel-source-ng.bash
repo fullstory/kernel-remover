@@ -89,6 +89,7 @@ patches_for_kernel() {
 				$PATCH_MIRROR/023-rework-hardware-crypto-flags_fixup.diff
 				$PATCH_MIRROR/2.6.23-rc5_sata_via_write-errors-on-pata-drive-connected-to-vt6421.diff
 				$PATCH_MIRROR/2.6.23-rc5_ata_piix_fix-oops.diff
+				$PATCH_MIRROR/2.6.23-rc5_dst-can-be-null-in-tcp_rto_min.diff
 			)
 			;;
 		*)
