@@ -81,15 +81,13 @@ patches_for_kernel() {
 				$PATCH_MIRROR/unionfs-2.1.2_for_2.6.23-rc3.diff.gz
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-unicode-vt.patch.bz2
-				$MIRROR/people/akpm/patches/2.6/2.6.23-rc3/2.6.23-rc3-mm1/broken-out/git-ipwireless_cs.patch
-				$MIRROR/people/akpm/patches/2.6/2.6.23-rc3/2.6.23-rc3-mm1/broken-out/gregkh-driver-nozomi.patch 
-				$PATCH_MIRROR/2.6.23-rc5_wireless-dev_20070827.diff.bz2
-				$PATCH_MIRROR/2.6.23-rc3_wireless-dev_20070827_update_rt2x00.diff.bz2
+				$MIRROR/people/akpm/patches/2.6/2.6.23-rc4/2.6.23-rc4-mm1/broken-out/git-ipwireless_cs.patch
+				$MIRROR/people/akpm/patches/2.6/2.6.23-rc4/2.6.23-rc4-mm1/broken-out/gregkh-driver-nozomi.patch
+				$PATCH_MIRROR/2.6.23-rc5_wireless-dev_20070910.diff.bz2
+				$PATCH_MIRROR/2.6.23-rc5_rt2x00_20070910.diff.bz2
+				$PATCH_MIRROR/2.6.23-rc5_at76_usb_20070910.diff.bz2
 				http://johannes.sipsolutions.net/patches/kernel/all/2007-08-29-12:08/023-rework-hardware-crypto-flags.patch
-				$PATCH_MIRROR/023-rework-hardware-crypto-flags_fixup.diff
-				$PATCH_MIRROR/2.6.23-rc5_sata_via_write-errors-on-pata-drive-connected-to-vt6421.diff
-				$PATCH_MIRROR/2.6.23-rc5_ata_piix_fix-oops.diff
-				$PATCH_MIRROR/2.6.23-rc5_dst-can-be-null-in-tcp_rto_min.diff
+				$PATCH_MIRROR/2.6.23-rc5_023-rework-hardware-crypto-flags_fixup.diff
 			)
 			;;
 		*)
