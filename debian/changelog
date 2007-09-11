@@ -15,8 +15,9 @@ sidux-kernelhacking (2.6.22.16) UNRELEASED; urgency=low
     disable the old firewire stack.
   * update experimental default config for i686 to 2.6.23-rc6-slh-smp-1,
     disable the old firewire stack.
+  * add VCS control headers.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 11 Sep 2007 15:04:31 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 11 Sep 2007 20:23:30 +0200
 
 sidux-kernelhacking (2.6.22.15) unstable; urgency=low
 
