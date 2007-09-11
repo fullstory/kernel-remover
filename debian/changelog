@@ -11,8 +11,10 @@ sidux-kernelhacking (2.6.22.16) UNRELEASED; urgency=low
   * update experimental kernel.
   * update unionfs to 2.1.3.
   * add support for IC Plus Sundance IP1000A ethernet device.
+  * update experimental default config for amd64 to 2.6.23-rc6-slh64-smp-1,
+    disable the old firewire stack.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 11 Sep 2007 13:42:04 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 11 Sep 2007 14:45:54 +0200
 
 sidux-kernelhacking (2.6.22.15) unstable; urgency=low
 
