@@ -1,8 +1,9 @@
 sidux-kernelhacking (2.6.22.17) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * update experimental default config to 2.6.23-rc6-git1-slh-smp-1.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 12 Sep 2007 13:45:15 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 12 Sep 2007 13:53:03 +0200
 
 sidux-kernelhacking (2.6.22.16) unstable; urgency=low
 
