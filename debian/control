@@ -19,7 +19,7 @@ Description: various tools for kernel hacking
 
 Package: sidux-modules
 Architecture: all
-Depends: bzip2, unp, zip, gawk, acx100-source (>= 20070101-1), acer-acpi-source, aufs-source (>= 0+20070812-0+c0.sidux.1), et131x-source (>= 1.2.3-3+c0.sidux.2), fsam7400-source, gspca-source, kqemu-source (>= 1.3.0~pre10-2), lirc-modules-source (>= 0.8.0-9+c0.sidux.1), ndiswrapper-source, qc-usb-source (>= 0.6.6-1+c0.sidux.1), rfswitch-source, rt2400-source (>= 1.2.2+cvs20070626-0+c0.sidux.1), rt2500-source (>= 1:1.1.0-b4+cvs20070627-0+c0.sidux.1), rt2570-source (>= 1.1.0+cvs20070626-0+c0.sidux.1), rt61-source (>= 1.1.0.dfsg.2+cvs20070627-1), rt73-legacy-source, squashfs-source (>= 3.2r2-6+c0.sidux.1), virtualbox-ose-source
+Depends: bzip2, unp, zip, gawk, acx100-source (>= 20070101-1), acer-acpi-source, aufs-source (>= 0+20070904-1+c0.sidux.1), et131x-source (>= 1.2.3-3+c0.sidux.2), fsam7400-source, gspca-source, kqemu-source (>= 1.3.0~pre10-2), lirc-modules-source (>= 0.8.0-9+c0.sidux.1), ndiswrapper-source, qc-usb-source (>= 0.6.6-1+c0.sidux.1), rfswitch-source, rt2400-source (>= 1.2.2+cvs20070626-0+c0.sidux.1), rt2500-source (>= 1:1.1.0-b4+cvs20070627-0+c0.sidux.1), rt2570-source (>= 1.1.0+cvs20070626-0+c0.sidux.1), rt61-source (>= 1.1.0.dfsg.2+cvs20070627-1), rt73-legacy-source, squashfs-source (>= 3.2r2-6+c0.sidux.1), virtualbox-ose-source
 Recommends: acerhk-source
 Suggests: sidux-kernelhacking
 Description: meta package for sidux kernel modules
