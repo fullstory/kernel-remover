@@ -89,6 +89,7 @@ patches_for_kernel() {
 				http://johannes.sipsolutions.net/patches/kernel/all/2007-08-29-12:08/023-rework-hardware-crypto-flags.patch
 				$PATCH_MIRROR/2.6.23-rc5_023-rework-hardware-crypto-flags_fixup.diff
 				$PATCH_MIRROR/2.6.23-rc6_add_ip1000a_driver.diff.bz2
+				$PATCH_MIRROR/2.6.23-rc6-git1_fix-hci_sock-build.diff
 			)
 			;;
 		*)
