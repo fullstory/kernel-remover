@@ -7,8 +7,9 @@ sidux-kernelhacking (2.6.22.17) UNRELEASED; urgency=low
   * re- add accidentally missing support for block devices.
   * update experimental default config to 2.6.23-rc6-git1-slh-smp-2.
   * update experimental default config to 2.6.23-rc6-git1-slh64-smp-2.
+  * UNION_FS_DEBUG is too noisy to be useful, disable it.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 12 Sep 2007 18:30:14 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 13 Sep 2007 00:00:58 +0200
 
 sidux-kernelhacking (2.6.22.16) unstable; urgency=low
 
