@@ -11,10 +11,14 @@ sidux-kernelhacking (2.6.22.17) UNRELEASED; urgency=low
   * update rt2x00.
   * use official ip1000a patch.
   * update experimental default config for i686 to 2.6.23-rc6-git7-slh-smp-1.
-  * update experimental default config for amd64 to 
+  * update experimental default config for amd64 to
     2.6.23-rc6-git7-slh64-smp-1.
+  * remove obsolete cruft:
+    - remove-all-kernels-completely
+    - remove-kernel-completely
+    - make-kernel-links
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 17 Sep 2007 16:55:05 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 18 Sep 2007 09:49:08 +0200
 
 sidux-kernelhacking (2.6.22.16) unstable; urgency=low
 
