@@ -1,3 +1,9 @@
+sidux-kernelhacking (2.6.22.18) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 18 Sep 2007 10:42:49 +0200
+
 sidux-kernelhacking (2.6.22.17) unstable; urgency=low
 
   * add 2.6.23-rc6-git1_fix-hci_sock-build.diff.
