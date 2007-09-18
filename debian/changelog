@@ -1,3 +1,9 @@
+sidux-kernelhacking (2.6.22.19) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 18 Sep 2007 13:18:29 +0200
+
 sidux-kernelhacking (2.6.22.18) unstable; urgency=low
 
   * bump versioned dependency of lirc-modules-source to >= 0.8.1~sidux-0.7.
