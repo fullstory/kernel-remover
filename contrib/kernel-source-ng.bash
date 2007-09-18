@@ -83,12 +83,7 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-unicode-vt.patch.bz2
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc4/2.6.23-rc4-mm1/broken-out/git-ipwireless_cs.patch
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc4/2.6.23-rc4-mm1/broken-out/gregkh-driver-nozomi.patch
-				$PATCH_MIRROR/2.6.23-rc5_wireless-dev_20070910.diff.bz2
-				$PATCH_MIRROR/2.6.23-rc6_rt2x00_20070917.diff.bz2
-				$PATCH_MIRROR/2.6.23-rc5_at76_usb_20070910.diff.bz2
-				http://johannes.sipsolutions.net/patches/kernel/all/2007-08-29-12:08/023-rework-hardware-crypto-flags.patch
-				$PATCH_MIRROR/2.6.23-rc5_023-rework-hardware-crypto-flags_fixup.diff
-				$PATCH_MIRROR/revert-apply-the-IEEE80211_HW_WEP_INCLUDE_IV-flag-its-required-linville-being-mia-doesnt-change-that.diff
+				$PATCH_MIRROR/2.6.23-rc6_wireless-dev_20070917.diff.bz2
 				$PATCH_MIRROR/2.6.23-rc6_ipg-add-ip1000a-driver-to-kernel-tree.diff.bz2
 			)
 			;;

@@ -17,8 +17,9 @@ sidux-kernelhacking (2.6.22.17) UNRELEASED; urgency=low
     - remove-all-kernels-completely
     - remove-kernel-completely
     - make-kernel-links
+  * finally update wireless-dev.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 18 Sep 2007 09:49:08 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 18 Sep 2007 10:08:12 +0200
 
 sidux-kernelhacking (2.6.22.16) unstable; urgency=low
 
