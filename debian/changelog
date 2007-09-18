@@ -1,6 +1,5 @@
-sidux-kernelhacking (2.6.22.17) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.22.17) unstable; urgency=low
 
-  * NOT RELEASED YET
   * add 2.6.23-rc6-git1_fix-hci_sock-build.diff.
   * update experimental default config to 2.6.23-rc6-git1-slh-smp-1.
   * update experimental default config to 2.6.23-rc6-git1-slh64-smp-1.
@@ -18,8 +17,11 @@ sidux-kernelhacking (2.6.22.17) UNRELEASED; urgency=low
     - remove-kernel-completely
     - make-kernel-links
   * finally update wireless-dev.
+  * overhaul install-kernel scripts.
+  * remove obsolete cruft:
+    - remove-kernel-sidux.sh, kernel-remover does a better job.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 18 Sep 2007 10:08:12 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 18 Sep 2007 10:41:10 +0200
 
 sidux-kernelhacking (2.6.22.16) unstable; urgency=low
 
