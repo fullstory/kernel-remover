@@ -4,8 +4,10 @@ sidux-kernelhacking (2.6.22.19) UNRELEASED; urgency=low
   * update experimental default config for i686 to 2.6.23-rc6-git7-slh-smp-2.
   * update experimental default config for amd64 to
     2.6.23-rc6-git7-slh64-smp-2.
+  * update stable default config for amd64 to 2.6.22.6-slh64-smp-6.
+  * update stable default config for 686 to 2.6.22.6-slh-smp-6.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 18 Sep 2007 13:50:03 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 18 Sep 2007 14:31:41 +0200
 
 sidux-kernelhacking (2.6.22.18) unstable; urgency=low
 
