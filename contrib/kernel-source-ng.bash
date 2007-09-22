@@ -84,7 +84,7 @@ patches_for_kernel() {
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc4/2.6.23-rc4-mm1/broken-out/git-ipwireless_cs.patch
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc4/2.6.23-rc4-mm1/broken-out/gregkh-driver-nozomi.patch
 				$PATCH_MIRROR/2.6.23-rc6_wireless-dev_20070917.diff.bz2
-				$PATCH_MIRROR/2.6.23-rc6_wireless-dev_20070917+rt2x00-20070920.diff
+				$PATCH_MIRROR/2.6.23-rc7_wireless-dev_20070917+rt2x00-20070922.diff.bz2
 				$PATCH_MIRROR/2.6.23-rc6_ipg-add-ip1000a-driver-to-kernel-tree.diff.bz2
 			)
 			;;
