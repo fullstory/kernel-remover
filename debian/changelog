@@ -8,9 +8,8 @@ sidux-kernelhacking (2.6.22.19) UNRELEASED; urgency=low
   * update stable default config for 686 to 2.6.22.6-slh-smp-6.
   * update to unionfs 2.1.4.
   * update rt2x00.
-  * update rt2x00.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 22 Sep 2007 15:29:37 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 22 Sep 2007 16:24:52 +0200
 
 sidux-kernelhacking (2.6.22.18) unstable; urgency=low
 
