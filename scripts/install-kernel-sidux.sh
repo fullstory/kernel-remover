@@ -29,8 +29,15 @@ grep -q do_initrd /etc/kernel-img.conf 2> /dev/null || \
 
 
 # install important dependencies
-[ -x /usr/bin/gcc-4.2 ]		|| apt-get install gcc-4.2
-[ -x /usr/sbin/mkinitramfs ]	|| apt-get install initramfs-tools
+[ -x /usr/bin/gcc-4.2 ]		|| INSTALL_DEP="$INSTALL_DEP gcc-4.2"
+[ -x /usr/sbin/mkinitramfs ]	|| INSTALL_DEP="$INSTALL_DEP initramfs-tools"
+if dpkg -l bcm43xx-fwcutter 2>/dev/null 2>&1 || test -r /lib/firmware/bcm43xx_pcm4.fw; then
+	INSTALL_DEP="$INSTALL_DEP b43-fwcutter"
+fi
+if [ -n "$INSTALL_DEP" ]; then
+	apt-get update
+	apt-get install $INSTALL_DEP
+fi
 
 # install kernel, headers and our patches to the vanilla tree
 dpkg -i "linux-image-${VER}_${SUB}_${ARCH}.deb"
