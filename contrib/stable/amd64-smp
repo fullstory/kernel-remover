@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.22.7-slh64-smp-1
-# Sat Sep 22 11:25:46 2007
+# Linux kernel version: 2.6.22.8-rc1-slh64-smp-1
+# Mon Sep 24 22:18:07 2007
 #
 CONFIG_X86_64=y
 CONFIG_64BIT=y
@@ -77,7 +77,6 @@ CONFIG_FUTEX=y
 CONFIG_ANON_INODES=y
 CONFIG_EPOLL=y
 CONFIG_SIGNALFD=y
-CONFIG_TIMERFD=y
 CONFIG_EVENTFD=y
 CONFIG_SHMEM=y
 CONFIG_VM_EVENT_COUNTERS=y
