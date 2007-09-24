@@ -1,8 +1,9 @@
 sidux-kernelhacking (2.6.22.20) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * update stable default config for i686 to 2.6.22.8-rc1-slh-smp-1.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 23 Sep 2007 21:31:14 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 24 Sep 2007 23:32:37 +0200
 
 sidux-kernelhacking (2.6.22.19) unstable; urgency=low
 
