@@ -3,8 +3,10 @@ sidux-kernelhacking (2.6.22.20) UNRELEASED; urgency=low
   * NOT RELEASED YET
   * update stable default config for i686 to 2.6.22.8-rc1-slh-smp-1.
   * update stable default config for amd64 to 2.6.22.8-rc1-slh64-smp-1.
+  * prefer new firewire stack.
+  * update stable default config for amd64 to 2.6.22.8-slh64-smp-1.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 24 Sep 2007 23:33:58 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 25 Sep 2007 12:28:43 +0200
 
 sidux-kernelhacking (2.6.22.19) unstable; urgency=low
 
