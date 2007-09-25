@@ -81,11 +81,10 @@ patches_for_kernel() {
 				$PATCH_MIRROR/unionfs-2.1/unionfs-2.1.4_for_2.6.23-rc7.diff.gz
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-unicode-vt.patch.bz2
-				$MIRROR/people/akpm/patches/2.6/2.6.23-rc4/2.6.23-rc4-mm1/broken-out/git-ipwireless_cs.patch
-				$MIRROR/people/akpm/patches/2.6/2.6.23-rc4/2.6.23-rc4-mm1/broken-out/gregkh-driver-nozomi.patch
+				$MIRROR/people/akpm/patches/2.6/2.6.23-rc8/2.6.23-rc8-mm1/broken-out/git-ipwireless_cs.patch
+				$MIRROR/people/akpm/patches/2.6/2.6.23-rc8/2.6.23-rc8-mm1/broken-out/gregkh-driver-nozomi.patch
 				$PATCH_MIRROR/2.6.23-rc6_wireless-dev_20070917.diff.bz2
 				$PATCH_MIRROR/2.6.23-rc6_wireless-dev_20070917+rt2x00-20070920.diff
-				$PATCH_MIRROR/2.6.23-rc6_ipg-add-ip1000a-driver-to-kernel-tree.diff.bz2
 			)
 			;;
 		*)
