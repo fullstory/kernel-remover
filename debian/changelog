@@ -12,8 +12,9 @@ sidux-kernelhacking (2.6.22.20) UNRELEASED; urgency=low
   * update unionfs to 2.1.5.
   * unionfs 2.1.5 doesn't apply to 2.6.23, fix it later and remove it for now.
   * update experimental default config for i686 to 2.6.23-rc8-slh-smp-2.
+  * update experimental default config for amd64 to 2.6.23-rc8-slh64-smp-2.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 28 Sep 2007 15:48:58 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 28 Sep 2007 15:49:31 +0200
 
 sidux-kernelhacking (2.6.22.19) unstable; urgency=low
 
