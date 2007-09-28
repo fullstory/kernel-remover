@@ -84,7 +84,7 @@ patches_for_kernel() {
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc8/2.6.23-rc8-mm2/broken-out/git-ipwireless_cs.patch
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc8/2.6.23-rc8-mm2/broken-out/gregkh-driver-nozomi.patch
 				$PATCH_MIRROR/2.6.23-rc8_wireless-2.6_20070928.diff.bz2
-				$PATCH_MIRROR/2.6.23-rc8_wireless-2.6_20070918-at76_usb_rt2x00.diff.bz2
+				$PATCH_MIRROR/2.6.23-rc8_wireless-2.6_20070928-at76_usb.diff.bz2
 			)
 			;;
 		*)
