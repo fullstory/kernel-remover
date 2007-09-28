@@ -10,8 +10,13 @@ sidux-kernelhacking (2.6.22.20) UNRELEASED; urgency=low
   * update experimental default config for i686 to 2.6.23-rc8-slh-smp-1.
   * pata_ali is supposed to work now.
   * update unionfs to 2.1.5.
+  * disable unionfs 2.1.5 for 2.6.23 for now, it doesn't apply.
+  * pull in net-2.6.24.
+  * add at76_usb.
+  * add ath5k.
+  * update rt2x00 from rt2x00.git.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 26 Sep 2007 22:00:03 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 28 Sep 2007 19:35:54 +0200
 
 sidux-kernelhacking (2.6.22.19) unstable; urgency=low
 
