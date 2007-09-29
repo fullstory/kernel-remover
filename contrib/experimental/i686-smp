@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.23-rc8-git2-slh-smp-1
-# Fri Sep 28 22:47:57 2007
+# Linux kernel version: 2.6.23-rc8-git3-slh-smp-1
+# Sat Sep 29 13:53:44 2007
 #
 CONFIG_X86_32=y
 CONFIG_GENERIC_TIME=y
@@ -1488,6 +1488,7 @@ CONFIG_MACVLAN=m
 CONFIG_EQUALIZER=m
 CONFIG_TUN=m
 CONFIG_NET_SB1000=m
+CONFIG_IP1000=m
 CONFIG_ARCNET=m
 CONFIG_ARCNET_1201=m
 CONFIG_ARCNET_1051=m
@@ -3558,19 +3559,12 @@ CONFIG_RAMFS=y
 CONFIG_CONFIGFS_FS=m
 
 #
-# Layered filesystems
-#
-CONFIG_ECRYPT_FS=m
-CONFIG_UNION_FS=m
-CONFIG_UNION_FS_XATTR=y
-# CONFIG_UNION_FS_DEBUG is not set
-
-#
 # Miscellaneous filesystems
 #
 CONFIG_ADFS_FS=m
 CONFIG_ADFS_FS_RW=y
 CONFIG_AFFS_FS=m
+CONFIG_ECRYPT_FS=m
 CONFIG_HFS_FS=m
 CONFIG_HFSPLUS_FS=m
 CONFIG_BEFS_FS=m
