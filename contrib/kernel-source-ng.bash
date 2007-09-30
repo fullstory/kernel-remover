@@ -89,7 +89,6 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.23-rc8-git2_zd1211rw-mac80211.patch.bz2
 				$PATCH_MIRROR/2.6.23-rc8-git2_mac80211-extras.patch.bz2
 				$PATCH_MIRROR/2.6.23-rc6_ipg-add-ip1000a-driver-to-kernel-tree.diff.bz2
-				$PATCH_MIRROR/2.6.23_rtl8187-medion-md96290.diff
 			)
 			;;
 		*)

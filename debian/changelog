@@ -19,7 +19,6 @@ sidux-kernelhacking (2.6.22.20) UNRELEASED; urgency=low
   * add ip1000a again.
   * update experimental default config for amd64 to 2.6.23-rc8-git3-slh64-smp-1.
   * update experimental default config for i686 to 2.6.23-rc8-git3-slh-smp-1.
-  * add USB ID for Medion MD-96290 (rtl8187).
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 29 Sep 2007 13:56:06 +0200
 
