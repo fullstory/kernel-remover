@@ -1,6 +1,5 @@
-sidux-kernelhacking (2.6.22.20) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.22.20) unstable; urgency=low
 
-  * NOT RELEASED YET
   * update stable default config for i686 to 2.6.22.8-rc1-slh-smp-1.
   * update stable default config for amd64 to 2.6.22.8-rc1-slh64-smp-1.
   * prefer new firewire stack.
@@ -22,8 +21,9 @@ sidux-kernelhacking (2.6.22.20) UNRELEASED; urgency=low
   * disable BCM43XX for kernel 2.6.23, B43 to the rescue.
   * update experimental default config for i686 to 2.6.23-rc8-git4-slh-smp-1.
   * update experimental default config for amd64 to 2.6.23-rc8-git4-slh64-smp-1.
+  * handle the bcm43xx to b43/ b43legacy transition for kernel 2.6.23.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 30 Sep 2007 15:35:29 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 30 Sep 2007 20:09:53 +0200
 
 sidux-kernelhacking (2.6.22.19) unstable; urgency=low
 

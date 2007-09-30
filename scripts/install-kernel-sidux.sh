@@ -31,9 +31,17 @@ grep -q do_initrd /etc/kernel-img.conf 2> /dev/null || \
 # install important dependencies
 [ -x /usr/bin/gcc-4.2 ]		|| INSTALL_DEP="$INSTALL_DEP gcc-4.2"
 [ -x /usr/sbin/mkinitramfs ]	|| INSTALL_DEP="$INSTALL_DEP initramfs-tools"
+
+# take care to install b43-fwcutter, if bcm43xx-fwcutter is already installed
 if dpkg -l bcm43xx-fwcutter 2>/dev/null 2>&1 || test -r /lib/firmware/bcm43xx_pcm4.fw; then
 	INSTALL_DEP="$INSTALL_DEP b43-fwcutter"
 fi
+
+# do not blacklist b43, we need it for kernel >= 2.6.23
+if [ -r /etc/modprobe.d/mac80211 ] && dpkg --compare-versions $(dpkg -l udev-config-sidux >/dev/null 2>&1 | awk '/^ii/{print $3}') lt 0.4.2 >/dev/null 2>&1; then
+	INSTALL_DEP="$INSTALL_DEP udev-config-sidux"
+fi
+
 if [ -n "$INSTALL_DEP" ]; then
 	apt-get update
 	apt-get install $INSTALL_DEP
