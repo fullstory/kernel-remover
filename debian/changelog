@@ -21,8 +21,9 @@ sidux-kernelhacking (2.6.22.20) UNRELEASED; urgency=low
   * update experimental default config for i686 to 2.6.23-rc8-git3-slh-smp-1.
   * disable BCM43XX for kernel 2.6.23, B43 to the rescue.
   * update experimental default config for i686 to 2.6.23-rc8-git4-slh-smp-1.
+  * update experimental default config for amd64 to 2.6.23-rc8-git4-slh64-smp-1.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 30 Sep 2007 15:34:20 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 30 Sep 2007 15:35:29 +0200
 
 sidux-kernelhacking (2.6.22.19) unstable; urgency=low
 
