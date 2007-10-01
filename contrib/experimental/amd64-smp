@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.23-rc8-git4-slh64-smp-1
-# Sun Sep 30 15:34:26 2007
+# Linux kernel version: 2.6.23-rc8-git4-slh64-smp-2
+# Mon Oct  1 14:38:49 2007
 #
 CONFIG_X86_64=y
 CONFIG_64BIT=y
@@ -3241,12 +3241,19 @@ CONFIG_RAMFS=y
 CONFIG_CONFIGFS_FS=m
 
 #
+# Layered filesystems
+#
+CONFIG_ECRYPT_FS=m
+CONFIG_UNION_FS=m
+CONFIG_UNION_FS_XATTR=y
+# CONFIG_UNION_FS_DEBUG is not set
+
+#
 # Miscellaneous filesystems
 #
 CONFIG_ADFS_FS=m
 CONFIG_ADFS_FS_RW=y
 CONFIG_AFFS_FS=m
-CONFIG_ECRYPT_FS=m
 CONFIG_HFS_FS=m
 CONFIG_HFSPLUS_FS=m
 CONFIG_BEFS_FS=m
