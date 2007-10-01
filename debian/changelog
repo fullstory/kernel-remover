@@ -1,8 +1,9 @@
 sidux-kernelhacking (2.6.23.0) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * update unionfs to 2.1.6.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 30 Sep 2007 20:13:19 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 01 Oct 2007 14:22:43 +0200
 
 sidux-kernelhacking (2.6.22.20) unstable; urgency=low
 
