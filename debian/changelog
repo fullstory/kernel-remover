@@ -6,8 +6,9 @@ sidux-kernelhacking (2.6.23.0) UNRELEASED; urgency=low
   * update experimental default config for i686 to 2.6.23-rc8-git4-slh-smp-2
   * enable AX25_DAMA_SLAVE.
   * update wireless/ mac80211 patches.
+  * fix conflicts with current -git.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 05 Oct 2007 12:18:21 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 05 Oct 2007 12:24:16 +0200
 
 sidux-kernelhacking (2.6.22.20) unstable; urgency=low
 
