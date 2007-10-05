@@ -11,8 +11,9 @@ sidux-kernelhacking (2.6.23.0) UNRELEASED; urgency=low
     2.6.23-rc9-git2-slh64-smp-1.
   * update experimental default config for i686 to 2.6.23-rc9-git2-slh-smp-1.
   * update wireless/ mac80211 patches.
+  * update experimental default config for i686 to 2.6.23-rc9-git3-slh-smp-1.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 06 Oct 2007 01:05:03 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 06 Oct 2007 01:13:41 +0200
 
 sidux-kernelhacking (2.6.22.20) unstable; urgency=low
 
