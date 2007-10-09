@@ -2,8 +2,12 @@ sidux-kernelhacking (2.6.23.1) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
   * disable kernel based IRQ balance.
+  * kernel 2.6.22 is in deep feature freeze now, consider it deprecated for
+    ongoing development.
+  * kernel 2.6.22 is very close to being released, declare it the new stable
+    now.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 08 Oct 2007 18:25:44 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 09 Oct 2007 15:50:53 +0200
 
 sidux-kernelhacking (2.6.23.0) unstable; urgency=low
 
