@@ -48,32 +48,6 @@ KREGEXP="^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9]+)?-?(mm
 #=============================================================================#
 patches_for_kernel() {
 	case "$1" in
-		2.6.22*)
-			PATCH+=(
-				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
-				$PATCH_MIRROR/t-sinus_111card-2.6.16.diff
-				$PATCH_MIRROR/unionfs-2.1/unionfs-2.1.6_for_2.6.22.9.diff.gz
-				$PATCH_MIRROR/2.6.22.2-at76_usb20070810.diff.bz2
-				$PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2
-				$PATCH_MIRROR/2.6.22-1.3242_defaults-unicode-vt.patch.bz2
-				$MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/git-ipwireless_cs.patch
-				$MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/gregkh-driver-nozomi.patch
-				$MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/fix-gregkh-driver-nozomi.patch
-				$MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/gregkh-usb-usb-oti6858-usb-serial-driver.patch
-				$MIRROR/people/akpm/patches/2.6/2.6.22-rc6/2.6.22-rc6-mm1/broken-out/gregkh-usb-usb-oti6858-status.patch
-				$PATCH_MIRROR/2.6.22_softmac-set-essid-state-fix.patch
-				$PATCH_MIRROR/2.6.22.1_0001-mac80211-Add-support-for-SIOCGIWRATE-ioctl-to-pro.patch
-				$PATCH_MIRROR/2.6.22.1_0002-mac80211-Set-low-initial-rate-in-rc80211_simple.patch
-				$PATCH_MIRROR/0005-mac80211-remove-rtnl-locking-in-ieee80211_sta.c.patch
-				$PATCH_MIRROR/2.6.22.1_mac80211_missing-dev_put-in-ieee80211_master_start_xmit.diff
-				$PATCH_MIRROR/2.6.22.1_2.6.22-8_rtl8187.patch.gz
-				$PATCH_MIRROR/2.6.22.2-iwlwifi-1.0.0-1.diff.bz2
-				$PATCH_MIRROR/2.6.22.3-rt2x00-2.0.6_20060814.bz2
-				$PATCH_MIRROR/2.6.22_zd1211rw_add-id-for-zyxel-g-200v2.diff
-				$PATCH_MIRROR/2.6.22_zd1211rw_extend-rf-layer.diff
-				$PATCH_MIRROR/2.6.22_zd1211rw_add-uw2453-rf-support.diff
-			)
-			;;
 		2.6.23*)
 			PATCH+=(
 				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch

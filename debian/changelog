@@ -6,8 +6,9 @@ sidux-kernelhacking (2.6.23.1) UNRELEASED; urgency=low
     ongoing development.
   * kernel 2.6.22 is very close to being released, declare it the new stable
     now.
+  * kernel 2.6.22 is history as of now.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 09 Oct 2007 15:50:53 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 09 Oct 2007 23:48:48 +0200
 
 sidux-kernelhacking (2.6.23.0) unstable; urgency=low
 
