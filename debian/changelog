@@ -7,8 +7,12 @@ sidux-kernelhacking (2.6.23.1) UNRELEASED; urgency=low
   * kernel 2.6.22 is very close to being released, declare it the new stable
     now.
   * kernel 2.6.22 is history as of now.
+  * move ALi back to blkdev.
+  * branch of experimental configs for 2.6.24 (ALi using pata_ali, VIA isung
+    pata_via - this must be fixed upstream!).
+  * increase minimum version requirement for rt2570.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 09 Oct 2007 23:48:48 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 10 Oct 2007 14:03:37 +0200
 
 sidux-kernelhacking (2.6.23.0) unstable; urgency=low
 
