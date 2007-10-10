@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.23-rc9-git7-slh-smp-1
-# Tue Oct  9 16:02:27 2007
+# Linux kernel version: 2.6.23-slh-smp-2
+# Wed Oct 10 14:21:38 2007
 #
 CONFIG_X86_32=y
 CONFIG_GENERIC_TIME=y
@@ -1195,6 +1195,7 @@ CONFIG_BLK_DEV_IDEDMA_PCI=y
 # CONFIG_IDEDMA_ONLYDISK is not set
 # CONFIG_BLK_DEV_AEC62XX is not set
 CONFIG_BLK_DEV_ALI15X3=m
+# CONFIG_WDC_ALI15X3 is not set
 # CONFIG_BLK_DEV_AMD74XX is not set
 # CONFIG_BLK_DEV_ATIIXP is not set
 # CONFIG_BLK_DEV_CMD64X is not set
