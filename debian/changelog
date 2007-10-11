@@ -1,6 +1,5 @@
-sidux-kernelhacking (2.6.23.1) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.23.1) unstable; urgency=low
 
-  * NOT RELEASED YET
   * disable kernel based IRQ balance.
   * kernel 2.6.22 is in deep feature freeze now, consider it deprecated for
     ongoing development.
@@ -12,8 +11,9 @@ sidux-kernelhacking (2.6.23.1) UNRELEASED; urgency=low
     pata_via - this must be fixed upstream!).
   * increase minimum version requirement for rt2570.
   * update T-Sinux 111card patch with wireless-2.6.
+  * properly hide error messages if bcm43xx-fwcutter is not installed.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 10 Oct 2007 23:33:57 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 11 Oct 2007 15:10:32 +0200
 
 sidux-kernelhacking (2.6.23.0) unstable; urgency=low
 

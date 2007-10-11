@@ -33,7 +33,7 @@ grep -q do_initrd /etc/kernel-img.conf 2> /dev/null || \
 [ -x /usr/sbin/mkinitramfs ]	|| INSTALL_DEP="$INSTALL_DEP initramfs-tools"
 
 # take care to install b43-fwcutter, if bcm43xx-fwcutter is already installed
-if dpkg -l bcm43xx-fwcutter 2>/dev/null 2>&1 || test -r /lib/firmware/bcm43xx_pcm4.fw; then
+if dpkg -l bcm43xx-fwcutter >/dev/null 2>&1 || test -r /lib/firmware/bcm43xx_pcm4.fw; then
 	INSTALL_DEP="$INSTALL_DEP b43-fwcutter"
 fi
 
