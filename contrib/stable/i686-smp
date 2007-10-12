@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.23-slh-smp-2
-# Wed Oct 10 14:21:38 2007
+# Linux kernel version: 2.6.23.1-slh-smp-1
+# Fri Oct 12 20:33:34 2007
 #
 CONFIG_X86_32=y
 CONFIG_GENERIC_TIME=y
@@ -1620,6 +1620,7 @@ CONFIG_DL2K=m
 CONFIG_E1000=m
 CONFIG_E1000_NAPI=y
 # CONFIG_E1000_DISABLE_PACKET_SPLIT is not set
+CONFIG_E1000E=m
 CONFIG_NS83820=m
 CONFIG_HAMACHI=m
 CONFIG_YELLOWFIN=m
