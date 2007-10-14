@@ -38,7 +38,8 @@ if dpkg -l bcm43xx-fwcutter >/dev/null 2>&1 || test -r /lib/firmware/bcm43xx_pcm
 fi
 
 # do not blacklist b43, we need it for kernel >= 2.6.23
-if [ -r /etc/modprobe.d/mac80211 ] && dpkg --compare-versions $(dpkg -l udev-config-sidux >/dev/null 2>&1 | awk '/^ii/{print $3}') lt 0.4.2 >/dev/null 2>&1; then
+# make sure to install the IEEE1394 vs. FireWire "Juju" blacklist
+if [ -r /etc/modprobe.d/sidux ] && dpkg --compare-versions $(dpkg -l udev-config-sidux >/dev/null 2>&1 | awk '/^ii/{print $3}') lt 0.4.3 >/dev/null 2>&1; then
 	INSTALL_DEP="$INSTALL_DEP udev-config-sidux"
 fi
 
