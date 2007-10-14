@@ -3,8 +3,9 @@ sidux-kernelhacking (2.6.23.3) UNRELEASED; urgency=low
   * NOT RELEASED YET
   * add highres timer patches.
   * enable classic pre-Juju IEEE1394 stack for stable kernels again.
+  * enable NO_HZ for amd64.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 14 Oct 2007 13:56:36 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 14 Oct 2007 13:57:34 +0200
 
 sidux-kernelhacking (2.6.23.2) unstable; urgency=low
 
