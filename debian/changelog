@@ -1,8 +1,9 @@
 sidux-kernelhacking (2.6.23.3) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * add highres timer patches.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 14 Oct 2007 13:40:48 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 14 Oct 2007 13:43:03 +0200
 
 sidux-kernelhacking (2.6.23.2) unstable; urgency=low
 

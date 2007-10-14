@@ -50,6 +50,7 @@ patches_for_kernel() {
 	case "$1" in
 		2.6.23*)
 			PATCH+=(
+				$PATCH_MIRROR/2.6.23.1_highres-timers.patch.bz2
 				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
 				$PATCH_MIRROR/wireless-2.6.git-842fca6b94bfad2820bcd1edaafce567e30925df.patch
 				$PATCH_MIRROR/unionfs-2.1/unionfs-2.1.6_for_2.6.23-rc8.diff.gz
