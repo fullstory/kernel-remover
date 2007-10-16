@@ -78,6 +78,7 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.23.1_at76_usb-20071012.diff.bz2
 				$PATCH_MIRROR/2.6.23.1_i915-fix-vbl-swap-allocation-size.patch
 				$PATCH_MIRROR/2.6.23.1_e1000-corrupt-eeprom-checksum.patch
+				$PATCH_MIRROR/2.6.23.1_zd1211rw_fix-oops-when-ejecting-install-media.diff
 			)
 			;;
 		*)

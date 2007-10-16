@@ -6,8 +6,9 @@ sidux-kernelhacking (2.6.23.3) UNRELEASED; urgency=low
   * enable NO_HZ for amd64.
   * add patches to fix i915 related crashes.
   * add patch to fix e1000 EEPROM corruption issues.
+  * add patch to fix zd1211rw related kernel oops.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 16 Oct 2007 00:02:09 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 16 Oct 2007 11:45:27 +0200
 
 sidux-kernelhacking (2.6.23.2) unstable; urgency=low
 
