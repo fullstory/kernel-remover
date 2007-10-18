@@ -50,7 +50,7 @@ patches_for_kernel() {
 	case "$1" in
 		2.6.23*)
 			PATCH+=(
-				$PATCH_MIRROR/2.6.23.1_highres-timers.patch.bz2
+				$PATCH_MIRROR/2.6.23.1_highres-timers-hrt3.patch.bz2
 				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
 				$PATCH_MIRROR/wireless-2.6.git-842fca6b94bfad2820bcd1edaafce567e30925df.patch
 				$PATCH_MIRROR/unionfs-2.1/unionfs-2.1.6_for_2.6.23-rc8.diff.gz
@@ -59,12 +59,13 @@ patches_for_kernel() {
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc8/2.6.23-rc8-mm2/broken-out/git-ipwireless_cs.patch
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc8/2.6.23-rc8-mm2/broken-out/gregkh-driver-nozomi.patch
 				$PATCH_MIRROR/2.6.23-rc6_ipg-add-ip1000a-driver-to-kernel-tree.diff.bz2
-				$PATCH_MIRROR/2.6.23.1_wireless.patch.bz2
+				$PATCH_MIRROR/2.6.23.1_wireless2.patch.bz2
 				$PATCH_MIRROR/2.6.23-rc9-git3_iwlwifi-fixes.patch.bz2
-				$PATCH_MIRROR/2.6.23.1_mac80211-nm-hidden-ssid.patch.bz2
-				$PATCH_MIRROR/2.6.23-rc9-git3_ath5k.patch.bz2
+				$PATCH_MIRROR/2.6.23.1_ath5k.patch.bz2
+				$PATCH_MIRROR/2.6.23.1_ath5k-fixes.patch.bz2
 				$PATCH_MIRROR/2.6.23-rc9-git3_zd1211rw-mac80211.patch.bz2
 				$PATCH_MIRROR/2.6.23-rc9-git3_mac80211-extras.patch.bz2
+				$PATCH_MIRROR/2.6.23.1_wireless-fixes.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-01.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-02.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-03.patch.bz2
@@ -75,10 +76,18 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-08.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-09.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-10.patch.bz2
+				$PATCH_MIRROR/2.6.23.1_e1000e_corrupt-eeprom-checksum.patch.bz2
+				$PATCH_MIRROR/2.6.23.1_e1000e_dont-poke-phy-registers-to-retrieve-link-status.diff.bz2
+				$PATCH_MIRROR/2.6.23.1_e1000e_fix-error-checks.diff.bz2
+				$PATCH_MIRROR/2.6.23.1_e1000e_fix-debug-printk-macro.diff.bz2
 				$PATCH_MIRROR/2.6.23.1_at76_usb-20071012.diff.bz2
 				$PATCH_MIRROR/2.6.23.1_i915-fix-vbl-swap-allocation-size.patch
-				$PATCH_MIRROR/2.6.23.1_e1000-corrupt-eeprom-checksum.patch
 				$PATCH_MIRROR/2.6.23.1_zd1211rw_fix-oops-when-ejecting-install-media.diff
+				$PATCH_MIRROR/2.6.23.1_cputime-fix-accounting.patch.bz2
+				$PATCH_MIRROR/2.6.23.1_esp-scsi.diff.bz2
+				$PATCH_MIRROR/2.6.23.1_thinkpad-key-events.patch.bz2
+				$PATCH_MIRROR/2.6.23.1_usb-storage-initialize-huawei-e220-properly.patch.bz2
+				$PATCH_MIRROR/2.6.23.1_lirc-0.8.2-current.patch.bz2
 			)
 			;;
 		*)

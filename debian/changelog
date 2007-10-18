@@ -7,8 +7,18 @@ sidux-kernelhacking (2.6.23.3) UNRELEASED; urgency=low
   * add patches to fix i915 related crashes.
   * add patch to fix e1000 EEPROM corruption issues.
   * add patch to fix zd1211rw related kernel oops.
+  * update high resolution timer patches to hrt3.
+  * update wireless.
+  * update ath5k.
+  * numerous e1000e fixes.
+  * add thinkpad key support.
+  * fix cputime accounting.
+  * fix Huawei e220 initialization.
+  * fix esp-scsi.
+  * fir zd1201.
+  * add lirc 0.8.2-current support.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 16 Oct 2007 11:45:27 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 18 Oct 2007 22:29:27 +0200
 
 sidux-kernelhacking (2.6.23.2) unstable; urgency=low
 
