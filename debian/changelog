@@ -1,6 +1,5 @@
-sidux-kernelhacking (2.6.23.3) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.23.3) unstable; urgency=low
 
-  * NOT RELEASED YET
   * add highres timer patches.
   * enable classic pre-Juju IEEE1394 stack for stable kernels again.
   * enable NO_HZ for amd64.
@@ -17,8 +16,12 @@ sidux-kernelhacking (2.6.23.3) UNRELEASED; urgency=low
   * fix esp-scsi.
   * fir zd1201.
   * add lirc 0.8.2-current support.
+  * the lirc-module-source packaging is seriously out of sync, use a kernel
+    patch for the time being.
+  * insane hack to unp-kernel-modules to prevent et131x from modpring in
+    chroot.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 18 Oct 2007 22:29:27 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 19 Oct 2007 00:05:07 +0200
 
 sidux-kernelhacking (2.6.23.2) unstable; urgency=low
 

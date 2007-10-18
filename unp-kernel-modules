@@ -18,30 +18,25 @@ do
         esac
 done
 
-if ((UID))
-then
+if ((UID)); then
 	# not root
-	if [[ ! $BASE_DIR ]]
-	then
+	if [[ ! $BASE_DIR ]]; then
 		BASE_DIR="$PWD"
 		[[ -e $BASE_DIR/Makefile && -e /usr/src/Makefile ]] || ln -s /usr/src/Makefile ${BASE_DIR}/
 	fi
 
-	if [[ ! -s $KMODFILE ]]
-	then
+	if [[ ! -s $KMODFILE ]]; then
 		echo "$KMODFILE is missing!"
 		exit 2
 	fi
 	
 	# dir must exist and be writeable
-	if [[ ! -d $BASE_DIR ]]
-	then
+	if [[ ! -d $BASE_DIR ]]; then
 		mkdir -p "$BASE_DIR" || {
 			echo "Cannot create directory: \"$BASE_DIR\""
 			exit 3
 		}
-	elif [[ -d $BASE_DIR ]]
-	then
+	elif [[ -d $BASE_DIR ]]; then
 		touch "$BASE_DIR" || {
 			echo "Cannot write to directory: \"$BASE_DIR\""
 			exit 4
@@ -62,6 +57,9 @@ function rm_modules_dir () {
 function pop_modules_dir () {
 	pushd "$BASE_DIR" >/dev/null
 		awk -f /usr/share/sidux-modules/unp_sidux_modules.awk $KMODFILE
+
+		# insane hacks to sanitize module packages
+		rm -f modules/et131x/debian/et131x-modules-_KVERS_.postinst.modules.in
 	popd >/dev/null
 }
 
