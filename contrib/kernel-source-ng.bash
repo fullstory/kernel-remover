@@ -65,7 +65,7 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.23.1_ath5k-fixes.patch.bz2
 				$PATCH_MIRROR/2.6.23-rc9-git3_zd1211rw-mac80211.patch.bz2
 				$PATCH_MIRROR/2.6.23-rc9-git3_mac80211-extras.patch.bz2
-				$PATCH_MIRROR/2.6.23.1_wireless-fixes.patch.bz2
+				$PATCH_MIRROR/2.6.23.1_wireless-fixes-1.3.2.1.patch
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-01.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-02.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-03.patch.bz2
@@ -80,9 +80,9 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.23.1_e1000e_dont-poke-phy-registers-to-retrieve-link-status.diff.bz2
 				$PATCH_MIRROR/2.6.23.1_e1000e_fix-error-checks.diff.bz2
 				$PATCH_MIRROR/2.6.23.1_e1000e_fix-debug-printk-macro.diff.bz2
+				$PATCH_MIRROR/2.6.23.1_e100-disable-polling.patch
 				$PATCH_MIRROR/2.6.23.1_at76_usb-20071012.diff.bz2
 				$PATCH_MIRROR/2.6.23.1_i915-fix-vbl-swap-allocation-size.patch
-				$PATCH_MIRROR/2.6.23.1_zd1211rw_fix-oops-when-ejecting-install-media.diff
 				$PATCH_MIRROR/2.6.23.1_cputime-fix-accounting.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_esp-scsi.diff.bz2
 				$PATCH_MIRROR/2.6.23.1_thinkpad-key-events.patch.bz2
