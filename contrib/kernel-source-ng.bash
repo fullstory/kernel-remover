@@ -53,7 +53,7 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.23.1_highres-timers-hrt3.patch.bz2
 				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
 				$PATCH_MIRROR/wireless-2.6.git-842fca6b94bfad2820bcd1edaafce567e30925df.patch
-				$PATCH_MIRROR/unionfs-2.1/unionfs-2.1.6_for_2.6.23-rc8.diff.gz
+				$PATCH_MIRROR/unionfs-2.1/unionfs-2.1.7_for_2.6.23.1.diff.gz
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-unicode-vt.patch.bz2
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc8/2.6.23-rc8-mm2/broken-out/git-ipwireless_cs.patch
