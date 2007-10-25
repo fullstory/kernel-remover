@@ -88,6 +88,7 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.23.1_thinkpad-key-events.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_usb-storage-initialize-huawei-e220-properly.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_lirc-0.8.2-current.patch.bz2
+				$PATCH_MIRROR/2.6.23.1_mac80211-decryption-noise_1.1.patch
 			)
 			;;
 		*)

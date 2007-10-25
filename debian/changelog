@@ -4,8 +4,9 @@ sidux-kernelhacking (2.6.23.4) UNRELEASED; urgency=low
   * Disable polling before registering netdevice in e100.
   * Testing current wireless bits from upstream.
   * update unionfs to 2.1.7.
+  * quiet mac80211 decryption noise when frames may not be for us.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 22 Oct 2007 01:59:57 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 26 Oct 2007 01:36:27 +0200
 
 sidux-kernelhacking (2.6.23.3) unstable; urgency=low
 
