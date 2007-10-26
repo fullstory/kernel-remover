@@ -87,6 +87,7 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.23.1_lirc-0.8.2-current.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_alsa-1.0.15-merge-1_1.1.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_alsa-1.0.15-merge-2_1.1.patch.bz2
+				$PATCH_MIRROR/2.6.23.1_iwlwifi-irq-fix.diff
 			)
 			;;
 		*)
