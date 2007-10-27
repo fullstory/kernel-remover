@@ -1,6 +1,5 @@
-sidux-kernelhacking (2.6.23.4) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.23.4) unstable; urgency=low
 
-  * NOT RELEASED YET
   * Disable polling before registering netdevice in e100.
   * Testing current wireless bits from upstream.
   * update unionfs to 2.1.7.
@@ -12,8 +11,11 @@ sidux-kernelhacking (2.6.23.4) UNRELEASED; urgency=low
   * display PHY info for rt2x00.
   * further updates for iwlwifi and rt2x00.
   * remove macbuf dependency.
+  * make kernel remover pattern matching stricter.
+  * small grammar fixes.
+  * Recommend omnibook-source (i386 only).
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 27 Oct 2007 17:31:36 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 27 Oct 2007 23:54:38 +0200
 
 sidux-kernelhacking (2.6.23.3) unstable; urgency=low
 

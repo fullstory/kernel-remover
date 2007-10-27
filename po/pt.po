@@ -32,7 +32,7 @@ msgid "removing kernel ${i}"
 msgstr "Removendo o Kernel ${i}"
 
 #: remove-kernels.sh:195
-msgid "The following kernels were removed: \"${KernelList}\""
+msgid "The following kernels have been removed: \"${KernelList}\""
 msgstr "Os seguintes Kernelis foram removidos da instalação: \"${KernelList}\""
 
 #: remove-kernels.sh:208

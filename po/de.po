@@ -21,24 +21,24 @@ msgstr "Entfernen installierten Kernels"
 
 #: remove-kernels.sh:130
 msgid "The actual (active) kernel is $(uname -r)"
-msgstr "Der aktuelle (akiven) Kernel ist $(uname -r)"
+msgstr "Der aktuelle (akive) Kernel ist $(uname -r)"
 
 #: remove-kernels.sh:182
 msgid "There is only one kernel installed on this system. Nothing to be done!"
-msgstr "Dieses System hat nur einen kernel installiert. Nichts zu tun"
+msgstr "Dieses System hat nur einen Kernel installiert. Nichts zu tun!"
 
 #: remove-kernels.sh:189
 msgid "removing kernel ${i}"
 msgstr "Kernel ${i} wird entfernt."
 
 #: remove-kernels.sh:195
-msgid "The following kernels were removed: \"${KernelList}\""
+msgid "The following kernels have been removed: \"${KernelList}\""
 msgstr "Folgende Kernel sind entfernt worden: \"${KernelList}\""
 
 #: remove-kernels.sh:208
 msgid "Should I remove this kernel?"
-msgstr "Soll diesen Kernel entfernt werden?"
+msgstr "Soll dieser Kernel entfernt werden?"
 
 #: remove-kernels.sh:215
 msgid "Kernel not removed:"
-msgstr "Kernel würde nicht entfernt:"
+msgstr "Kernel wurde nicht entfernt:"
