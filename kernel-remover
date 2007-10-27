@@ -146,7 +146,7 @@ function remove_one_kernel
 	local Kernel
 	Kernel=$1 
 	if [ "${Kernel}" != "${ACTUAL}" ]; then
-		apt-get remove --purge --yes $(dpkg -l | awk '{print $2}' | grep ^${Kernel}$)
+		apt-get remove --purge --yes $(dpkg -l | awk '{print $2}' | grep ${Kernel}$)
 		if [ ! -e "/boot/vmlinuz-${Kernel}" ]; then
 			rm -rf /lib/modules/${Kernel}
 			rm -rf /usr/src/kernel-headers-${Kernel}
