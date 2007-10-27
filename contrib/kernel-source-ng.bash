@@ -64,7 +64,8 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.23.1-35.wl.1_ath5k.patch.bz2
 				$PATCH_MIRROR/2.6.23.1-35.wl.1_zd1211rw-mac80211.patch.bz2
 				$PATCH_MIRROR/2.6.23.1-35.wl.1_mac80211-decryption-noise.patch.bz2
-				$PATCH_MIRROR/2.6.23.1_rt2x00-8467e4fd13b5e567fa8c103aaa1c80fce4e3d33e.diff.bz2
+				$PATCH_MIRROR/2.6.23.1-35.wl.1_rt2x00-2.0.12.diff.bz2
+				$PATCH_MIRROR/rt2x00_show-info.diff
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-01.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-02.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-03.patch.bz2
