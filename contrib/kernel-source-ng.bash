@@ -58,14 +58,15 @@ patches_for_kernel() {
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc8/2.6.23-rc8-mm2/broken-out/git-ipwireless_cs.patch
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc8/2.6.23-rc8-mm2/broken-out/gregkh-driver-nozomi.patch
 				$PATCH_MIRROR/2.6.23-rc6_ipg-add-ip1000a-driver-to-kernel-tree.diff.bz2
-				$PATCH_MIRROR/2.6.23.1-35.wl.1_wireless.patch.bz2
-				$PATCH_MIRROR/2.6.23.1-35.wl.1_wireless-pending.patch.bz2
-				$PATCH_MIRROR/2.6.23.1-35.wl.1_at76.patch.bz2
-				$PATCH_MIRROR/2.6.23.1-35.wl.1_ath5k.patch.bz2
-				$PATCH_MIRROR/2.6.23.1-35.wl.1_zd1211rw-mac80211.patch.bz2
-				$PATCH_MIRROR/2.6.23.1-35.wl.1_mac80211-decryption-noise.patch.bz2
-				$PATCH_MIRROR/2.6.23.1-35.wl.1_rt2x00-2.0.12.diff.bz2
+				$PATCH_MIRROR/2.6.23.1-35.wl.2_wireless.patch.bz2
+				$PATCH_MIRROR/2.6.23.1-35.wl.2_wireless-pending.patch.bz2
+				$PATCH_MIRROR/2.6.23.1-35.wl.2_at76.patch.bz2
+				$PATCH_MIRROR/2.6.23.1-35.wl.2_ath5k.patch.bz2
+				$PATCH_MIRROR/2.6.23.1-35.wl.2_zd1211rw-mac80211.patch.bz2
+				$PATCH_MIRROR/2.6.23.1-35.wl.2_mac80211-decryption-noise.patch.bz2
+				$PATCH_MIRROR/2.6.23.1-35.wl.2_rt2x00-2.0.12.diff.bz2
 				$PATCH_MIRROR/rt2x00_show-info.diff
+				$PATCH_MIRROR/rt2x00_no-macbuf.diff
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-01.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-02.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-03.patch.bz2
@@ -88,7 +89,6 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.23.1_lirc-0.8.2-current.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_alsa-1.0.15-merge-1_1.1.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_alsa-1.0.15-merge-2_1.1.patch.bz2
-				$PATCH_MIRROR/2.6.23.1_iwlwifi-irq-fix.diff
 			)
 			;;
 		*)
