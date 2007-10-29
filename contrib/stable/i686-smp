@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.23.1-slh-smp-17
-# Sat Oct 27 15:21:24 2007
+# Linux kernel version: 2.6.23.1-slh-smp-19
+# Sun Oct 28 20:16:24 2007
 #
 CONFIG_X86_32=y
 CONFIG_GENERIC_TIME=y
@@ -108,7 +108,6 @@ CONFIG_DEFAULT_IOSCHED="cfq"
 CONFIG_TICK_ONESHOT=y
 CONFIG_NO_HZ=y
 CONFIG_HIGH_RES_TIMERS=y
-CONFIG_GENERIC_CLOCKEVENTS_BUILD=y
 CONFIG_SMP=y
 CONFIG_X86_PC=y
 # CONFIG_X86_ELAN is not set
@@ -325,17 +324,6 @@ CONFIG_X86_E_POWERSAVER=m
 # CONFIG_X86_ACPI_CPUFREQ_PROC_INTF is not set
 CONFIG_X86_SPEEDSTEP_LIB=m
 CONFIG_X86_SPEEDSTEP_RELAXED_CAP_CHECK=y
-
-#
-# CPU idle PM support
-#
-CONFIG_CPU_IDLE=y
-
-#
-# Governors
-#
-CONFIG_CPU_IDLE_GOV_LADDER=m
-CONFIG_CPU_IDLE_GOV_MENU=m
 
 #
 # Bus options (PCI, PCMCIA, EISA, MCA, ISA)
