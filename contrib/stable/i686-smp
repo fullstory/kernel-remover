@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.23.1-slh-smp-19
-# Sun Oct 28 20:16:24 2007
+# Linux kernel version: 2.6.23.1-slh-smp-22
+# Sun Nov  4 15:59:42 2007
 #
 CONFIG_X86_32=y
 CONFIG_GENERIC_TIME=y
@@ -1724,6 +1724,7 @@ CONFIG_AIRO_CS=m
 CONFIG_PCMCIA_WL3501=m
 CONFIG_PRISM54=m
 CONFIG_USB_ZD1201=m
+CONFIG_RTL8180=m
 CONFIG_RTL8187=m
 CONFIG_ADM8211=m
 CONFIG_P54_COMMON=m
