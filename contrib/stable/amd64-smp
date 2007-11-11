@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.23.1-slh64-smp-22
-# Sun Nov  4 15:59:24 2007
+# Linux kernel version: 2.6.23.1-slh64-smp-25
+# Sun Nov 11 15:50:46 2007
 #
 CONFIG_X86_64=y
 CONFIG_64BIT=y
@@ -823,6 +823,7 @@ CONFIG_CFG80211=m
 CONFIG_NL80211=y
 CONFIG_WIRELESS_EXT=y
 CONFIG_MAC80211=m
+CONFIG_MAC80211_RCSIMPLE=y
 CONFIG_MAC80211_LEDS=y
 # CONFIG_MAC80211_DEBUG is not set
 CONFIG_IEEE80211=m
