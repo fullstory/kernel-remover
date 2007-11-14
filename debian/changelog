@@ -5,8 +5,9 @@ sidux-kernelhacking (2.6.23.6) unstable; urgency=low
     correctly.
   * update wireless-2.6 to 49.fc8.
   * update rt2x00 to cvs20071111 (git is broken).
+  * update unionfs 2.1.9.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 11 Nov 2007 15:44:12 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 14 Nov 2007 15:15:01 +0100
 
 sidux-kernelhacking (2.6.23.5) unstable; urgency=low
 
