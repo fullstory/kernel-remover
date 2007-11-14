@@ -50,6 +50,7 @@ patches_for_kernel() {
 	case "$1" in
 		2.6.23*)
 			PATCH+=(
+				$PATCH_MIRROR/2.6.23.1_stable-20071112.diff
 				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
 				$PATCH_MIRROR/unionfs-2.1/unionfs-2.1.9_for_2.6.23.1.diff.gz
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2
@@ -80,7 +81,6 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.23.1_e1000e_fix-error-checks.diff.bz2
 				$PATCH_MIRROR/2.6.23.1_e1000e_fix-debug-printk-macro.diff.bz2
 				$PATCH_MIRROR/2.6.23.1_e100-disable-polling.patch
-				$PATCH_MIRROR/2.6.23.1_i915-fix-vbl-swap-allocation-size.patch
 				$PATCH_MIRROR/2.6.23.1_esp-scsi.diff.bz2
 				$PATCH_MIRROR/2.6.23.1_thinkpad-key-events.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_usb-storage-initialize-huawei-e220-properly.patch.bz2
