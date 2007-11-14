@@ -1,4 +1,4 @@
-sidux-kernelhacking (2.6.23.6) unstable; urgency=low
+sidux-kernelhacking (2.6.23.6) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
   * radeon: set the address to access the GART table on the CPU side
@@ -6,9 +6,8 @@ sidux-kernelhacking (2.6.23.6) unstable; urgency=low
   * update wireless-2.6 to 49.fc8.
   * update rt2x00 to cvs20071111 (git is broken).
   * update unionfs 2.1.9.
-  * import queued up -stable patches.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 14 Nov 2007 16:12:10 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 14 Nov 2007 16:32:41 +0100
 
 sidux-kernelhacking (2.6.23.5) unstable; urgency=low
 
