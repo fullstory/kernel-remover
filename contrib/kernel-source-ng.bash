@@ -54,6 +54,7 @@ patches_for_kernel() {
 				http://www.kernel.org/pub/linux/kernel/v2.6/stable-review/patch-2.6.23.3-rc1.gz
 				http://www.kernel.org/pub/linux/kernel/v2.6/stable-review/patch-2.6.23.4-rc1.gz
 				$PATCH_MIRROR/2.6.23.4-rc1_revert-conflicts-with-wireless-2.6.diff
+				$PATCH_MIRROR/2.6.23.4-rc1_tcp_fix-size-calculation-in-sk_stream_alloc_pskb.diff
 				http://www.kernel.org/pub/linux/kernel/v2.6/stable-review/patch-2.6.23.5-rc1.gz
 				$PATCH_MIRROR/2.6.23.5-rc1_revert-conflicts-with-wireless-2.6.diff
 				http://www.kernel.org/pub/linux/kernel/v2.6/stable-review/patch-2.6.23.6-rc1.gz
