@@ -106,6 +106,7 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.23.1-53.wl.1_input-alps-add-thinkpad-r61.patch.bz2
 				$PATCH_MIRROR/2.6.23.1-53.wl.1_serial-460800.patch.bz2
 				$PATCH_MIRROR/2.6.23.1-53.wl.1_serial_pnp-add-new-wacom-ids.patch.bz2
+				$PATCH_MIRROR/2.6.23.1_cifs_fix-potential-data-corruption-when-there-are-errors-writing-out-dirty-pages.diff
 			)
 			;;
 		2.6.24*)
