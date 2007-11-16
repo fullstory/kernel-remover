@@ -69,6 +69,7 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.23.1-56.fc8_b43-rev-d.patch.bz2
 				$PATCH_MIRROR/2.6.23.1-56.fc8_rt2x00-2.0.12+git-9501-g9dab9ee.diff.bz2
 				$PATCH_MIRROR/rt2x00_no-macbuf.diff
+				$PATCH_MIRROR/2.6.23.1-56.fc8_ssb_fix-compilation-errors-in-ssb.diff
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-01.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-02.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-03.patch.bz2

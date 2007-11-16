@@ -22,8 +22,9 @@ sidux-kernelhacking (2.6.23.6) UNRELEASED; urgency=low
   * update wireless to 2.6.23.1-56.fc8.
   * update rt2x00 to 2.0.12+git-8649-g39e0501
   * update Sundance IP1000A driver.
+  * fix compilation of 2.6.23.1-56.fc8.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 16 Nov 2007 20:50:58 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 16 Nov 2007 21:26:14 +0100
 
 sidux-kernelhacking (2.6.23.5) unstable; urgency=low
 
