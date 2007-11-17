@@ -1,3 +1,9 @@
+sidux-kernelhacking (2.6.23.8) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 17 Nov 2007 17:25:43 +0100
+
 sidux-kernelhacking (2.6.23.7) unstable; urgency=low
 
   * update wireless to 2.6.23.1-58.fc8.
