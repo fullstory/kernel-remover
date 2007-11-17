@@ -24,8 +24,9 @@ sidux-kernelhacking (2.6.23.6) unstable; urgency=low
   * fix compilation of 2.6.23.1-56.fc8.
   * raise minimum required version of virtualbox, to fetch new style
     packaging.
+  * depend on virtualbox-ose-guest-source.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 17 Nov 2007 14:49:00 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 17 Nov 2007 14:51:04 +0100
 
 sidux-kernelhacking (2.6.23.5) unstable; urgency=low
 
