@@ -1,6 +1,5 @@
-sidux-kernelhacking (2.6.23.6) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.23.6) unstable; urgency=low
 
-  * NOT RELEASED YET
   * radeon: set the address to access the GART table on the CPU side
     correctly.
   * update wireless-2.6 to 49.fc8.
@@ -23,8 +22,10 @@ sidux-kernelhacking (2.6.23.6) UNRELEASED; urgency=low
   * update rt2x00 to 2.0.12+git-8649-g39e0501
   * update Sundance IP1000A driver.
   * fix compilation of 2.6.23.1-56.fc8.
+  * raise minimum required version of virtualbox, to fetch new style
+    packaging.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 16 Nov 2007 21:26:14 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 17 Nov 2007 14:49:00 +0100
 
 sidux-kernelhacking (2.6.23.5) unstable; urgency=low
 
