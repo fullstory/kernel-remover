@@ -1,8 +1,10 @@
 sidux-kernelhacking (2.6.23.7) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * update wireless to 2.6.23.1-58.fc8.
+  * rediff rt2x00 2.0.12+git-9501-g9dab9ee against 2.6.23.1-58.fc8.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 17 Nov 2007 14:54:51 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 17 Nov 2007 15:46:32 +0100
 
 sidux-kernelhacking (2.6.23.6) unstable; urgency=low
 
@@ -25,7 +27,7 @@ sidux-kernelhacking (2.6.23.6) unstable; urgency=low
   * update rt2x00 to 2.0.12+git-8649-g39e0501.
   * add 2.6.23.4-rc1_tcp_fix-size-calculation-in-sk_stream_alloc_pskb.diff.
   * update wireless to 2.6.23.1-56.fc8.
-  * update rt2x00 to 2.0.12+git-8649-g39e0501
+  * update rt2x00 to 2.0.12+git-9501-g9dab9ee.
   * update Sundance IP1000A driver.
   * fix compilation of 2.6.23.1-56.fc8.
   * raise minimum required version of virtualbox, to fetch new style
