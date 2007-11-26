@@ -1,11 +1,11 @@
-sidux-kernelhacking (2.6.23.9) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.23.9) unstable; urgency=low
 
-  * NOT RELEASED YET
   * update unionfs to 2.1.10.
   * update wireless to 2.6.23.8-63.fc8.
   * update rt2x00 to 2.0.12+git-9515-ga3e7e68.
+  * revert to single line dependencies, unp-kernel-modules breaks otherwise.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 26 Nov 2007 20:14:36 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 26 Nov 2007 20:21:26 +0100
 
 sidux-kernelhacking (2.6.23.8) unstable; urgency=low
 
