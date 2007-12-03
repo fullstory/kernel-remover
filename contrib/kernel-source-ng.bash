@@ -61,15 +61,16 @@ patches_for_kernel() {
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc8/2.6.23-rc8-mm2/broken-out/git-ipwireless_cs.patch
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc8/2.6.23-rc8-mm2/broken-out/gregkh-driver-nozomi.patch
 				$PATCH_MIRROR/2.6.23.8_ipg-add-ip1000a-driver.diff.bz2
-				$PATCH_MIRROR/2.6.23.8-63.fc8_wireless.patch.bz2
-				$PATCH_MIRROR/2.6.23.8-63.fc8_wireless-pending.patch.bz2
-				$PATCH_MIRROR/2.6.23.8-63.fc8_at76.patch.bz2
-				$PATCH_MIRROR/2.6.23.8-63.fc8_ath5k.patch.bz2
-				$PATCH_MIRROR/2.6.23.8-63.fc8_zd1211rw-mac80211.patch.bz2
-				$PATCH_MIRROR/2.6.23.8-63.fc8_rtl8180.patch.bz2
-				$PATCH_MIRROR/2.6.23.8-63.fc8_b43-rev-d.patch.bz2
-				$PATCH_MIRROR/2.6.23.8-63.fc8_cfg80211-extras.patch.bz2
-				$PATCH_MIRROR/2.6.23.8-63.fc8_rt2x00-2.0.12+git-9515-ga3e7e68.diff.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_wireless.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_wireless-pending.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_at76.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_ath5k.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_zd1211rw-mac80211.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_rtl8180.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_b43-rev-d.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_ath5k-use-soft-wep.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_cfg80211-extras.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_rt2x00-2.0.13.diff.bz2
 				$PATCH_MIRROR/rt2x00_no-macbuf.diff
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-01.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-02.patch.bz2
@@ -85,22 +86,31 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.23.1_e1000e_dont-poke-phy-registers-to-retrieve-link-status.diff.bz2
 				$PATCH_MIRROR/2.6.23.1_e1000e_fix-error-checks.diff.bz2
 				$PATCH_MIRROR/2.6.23.1_e1000e_fix-debug-printk-macro.diff.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_netdev-e1000-disable-alpm.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_e100-disable-polling.patch
 				$PATCH_MIRROR/2.6.23.1_esp-scsi.diff.bz2
 				$PATCH_MIRROR/2.6.23.1_thinkpad-key-events.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_usb-storage-initialize-huawei-e220-properly.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_usb-huawei-fix-init-in-modem-mode.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_lirc-0.8.2-current.patch.bz2
-				$PATCH_MIRROR/2.6.23.1-53.wl.1_alsa-1.0.15-merge-1.patch.bz2
-				$PATCH_MIRROR/2.6.23.1-53.wl.1_alsa-1.0.15-merge-2.patch.bz2
-				$PATCH_MIRROR/2.6.23.1-53.wl.1_alsa.git-000-771af442.patch.bz2
-				$PATCH_MIRROR/2.6.23.1-53.wl.1_alsa.git-004-ba76a374.patch.bz2
-				$PATCH_MIRROR/2.6.23.1-53.wl.1_alsa-revert-hda-stac-volume.patch.bz2
-				$PATCH_MIRROR/2.6.23.1-53.wl.1_alsa-hda-stac-dmic.patch.bz2
 				$PATCH_MIRROR/2.6.23.1-53.wl.1_input-kill-stupid-messages.patch.bz2
 				$PATCH_MIRROR/2.6.23.1-53.wl.1_input-alps-add-dell-vostro-1400.patch.bz2
 				$PATCH_MIRROR/2.6.23.1-53.wl.1_input-alps-add-thinkpad-r61.patch.bz2
 				$PATCH_MIRROR/2.6.23.1-53.wl.1_serial-460800.patch.bz2
 				$PATCH_MIRROR/2.6.23.1-53.wl.1_serial_pnp-add-new-wacom-ids.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_alsa-1.0.15-merge-1.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_alsa-1.0.15-merge-2.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_alsa-1.0.15-merge-3.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_alsa-support-sis7019.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_alsa-hda-stac-dmic.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_alsa-drivers-set-device-links.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_firewire-ohci-1.0-iso-receive.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_usb-storage-always-set-the-allow_restart-flag.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_netfilter-fix-null-deref-nf_nat_move_storage.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_libata-correct-iordy-handling.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_libata-dont-fail-revalidation-for-bad-gtf-methods.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_libata-pata_serverworks-fix-drive-combinations.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-77.fc8_acpi-button-send-initial-state.patch.bz2
 			)
 			;;
 		2.6.24*)
