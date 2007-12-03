@@ -1,8 +1,9 @@
 sidux-kernelhacking (2.6.23.12) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * update to Standards-Version 3.7.3, no changes necessary.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 27 Nov 2007 02:03:48 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 03 Dec 2007 14:58:24 +0100
 
 sidux-kernelhacking (2.6.23.11) unstable; urgency=low
 
