@@ -56,7 +56,17 @@ function rm_modules_dir () {
 
 function pop_modules_dir () {
 	pushd "$BASE_DIR" >/dev/null
-		awk -f /usr/share/sidux-modules/unp_sidux_modules.awk $KMODFILE
+		awk '
+		{
+			tar = "^/usr/src/(.*)\\.(gz|bz2)$"
+			list = gensub($0,"/var/lib/dpkg/info/&.list","g")
+			while ((getline < list) > 0) {
+				if ($0 ~ tar) {
+					printf "unp %s >/dev/null", $0 | "/bin/sh"
+					close("/bin/sh")
+				}
+			}
+		}' $KMODFILE
 
 		# insane hacks to sanitize module packages
 		rm -f modules/et131x/debian/et131x-modules-_KVERS_.postinst.modules.in
