@@ -1,7 +1,6 @@
-sidux-kernelhacking (2.6.23.12) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.23.12) unstable; urgency=low
 
   [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
   * update to Standards-Version 3.7.3, no changes necessary.
   * update wireless to 2.6.23.9-77.fc8.
   * update rt2x00 to 2.0.13.
