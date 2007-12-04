@@ -86,6 +86,12 @@ for deb in *-${VER}_*+${SUB}_${ARCH}.deb; do
 		[ -n "$mod" ] || continue
 		
 		if [ -d "/sys/module/$mod" ] || grep -w -q "^$mod" /proc/modules; then
+			# check the currently running variant of vboxdrv is OSE
+			if [ "$mod" = vboxdrv ]; then
+				modinfo -Fversion vboxdrv | grep -q OSE || break
+			fi
+			
+			# module contained within this package is currently in use
 			EXTRA_DEBS="$EXTRA_DEBS $deb"
 			break
 		fi
