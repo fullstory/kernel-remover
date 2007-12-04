@@ -1,5 +1,6 @@
 sidux-kernelhacking (2.6.23.12) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
   * update to Standards-Version 3.7.3, no changes necessary.
   * update wireless to 2.6.23.9-77.fc8.
@@ -7,7 +8,25 @@ sidux-kernelhacking (2.6.23.12) UNRELEASED; urgency=low
   * update ALSA to merge-3.
   * libata/ IEEE1394/ netfilter/ e1000/ usb-storage fixes.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 03 Dec 2007 19:42:04 +0100
+  [ Kel Modderman ]
+  * Give scripts/install-kernel-sidux.sh some love:
+    - don't remove /etc/initramfs-tools/conf.d/resume
+    - create minimal /etc/kernel-img.conf if missing
+    - add extra checks for the dep of udev-config-sidux
+    - use a recent /usr/sbin/get-resume-partition to fix resume conf
+    - detect modules that are externally supplied for current local use, if
+      they are currently used add them to the list to be installed
+    - after invoking dpkg -i on the list to be installed, check return value
+      and run apt-get -f install if not equal to zero
+    - use update-initramfs and not mkinitramfs
+    - remove fglrx/radeon/agpgart hack, i think that was never employed in
+      sidux release, ever
+    - add a hint for people using madwifi drivers
+    - do not remove /var/lib/alsa/asound.state
+    - cleanup final message, hint the manual for more information on UUID and
+      LABEL usage
+
+ -- Kel Modderman <kel@otaku42.de>  Tue, 04 Dec 2007 16:02:18 +1000
 
 sidux-kernelhacking (2.6.23.11) unstable; urgency=low
 
