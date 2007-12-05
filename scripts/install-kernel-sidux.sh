@@ -86,9 +86,10 @@ for deb in *-${VER}_*+${SUB}_${ARCH}.deb; do
 		[ -n "$mod" ] || continue
 		
 		if [ -d "/sys/module/$mod" ] || grep -w -q "^$mod" /proc/modules; then
-			# check the currently running variant of vboxdrv is OSE
 			if [ "$mod" = vboxdrv ]; then
-				modinfo -Fversion vboxdrv | grep -q OSE || break
+				# we cannot determine reliably if its free or non-free
+				# innotek, please get a clue!
+				break
 			fi
 			
 			# module contained within this package is currently in use
