@@ -89,7 +89,7 @@ for deb in *-${VER}_*+${SUB}_${ARCH}.deb; do
 			if [ "$mod" = vboxdrv ]; then
 				# we cannot determine reliably if its free or non-free
 				# innotek, please get a clue!
-				break
+				[ -d /usr/share/doc/virtualbox-ose ] || break
 			fi
 			
 			# module contained within this package is currently in use
