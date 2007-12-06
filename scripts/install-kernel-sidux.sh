@@ -56,7 +56,7 @@ fi
 # - do not blacklist b43, we need it for kernel >= 2.6.23
 # - make sure to install the IEEE1394 vs. FireWire "Juju" blacklist
 if [ -r /etc/modprobe.d/sidux ] || [ -r /etc/modprobe.d/ieee1394 ] || [ -r /etc/modprobe.d/mac80211 ]; then
-	dpkg --compare-versions $(dpkg -l udev-config-sidux >/dev/null 2>&1 | awk '/^[hi]i/{print $3}') lt 0.4.3 >/dev/null 2>&1
+	dpkg --compare-versions $(dpkg -l udev-config-sidux 2>/dev/null | awk '/^[hi]i/{print $3}') lt 0.4.3
 	if [ "$?" -eq 0 ]; then
 		INSTALL_DEP="$INSTALL_DEP udev-config-sidux"
 	fi
@@ -71,7 +71,7 @@ fi
 
 # check resume partition configuration is valid
 if [ -x /usr/sbin/get-resume-partition ]; then
-	dpkg --compare-versions $(dpkg -l sidux-scripts >/dev/null 2>&1 | awk '/^[hi]i/{print $3}') ge 0.1.38 >/dev/null 2>&1
+	dpkg --compare-versions $(dpkg -l sidux-scripts 2>/dev/null | awk '/^[hi]i/{print $3}') ge 0.1.38
 	if [ "$?" -eq 0 ]; then
 		get-resume-partition
 	fi

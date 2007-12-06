@@ -12,8 +12,10 @@ sidux-kernelhacking (2.6.23.16) UNRELEASED; urgency=low
     - put scripts into bin/ subdir
     - use debian/tmp to generate sidux-modules from modules.list rather than
       needing to cleanup package area
+  * Remove useless use of redirection in scripts/install-kernel-sidux.sh to
+    fix detection of udev-config-sidux and sidux-scripts package versions.
 
- -- Kel Modderman <kel@otaku42.de>  Thu, 06 Dec 2007 13:13:21 +1000
+ -- Kel Modderman <kel@otaku42.de>  Thu, 06 Dec 2007 14:41:41 +1000
 
 sidux-kernelhacking (2.6.23.15) unstable; urgency=low
 
