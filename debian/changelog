@@ -1,9 +1,5 @@
-sidux-kernelhacking (2.6.23.16) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.23.16) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Kel Modderman ]
   * Improve sidux-modules substvars injection, comment modules.list
     accordingly.
   * Call gawk explicitly in unp-kernel-modules.
