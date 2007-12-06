@@ -35,7 +35,7 @@ BEGIN {
 }
 
 END {
-	# If "substvars" is defined (-v substvars=1) then print substvarss
+	# If "substvars" is defined (-v substvars=1) then print it
 	if (substvars && depends)
 		print "module:Depends=" depends
 }
