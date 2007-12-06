@@ -4,7 +4,6 @@ sidux-kernelhacking (2.6.23.17) unstable; urgency=low
   * compile fixes.
   * update wireless bits to 2.6.23.9-80.fc8.
   * revert b43/ b43legacy to 2.6.24.
-  * don't try to set a resume partition without active swap.
   * try to recover from aborting dpkg -i linux-image-$VER.
   * refuse to install a kernel, if /boot/vmlinuz-$VER already exists.
 

@@ -74,8 +74,8 @@ if [ -n "$INSTALL_DEP" ]; then
 	apt-get install $INSTALL_DEP
 fi
 
-# check resume partition configuration is valid, if swap is active
-if [ "$(wc -l /proc/swaps)" -gt 1 ] &&  [ -x /usr/sbin/get-resume-partition ]; then
+# check resume partition configuration is valid
+if [ -x /usr/sbin/get-resume-partition ]; then
 	dpkg --compare-versions $(dpkg -l sidux-scripts 2>/dev/null | awk '/^[hi]i/{print $3}') ge 0.1.38
 	if [ "$?" -eq 0 ]; then
 		get-resume-partition
