@@ -12,7 +12,7 @@ build/sidux-kernelhacking::
 build/sidux-modules::
 	awk -v deb_build_arch=$(DEB_BUILD_ARCH) -f \
 		mk_modules_depends_substvar.awk modules.list > sidux-modules
-	awk -v deb_build_arch=$(DEB_BUILD_ARCH) -v substvar=1 -f \
+	awk -v deb_build_arch=$(DEB_BUILD_ARCH) -v substvars=1 -f \
 		mk_modules_depends_substvar.awk modules.list >> debian/sidux-modules.substvars
 
 clean::

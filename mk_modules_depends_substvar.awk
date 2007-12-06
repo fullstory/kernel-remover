@@ -1,25 +1,40 @@
-#!/usr/bin/gawk -f
 BEGIN {
 	FS = ","
 }
 
 {
-	arch    = match($3, deb_build_arch) ? deb_build_arch : "all"
+	# Skip comments of blank lines
+	if (! $1 || $1 ~ /^#/)
+		next
+	
+	# Strip leading/trailing whitespace from fields
+	for (n = 1; n <= NF; n++)
+		gsub(/(^[ \t]+|[ \t]+$)/,"",$n)
+	
+	# Form package name to be injected into substvars
 	package = $2 ? $1 " " $2 : $1
 
-	if (! $3 || match($3, deb_build_arch)) {
-		depends[arch] = depends[arch] ? depends[arch] ", " package : package
-		modules[i++] = $1
+	# Process arch specific packages, or assume package is
+	# wanted when no arch is listed
+	if ($3) {
+		for (n = 3; n <= NF; n++) {
+			if ($n == deb_build_arch) {
+				depends = depends ? depends ", " package : package
+				if (! substvars)
+					print $1
+			}
+		}
+	}
+	else {
+		depends = depends ? depends ", " package : package
+		if (! substvars)
+			print $1
 	}
 }
 
 END {
-	if (substvar) {
-		module_depends = depends[deb_build_arch] ? depends["all"] ", " depends[deb_build_arch] : depends["all"]
-		print "module:Depends=" module_depends
-	}
-	else {
-		for (i in modules)
-			print modules[i]
+	# If "substvars" is defined (-v substvars=1) then print substvarss
+	if (substvars && depends) {
+		print "module:Depends=" depends
 	}
 }
