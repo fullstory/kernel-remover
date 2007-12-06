@@ -1,15 +1,20 @@
 #!/bin/sh
 
+VER=%KERNEL_VERSION%
+SUB=1
+ARCH="$(dpkg-architecture -qDEB_BUILD_ARCH)"
+
+if [ -e "/boot/vmlinuz-${VER}" ]; then
+	echo "ERROR: /boot/vmlinuz-${VER} already exist, terminate abnormally" >&2
+	exit 1
+fi
+
 if [ "$(id -u)" -ne 0 ]; then
 	[ -x /usr/bin/su-me ] && DISPLAY="" exec su-me "$0" "$@"
 
 	echo Error: You must be root to run this script!
-	exit 1
+	exit 2
 fi
-
-VER=%KERNEL_VERSION%
-SUB=1
-ARCH="$(dpkg-architecture -qDEB_BUILD_ARCH)"
 
 rm -f	/boot/System.map \
 	/boot/vmlinuz \
@@ -112,12 +117,12 @@ dpkg -i "linux-image-${VER}_${SUB}_${ARCH}.deb" \
 
 # something went wrong, allow apt an attempt to fix it
 if [ "$?" -ne 0 ]; then
-	if [ -e "vmlinuz-${VER}" ]; then 
+	if [ -e "/boot/vmlinuz-${VER}" ]; then 
 		apt-get --fix-broken install
 	else
 		[ -x /usr/sbin/update-grub ] && update-grub
 		echo "kernel image not install, terminate abnormally!"
-		exit 666
+		exit 3
 	fi
 
 fi
