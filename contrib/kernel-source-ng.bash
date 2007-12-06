@@ -71,8 +71,8 @@ patches_for_kernel() {
 				#$PATCH_MIRROR/2.6.23.9-77.fc8_ath5k-use-soft-wep.patch.bz2
 				#$PATCH_MIRROR/2.6.23.9-77.fc8_cfg80211-extras.patch.bz2
 				#$PATCH_MIRROR/2.6.23.9-77.fc8_rt2x00-2.0.13.diff.bz2
-				#$PATCH_MIRROR/rt2x00_no-macbuf.diff
 				$PATCH_MIRROR/2.6.23.9-77.fc8-2.6.24_rt2x00-2.0.13.diff.bz2
+				$PATCH_MIRROR/rt2x00_no-macbuf.diff
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-01.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-02.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-03.patch.bz2
