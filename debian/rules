@@ -10,11 +10,8 @@ build/sidux-kernelhacking::
 	DESTDIR=$(CURDIR)/debian/sidux-kernelhacking $(CURDIR)/po/make_po.sh kernel-remover.mo
 
 build/sidux-modules::
+	mkdir -p debian/tmp/
 	awk -v deb_build_arch=$(DEB_BUILD_ARCH) -f \
-		mk_modules_depends_substvar.awk modules.list > sidux-modules
+		mk_modules_depends_substvar.awk modules.list > debian/tmp/sidux-modules
 	awk -v deb_build_arch=$(DEB_BUILD_ARCH) -v substvars=1 -f \
 		mk_modules_depends_substvar.awk modules.list > debian/sidux-modules.substvars
-
-clean::
-	-rm -f sidux-modules
-	
