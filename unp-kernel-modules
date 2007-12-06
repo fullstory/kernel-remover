@@ -22,7 +22,7 @@ if ((UID)); then
 	# not root
 	if [[ ! $BASE_DIR ]]; then
 		BASE_DIR="$PWD"
-		[[ -e $BASE_DIR/Makefile && -e /usr/src/Makefile ]] || ln -s /usr/src/Makefile ${BASE_DIR}/
+		[[ -e $BASE_DIR/Makefile ]] || ln -s /usr/src/Makefile ${BASE_DIR}/
 	fi
 
 	if [[ ! -s $KMODFILE ]]; then
@@ -56,7 +56,7 @@ function rm_modules_dir () {
 
 function pop_modules_dir () {
 	pushd "$BASE_DIR" >/dev/null
-		awk '
+		gawk '
 		{
 			tar = "^/usr/src/(.*)\\.(gz|bz2)$"
 			list = gensub($0,"/var/lib/dpkg/info/&.list","g")
