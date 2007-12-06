@@ -138,6 +138,24 @@ rm -f "/lib/modules/${VER}/build" >/dev/null 2>&1
 ln -s "/usr/src/linux-headers-${VER}" "/lib/modules/${VER}/build"
 ln -fs "linux-headers-${VER}" /usr/src/linux >/dev/null 2>&1
 
+# hints for madwifi
+if [ -d /sys/module/ath_pci ] || grep -q '^ath_pci' /proc/modules; then
+	if [ -f /usr/src/madwifi.tar.bz2 ] && which m-a >/dev/null; then
+		# user setup madwifi with module-assistant already
+		# we may as well do that for him again now
+		if [ -d /usr/src/modules/madwifi/ ]; then
+			rm -rf /usr/src/modules/madwifi/
+		fi
+
+		KERNELDIRS="/usr/src/linux-headers-${VER}" m-a --text-mode --non-inter a-i madwifi
+	else
+		echo
+		echo "Atheros Wireless Network Adaptor will not work until"
+		echo "the non-free madwifi driver is reinstalled."
+		echo
+	fi
+fi
+
 # hints for fglrx
 if grep -q '"fglrx"' /etc/X11/xorg.conf; then
 	echo
@@ -152,14 +170,6 @@ if grep -q '"nvidia"' /etc/X11/xorg.conf; then
 	echo
 	echo "nVidia 3D acceleration will NOT work with the new kernel until"
 	echo "the non-free nVidia driver is reinstalled."
-	echo
-fi
-
-# hints for madwifi
-if [ -d /sys/module/ath_pci ] || grep -q '^ath_pci' /proc/modules; then
-	echo
-	echo "Atheros Wireless Network Adaptor will not work until"
-	echo "the non-free madwifi driver is reinstalled."
 	echo
 fi
 
