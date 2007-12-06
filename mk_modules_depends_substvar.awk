@@ -19,22 +19,23 @@ BEGIN {
 	if ($3) {
 		for (n = 3; n <= NF; n++) {
 			if ($n == deb_build_arch) {
-				depends = depends ? depends ", " package : package
-				if (! substvars)
+				if (substvars)
+					depends = depends ? depends ", " package : package
+				else
 					print $1
 			}
 		}
 	}
 	else {
-		depends = depends ? depends ", " package : package
-		if (! substvars)
+		if (substvars)
+			depends = depends ? depends ", " package : package
+		else
 			print $1
 	}
 }
 
 END {
 	# If "substvars" is defined (-v substvars=1) then print substvarss
-	if (substvars && depends) {
+	if (substvars && depends)
 		print "module:Depends=" depends
-	}
 }
