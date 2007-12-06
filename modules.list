@@ -12,7 +12,7 @@
 #
 
 # arch: all
-acx100-source,(>= 20070101-1),
+acx100-source,(>= 20070101-1)
 acer-acpi-source
 atl2-source
 aufs-source,(>= 0+20070904-1+c0.sidux.1)
