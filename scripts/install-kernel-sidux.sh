@@ -69,8 +69,8 @@ if [ -n "$INSTALL_DEP" ]; then
 	apt-get install $INSTALL_DEP
 fi
 
-# check resume partition configuration is valid
-if [ -x /usr/sbin/get-resume-partition ]; then
+# check resume partition configuration is valid, if swap is active
+if [ "$(wc -l /proc/swaps)" -gt 1 ] &&  [ -x /usr/sbin/get-resume-partition ]; then
 	dpkg --compare-versions $(dpkg -l sidux-scripts 2>/dev/null | awk '/^[hi]i/{print $3}') ge 0.1.38
 	if [ "$?" -eq 0 ]; then
 		get-resume-partition
@@ -112,7 +112,14 @@ dpkg -i "linux-image-${VER}_${SUB}_${ARCH}.deb" \
 
 # something went wrong, allow apt an attempt to fix it
 if [ "$?" -ne 0 ]; then
-	apt-get --fix-broken install
+	if [ -e "vmlinuz-${VER}" ]; then 
+		apt-get --fix-broken install
+	else
+		[ -x /usr/sbin/update-grub ] && update-grub
+		echo "kernel image not install, terminate abnormally!"
+		exit 666
+	fi
+
 fi
 
 ln -fs "vmlinuz-${VER}"		/boot/vmlinuz
