@@ -68,6 +68,7 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.23.9-80.fc8_rtl8180.patch.bz2
 				$PATCH_MIRROR/2.6.23.9-80.fc8_ath5k-use-soft-wep.patch.bz2
 				$PATCH_MIRROR/2.6.23.9-80.fc8_cfg80211-extras.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-80.fc8_wireless-pending_revert-b43.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-01.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-02.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-03.patch.bz2
