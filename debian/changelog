@@ -12,7 +12,7 @@ sidux-kernelhacking (2.6.23.17) unstable; urgency=low
   * update rt2x00 to 2.0.13.
   * API forward porting for rt2x00.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 07 Dec 2007 01:20:56 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 07 Dec 2007 01:38:27 +0100
 
 sidux-kernelhacking (2.6.23.16) unstable; urgency=low
 
