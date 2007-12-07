@@ -4,8 +4,9 @@ sidux-kernelhacking (2.6.23.18) UNRELEASED; urgency=low
   * add dsdt patches to 2.6.24 line-up.
   * add nozomi and ipw_wireless patches to 2.6.24 line-up.
   * switch vfat defaults to utf8 for 2.6.24.
+  * add at76_usb to 2.6.24 line-up.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 07 Dec 2007 15:10:05 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 07 Dec 2007 15:13:08 +0100
 
 sidux-kernelhacking (2.6.23.17) unstable; urgency=low
 
