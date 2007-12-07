@@ -114,6 +114,7 @@ patches_for_kernel() {
 			;;
 		2.6.24*)
 			PATCH+=(
+				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
 				$PATCH_MIRROR/unionfs-2.1/unionfs-2.1.10_for_2.6.24-rc3.diff.gz
 			)
 			;;
