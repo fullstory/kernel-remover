@@ -61,14 +61,16 @@ patches_for_kernel() {
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc8/2.6.23-rc8-mm2/broken-out/git-ipwireless_cs.patch
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc8/2.6.23-rc8-mm2/broken-out/gregkh-driver-nozomi.patch
 				$PATCH_MIRROR/2.6.23.8_ipg-add-ip1000a-driver.diff.bz2
-				$PATCH_MIRROR/2.6.23.9-80.fc8_wireless.patch.bz2
-				$PATCH_MIRROR/2.6.23.9-80.fc8_wireless-pending.patch.bz2
-				$PATCH_MIRROR/2.6.23.9-80.fc8_at76.patch.bz2
-				$PATCH_MIRROR/2.6.23.9-80.fc8_ath5k.patch.bz2
-				$PATCH_MIRROR/2.6.23.9-80.fc8_rtl8180.patch.bz2
-				$PATCH_MIRROR/2.6.23.9-80.fc8_ath5k-use-soft-wep.patch.bz2
-				$PATCH_MIRROR/2.6.23.9-80.fc8_cfg80211-extras.patch.bz2
-				$PATCH_MIRROR/2.6.23.9-80.fc8_wireless-pending_revert-b43.patch.bz2
+				$PATCH_MIRROR/2.6.23.9-80.fc8_wireless.patch.bz2			# 2.6.24
+				#$PATCH_MIRROR/2.6.23.9-80.fc8_wireless-pending.patch.bz2		# heading towards 2.6.25, breaks b43/ b43legacy
+				$PATCH_MIRROR/2.6.23.9-80.fc8_at76.patch.bz2				# almost independent from mac80211/ wireless-2.6
+				#$PATCH_MIRROR/2.6.23.9-80.fc8_ath5k.patch.bz2				# depends on wireless-pending
+				#$PATCH_MIRROR/2.6.23.9-80.fc8_rtl8180.patch.bz2			# depends on wireless-pending
+				#$PATCH_MIRROR/2.6.23.9-80.fc8_ath5k-use-soft-wep.patch.bz2		# depends on ath5k
+				#$PATCH_MIRROR/2.6.23.9-80.fc8_cfg80211-extras.patch.bz2		# depends on wireless-pending
+				#$PATCH_MIRROR/2.6.23.9-80.fc8_wireless-pending_revert-b43.patch.bz2	# brings ssb, b43, b43legacy, b44 back to 2.6.24 - no improvements
+				$PATCH_MIRROR/2.6.23.9-80.fc8-2.6.24_rt2x00-2.0.13.diff.bz2		# update rt2x00, depending on 2.6.24-rc1
+				$PATCH_MIRROR/rt2x00_no-macbuf.diff					# API fix for 2.6.24 mac80211
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-01.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-02.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-03.patch.bz2
