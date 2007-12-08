@@ -11,8 +11,9 @@ sidux-kernelhacking (2.6.23.18) UNRELEASED; urgency=low
     2.6.24-rc4-git5-slh-smp-1.
   * CONFIG_PARAVIRT_GUEST breaks kernel-package, disable it for the time
     being.
+  * update unionfs to 2.1.11.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 07 Dec 2007 16:34:38 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 09 Dec 2007 00:37:31 +0100
 
 sidux-kernelhacking (2.6.23.17) unstable; urgency=low
 
