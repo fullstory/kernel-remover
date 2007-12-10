@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.23.9-slh-smp-16
-# Sun Dec  9 20:38:40 2007
+# Linux kernel version: 2.6.23.9-slh-smp-18
+# Mon Dec 10 02:59:57 2007
 #
 CONFIG_X86_32=y
 CONFIG_GENERIC_TIME=y
