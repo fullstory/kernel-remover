@@ -1,9 +1,9 @@
-sidux-kernelhacking (2.6.23.19) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.23.19) unstable; urgency=low
 
-  * NOT RELEASED YET
   * allow aufs to work on 2.6.24 with CONFIG_SECURITY=y.
+  * add hack to allow building virtualbox-ose modules against kernel 2.6.24.
 
- -- Stefan Lippers-Hollmann <slh@dev.sidux.com>  Tue, 11 Dec 2007 12:32:23 +0000
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 11 Dec 2007 14:26:19 +0100
 
 sidux-kernelhacking (2.6.23.18) unstable; urgency=low
 

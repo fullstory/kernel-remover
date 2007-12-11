@@ -1,0 +1,31 @@
+#!/bin/bash
+
+for i in virtualbox-ose virtualbox-ose-guest/vboxvfs virtualbox-ose-guest/vboxadd; do
+	if [ -d "modules/${i}" ]; then
+		pushd "modules/${i}"
+
+		find . -type f -exec sed -i "s/\([^_]\)BIT(/\1VB_BIT(/g" {} +
+
+		cat << EOF | patch -p1
+--- a/include/iprt/stdint.h	2007-12-11 14:14:37.000000000 +0100
++++ b/include/iprt/stdint.h	2007-12-11 14:14:56.000000000 +0100
+@@ -112,14 +112,6 @@ typedef __uint64_t      uint64_t;
+ 
+ #endif /* !linux kernel || no-crt */
+ 
+-#ifndef _MSC_VER
+-#ifndef _INTPTR_T_DECLARED
+-typedef __intptr_t              intptr_t;
+-typedef __uintptr_t             uintptr_t;
+-#define _INTPTR_T_DECLARED
+-#endif
+-#endif /* !_MSC_VER */
+-
+ #if !defined(__cplusplus) || defined(__STDC_CONSTANT_MACROS)
+ 
+ #define INT8_C(c)       (c)
+EOF
+		popd
+	fi
+done
+
