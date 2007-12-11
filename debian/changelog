@@ -5,8 +5,10 @@ sidux-kernelhacking (2.6.23.20) UNRELEASED; urgency=low
     package now.
   * update module dependencies for 2.6.24.
   * build against sane et131x/ virtualbox-ose packages.
+  * update dependency on aufs to current debian update.update dependency on
+    aufs to current debian update.
 
- -- Stefan Lippers-Hollmann <slh@dev.sidux.com>  Tue, 11 Dec 2007 20:24:53 +0000
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 11 Dec 2007 22:14:51 +0100
 
 sidux-kernelhacking (2.6.23.19) unstable; urgency=low
 

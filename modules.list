@@ -15,7 +15,7 @@
 acx100-source,(>= 20070101-1+c0.sidux.1)
 acer-acpi-source,(>= 0.9.1-4)
 atl2-source,(>= 2.0.3-1+c0.sidux.1)
-aufs-source,(>= 0+20071210~sidux-0+c0.sidux.1)
+aufs-source,(>= 0+20071211-1)
 et131x-source,(>= 1.2.3-5+c0.sidux.2)
 fsam7400-source,(>= 0.5.1-6)
 gspca-source,(>= 01.00.18-2+c0.sidux.1)
