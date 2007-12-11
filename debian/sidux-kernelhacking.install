@@ -3,4 +3,3 @@ bin/kernel-remover   usr/sbin
 Makefile             usr/src/
 scripts              usr/share/sidux-kernelhacking/
 linux-custom-patches usr/share/sidux-kernelhacking/
-bin/patch-vbox-ose-modules-2.6.24	usr/bin/
