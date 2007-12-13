@@ -122,7 +122,6 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.23.9-80.fc8_at76.patch.bz2				# almost independent from mac80211/ wireless-2.6
 				$PATCH_MIRROR/2.6.24-rc4-git5_rt2x00-2.0.13.diff.bz2
 				$PATCH_MIRROR/2.6.24-rc4-git5_lirc-0.8.2-current.patch.bz2
-				$PATCH_MIRROR/sec_perm-2.6.24.patch
 			)
 			;;
 		*)
