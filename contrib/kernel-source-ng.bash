@@ -54,6 +54,7 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.23.5-rc1_revert-conflicts-with-wireless-2.6.diff
 				$PATCH_MIRROR/2.6.23.6-rc1_revert-conflicts-with-alsa-1.0.15.diff
 				$PATCH_MIRROR/2.6.23.9-rc1_revert-conflicts-with-wireless-2.6.diff
+				$PATCH_MIRROR/2.6.23.10-rc1_revert-conflicts-with-wireless-2.6.diff
 				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
 				$PATCH_MIRROR/unionfs-2.1/unionfs-2.1.11_for_2.6.23.9.diff.gz
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2
