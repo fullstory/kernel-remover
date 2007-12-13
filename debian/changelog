@@ -9,8 +9,9 @@ sidux-kernelhacking (2.6.23.20) UNRELEASED; urgency=low
     aufs to current debian update.
   * drop sec_perm-2.6.24.patch again.
   * fix 2.6.23.10 merge conflicts.
+  * re-add sec_perm patch, restrict to GPL2 module only.
 
- -- Stefan Lippers-Hollmann <slh@dev.sidux.com>  Thu, 13 Dec 2007 17:03:54 +0000
+ -- Stefan Lippers-Hollmann <slh@dev.sidux.com>  Thu, 13 Dec 2007 20:38:48 +0000
 
 sidux-kernelhacking (2.6.23.19) unstable; urgency=low
 
