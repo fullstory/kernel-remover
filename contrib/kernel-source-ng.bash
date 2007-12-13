@@ -94,8 +94,6 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.23.9-77.fc8_usb-huawei-fix-init-in-modem-mode.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_lirc-0.8.2-current.patch.bz2
 				$PATCH_MIRROR/2.6.23.1-53.wl.1_input-kill-stupid-messages.patch.bz2
-				$PATCH_MIRROR/2.6.23.1-53.wl.1_input-alps-add-dell-vostro-1400.patch.bz2
-				$PATCH_MIRROR/2.6.23.1-53.wl.1_input-alps-add-thinkpad-r61.patch.bz2
 				$PATCH_MIRROR/2.6.23.1-53.wl.1_serial-460800.patch.bz2
 				$PATCH_MIRROR/2.6.23.1-53.wl.1_serial_pnp-add-new-wacom-ids.patch.bz2
 				$PATCH_MIRROR/2.6.23.9-77.fc8_alsa-1.0.15-merge-1.patch.bz2
@@ -106,7 +104,6 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.23.9-77.fc8_alsa-drivers-set-device-links.patch.bz2
 				$PATCH_MIRROR/2.6.23.9-77.fc8_firewire-ohci-1.0-iso-receive.patch.bz2
 				$PATCH_MIRROR/2.6.23.9-77.fc8_usb-storage-always-set-the-allow_restart-flag.patch.bz2
-				$PATCH_MIRROR/2.6.23.9-77.fc8_netfilter-fix-null-deref-nf_nat_move_storage.patch.bz2
 				$PATCH_MIRROR/2.6.23.9-77.fc8_libata-correct-iordy-handling.patch.bz2
 				$PATCH_MIRROR/2.6.23.9-77.fc8_libata-dont-fail-revalidation-for-bad-gtf-methods.patch.bz2
 				$PATCH_MIRROR/2.6.23.9-77.fc8_libata-pata_serverworks-fix-drive-combinations.patch.bz2
