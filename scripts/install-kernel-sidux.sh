@@ -10,9 +10,10 @@ if [ -e "/boot/vmlinuz-${VER}" ]; then
 fi
 
 if [ "$(id -u)" -ne 0 ]; then
+	echo "You must be root to run this script!"
 	[ -x /usr/bin/su-me ] && DISPLAY="" exec su-me "$0" "$@"
 
-	echo Error: You must be root to run this script!
+	echo "Error: error executing script as root, aborting."
 	exit 2
 fi
 
