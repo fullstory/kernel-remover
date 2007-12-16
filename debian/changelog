@@ -1,8 +1,10 @@
 sidux-kernelhacking (2.6.23.21) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * bump minimum requirements for acer-acpi and et131x (official upstream,
+    respectively debian, releases fixing kernel 2.6.24 compatibility).
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 14 Dec 2007 03:30:57 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 16 Dec 2007 15:35:29 +0100
 
 sidux-kernelhacking (2.6.23.20) unstable; urgency=low
 
