@@ -1,10 +1,10 @@
-sidux-kernelhacking (2.6.23.21) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.23.21) unstable; urgency=low
 
-  * NOT RELEASED YET
   * bump minimum requirements for acer-acpi and et131x (official upstream,
     respectively debian, releases fixing kernel 2.6.24 compatibility).
+  * bump minimum requirements to a working virtualbox version.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 16 Dec 2007 15:35:29 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 19 Dec 2007 12:52:39 +0100
 
 sidux-kernelhacking (2.6.23.20) unstable; urgency=low
 
