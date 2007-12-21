@@ -91,7 +91,7 @@ for deb in *-${VER}_*+${SUB}_${ARCH}.deb; do
 	for mod in $(dpkg --contents $deb | sed -n -e 's%-%_%g;s%.*/\([^\.]\+\)\.ko$%\1%p'); do
 		[ -n "$mod" ] || continue
 		
-		if [ -d "/sys/module/$mod" ] || grep -w -q "^$mod" /proc/modules; then
+		if modinfo -k $(uname -r) -F filename "$mod" >/dev/null 2>&1; then
 			if [ "$mod" = vboxdrv ]; then
 				# we cannot determine reliably if its free or non-free
 				# innotek, please get a clue!
@@ -152,7 +152,7 @@ ln -s "/usr/src/linux-headers-${VER}" "/lib/modules/${VER}/build"
 ln -fs "linux-headers-${VER}" /usr/src/linux >/dev/null 2>&1
 
 # hints for madwifi
-if [ -d /sys/module/ath_pci ] || grep -q '^ath_pci' /proc/modules; then
+if modinfo -k $(uname -r) -F filename ath_pci >/dev/null 2>&1; then
 	if [ -f /usr/src/madwifi.tar.bz2 ] && which m-a >/dev/null; then
 		# user setup madwifi with module-assistant already
 		# we may as well do that for him again now
