@@ -1,8 +1,11 @@
 sidux-kernelhacking (2.6.23.23) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * update unionfs to 2.2.
+  * update nozomi to 2.6.24-rc6-mm1.
+  * update ipwireless_cs to 2.6.24-rc6-mm1.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 22 Dec 2007 03:34:46 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 01 Jan 2008 12:55:15 +0100
 
 sidux-kernelhacking (2.6.23.22) unstable; urgency=low
 
