@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.24-rc6-git1-slh64-smp-1
-# Sun Dec 23 12:52:17 2007
+# Linux kernel version: 2.6.24-rc6-git7-slh64-smp-1
+# Tue Jan  1 12:01:52 2008
 #
 CONFIG_64BIT=y
 # CONFIG_X86_32 is not set
@@ -2077,7 +2077,7 @@ CONFIG_APPLICOM=m
 CONFIG_SYNCLINK_CS=m
 CONFIG_CARDMAN_4000=m
 CONFIG_CARDMAN_4040=m
-CONFIG_IPWIRELESS_CS=m
+CONFIG_IPWIRELESS=m
 CONFIG_MWAVE=m
 CONFIG_PC8736x_GPIO=m
 CONFIG_NSC_GPIO=m
