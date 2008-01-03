@@ -48,7 +48,7 @@ KREGEXP="^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9]+)?-?(mm
 #=============================================================================#
 patches_for_kernel() {
 	case "$1" in
-		2.6.23.*)
+		2.6.23*)
 			PATCH+=(
 				$PATCH_MIRROR/2.6.23.4-rc1_revert-conflicts-with-wireless-2.6.diff
 				$PATCH_MIRROR/2.6.23.5-rc1_revert-conflicts-with-wireless-2.6.diff
@@ -108,18 +108,6 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.23.9-77.fc8_libata-dont-fail-revalidation-for-bad-gtf-methods.patch.bz2
 				$PATCH_MIRROR/2.6.23.9-77.fc8_libata-pata_serverworks-fix-drive-combinations.patch.bz2
 				$PATCH_MIRROR/2.6.23.9-77.fc8_acpi-button-send-initial-state.patch.bz2
-			)
-			;;
-		2.6.23-rt2x00*)
-			PATCH+=(
-				$PATCH_MIRROR/2.6.23_rt2x00.git_v2.6.23-rc3-11386-gaac8cf0.diff.bz2
-				$PATCH_MIRROR/sec_perm-2.6.24-gpl.patch
-			)
-			;;
-		2.6.23-wlan*)
-			PATCH+=(
-				$PATCH_MIRROR/2.6.23_wireless-2.6.git_v2.6.24-rc1-2880-g2d0811f.diff.bz2
-				$PATCH_MIRROR/sec_perm-2.6.24-gpl.patch
 			)
 			;;
 		2.6.24*)
