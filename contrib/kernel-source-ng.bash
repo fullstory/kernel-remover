@@ -113,11 +113,13 @@ patches_for_kernel() {
 		2.6.23-rt2x00*)
 			PATCH+=(
 				$PATCH_MIRROR/2.6.23_rt2x00.git_v2.6.23-rc3-11386-gaac8cf0.diff.bz2
+				$PATCH_MIRROR/sec_perm-2.6.24-gpl.patch
 			)
 			;;
 		2.6.23-wlan*)
 			PATCH+=(
 				$PATCH_MIRROR/2.6.23_wireless-2.6.git_v2.6.24-rc1-2880-g2d0811f.diff.bz2
+				$PATCH_MIRROR/sec_perm-2.6.24-gpl.patch
 			)
 			;;
 		2.6.24*)

@@ -8,8 +8,9 @@ sidux-kernelhacking (2.6.23.23) UNRELEASED; urgency=low
     everything.
   * add http://bugzilla.kernel.org/attachment.cgi?id=14137&action=view as
     2.6.24-rc6_make_sysfs_optional.patch.
+  * add sec_perm-2.6.24-gpl.patch to experimental line-ups.
 
- -- Stefan Lippers-Hollmann <slh@dev.sidux.com>  Thu, 03 Jan 2008 00:39:45 +0000
+ -- Stefan Lippers-Hollmann <slh@dev.sidux.com>  Thu, 03 Jan 2008 01:01:09 +0000
 
 sidux-kernelhacking (2.6.23.22) unstable; urgency=low
 
