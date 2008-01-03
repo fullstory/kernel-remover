@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.24-rc6-git7-slh-smp-2
-# Tue Jan  1 20:35:26 2008
+# Linux kernel version: 2.6.24-rc6-git8-slh-smp-1
+# Thu Jan  3 01:55:30 2008
 #
 # CONFIG_64BIT is not set
 CONFIG_X86_32=y
@@ -275,6 +275,7 @@ CONFIG_ACPI=y
 CONFIG_ACPI_SLEEP=y
 CONFIG_ACPI_PROCFS=y
 CONFIG_ACPI_PROCFS_POWER=y
+# CONFIG_ACPI_SYSFS_POWER is not set
 CONFIG_ACPI_PROC_EVENT=y
 CONFIG_ACPI_AC=m
 CONFIG_ACPI_BATTERY=m
