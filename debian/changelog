@@ -12,8 +12,9 @@ sidux-kernelhacking (2.6.23.23) UNRELEASED; urgency=low
   * special rt2x00/ wireless-2.6 snapshots don't cope well with the sublevel
     versioning, remove the experiments again.
   * test 2.6.24's own rt2x00 implementation.
+  * update unionfs to 2.2.1.
 
- -- Stefan Lippers-Hollmann <slh@dev.sidux.com>  Sat, 05 Jan 2008 14:18:12 +0000
+ -- Stefan Lippers-Hollmann <slh@dev.sidux.com>  Sat, 05 Jan 2008 14:20:19 +0000
 
 sidux-kernelhacking (2.6.23.22) unstable; urgency=low
 
