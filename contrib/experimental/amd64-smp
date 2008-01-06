@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.24-rc6-git8-slh64-smp-1
-# Thu Jan  3 00:50:26 2008
+# Linux kernel version: 2.6.24-rc7-slh64-smp-1
+# Sun Jan  6 23:02:44 2008
 #
 CONFIG_64BIT=y
 # CONFIG_X86_32 is not set
@@ -99,6 +99,7 @@ CONFIG_SLUB_DEBUG=y
 # CONFIG_SLAB is not set
 CONFIG_SLUB=y
 # CONFIG_SLOB is not set
+CONFIG_SLABINFO=y
 CONFIG_RT_MUTEXES=y
 # CONFIG_TINY_SHMEM is not set
 CONFIG_BASE_SMALL=0
