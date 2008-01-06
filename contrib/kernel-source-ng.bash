@@ -118,7 +118,7 @@ patches_for_kernel() {
 				$MIRROR/people/akpm/patches/2.6/2.6.24-rc6/2.6.24-rc6-mm1/broken-out/git-ipwireless_cs.patch
 				$MIRROR/people/akpm/patches/2.6/2.6.24-rc6/2.6.24-rc6-mm1/broken-out/gregkh-driver-nozomi.patch
 				$PATCH_MIRROR/2.6.23.9-80.fc8_at76.patch.bz2				# almost independent from mac80211/ wireless-2.6
-				$PATCH_MIRROR/2.6.24-rc7_rt2x00-2.0.14.diff.bz2
+				#$PATCH_MIRROR/2.6.24-rc7_rt2x00-2.0.14.diff.bz2
 				$PATCH_MIRROR/2.6.24-rc4-git5_lirc-0.8.2-current.patch.bz2
 				$PATCH_MIRROR/sec_perm-2.6.24-gpl.patch
 				$PATCH_MIRROR/2.6.24-rc6_make_sysfs_optional.patch

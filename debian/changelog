@@ -13,9 +13,8 @@ sidux-kernelhacking (2.6.23.23) UNRELEASED; urgency=low
     versioning, remove the experiments again.
   * test 2.6.24's own rt2x00 implementation.
   * update unionfs to 2.2.1.
-  * update rt2x00 to 2.0.14 for 2.6.24.
 
- -- Stefan Lippers-Hollmann <slh@dev.sidux.com>  Sun, 06 Jan 2008 22:57:31 +0000
+ -- Stefan Lippers-Hollmann <slh@dev.sidux.com>  Sun, 06 Jan 2008 23:24:44 +0000
 
 sidux-kernelhacking (2.6.23.22) unstable; urgency=low
 
