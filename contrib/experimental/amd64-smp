@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.24-rc7-slh64-smp-1
-# Sun Jan  6 23:02:44 2008
+# Linux kernel version: 2.6.24-rc7-slh64-smp-2
+# Mon Jan  7 00:34:41 2008
 #
 CONFIG_64BIT=y
 # CONFIG_X86_32 is not set
@@ -1563,6 +1563,7 @@ CONFIG_AIRO_CS=m
 CONFIG_PCMCIA_WL3501=m
 CONFIG_PRISM54=m
 CONFIG_USB_ZD1201=m
+CONFIG_RTL8180=m
 CONFIG_RTL8187=m
 CONFIG_ADM8211=m
 CONFIG_P54_COMMON=m
