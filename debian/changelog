@@ -13,8 +13,9 @@ sidux-kernelhacking (2.6.23.23) UNRELEASED; urgency=low
     versioning, remove the experiments again.
   * test 2.6.24's own rt2x00 implementation.
   * update unionfs to 2.2.1.
+  * add experimental support for RealTek RTL8180L and RTL8185 wlan cards.
 
- -- Stefan Lippers-Hollmann <slh@dev.sidux.com>  Sun, 06 Jan 2008 23:24:44 +0000
+ -- Stefan Lippers-Hollmann <slh@dev.sidux.com>  Mon, 07 Jan 2008 00:31:03 +0000
 
 sidux-kernelhacking (2.6.23.22) unstable; urgency=low
 
