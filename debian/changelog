@@ -1,6 +1,5 @@
-sidux-kernelhacking (2.6.23.23) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.23.23) unstable; urgency=low
 
-  * NOT RELEASED YET
   * update unionfs to 2.2.
   * update nozomi to 2.6.24-rc6-mm1.
   * update ipwireless_cs to 2.6.24-rc6-mm1.
@@ -14,8 +13,10 @@ sidux-kernelhacking (2.6.23.23) UNRELEASED; urgency=low
   * test 2.6.24's own rt2x00 implementation.
   * update unionfs to 2.2.1.
   * add experimental support for RealTek RTL8180L and RTL8185 wlan cards.
+  * remove su-me usage and recommend menu.
+  * depend on official acx100-source package version.
 
- -- Stefan Lippers-Hollmann <slh@dev.sidux.com>  Mon, 07 Jan 2008 00:31:03 +0000
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 08 Jan 2008 21:01:21 +0100
 
 sidux-kernelhacking (2.6.23.22) unstable; urgency=low
 

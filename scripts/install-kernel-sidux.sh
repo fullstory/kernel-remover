@@ -4,16 +4,14 @@ VER=%KERNEL_VERSION%
 SUB=1
 ARCH="$(dpkg-architecture -qDEB_BUILD_ARCH)"
 
-if [ -e "/boot/vmlinuz-${VER}" ]; then
-	echo "ERROR: /boot/vmlinuz-${VER} already exist, terminate abnormally" >&2
+if [ "$(id -u)" -ne 0 ]; then
+	[ -x "$(which su-to-root)" ] && exec su-to-root -X -c "$0" "$@"
+	printf "ERROR: $0 needs root capabilities, please start it as root.\n\n" >&2
 	exit 1
 fi
 
-if [ "$(id -u)" -ne 0 ]; then
-	echo "You must be root to run this script!"
-	[ -x /usr/bin/su-me ] && DISPLAY="" exec su-me "$0" "$@"
-
-	echo "Error: error executing script as root, aborting."
+if [ -e "/boot/vmlinuz-${VER}" ]; then
+	echo "ERROR: /boot/vmlinuz-${VER} already exist, terminate abnormally" >&2
 	exit 2
 fi
 
