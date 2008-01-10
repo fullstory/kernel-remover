@@ -1,11 +1,14 @@
 sidux-kernelhacking (2.6.23.24) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
-  * update wireless pieces for 2.6.23 to 2.6.24
+  * update wireless pieces for 2.6.23 to 2.6.24 as of 2008-01-11.
   * update rt2x00 to 2.0.14 for 2.6.23.13.
   * add rt2x00_correctly-initialize-rt2500usb-mac.
+  * update wireless pieces for 2.6.23 to staging 2.6.24 as of 2008-01-12.
+  * revert broken (rt61pci) rt2x00 2.0.14 to known good 2.0.13.
+  * update unionfs to 2.2.2.
 
- -- Stefan Lippers-Hollmann <slh@dev.sidux.com>  Wed, 09 Jan 2008 18:56:34 +0000
+ -- Stefan Lippers-Hollmann <slh@dev.sidux.com>  Thu, 10 Jan 2008 12:51:11 +0000
 
 sidux-kernelhacking (2.6.23.23) unstable; urgency=low
 
