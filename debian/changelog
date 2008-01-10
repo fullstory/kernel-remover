@@ -7,8 +7,9 @@ sidux-kernelhacking (2.6.23.24) UNRELEASED; urgency=low
   * update wireless pieces for 2.6.23 to staging 2.6.24 as of 2008-01-12.
   * revert broken (rt61pci) rt2x00 2.0.14 to known good 2.0.13.
   * update unionfs to 2.2.2.
+  * update rtl818x to wireless-2.6 v2.6.24-rc7-716-g62ec51e (200801102048).
 
- -- Stefan Lippers-Hollmann <slh@dev.sidux.com>  Thu, 10 Jan 2008 17:42:39 +0000
+ -- Stefan Lippers-Hollmann <slh@dev.sidux.com>  Thu, 10 Jan 2008 21:56:26 +0000
 
 sidux-kernelhacking (2.6.23.23) unstable; urgency=low
 
