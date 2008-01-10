@@ -118,6 +118,7 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2
 				$MIRROR/people/akpm/patches/2.6/2.6.24-rc6/2.6.24-rc6-mm1/broken-out/git-ipwireless_cs.patch
 				$MIRROR/people/akpm/patches/2.6/2.6.24-rc6/2.6.24-rc6-mm1/broken-out/gregkh-driver-nozomi.patch
+				$PATCH_MIRROR/2.6.23.9-80.fc8_at76.patch.bz2
 				$PATCH_MIRROR/2.6.24-rc7-git2_rtl818x-git-716-g62ec51e-200801102048.diff.bz2
 				$PATCH_MIRROR/2.6.24-rc7-git2_rtl818x-pciids.diff
 				$PATCH_MIRROR/2.6.24-rc7-git2_rtl818x-kconfig-makefile.diff
