@@ -118,8 +118,6 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2
 				$MIRROR/people/akpm/patches/2.6/2.6.24-rc6/2.6.24-rc6-mm1/broken-out/git-ipwireless_cs.patch
 				$MIRROR/people/akpm/patches/2.6/2.6.24-rc6/2.6.24-rc6-mm1/broken-out/gregkh-driver-nozomi.patch
-				$PATCH_MIRROR/2.6.23.9-80.fc8_at76.patch.bz2				# almost independent from mac80211/ wireless-2.6
-				$PATCH_MIRROR/rt2x00_correctly-initialize-rt2500usb-mac.diff		# fix rt2500usb support
 				$PATCH_MIRROR/2.6.24-rc7-git2_rt2x00_put-802.11-data-on-4-byte-boundary.diff
 				$PATCH_MIRROR/2.6.24-rc7-git2_rtl818x-git-716-g62ec51e-200801102048.diff.bz2
 				$PATCH_MIRROR/2.6.24-rc7-git2_rtl818x-pciids.diff
@@ -128,6 +126,7 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.24-rc4-git5_lirc-0.8.2-current.patch.bz2
 				$PATCH_MIRROR/sec_perm-2.6.24-gpl.patch
 				$PATCH_MIRROR/2.6.24-rc6_make_sysfs_optional.patch
+				$PATCH_MIRROR/2.6.24-rc7-git2_wireless-updates.diff
 			)
 			;;
 		*)
