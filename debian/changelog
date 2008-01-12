@@ -1,6 +1,5 @@
-sidux-kernelhacking (2.6.23.24) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.23.24) unstable; urgency=low
 
-  * NOT RELEASED YET
   * update wireless pieces for 2.6.23 to 2.6.24 as of 2008-01-11.
   * update rt2x00 to 2.0.14 for 2.6.23.13.
   * update wireless pieces for 2.6.23 to staging 2.6.24 as of 2008-01-12.
@@ -10,8 +9,10 @@ sidux-kernelhacking (2.6.23.24) UNRELEASED; urgency=low
   * rt2x00: Correctly initialize rt2500usb MAC
   * rt2x00: Put 802.11 data on 4 byte boundary
   * rt2x00: Allow rt61 to catch up after a missing tx report
+  * we have neither X11 output nor any paramaters, remove it from the
+    su-to-root call.
 
- -- Stefan Lippers-Hollmann <slh@dev.sidux.com>  Thu, 10 Jan 2008 22:07:16 +0000
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 12 Jan 2008 02:30:28 +0100
 
 sidux-kernelhacking (2.6.23.23) unstable; urgency=low
 

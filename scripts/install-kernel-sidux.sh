@@ -5,7 +5,7 @@ SUB=1
 ARCH="$(dpkg-architecture -qDEB_BUILD_ARCH)"
 
 if [ "$(id -u)" -ne 0 ]; then
-	[ -x "$(which su-to-root)" ] && exec su-to-root -X -c "$0" "$@"
+	[ -x "$(which su-to-root)" ] && exec su-to-root -c "$0"
 	printf "ERROR: $0 needs root capabilities, please start it as root.\n\n" >&2
 	exit 1
 fi
