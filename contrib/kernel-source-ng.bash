@@ -125,7 +125,6 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.24-rc7-git2_rtl818x-kcompat-2.6.24.diff
 				$PATCH_MIRROR/2.6.24-rc4-git5_lirc-0.8.2-current.patch.bz2
 				$PATCH_MIRROR/sec_perm-2.6.24-gpl.patch
-				$PATCH_MIRROR/2.6.24-rc7-git2_wireless-updates.diff
 			)
 			;;
 		*)
