@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.24-rc7-git1-slh-smp-1
-# Wed Jan  9 20:21:20 2008
+# Linux kernel version: 2.6.24-rc7-git6-slh-smp-1
+# Mon Jan 14 22:46:45 2008
 #
 # CONFIG_64BIT is not set
 CONFIG_X86_32=y
@@ -1488,7 +1488,6 @@ CONFIG_EQUALIZER=m
 CONFIG_TUN=m
 CONFIG_VETH=m
 CONFIG_NET_SB1000=m
-CONFIG_IP1000=m
 CONFIG_ARCNET=m
 CONFIG_ARCNET_1201=m
 CONFIG_ARCNET_1051=m
@@ -1626,6 +1625,7 @@ CONFIG_E1000=m
 CONFIG_E1000_NAPI=y
 # CONFIG_E1000_DISABLE_PACKET_SPLIT is not set
 CONFIG_E1000E=m
+CONFIG_IP1000=m
 CONFIG_NS83820=m
 CONFIG_HAMACHI=m
 CONFIG_YELLOWFIN=m
