@@ -71,7 +71,7 @@ patches_for_kernel() {
 				#$PATCH_MIRROR/2.6.23.13_ath5k-use-soft-wep-1.1.patch.bz2		# depends on ath5k
 				#$PATCH_MIRROR/2.6.23.13_cfg80211-extras-1.1.patch.bz2			# depends on wireless-pending
 				#$PATCH_MIRROR/2.6.23.9-80.fc8_wireless-pending_revert-b43.patch.bz2	# brings ssb, b43, b43legacy, b44 back to 2.6.24 - no improvements
-				$PATCH_MIRROR/2.6.23.9-80.fc8-2.6.24_rt2x00-2.0.13.diff.bz2	# update rt2x00, depending on 2.6.24-rc1
+				$PATCH_MIRROR/2.6.23.9-80.fc8-2.6.24_rt2x00-2.0.13.diff.bz2		# update rt2x00, depending on 2.6.24-rc1
 				$PATCH_MIRROR/rt2x00_no-macbuf.diff					# API fix for 2.6.24 mac80211
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-01.patch.bz2
 				$PATCH_MIRROR/2.6.23.1_netdev-e1000e-02.patch.bz2
