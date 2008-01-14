@@ -1,8 +1,9 @@
 sidux-kernelhacking (2.6.23.25) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * 2.6.24-rc6_make_sysfs_optional has been merged upstream, drop it.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 12 Jan 2008 02:35:47 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 14 Jan 2008 21:38:26 +0000
 
 sidux-kernelhacking (2.6.23.24) unstable; urgency=low
 
