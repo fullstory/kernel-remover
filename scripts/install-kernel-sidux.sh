@@ -47,20 +47,21 @@ EOF
 fi
 
 # install important dependencies before attempting to install kernel
-unset INSTALL_DEP
+INSTALL_DEP=
 [ -x /usr/bin/gcc-4.2 ]           || INSTALL_DEP="$INSTALL_DEP gcc-4.2"
 [ -x /usr/sbin/update-initramfs ] || INSTALL_DEP="$INSTALL_DEP initramfs-tools"
 
 # take care to install b43-fwcutter, if bcm43xx-fwcutter is already installed
 if dpkg -l bcm43xx-fwcutter 2>/dev/null | grep -q '^[hi]i' || [ -e /lib/firmware/bcm43xx_pcm4.fw ]; then
-	INSTALL_DEP="$INSTALL_DEP b43-fwcutter"
+	dpkg -l b43-fwcutter 2>/dev/null | grep -q '^[hi]i' || INSTALL_DEP="$INSTALL_DEP b43-fwcutter"
 fi
 
 # make sure udev-config-sidux is up to date
 # - do not blacklist b43, we need it for kernel >= 2.6.23
 # - make sure to install the IEEE1394 vs. FireWire "Juju" blacklist
 if [ -r /etc/modprobe.d/sidux ] || [ -r /etc/modprobe.d/ieee1394 ] || [ -r /etc/modprobe.d/mac80211 ]; then
-	dpkg --compare-versions $(dpkg -l udev-config-sidux 2>/dev/null | awk '/^[hi]i/{print $3}') lt 0.4.3
+	VERSION=$(dpkg -l udev-config-sidux 2>/dev/null | awk '/^[hi]i/{print $3}')
+	dpkg --compare-versions ${VERSION:-0} lt 0.4.3
 	if [ "$?" -eq 0 ]; then
 		INSTALL_DEP="$INSTALL_DEP udev-config-sidux"
 	fi
@@ -75,7 +76,8 @@ fi
 
 # check resume partition configuration is valid
 if [ -x /usr/sbin/get-resume-partition ]; then
-	dpkg --compare-versions $(dpkg -l sidux-scripts 2>/dev/null | awk '/^[hi]i/{print $3}') ge 0.1.38
+	VERSION=$(dpkg -l sidux-scripts 2>/dev/null | awk '/^[hi]i/{print $3}')
+	dpkg --compare-versions ${VERSION:-0} ge 0.1.38
 	if [ "$?" -eq 0 ]; then
 		get-resume-partition
 	fi
