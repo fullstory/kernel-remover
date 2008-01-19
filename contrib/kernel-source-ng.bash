@@ -125,8 +125,6 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.24-rc7-git2_rtl818x-kcompat-2.6.24.diff
 				$PATCH_MIRROR/2.6.24-rc7-git2_lirc-1.4.patch.bz2
 				$PATCH_MIRROR/sec_perm-2.6.24-gpl.patch
-				$PATCH_MIRROR/2.6.24-rc8-git3_e1000_detected-tx-unit-hang.diff
-				$PATCH_MIRROR/2.6.24-rc8_writeback_speed-up-writeback-of-big-dirty-files.diff
 			)
 			;;
 		*)
