@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.24-rc8-slh-smp-1
-# Wed Jan 16 18:54:05 2008
+# Linux kernel version: 2.6.24-rc8-git3-slh-smp-1
+# Sat Jan 19 13:42:47 2008
 #
 # CONFIG_64BIT is not set
 CONFIG_X86_32=y
@@ -2248,7 +2248,6 @@ CONFIG_UNIX98_PTYS=y
 CONFIG_PRINTER=m
 CONFIG_LP_CONSOLE=y
 CONFIG_PPDEV=m
-CONFIG_HVC_DRIVER=y
 CONFIG_IPMI_HANDLER=m
 # CONFIG_IPMI_PANIC_EVENT is not set
 CONFIG_IPMI_DEVICE_INTERFACE=m
@@ -3531,7 +3530,7 @@ CONFIG_VIRTUALIZATION=y
 CONFIG_KVM=m
 CONFIG_KVM_INTEL=m
 CONFIG_KVM_AMD=m
-CONFIG_LGUEST=m
+# CONFIG_LGUEST is not set
 
 #
 # Userspace I/O
