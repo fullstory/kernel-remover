@@ -116,8 +116,8 @@ patches_for_kernel() {
 				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
 				$PATCH_MIRROR/unionfs-2.x/unionfs-2.2.2_for_2.6.24-rc7.diff.gz
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2
-				$MIRROR/people/akpm/patches/2.6/2.6.24-rc6/2.6.24-rc6-mm1/broken-out/git-ipwireless_cs.patch
-				$MIRROR/people/akpm/patches/2.6/2.6.24-rc6/2.6.24-rc6-mm1/broken-out/gregkh-driver-nozomi.patch
+				$MIRROR/people/akpm/patches/2.6/2.6.24-rc8/2.6.24-rc8-mm1/broken-out/git-ipwireless_cs.patch
+				$MIRROR/people/akpm/patches/2.6/2.6.24-rc8/2.6.24-rc8-mm1/broken-out/gregkh-driver-nozomi.patch
 				$PATCH_MIRROR/2.6.23.9-80.fc8_at76.patch.bz2
 				$PATCH_MIRROR/2.6.24-rc7-git2_rtl818x-git-716-g62ec51e-200801102048.diff.bz2
 				$PATCH_MIRROR/2.6.24-rc7-git2_rtl818x-pciids.diff
@@ -125,8 +125,8 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.24-rc7-git2_rtl818x-kcompat-2.6.24.diff
 				$PATCH_MIRROR/2.6.24-rc7-git2_lirc-1.4.patch.bz2
 				$PATCH_MIRROR/sec_perm-2.6.24-gpl.patch
-				$PATCH_MIRROR/2.6.24-rc8_e1000_detected-tx-unit-hang.diff
-				$PATCH_MIRROR/2.6.24-rc8_iowait.diff
+				$PATCH_MIRROR/2.6.24-rc8-git3_e1000_detected-tx-unit-hang.diff
+				$PATCH_MIRROR/2.6.24-rc8_writeback_speed-up-writeback-of-big-dirty-files.diff
 			)
 			;;
 		*)

@@ -1,8 +1,12 @@
 sidux-kernelhacking (2.6.23.27) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * update ipwireless_cs for 2.6.24 to 2.6.24-rc8-mm1.
+  * update nozomi for 2.6.24 to 2.6.24-rc8-mm1.
+  * refresh e1000_detected-tx-unit-hang for 2.6.24.
+  * update writeback_speed-up-writeback-of-big-dirty-files (iowait) for 2.6.24.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 19 Jan 2008 02:34:53 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 19 Jan 2008 12:23:17 +0000
 
 sidux-kernelhacking (2.6.23.26) unstable; urgency=low
 
