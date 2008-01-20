@@ -8,8 +8,10 @@ sidux-kernelhacking (2.6.23.27) UNRELEASED; urgency=low
   * drop e1000_detected-tx-unit-hang, merged upstream.
   * drop writeback_speed-up-writeback-of-big-dirty-files, still under
     investigation.
+  * revert back to procfs based powermanagement, hal and friends don't deal
+    properly with sysfs yet.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 19 Jan 2008 12:28:44 +0000
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 20 Jan 2008 14:44:31 +0100
 
 sidux-kernelhacking (2.6.23.26) unstable; urgency=low
 
