@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Exec=su-to-root -X -c /usr/sbin/kernel-remover
+Icon=kernel-remover
+Name=kernel-remover
+GenericName=delete old kernels
+GenericName[de]=entferne alte Kernel
+Categories=System;

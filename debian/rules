@@ -15,3 +15,28 @@ build/sidux-modules::
 		mk_modules_depends_substvar.awk modules.list > debian/tmp/sidux-modules
 	awk -v deb_build_arch=$(DEB_BUILD_ARCH) -v substvars=1 -f \
 		mk_modules_depends_substvar.awk modules.list > debian/sidux-modules.substvars
+
+create-icons::
+	# requires inkscape and imagemagick to be installed
+	@if [ ! -x /usr/bin/convert ]; then \
+		echo "ERROR: imagemagick not installed!" ; \
+		false ; \
+	fi
+	@if [ ! -x /usr/bin/inkscape ]; then \
+		echo "ERROR: inkscape not installed!" ; \
+		false ; \
+	fi
+	
+	for f in kernel-remover; do \
+		[ -r  $(CURDIR)/icons/$${f}.svg ] || false ; \
+		for i in 16 22 32 48 64 128; do \
+			mkdir -p "icons/hicolor.$${f}/$${i}x$${i}/apps" ; \
+			inkscape --export-width=$${i} \
+				 --export-height=$${i} \
+				 --export-png="$(CURDIR)/icons/hicolor.$${f}/$${i}x$${i}/apps/$${f}.png" \
+					$(CURDIR)/icons/$${f}.svg ; \
+		done ; \
+		mkdir -p "icons/pixmaps.$${f}" ; \
+		convert icons/hicolor.$${f}/32x32/apps/$${f}.png icons/pixmaps.$${f}/$${f}.xpm ; \
+		convert icons/hicolor.$${f}/16x16/apps/$${f}.png icons/pixmaps.$${f}/$${f}-16.xpm ; \
+	done

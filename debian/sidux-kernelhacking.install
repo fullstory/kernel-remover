@@ -1,5 +1,8 @@
-bin/mk_dpatch        usr/bin/
-bin/kernel-remover   usr/sbin
-Makefile             usr/src/
-scripts              usr/share/sidux-kernelhacking/
-linux-custom-patches usr/share/sidux-kernelhacking/
+kernel-remover			usr/sbin/
+kernel-remover.desktop		usr/share/applications/sidux/
+icons/kernel-remover.svg	usr/share/icons/hicolor/scalable/apps/
+icons/hicolor.kernel-remover/*	usr/share/icons/hicolor/
+icons/pixmaps.kernel-remover/*	usr/share/pixmaps/
+Makefile			usr/src/
+scripts				usr/share/sidux-kernelhacking/
+linux-custom-patches		usr/share/sidux-kernelhacking/

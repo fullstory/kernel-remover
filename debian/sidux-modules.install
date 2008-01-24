@@ -1,2 +1,2 @@
-debian/tmp/sidux-modules etc/
-bin/unp-kernel-modules   usr/bin/
+debian/tmp/sidux-modules	etc/
+unp-kernel-modules		usr/bin/
