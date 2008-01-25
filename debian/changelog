@@ -1,8 +1,9 @@
 sidux-kernelhacking (2.6.24.1) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * move 2.6.23 kernel configs to deprecated.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 25 Jan 2008 00:52:47 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 25 Jan 2008 00:05:35 +0000
 
 sidux-kernelhacking (2.6.24.0) unstable; urgency=low
 
