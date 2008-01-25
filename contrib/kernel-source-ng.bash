@@ -129,6 +129,10 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.24_b43_2-3_drop-packets-we-are-not-able-to-encrypt.diff
 				$PATCH_MIRROR/2.6.24_b43_3-3_fix-dma-slot-resource-leakage.diff
 				$PATCH_MIRROR/2.6.24_hid_hid-input.diff
+				$PATCH_MIRROR/2.6.24_b43legacy_1-4_fix-pio-crash.diff
+				$PATCH_MIRROR/2.6.24_b43legacy_2-4_fix-suspend-resume.diff
+				$PATCH_MIRROR/2.6.24_b43legacy_3-4_drop-packets-we-are-not-able-to-encrypt.diff
+				$PATCH_MIRROR/2.6.24_b43legacy_4-4_fix_dma-slot-resource-leakage.diff
 			)
 			;;
 		*)
