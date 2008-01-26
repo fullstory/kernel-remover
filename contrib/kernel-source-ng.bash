@@ -56,7 +56,7 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.23.9-rc1_revert-conflicts-with-wireless-2.6.diff
 				$PATCH_MIRROR/2.6.23.10-rc1_revert-conflicts-with-wireless-2.6.diff
 				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
-				$PATCH_MIRROR/unionfs-2.x/unionfs-2.2.2_for_2.6.23.13.diff.gz
+				$PATCH_MIRROR/unionfs-2.x/unionfs-2.2.3_for_2.6.23.14.diff.gz
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-unicode-vt.patch.bz2
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc8/2.6.23-rc8-mm2/broken-out/git-ipwireless_cs.patch
@@ -114,7 +114,7 @@ patches_for_kernel() {
 		2.6.24*)
 			PATCH+=(
 				http://gaugusch.at/acpi-dsdt-initrd-patches/acpi-dsdt-initrd-v0.8.4-2.6.21.patch
-				$PATCH_MIRROR/unionfs-2.x/unionfs-2.2.2_for_2.6.24-rc7.diff.gz
+				$PATCH_MIRROR/unionfs-2.x/unionfs-2.2.3_for_2.6.24.diff.gz
 				$PATCH_MIRROR/2.6.22-1.3242_defaults-fat-utf8.patch.bz2
 				$MIRROR/people/akpm/patches/2.6/2.6.24-rc8/2.6.24-rc8-mm1/broken-out/git-ipwireless_cs.patch
 				$MIRROR/people/akpm/patches/2.6/2.6.24-rc8/2.6.24-rc8-mm1/broken-out/gregkh-driver-nozomi.patch
@@ -133,6 +133,7 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.24_b43legacy_2-4_fix-suspend-resume.diff
 				$PATCH_MIRROR/2.6.24_b43legacy_3-4_drop-packets-we-are-not-able-to-encrypt.diff
 				$PATCH_MIRROR/2.6.24_b43legacy_4-4_fix_dma-slot-resource-leakage.diff
+				$PATCH_MIRROR/2.6.24_dvb-cx23885-add-missing-subsystem-id-for-hauppauge-hvr1800-retail.patch
 			)
 			;;
 		*)

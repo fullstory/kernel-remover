@@ -5,8 +5,10 @@ sidux-kernelhacking (2.6.24.1) UNRELEASED; urgency=low
   * declare 2.6.24 as stable.
   * apply important bugfixes for b43 and hid-input.
   * add similar patches to fix b43legacy as well.
+  * add dvb-cx23885-add-missing-subsystem-id-for-hauppauge-hvr1800-retail.
+  * update unionfs to 2.2.3.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 25 Jan 2008 13:51:29 +0000
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 26 Jan 2008 12:09:57 +0100
 
 sidux-kernelhacking (2.6.24.0) unstable; urgency=low
 
