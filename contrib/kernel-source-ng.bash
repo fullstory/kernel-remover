@@ -63,6 +63,7 @@ patches_for_kernel() {
 				$MIRROR/people/akpm/patches/2.6/2.6.23-rc8/2.6.23-rc8-mm2/broken-out/gregkh-driver-nozomi.patch
 				$PATCH_MIRROR/2.6.23.8_ipg-add-ip1000a-driver.diff.bz2
 				$PATCH_MIRROR/2.6.23.13_wireless-1.19.patch.bz2				# 2.6.24
+				$PATCH_MIRROR/2.6.24_b43_reject-new-firmware-early.diff
 				#$PATCH_MIRROR/2.6.23.13_wireless-pending-1.22.patch.bz2		# heading towards 2.6.25, breaks b43/ b43legacy
 				#$PATCH_MIRROR/2.6.23.13_wireless-pending-too-1.1.patch.bz2		# heading towards 2.6.26
 				$PATCH_MIRROR/2.6.23.13_at76-1.6.patch.bz2				# almost independent from mac80211/ wireless-2.6
@@ -128,6 +129,7 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.24_b43_1-3_fix-suspend-resume.diff
 				$PATCH_MIRROR/2.6.24_b43_2-3_drop-packets-we-are-not-able-to-encrypt.diff
 				$PATCH_MIRROR/2.6.24_b43_3-3_fix-dma-slot-resource-leakage.diff
+				$PATCH_MIRROR/2.6.24_b43_reject-new-firmware-early.diff
 				$PATCH_MIRROR/2.6.24_hid_hid-input.diff
 				$PATCH_MIRROR/2.6.24_b43legacy_1-4_fix-pio-crash.diff
 				$PATCH_MIRROR/2.6.24_b43legacy_2-4_fix-suspend-resume.diff
