@@ -125,7 +125,6 @@ patches_for_kernel() {
 				$PATCH_MIRROR/2.6.24-rc7-git2_rtl818x-kconfig-makefile.diff
 				$PATCH_MIRROR/2.6.24-rc7-git2_rtl818x-kcompat-2.6.24.diff
 				$PATCH_MIRROR/2.6.24-rc7-git2_lirc-1.4.patch.bz2
-				$PATCH_MIRROR/sec_perm-2.6.24-gpl.patch
 				$PATCH_MIRROR/2.6.24_b43_1-3_fix-suspend-resume.diff
 				$PATCH_MIRROR/2.6.24_b43_2-3_drop-packets-we-are-not-able-to-encrypt.diff
 				$PATCH_MIRROR/2.6.24_b43_3-3_fix-dma-slot-resource-leakage.diff
