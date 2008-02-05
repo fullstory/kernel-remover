@@ -12,8 +12,10 @@ sidux-kernelhacking (2.6.24.1) UNRELEASED; urgency=low
     anymore.
   * bump minimum requirements for aufs-source to a version that works with
     2.6.24 without symbol exports.
+  * depend on an official debian version of qc-usb-source which is 2.6.24
+    compatible.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 31 Jan 2008 20:49:03 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 05 Feb 2008 01:19:10 +0100
 
 sidux-kernelhacking (2.6.24.0) unstable; urgency=low
 
