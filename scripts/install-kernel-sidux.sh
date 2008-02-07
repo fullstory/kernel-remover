@@ -128,8 +128,8 @@ if [ "$?" -ne 0 ]; then
 
 fi
 
-ln -fs "vmlinuz-${VER}"		/boot/vmlinuz
-ln -fs "boot/vmlinuz-${VER}"	/vmlinuz
+[[ -L /boot/vmlinuz ]] &&	ln -fs "vmlinuz-${VER}" /boot/vmlinuz
+[[ -L /vmlinuz ]] &&		ln -fs "boot/vmlinuz-${VER}" /vmlinuz
 
 # we do need an initrd
 if [ ! -f "/boot/initrd.img-${VER}" ]; then
@@ -137,9 +137,9 @@ if [ ! -f "/boot/initrd.img-${VER}" ]; then
 fi
 
 # set new kernel as default
-ln -fs "initrd.img-${VER}"	/boot/initrd.img
-ln -fs "boot/initrd.img-${VER}"	/initrd.img
-ln -fs "System.map-${VER}"	/boot/System.map
+[[ -L /boot/initrd.img ]] &&	ln -fs "initrd.img-${VER}" /boot/initrd.img
+[[ -L /initrd.img ]] &&		ln -fs "boot/initrd.img-${VER}" /initrd.img
+[[ -L /boot/System.map ]] &&	ln -fs "System.map-${VER}" /boot/System.map
 
 # in case we just created an initrd, update menu.lst
 if [ -x /usr/sbin/update-grub ]; then
@@ -160,7 +160,7 @@ if modinfo -k $(uname -r) -F filename ath_pci >/dev/null 2>&1; then
 			rm -rf /usr/src/modules/madwifi/
 		fi
 
-		KERNELDIRS="/usr/src/linux-headers-${VER}" m-a --text-mode --non-inter a-i madwifi
+		m-a --text-mode --non-inter -l "${VER}" a-i madwifi
 	else
 		echo
 		echo "Atheros Wireless Network Adaptor will not work until"
