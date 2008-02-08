@@ -67,9 +67,6 @@ function pop_modules_dir () {
 				}
 			}
 		}' $KMODFILE
-
-		# insane hacks to sanitize module packages
-		rm -f modules/et131x/debian/et131x-modules-_KVERS_.postinst.modules.in
 	popd >/dev/null
 }
 
