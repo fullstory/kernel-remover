@@ -1,0 +1,71 @@
+#!/bin/bash
+
+KMODFILE="/etc/sidux-modules"
+
+while getopts vd:k: opt
+do
+        case $opt in
+		v)
+			set -x
+			;;
+		d)
+			BASE_DIR=$OPTARG
+			;;
+		k)
+			KERNEL_VERSION=$OPTARG
+			;;
+                \?)
+                        echo "Unknown option: \"$opt\""
+			exit 1
+                        ;;
+        esac
+done
+
+if ((UID)); then
+	# not root
+	if [[ ! $BASE_DIR ]]; then
+		BASE_DIR="$PWD"
+		[[ -e $BASE_DIR/Makefile ]] || ln -s /usr/src/Makefile ${BASE_DIR}/
+	fi
+
+	if [[ ! -s $KMODFILE ]]; then
+		echo "$KMODFILE is missing!"
+		exit 2
+	fi
+	
+	# dir must exist and be writeable
+	if [[ ! -d $BASE_DIR ]]; then
+		mkdir -p "$BASE_DIR" || {
+			echo "Cannot create directory: \"$BASE_DIR\""
+			exit 3
+		}
+	elif [[ -d $BASE_DIR ]]; then
+		touch "$BASE_DIR" || {
+			echo "Cannot write to directory: \"$BASE_DIR\""
+			exit 4
+		}
+	fi
+
+	[[ -z $KERNEL_VERSION ]] && KERNEL_VERSION="$(uname -r)"
+
+	if [[ -e ${BASE_DIR}/modules ]] || ! /usr/bin/unp-kernel-modules; then
+		echo "Cannot extract kernel modules to: \"$BASE_DIR\""
+		exit 5
+	fi
+	if ! tar -cjf "${BASE_DIR}/kernel-${KERNEL_VERSION}-custom-modules.tar.bz2" "${BASE_DIR}/modules"; then
+		echo "Cannot create module tarball ${BASE_DIR}/kernel-${KERNEL_VERSION}-custom-modules.tar.bz2"
+		exit 6
+	fi
+
+	for i in $(cat ${KMODFILE}); do
+		LANG= m-a --kvers-list "${KERNEL_VERSION}" --kernel-dir "/usr/src/linux-headers-${KERNEL_VERSION}/" --userdir "${BASE_DIR}" --text-mode build "${i}"
+	done
+else
+	# root
+	BASE_DIR="/usr/src"
+
+	for i in $(cat ${KMODFILE}); do
+		LANG= m-a --kvers-list "${KERNEL_VERSION}" --kernel-dir "/usr/src/linux-headers-${KERNEL_VERSION}/" --text-mode auto-install "${i}"
+	done
+fi
+
