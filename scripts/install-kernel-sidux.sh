@@ -15,10 +15,6 @@ if [ -e "/boot/vmlinuz-${VER}" ]; then
 	exit 2
 fi
 
-rm -f	/boot/System.map \
-	/boot/vmlinuz \
-	/boot/initrd.img
-
 # ensure /etc/kernel-img.conf is configured with correct settings
 # - fix path to update-grub
 # - make sure "do_initrd = Yes"
@@ -128,8 +124,8 @@ if [ "$?" -ne 0 ]; then
 
 fi
 
-[[ -L /boot/vmlinuz ]] &&	ln -fs "vmlinuz-${VER}" /boot/vmlinuz
-[[ -L /vmlinuz ]] &&		ln -fs "boot/vmlinuz-${VER}" /vmlinuz
+[ -L /boot/vmlinuz ] &&	ln -fs "vmlinuz-${VER}" /boot/vmlinuz
+[ -L /vmlinuz ] &&	ln -fs "boot/vmlinuz-${VER}" /vmlinuz
 
 # we do need an initrd
 if [ ! -f "/boot/initrd.img-${VER}" ]; then
@@ -137,9 +133,9 @@ if [ ! -f "/boot/initrd.img-${VER}" ]; then
 fi
 
 # set new kernel as default
-[[ -L /boot/initrd.img ]] &&	ln -fs "initrd.img-${VER}" /boot/initrd.img
-[[ -L /initrd.img ]] &&		ln -fs "boot/initrd.img-${VER}" /initrd.img
-[[ -L /boot/System.map ]] &&	ln -fs "System.map-${VER}" /boot/System.map
+[ -L /boot/initrd.img ] &&	ln -fs "initrd.img-${VER}" /boot/initrd.img
+[ -L /initrd.img ] &&		ln -fs "boot/initrd.img-${VER}" /initrd.img
+[ -L /boot/System.map ] &&	ln -fs "System.map-${VER}" /boot/System.map
 
 # in case we just created an initrd, update menu.lst
 if [ -x /usr/sbin/update-grub ]; then
