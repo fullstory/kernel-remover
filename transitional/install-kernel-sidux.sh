@@ -2,9 +2,8 @@
 
 K_UPSTREAM="%KERNEL_UPSTREAM%"
 K_ABINAME="%KERNEL_ABINAME%"
-K_FLAVOUR="sidux-$(dpkg-architecture -qDEB_BUILD_ARCH)"
 
-VER="${K_UPSTREAM}-${K_ABINAME}-${K_FLAVOUR}"
+VER="${K_UPSTREAM}-${K_ABINAME}"
 
 if [ "$(id -u)" -ne 0 ]; then
 	[ -x "$(which su-to-root)" ] && exec su-to-root -c "$0"

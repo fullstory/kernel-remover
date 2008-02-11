@@ -13,8 +13,9 @@ sidux-kernelhacking (2.6.24.2) UNRELEASED; urgency=low
   * explain why we don't need to bother about install failures of external
     modules yet.
   * add CVE numbers.
+  * the arch mapping isn't consistent.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 11 Feb 2008 03:02:15 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 11 Feb 2008 03:16:15 +0100
 
 sidux-kernelhacking (2.6.24.1) unstable; urgency=low
 
