@@ -62,7 +62,7 @@ if ((UID)); then
 		LANG= m-a --kvers-list "${KERNEL_VERSION}" --kernel-dir "/usr/src/linux-headers-${KERNEL_VERSION}/" --userdir "${BASE_DIR}" --text-mode build "${i}"
 		rm -rf "${BASE_DIR}/usr_src" "${BASE_DIR}/var_cache_modass"
 	done
-	rm "${BASE_DIR}/*.changes"
+	rm "${BASE_DIR}/*.changes" 2>/dev/null
 else
 	# root
 	BASE_DIR="/usr/src"
