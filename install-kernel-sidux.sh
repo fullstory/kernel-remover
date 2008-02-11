@@ -127,6 +127,12 @@ for i in acer_acpi acerhk acx atl2 aufs et131x fsam7400 gspca kqemu sqlzma ndisw
 			MODULE_PACKAGE="${MODULE_PACKAGE%$(uname -r)}${VER}"
 			if grep-aptavail -PX "${MODULE_PACKAGE}" >/dev/null 2>&1; then
 				apt-get --assume-yes install "${MODULE_PACKAGE}"
+				if [ "$?" -ne 0 ]; then
+					apt-get --fix-broken install
+				else
+					# ignore error cases
+					:
+				fi
 			fi
 		fi
 	fi
