@@ -123,7 +123,7 @@ for i in acer_acpi acerhk acx atl2 aufs et131x fsam7400 gspca kqemu sqlzma ndisw
 	if [ -n "${MODULE_PATH}" ]; then
 		MODULE_PACKAGE="$(dpkg -S ${MODULE_PATH} 2>/dev/null)"
 		if [ -n "${MODULE_PACKAGE}" ]; then
-			MODULE_PACKAGE="${MODULE_PACKAGE%$(uname -r)}${VER}"
+			MODULE_PACKAGE="$(echo ${MODULE_PACKAGE} | sed s/$(uname -r).*/${VER}/g)"
 			if grep-aptavail -PX "${MODULE_PACKAGE}" >/dev/null 2>&1; then
 				apt-get --assume-yes install "${MODULE_PACKAGE}"
 				if [ "$?" -ne 0 ]; then
