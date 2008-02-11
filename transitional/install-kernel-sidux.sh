@@ -118,7 +118,7 @@ fi
 # set symlinks to the kernel headers
 ln -fs "linux-headers-${VER}" /usr/src/linux >/dev/null 2>&1
 
-# try to install external module packages
+# try to install external dfsg-free module packages
 for i in acer_acpi acerhk acx atl2 aufs et131x fsam7400 gspca kqemu sqlzma ndiswrapper omnibook quickcam av5100 squashfs vboxadd vboxdrv; do
 	MODULE_PATH="$(/sbin/modinfo -k $(uname -r) -F filename "${i}" 2>/dev/null)"
 	if [ -n "${MODULE_PATH}" ]; then
@@ -130,7 +130,9 @@ for i in acer_acpi acerhk acx atl2 aufs et131x fsam7400 gspca kqemu sqlzma ndisw
 				if [ "$?" -ne 0 ]; then
 					apt-get --fix-broken install
 				else
-					# ignore error cases for now
+					# ignore error cases for now, apt will do the "right" thing to get 
+					# into a consistent state and worst that could happen is some external
+					# module not getting installed
 					:
 				fi
 			fi

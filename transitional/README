@@ -1,0 +1,61 @@
+Important information for stable kernels >= 2.6.24.1
+====================================================
+
+Starting kernel 2.6.24.1, sidux kernels and dfsg-free external modules
+are available via apt.
+
+The actual packaging is still a work in progress, but the recent local root
+exploit requires immediate action to provide secure kernel packages. While
+the binary packages for linux-image and linux-headers are already in good
+shape - and safe/ recommended for updating, the source packaging still has 
+be considered a work in progress, with adaptions to the support 
+infrastructure (like convenience meta- and module packages) still missing.
+
+For kernel 2.6.24.1 (which includes the important security fix for  this means:
+i686 systems:
+	apt-get install	linux-image-2.6.24-2.6.24.1.slh.3-sidux-686 \
+			linux-headers-2.6.24-2.6.24.1.slh.3-sidux-686
+amd64 systems:
+	apt-get install	linux-image-2.6.24-2.6.24.1.slh.3-sidux-amd64 \
+			linux-headers-2.6.24-2.6.24.1.slh.3-sidux-686
+
+Available module packages via apt:
+i686 systems:
+	acer-acpi-modules-2.6.24-2.6.24.1.slh.3-sidux-686
+	acerhk-modules-2.6.24-2.6.24.1.slh.3-sidux-686
+	acx100-2.6.24-2.6.24.1.slh.3-sidux-686
+	atl2-modules-2.6.24-2.6.24.1.slh.3-sidux-686
+	aufs-modules-2.6.24-2.6.24.1.slh.3-sidux-686
+	et131x-modules-2.6.24-2.6.24.1.slh.3-sidux-686
+	fsam7400-modules-2.6.24-2.6.24.1.slh.3-sidux-686
+	gspca-modules-2.6.24-2.6.24.1.slh.3-sidux-686
+	kqemu-modules-2.6.24-2.6.24.1.slh.3-sidux-686
+	ndiswrapper-modules-2.6.24-2.6.24.1.slh.3-sidux-686
+	omnibook-module-2.6.24-2.6.24.1.slh.3-sidux-686
+	qc-usb-modules-2.6.24-2.6.24.1.slh.3-sidux-686
+	rfswitch-modules-2.6.24-2.6.24.1.slh.3-sidux-686
+	virtualbox-ose-guest-modules-2.6.24-2.6.24.1.slh.3-sidux-686
+	virtualbox-ose-modules-2.6.24-2.6.24.1.slh.3-sidux-686
+
+amd64 systems:
+	acer-acpi-modules-2.6.24-2.6.24.1.slh.3-sidux-amd64
+	acx100-2.6.24-2.6.24.1.slh.3-sidux-amd64
+	atl2-modules-2.6.24-2.6.24.1.slh.3-sidux-amd64
+	aufs-modules-2.6.24-2.6.24.1.slh.3-sidux-amd64
+	et131x-modules-2.6.24-2.6.24.1.slh.3-sidux-amd64
+	fsam7400-modules-2.6.24-2.6.24.1.slh.3-sidux-amd64
+	gspca-modules-2.6.24-2.6.24.1.slh.3-sidux-amd64
+	kqemu-modules-2.6.24-2.6.24.1.slh.3-sidux-amd64
+	ndiswrapper-modules-2.6.24-2.6.24.1.slh.3-sidux-amd64
+	qc-usb-modules-2.6.24-2.6.24.1.slh.3-sidux-amd64
+	rfswitch-modules-2.6.24-2.6.24.1.slh.3-sidux-amd64
+	virtualbox-ose-modules-2.6.24-2.6.24.1.slh.3-sidux-amd64
+
+For transitional purposes, a dummy "kernel-${VER}.zip" providing an adapted
+"install-kernel-sidux.sh" to pull the updated kernel and module packages 
+is available, at the usual location to allow a seamless upgrade path.
+Manual installation using apt are preferred over using "kernel-${VER}.zip" 
+are preferred at this stage.
+
+Please report any problems you're encountering to:
+	http://sidux.com/PNphpBB2-viewforum-f-24.html
