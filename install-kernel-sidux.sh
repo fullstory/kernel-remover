@@ -120,7 +120,7 @@ ln -fs "linux-headers-${VER}" /usr/src/linux >/dev/null 2>&1
 
 # try to install external module packages
 for i in acer_acpi acerhk acx atl2 aufs et131x fsam7400 gspca kqemu sqlzma ndiswrapper omnibook quickcam av5100 squashfs vboxadd vboxdrv; do
-	MODULE_PATH="$(modinfo -k $(uname -r) -F filename "${i}" 2>/dev/null)"
+	MODULE_PATH="$(/sbin/modinfo -k $(uname -r) -F filename "${i}" 2>/dev/null)"
 	if [ -n "${MODULE_PATH}" ]; then
 		MODULE_PACKAGE="$(dpkg -S ${MODULE_PATH} 2>/dev/null)"
 		if [ -n "${MODULE_PACKAGE}" ]; then
@@ -139,7 +139,7 @@ for i in acer_acpi acerhk acx atl2 aufs et131x fsam7400 gspca kqemu sqlzma ndisw
 done
 
 # hints for madwifi
-if modinfo -k $(uname -r) -F filename ath_pci >/dev/null 2>&1; then
+if /sbin/modinfo -k $(uname -r) -F filename ath_pci >/dev/null 2>&1; then
 	if [ -f /usr/src/madwifi.tar.bz2 ] && which m-a >/dev/null; then
 		# user setup madwifi with module-assistant already
 		# we may as well do that for him again now
