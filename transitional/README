@@ -5,11 +5,13 @@ Starting kernel 2.6.24.1, sidux kernels and dfsg-free external modules
 are available via apt.
 
 The actual packaging is still a work in progress, but the recent local root
-exploit requires immediate action to provide secure kernel packages. While
-the binary packages for linux-image and linux-headers are already in good
-shape - and safe/ recommended for updating, the source packaging still has 
-be considered a work in progress, with adaptions to the support 
+exploit *) requires immediate action to provide secure kernel packages. 
+While the binary packages for linux-image and linux-headers are already in 
+good shape - and safe/ recommended for updating, the source packaging 
+still has be considered a work in progress, with adaptions to the support 
 infrastructure (like convenience meta- and module packages) still missing.
+
+*) CVE-2008-08, CVE-2008-09, CVE-2008-10
 
 For kernel 2.6.24.1 (which includes the important security fix for  this means:
 i686 systems:
