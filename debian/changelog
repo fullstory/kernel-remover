@@ -5,8 +5,9 @@ sidux-kernelhacking (2.6.24.2) UNRELEASED; urgency=low
   * add temporary build-kernel-modules, but don't install it.
   * don't rm default links in /boot/ prematurely.
   * fix bashisms in new link logic.
+  * hack up a transitional install-kernel-sidux.sh for debianized kernels.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 11 Feb 2008 00:27:15 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 11 Feb 2008 01:45:18 +0100
 
 sidux-kernelhacking (2.6.24.1) unstable; urgency=low
 
