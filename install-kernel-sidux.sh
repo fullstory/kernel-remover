@@ -130,7 +130,7 @@ for i in acer_acpi acerhk acx atl2 aufs et131x fsam7400 gspca kqemu sqlzma ndisw
 				if [ "$?" -ne 0 ]; then
 					apt-get --fix-broken install
 				else
-					# ignore error cases
+					# ignore error cases for now
 					:
 				fi
 			fi
