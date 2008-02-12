@@ -67,7 +67,7 @@ function prepare()
 			dialog)  SSFT_FRONTEND="${frontend}";;
 			kdialog)  SSFT_FRONTEND="${frontend}";;
 			zenity) SSFT_FRONTEND="${frontend}";;
-			*)  ;;
+			*)  echo unknown frontend && exit 1;;
 		esac
 	fi
 
@@ -76,7 +76,11 @@ function prepare()
 			SSFT_FRONTEND=${SSFT_FRONTEND:-"text"}
 	else
 		if [ -n "$DISPLAY" ] && [ ! -x /usr/bin/zenity ]; then
-			SSFT_FRONTEND="dialog"
+			if [ -x /usr/bin/dialog ]; then
+				SSFT_FRONTEND="dialog"
+			else
+				SSFT_FRONTEND="text"
+			fi
 			DISPLAY=""
 		else
 			SSFT_FRONTEND=${SSFT_FRONTEND:-"zenity"}
