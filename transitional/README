@@ -14,44 +14,11 @@ infrastructure (like convenience meta- and module packages) still missing.
 *) CVE-2008-08, CVE-2008-09, CVE-2008-10
 
 For kernel 2.6.24.1 (which includes the important security fix for  this means:
-i686 systems:
-	apt-get install	linux-image-2.6.24-2.6.24.2.slh.5-sidux-686 \
-			linux-headers-2.6.24-2.6.24.2.slh.5-sidux-686
-amd64 systems:
-	apt-get install	linux-image-2.6.24-2.6.24.2.slh.5-sidux-amd64 \
-			linux-headers-2.6.24-2.6.24.2.slh.5-sidux-686
+	apt-get install	linux-image-%KERNEL_VERSION% \
+			linux-headers-%KERNEL_VERSION%
 
 Available module packages via apt:
-i686 systems:
-	acer-acpi-modules-2.6.24-2.6.24.2.slh.5-sidux-686
-	acerhk-modules-2.6.24-2.6.24.2.slh.5-sidux-686
-	acx100-2.6.24-2.6.24.2.slh.5-sidux-686
-	atl2-modules-2.6.24-2.6.24.2.slh.5-sidux-686
-	aufs-modules-2.6.24-2.6.24.2.slh.5-sidux-686
-	et131x-modules-2.6.24-2.6.24.2.slh.5-sidux-686
-	fsam7400-modules-2.6.24-2.6.24.2.slh.5-sidux-686
-	gspca-modules-2.6.24-2.6.24.2.slh.5-sidux-686
-	kqemu-modules-2.6.24-2.6.24.2.slh.5-sidux-686
-	ndiswrapper-modules-2.6.24-2.6.24.2.slh.5-sidux-686
-	omnibook-module-2.6.24-2.6.24.2.slh.5-sidux-686
-	qc-usb-modules-2.6.24-2.6.24.2.slh.5-sidux-686
-	rfswitch-modules-2.6.24-2.6.24.2.slh.5-sidux-686
-	virtualbox-ose-guest-modules-2.6.24-2.6.24.2.slh.5-sidux-686
-	virtualbox-ose-modules-2.6.24-2.6.24.2.slh.5-sidux-686
-
-amd64 systems:
-	acer-acpi-modules-2.6.24-2.6.24.2.slh.5-sidux-amd64
-	acx100-2.6.24-2.6.24.2.slh.5-sidux-amd64
-	atl2-modules-2.6.24-2.6.24.2.slh.5-sidux-amd64
-	aufs-modules-2.6.24-2.6.24.2.slh.5-sidux-amd64
-	et131x-modules-2.6.24-2.6.24.2.slh.5-sidux-amd64
-	fsam7400-modules-2.6.24-2.6.24.2.slh.5-sidux-amd64
-	gspca-modules-2.6.24-2.6.24.2.slh.5-sidux-amd64
-	kqemu-modules-2.6.24-2.6.24.2.slh.5-sidux-amd64
-	ndiswrapper-modules-2.6.24-2.6.24.2.slh.5-sidux-amd64
-	qc-usb-modules-2.6.24-2.6.24.2.slh.5-sidux-amd64
-	rfswitch-modules-2.6.24-2.6.24.2.slh.5-sidux-amd64
-	virtualbox-ose-modules-2.6.24-2.6.24.2.slh.5-sidux-amd64
+%EXTERNAL_MODULES%
 
 For transitional purposes, a dummy "kernel-${VER}.zip" providing an adapted
 "install-kernel-sidux.sh" to pull the updated kernel and module packages 

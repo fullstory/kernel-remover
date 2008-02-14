@@ -2,8 +2,10 @@ sidux-kernelhacking (2.6.24.3) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
   * make install-kernel-sidux.sh arch independent.
+  * remove bashisms.
+  * add kernel-*.zip functionality.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 14 Feb 2008 16:56:26 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 14 Feb 2008 20:21:21 +0100
 
 sidux-kernelhacking (2.6.24.2) unstable; urgency=low
 

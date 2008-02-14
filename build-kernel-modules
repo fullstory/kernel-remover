@@ -1,8 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
 KMODFILE="/etc/sidux-modules"
+TEMPLATES="$(dirname ${0})/transitional"
 
-while getopts vd:k: opt
+while getopts vd:k:z: opt
 do
         case $opt in
 		v)
@@ -14,6 +15,9 @@ do
 		k)
 			KERNEL_VERSION=$OPTARG
 			;;
+		z)
+			ZIPFILE=$OPTARG
+			;;
                 \?)
                         echo "Unknown option: \"$opt\""
 			exit 1
@@ -23,46 +27,70 @@ done
 
 if ((UID)); then
 	# not root
-	if [[ ! $BASE_DIR ]]; then
+	if [ ! "${BASE_DIR}" ]; then
 		BASE_DIR="$PWD"
-		[[ -e $BASE_DIR/Makefile ]] || ln -s /usr/src/Makefile ${BASE_DIR}/
+		[ -e "${BASE_DIR}/Makefile}" ] || ln -s /usr/src/Makefile ${BASE_DIR}/
 	fi
 
-	if [[ ! -s $KMODFILE ]]; then
+	if [ ! -s "${KMODFILE}" ]; then
 		echo "$KMODFILE is missing!"
 		exit 2
 	fi
 	
 	# dir must exist and be writeable
-	if [[ ! -d $BASE_DIR ]]; then
-		mkdir -p "$BASE_DIR" || {
+	if [ ! -d "${BASE_DIR}" ]; then
+		mkdir -p "${BASE_DIR}" || {
 			echo "Cannot create directory: \"$BASE_DIR\""
 			exit 3
 		}
-	elif [[ -d $BASE_DIR ]]; then
+	elif [ -d "${BASE_DIR}" ]; then
 		touch "$BASE_DIR" || {
 			echo "Cannot write to directory: \"$BASE_DIR\""
 			exit 4
 		}
 	fi
 
-	[[ -z $KERNEL_VERSION ]] && KERNEL_VERSION="$(uname -r)"
+	[ -z "${KERNEL_VERSION}" ] && KERNEL_VERSION="$(uname -r)"
 
-	if [[ -e ${BASE_DIR}/modules ]] || ! /usr/bin/unp-kernel-modules; then
-		echo "Cannot extract kernel modules to: \"$BASE_DIR\""
-		exit 5
-	fi
-	if ! tar -cjf "${BASE_DIR}/kernel-${KERNEL_VERSION}-custom-modules.tar.bz2" "${BASE_DIR}/modules"; then
-		echo "Cannot create module tarball ${BASE_DIR}/kernel-${KERNEL_VERSION}-custom-modules.tar.bz2"
-		exit 6
-	fi
-	rm -rf "${BASE_DIR}/modules" "${BASE_DIR}/Makefile"
+	pushd "${BASE_DIR}" >/dev/null
+		if [ -e "${BASE_DIR}/modules" ] || ! /usr/bin/unp-kernel-modules; then
+			echo "Cannot extract kernel modules to: \"$BASE_DIR\""
+			exit 5
+		fi
 
-	for i in $(cat ${KMODFILE}); do
-		LANG= m-a --kvers-list "${KERNEL_VERSION}" --kernel-dir "/usr/src/linux-headers-${KERNEL_VERSION}/" --userdir "${BASE_DIR}" --text-mode build "${i}"
-		rm -rf "${BASE_DIR}/usr_src" "${BASE_DIR}/var_cache_modass"
-	done
-	rm "${BASE_DIR}/*.changes" 2>/dev/null
+		if ! tar -cjf "kernel-${KERNEL_VERSION}-custom-modules.tar.bz2" "modules"; then
+			echo "Cannot create module tarball ${BASE_DIR}/kernel-${KERNEL_VERSION}-custom-modules.tar.bz2"
+			exit 6
+		fi
+
+		rm -rf "${BASE_DIR}/modules" "${BASE_DIR}/Makefile"
+	
+		for i in $(cat ${KMODFILE}); do
+			LANG= m-a --kvers-list "${KERNEL_VERSION}" --kernel-dir "/usr/src/linux-headers-${KERNEL_VERSION}/" --userdir "${BASE_DIR}" --text-mode build "${i}"
+			rm -rf "${BASE_DIR}/usr_src" "${BASE_DIR}/var_cache_modass"
+		done
+		rm "${BASE_DIR}/*.changes" 2>/dev/null
+
+		if [ -d "${TEMPLATES}" ]; then
+			for i in ${TEMPLATES}/*; do
+				cp  "${i}" "${BASE_DIR}/$(basename ${i})"
+
+				for mod in $(ls -1 *.deb | cut -d\_ -f1); do
+					sed -i "s/\%EXTERNAL_MODULES\%/\t${mod}\n\%EXTERNAL_MODULES\%/" \
+						"${BASE_DIR}/$(basename ${i})"
+				done
+
+				sed -i	-e "s/\%KERNEL_VERSION\%/${KERNEL_VERSION}/g" \
+					-e "/\%EXTERNAL_MODULES\%/d" \
+						"${BASE_DIR}/$(basename ${i})"
+
+				if [ -n "${ZIPFILE}" ]; then
+					zip -g "$ZIPFILE" "$(basename ${i})"
+					rm -f "${BASE_DIR}/$(basename ${i})"
+				fi
+			done
+		fi
+	popd >/dev/null
 else
 	# root
 	BASE_DIR="/usr/src"
