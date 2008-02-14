@@ -3,7 +3,21 @@
 K_UPSTREAM="%KERNEL_UPSTREAM%"
 K_ABINAME="%KERNEL_ABINAME%"
 
-VER="${K_UPSTREAM}-${K_ABINAME}"
+case "$(uname -m)" in
+	i?86)
+		K_FLAVOUR="sidux-686"
+		;;
+	x86_64)
+		K_FLAVOUR="sidux-amd64"
+		;;
+	*)
+		echo "ERROR: unkown architecture" >&2
+		exit 99
+		;;
+esac
+
+
+VER="${K_UPSTREAM}-${K_ABINAME}-${K_FLAVOUR}"
 
 if [ "$(id -u)" -ne 0 ]; then
 	[ -x "$(which su-to-root)" ] && exec su-to-root -c "$0"
