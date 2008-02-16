@@ -149,9 +149,11 @@ CURRENT="$(eval_gettext "The actual (active) kernel is $(uname -r)")"
 function remove_one_kernel 
 {
 	local Kernel
+	local str
 	Kernel=$1 
+	kern_str=$(echo $1 | sed -e's/\-sidux.*$//')
 	if [ "${Kernel}" != "${ACTUAL}" ]; then
-		apt-get remove --purge --yes $(dpkg -l | awk '{print $2}' | grep ${Kernel}$)
+		apt-get remove --purge --yes $(dpkg -l | awk "/${str}/" | awk '{print $2}')
 		if [ ! -e "/boot/vmlinuz-${Kernel}" ]; then
 			rm -rf /lib/modules/${Kernel}
 			rm -rf /usr/src/kernel-headers-${Kernel}
