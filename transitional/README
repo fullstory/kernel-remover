@@ -9,9 +9,23 @@ exploit *) requires immediate action to provide secure kernel packages.
 While the binary packages for linux-image and linux-headers are already in 
 good shape - and safe/ recommended for updating, the source packaging 
 still has be considered a work in progress, with adaptions to the support 
-infrastructure (like convenience meta- and module packages) still missing.
+infrastructure (like convenience module metapackages) still missing.
 
 *) CVE-2008-08, CVE-2008-09, CVE-2008-10
+
+The preferred way to install the new kernel packages and to stay up to date
+is by using the newly added metapackages for linux-image and linux-headers:
+amd64:
+	apt-get install	linux-image-2.6-sidux-amd64 \
+			linux-headers-2.6-sidux-amd64
+	
+i386:
+	apt-get install	linux-image-2.6-sidux-686 \
+			linux-headers-2.6-sidux-686
+
+(metapackages for the external modules will follow in a few days)
+
+
 
 For kernel 2.6.24.1 (which includes the important security fix for  this means:
 	apt-get install	linux-image-%KERNEL_VERSION% \
