@@ -1,8 +1,12 @@
 sidux-kernelhacking (2.6.24.4) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 17 Feb 2008 00:22:32 +0100
+  [ Joaquim Boura ]
+  * fixed mispelling of var
+
+ -- Joaquim Boura <x-un-i@sidux.com>  Sun, 17 Feb 2008 01:12:20 +0100
 
 sidux-kernelhacking (2.6.24.3) unstable; urgency=low
 
