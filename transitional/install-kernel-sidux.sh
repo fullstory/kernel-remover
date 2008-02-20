@@ -93,18 +93,17 @@ if [ "$?" -ne 0 ]; then
 
 fi
 
-[ -L /boot/vmlinuz ] &&	ln -fs "vmlinuz-${VER}" /boot/vmlinuz
-[ -L /vmlinuz ] &&	ln -fs "boot/vmlinuz-${VER}" /vmlinuz
-
 # we do need an initrd
 if [ ! -f "/boot/initrd.img-${VER}" ]; then
 	update-initramfs -k "${VER}" -c
 fi
 
 # set new kernel as default
-[ -L /boot/initrd.img ] &&	ln -fs "initrd.img-${VER}" /boot/initrd.img
+[ -L /boot/vmlinuz ] &&		rm -f /boot/vmlinuz
+[ -L /boot/initrd.img ] &&	rm -f /boot/initrd.img
+[ -L /boot/System.map ] &&	rm -f /boot/System.map
+[ -L /vmlinuz ] &&		ln -fs "boot/vmlinuz-${VER}" /vmlinuz
 [ -L /initrd.img ] &&		ln -fs "boot/initrd.img-${VER}" /initrd.img
-[ -L /boot/System.map ] &&	ln -fs "System.map-${VER}" /boot/System.map
 
 # in case we just created an initrd, update menu.lst
 if [ -x /usr/sbin/update-grub ]; then
