@@ -63,7 +63,7 @@ For kernel 2.6.24.1 (which includes the important security fix for  this means:
 			linux-headers-%KERNEL_VERSION%
 
 Available module packages without metapackage support so far:
-%EXTERNAL_MODULES%
+- ndiswrapper, please use "m-a a-i ndiswrapper"
 
 For transitional purposes, a dummy "kernel-${VER}.zip" providing an adapted
 "install-kernel-sidux.sh" to pull the updated kernel and module packages 

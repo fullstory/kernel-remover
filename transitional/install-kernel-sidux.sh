@@ -114,7 +114,7 @@ fi
 ln -fs "linux-headers-${VER}" /usr/src/linux >/dev/null 2>&1
 
 # try to install external dfsg-free module packages
-for i in acer_acpi acerhk acx atl2 aufs et131x fsam7400 gspca kqemu sqlzma ndiswrapper omnibook quickcam av5100 squashfs vboxadd vboxdrv; do
+for i in acer_acpi acerhk acx atl2 aufs et131x fsam7400 gspca kqemu sqlzma omnibook quickcam av5100 squashfs vboxadd vboxdrv; do
 	MODULE_PATH="$(/sbin/modinfo -k $(uname -r) -F filename "${i}" 2>/dev/null)"
 	if [ -n "${MODULE_PATH}" ]; then
 		MODULE_PACKAGE="$(dpkg -S ${MODULE_PATH} 2>/dev/null)"
@@ -152,6 +152,25 @@ if /sbin/modinfo -k $(uname -r) -F filename ath_pci >/dev/null 2>&1; then
 		echo
 	fi
 fi
+
+# hints for ndiswrapper
+if /sbin/modinfo -k $(uname -r) -F filename ndiswrapper >/dev/null 2>&1; then
+	if [ -f /usr/src/ndiswrapper.tar.bz2 ] && which m-a >/dev/null; then
+		# user setup madwifi with module-assistant already
+		# we may as well do that for him again now
+		if [ -d /usr/src/modules/ndiswrapper/ ]; then
+			rm -rf /usr/src/modules/ndiswrapper/
+		fi
+
+		m-a --text-mode --non-inter -l "${VER}" a-i ndiswrapper
+	else
+		echo
+		echo "Wireless Network Adaptor using ndiswrapper will not work until"
+		echo "the ndiswrapper module is reinstalled."
+		echo
+	fi
+fi
+
 
 # hints for fglrx
 if grep -q '"fglrx"' /etc/X11/xorg.conf; then
