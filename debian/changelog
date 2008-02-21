@@ -1,8 +1,9 @@
 sidux-kernelhacking (2.6.24.7) unstable; urgency=low
 
   * no custom workaround for ndiswrapper.
+  * revert to full modules.list, it's still great for rapid prototyping.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 21 Feb 2008 22:31:40 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 21 Feb 2008 22:33:35 +0100
 
 sidux-kernelhacking (2.6.24.6) unstable; urgency=low
 
