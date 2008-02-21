@@ -1,8 +1,10 @@
-sidux-kernelhacking (2.6.24.6) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.24.6) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * drop all modules but ndiswrapper, they are built by
+    linux-modules-sidux-main-2.6 now.
+  * quick hack to list new style module package in README.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 21 Feb 2008 01:10:09 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 21 Feb 2008 22:15:35 +0100
 
 sidux-kernelhacking (2.6.24.5) unstable; urgency=low
 
