@@ -3,7 +3,7 @@
 KMODFILE="/etc/sidux-modules"
 TEMPLATES="$(dirname ${0})/transitional"
 
-while getopts vd:k:z: opt
+while getopts vd:k:nz: opt
 do
         case $opt in
 		v)
@@ -17,6 +17,9 @@ do
 			;;
 		z)
 			ZIPFILE=$OPTARG
+			;;
+		n)
+			NO_BUILD="yes"
 			;;
                 \?)
                         echo "Unknown option: \"$opt\""
@@ -53,29 +56,31 @@ if ((UID)); then
 	[ -z "${KERNEL_VERSION}" ] && KERNEL_VERSION="$(uname -r)"
 
 	pushd "${BASE_DIR}" >/dev/null
-		if [ -e "${BASE_DIR}/modules" ] || ! /usr/bin/unp-kernel-modules; then
-			echo "Cannot extract kernel modules to: \"$BASE_DIR\""
-			exit 5
-		fi
+		if [ -z "${NO_BUILD}" ]; then
+			if [ -e "${BASE_DIR}/modules" ] || ! /usr/bin/unp-kernel-modules; then
+				echo "Cannot extract kernel modules to: \"$BASE_DIR\""
+				exit 5
+			fi
 
-		if ! tar -cjf "kernel-${KERNEL_VERSION}-custom-modules.tar.bz2" "modules"; then
-			echo "Cannot create module tarball ${BASE_DIR}/kernel-${KERNEL_VERSION}-custom-modules.tar.bz2"
-			exit 6
-		fi
-
-		rm -rf "${BASE_DIR}/modules" "${BASE_DIR}/Makefile"
+			if ! tar -cjf "kernel-${KERNEL_VERSION}-custom-modules.tar.bz2" "modules"; then
+				echo "Cannot create module tarball ${BASE_DIR}/kernel-${KERNEL_VERSION}-custom-modules.tar.bz2"
+				exit 6
+			fi
 	
-		for i in $(cat ${KMODFILE}); do
-			LANG= m-a --kvers-list "${KERNEL_VERSION}" --kernel-dir "/usr/src/linux-headers-${KERNEL_VERSION}/" --userdir "${BASE_DIR}" --text-mode build "${i}"
-			rm -rf "${BASE_DIR}/usr_src" "${BASE_DIR}/var_cache_modass"
-		done
-		rm "${BASE_DIR}/*.changes" 2>/dev/null
+			rm -rf "${BASE_DIR}/modules" "${BASE_DIR}/Makefile"
+		
+			for i in $(cat ${KMODFILE}); do
+				LANG= m-a --kvers-list "${KERNEL_VERSION}" --kernel-dir "/usr/src/linux-headers-${KERNEL_VERSION}/" --userdir "${BASE_DIR}" --text-mode build "${i}"
+				rm -rf "${BASE_DIR}/usr_src" "${BASE_DIR}/var_cache_modass"
+			done
+			rm "${BASE_DIR}/*.changes" 2>/dev/null
+		fi
 
 		if [ -d "${TEMPLATES}" ]; then
 			for i in ${TEMPLATES}/*; do
 				cp  "${i}" "${BASE_DIR}/$(basename ${i})"
 
-				for mod in $(ls -1 *.deb | cut -d\_ -f1); do
+				for mod in $(ls -1 *.deb 2>/dev/null | cut -d\_ -f1); do
 					sed -i "s/\%EXTERNAL_MODULES\%/\t${mod}\n\%EXTERNAL_MODULES\%/" \
 						"${BASE_DIR}/$(basename ${i})"
 				done
