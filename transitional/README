@@ -29,6 +29,7 @@ external modules (amd64):
 			gspca-modules-2.6-sidux-amd64			\
 			loop-aes-modules-2.6-sidux-amd64		\
 			lzma-modules-2.6-sidux-amd64			\
+			ndiswrapper-modules-2.6-sidux-amd64		\
 			qc-usb-modules-2.6-sidux-amd64			\
 			redhat-cluster-modules-2.6-sidux-amd64		\
 			rfswitch-modules-2.6-sidux-amd64		\
@@ -49,6 +50,7 @@ external modules (i386):
 			gspca-modules-2.6-sidux-686			\
 			loop-aes-modules-2.6-sidux-686			\
 			lzma-modules-2.6-sidux-686			\
+			ndiswrapper-modules-2.6-sidux-686		\
 			omnibook-modules-2.6-sidux-686			\
 			qc-usb-modules-2.6-sidux-686			\
 			redhat-cluster-modules-2.6-sidux-686		\
@@ -61,9 +63,6 @@ external modules (i386):
 For kernel 2.6.24.1 (which includes the important security fix for  this means:
 	apt-get install	linux-image-%KERNEL_VERSION% \
 			linux-headers-%KERNEL_VERSION%
-
-Available module packages without metapackage support so far:
-- ndiswrapper, please use "m-a a-i ndiswrapper"
 
 For transitional purposes, a dummy "kernel-${VER}.zip" providing an adapted
 "install-kernel-sidux.sh" to pull the updated kernel and module packages 
