@@ -5,8 +5,9 @@ sidux-kernelhacking (2.6.24.8) unstable; urgency=low
     but just templates.
   * ndiswrapper now builds as part of linux-modules-sidux-main-2.6, thanks to
     kelmo.
+  * don't mention no longer provided module packages in transitional/README.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 24 Feb 2008 03:54:52 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 25 Feb 2008 01:00:55 +0100
 
 sidux-kernelhacking (2.6.24.7) unstable; urgency=low
 

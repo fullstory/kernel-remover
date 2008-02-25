@@ -23,15 +23,12 @@ external modules (amd64):
 			atl2-modules-2.6-sidux-amd64			\
 			aufs-modules-2.6-sidux-amd64			\
 			btrfs-modules-2.6-sidux-amd64			\
-			drbd8-modules-2.6-sidux-amd64			\
 			et131x-modules-2.6-sidux-amd64			\
 			fsam7400-modules-2.6-sidux-amd64		\
 			gspca-modules-2.6-sidux-amd64			\
-			loop-aes-modules-2.6-sidux-amd64		\
 			lzma-modules-2.6-sidux-amd64			\
 			ndiswrapper-modules-2.6-sidux-amd64		\
 			qc-usb-modules-2.6-sidux-amd64			\
-			redhat-cluster-modules-2.6-sidux-amd64		\
 			rfswitch-modules-2.6-sidux-amd64		\
 			squashfs-modules-2.6-sidux-amd64
 	
@@ -44,16 +41,13 @@ external modules (i386):
 			atl2-modules-2.6-sidux-686			\
 			aufs-modules-2.6-sidux-686			\
 			btrfs-modules-2.6-sidux-686			\
-			drbd8-modules-2.6-sidux-686			\
 			et131x-modules-2.6-sidux-686			\
 			fsam7400-modules-2.6-sidux-686			\
 			gspca-modules-2.6-sidux-686			\
-			loop-aes-modules-2.6-sidux-686			\
 			lzma-modules-2.6-sidux-686			\
 			ndiswrapper-modules-2.6-sidux-686		\
 			omnibook-modules-2.6-sidux-686			\
 			qc-usb-modules-2.6-sidux-686			\
-			redhat-cluster-modules-2.6-sidux-686		\
 			rfswitch-modules-2.6-sidux-686			\
 			squashfs-modules-2.6-sidux-686			\
 			virtualbox-ose-guest-modules-2.6-sidux-686	\
