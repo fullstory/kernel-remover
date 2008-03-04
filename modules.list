@@ -11,7 +11,7 @@
 # module-package,,arch
 #
 
-acerhk-source,(>= 0.5.35-8),i386
+acerhk-source,,i386
 acx100-source,(>= 20070101-2)
 acer-acpi-source,(>= 0.10-1)
 atl2-source,(>= 2.0.3-1+c0.sidux.1)

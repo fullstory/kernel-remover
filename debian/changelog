@@ -1,13 +1,14 @@
 sidux-kernelhacking (2.6.24.8) unstable; urgency=low
 
-  * NOT RELEASED YET
   * add -n switch to create bare kernel-*.zip assemblies without any modules
     but just templates.
   * ndiswrapper now builds as part of linux-modules-sidux-main-2.6, thanks to
     kelmo.
   * don't mention no longer provided module packages in transitional/README.
+  * acerhk is now in debian proper, drop the versioned dependency on no longer
+    existing debian revision.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 25 Feb 2008 01:00:55 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 04 Mar 2008 03:01:45 +0100
 
 sidux-kernelhacking (2.6.24.7) unstable; urgency=low
 
