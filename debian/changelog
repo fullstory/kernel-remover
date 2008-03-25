@@ -1,12 +1,13 @@
-sidux-kernelhacking (2.6.24.9) UNRELEASED; urgency=low
-
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
+sidux-kernelhacking (2.6.24.9) unstable; urgency=low
 
   [ Joaquim Boura ]
   * fixed removing kernel for higher revisions than 10
 
- -- Joaquim Boura <x-un-i@sidux.com>  Wed, 26 Mar 2008 00:37:59 +0100
+  [ Stefan Lippers-Hollmann ]
+  * merge awk invocations into one.
+  * remove linux-support-$VER as well.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 26 Mar 2008 00:45:50 +0100
 
 sidux-kernelhacking (2.6.24.8) unstable; urgency=low
 
