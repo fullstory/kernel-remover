@@ -1,3 +1,9 @@
+sidux-kernelhacking (2.6.24.12) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 27 Mar 2008 14:06:24 +0100
+
 sidux-kernelhacking (2.6.24.11) unstable; urgency=low
 
   * fix further bashisms (push/ popd).
