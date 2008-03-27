@@ -100,8 +100,6 @@ inputbox()
 	# The default value if used
 	SSFT_DEFAULT=$4
 	ssft_read_string "${Title}" "${Text}";
-	unset -v Title
-	unset -v Text
 }
 
 #---------------------------------------------------------------------
@@ -111,8 +109,6 @@ msgbox()
 	Title="$1"
 	Text="$2"
 	ssft_display_message "${Title}" "${Text}"
-	unset -v Title
-	unset -v Text
 }
 #---------------------------------------------------------------------
 select_more()
@@ -123,12 +119,8 @@ select_more()
 	shift 2
 	if ssft_select_multiple "$Title" "$Text" $@ ; then
 		Selected=$SSFT_RESULT
-		unset -v Title
-		unset -v Text
 		return 0
 	else
-		unset -v Title
-		unset -v Text
 		return 1 
 	fi
 }
@@ -139,8 +131,6 @@ yesno()
 	Title=$1
 	Text=$2
 	ssft_yesno "${Title}" "${Text}"
-	unset -v Title
-	unset -v Text
 	return $?
 }
 
@@ -172,15 +162,13 @@ remove_one_kernel()
 		# do not remove active kernel
 		:
 	fi
-	unset -v Kernel
-	unset -v str
 }
 
 #---------------------------------------------------------------------
 get_KernelList()
 {
 	for v in /boot/vmlinuz-*; do 
-		Kernel=$(basename $v | sed s/vmlinuz-//)
+		Kernel="$(basename $v | sed s/vmlinuz-//)"
 		if [ "${Kernel}" != "${ACTUAL}" ]; then
 			[ -z "${KernelList}" ] && KernelList="${Kernel}" ||\
 			KernelList="${KernelList} ${Kernel}"
@@ -190,7 +178,6 @@ get_KernelList()
 			# echo $Kernel
 		fi
 	done
-	unset -v Kernel
 }
 
 #---------------------------------------------------------------------
