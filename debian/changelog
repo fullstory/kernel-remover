@@ -1,8 +1,11 @@
-sidux-kernelhacking (2.6.24.10) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.24.10) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * fix regexp parsing of given kernel names.
+  * only try to remove linux-headers-commom-$KVER linux-support-$KVER if
+    installed.
+  * remove bashisms, make kernel-remover a pure SUSv3 script.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 26 Mar 2008 00:47:29 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 27 Mar 2008 13:36:46 +0100
 
 sidux-kernelhacking (2.6.24.9) unstable; urgency=low
 

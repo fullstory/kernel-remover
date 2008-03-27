@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 # we need gettext (is loaded in ssft.sh or cloned...)
 if [ -f /usr/bin/gettext.sh ]; then
@@ -24,7 +24,8 @@ TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAINDIR
 
 #---------------------------------------------------------------------
-function usage {
+usage()
+{
 	echo  "$(basename $0)"
 	echo  "     -F parameter    use parameter as the graphical frontend"
 	echo  "                     one of text | dialog | kdialog | zenity "
@@ -49,7 +50,7 @@ done
 shift $(($OPTIND - 1))
 
 #---------------------------------------------------------------------
-function prepare()
+prepare()
 {
 	if [ "$force" -eq 0 ]; then
 		# we need ssft 
@@ -90,7 +91,8 @@ function prepare()
 #---------------------------------------------------------------------
 # some useful functions
 #---------------------------------------------------------------------
-function inputbox {
+inputbox()
+{
 	local Title
 	local Text
 	# inputbox Title Text dummy default
@@ -103,7 +105,8 @@ function inputbox {
 }
 
 #---------------------------------------------------------------------
-function msgbox {
+msgbox()
+{
 	local Title
 	local Text
 	# msgbox title text
@@ -112,7 +115,8 @@ function msgbox {
 	ssft_display_message "${Title}" "${Text}"
 }
 #---------------------------------------------------------------------
-function select_more {
+select_more()
+{
 	local Title
 	local Text
 	# select one of a list
@@ -127,7 +131,8 @@ function select_more {
 	fi
 }
 #---------------------------------------------------------------------
-function yesno {
+yesno()
+{
 	local Title
 	local Text
 	# yesno title text width
@@ -146,14 +151,20 @@ TITLE="$(gettext "Removing installed kernels")"
 CURRENT="$(eval_gettext "The actual (active) kernel is $(uname -r)")"
 
 #---------------------------------------------------------------------
-function remove_one_kernel 
+remove_one_kernel()
 {
 	local Kernel
 	local str
 	Kernel=$1 
 	if [ "${Kernel}" != "${ACTUAL}" ]; then
-		apt-get remove --purge --yes $(dpkg -l | awk '/${Kernel}/{print $2}')
-		apt-get remove --purge --yes "linux-headers-$(echo $Kernel | sed -e's/\-sidux.*$//')-common" "linux-support-$(echo $Kernel | sed -e's/\-sidux.*$//')"
+		apt-get remove --purge --yes $(dpkg -l | awk "/${Kernel}/{print $2}")
+
+		dpkg -l "linux-headers-$(echo $Kernel | sed 's/\-sidux.*$//')-common" >/dev/null 2>&1 && \
+			apt-get remove --purge --yes "linux-headers-$(echo $Kernel | sed 's/\-sidux.*$//')-common"
+		dpkg -l "linux-support-$(echo $Kernel | sed 's/\-sidux.*$//')" >/dev/null 2>&1 && \
+			apt-get remove --purge --yes "linux-support-$(echo $Kernel | sed 's/\-sidux.*$//')"
+
+		# dispose make install artefacts
 		if [ ! -e "/boot/vmlinuz-${Kernel}" ]; then
 			rm -rf /lib/modules/${Kernel}
 		fi
@@ -164,7 +175,7 @@ function remove_one_kernel
 }
 
 #---------------------------------------------------------------------
-function get_KernelList
+get_KernelList()
 {
 	local Kernel
 	pushd /boot 2>&1 >>/dev/null
@@ -183,7 +194,7 @@ function get_KernelList
 }
 
 #---------------------------------------------------------------------
-function actualize_the_grub
+actualize_the_grub()
 {
 	[ -r /boot/grub/menu.lst -a -x /usr/sbin/update-grub ] && /usr/sbin/update-grub
 }
@@ -250,5 +261,6 @@ else
 		actualize_the_grub
 	fi
 fi
+
 exit 0
 
