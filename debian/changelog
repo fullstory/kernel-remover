@@ -2,8 +2,9 @@ sidux-kernelhacking (2.6.24.11) unstable; urgency=low
 
   * fix further bashisms (push/ popd).
   * and remove reliance on SUSv3 exceptions granted by Debian policy 10.4.
+  * properly escape awk options.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 27 Mar 2008 13:53:22 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 27 Mar 2008 14:01:40 +0100
 
 sidux-kernelhacking (2.6.24.10) unstable; urgency=low
 
