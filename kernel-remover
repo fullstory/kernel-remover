@@ -93,8 +93,6 @@ prepare()
 #---------------------------------------------------------------------
 inputbox()
 {
-	local Title
-	local Text
 	# inputbox Title Text dummy default
 	Title="$1"
 	Text="$2"
@@ -102,43 +100,47 @@ inputbox()
 	# The default value if used
 	SSFT_DEFAULT=$4
 	ssft_read_string "${Title}" "${Text}";
+	unset -v Title
+	unset -v Text
 }
 
 #---------------------------------------------------------------------
 msgbox()
 {
-	local Title
-	local Text
 	# msgbox title text
 	Title="$1"
 	Text="$2"
 	ssft_display_message "${Title}" "${Text}"
+	unset -v Title
+	unset -v Text
 }
 #---------------------------------------------------------------------
 select_more()
 {
-	local Title
-	local Text
 	# select one of a list
 	Title=$1
 	Text=$2
 	shift 2
 	if ssft_select_multiple "$Title" "$Text" $@ ; then
 		Selected=$SSFT_RESULT
+		unset -v Title
+		unset -v Text
 		return 0
 	else
+		unset -v Title
+		unset -v Text
 		return 1 
 	fi
 }
 #---------------------------------------------------------------------
 yesno()
 {
-	local Title
-	local Text
 	# yesno title text width
 	Title=$1
 	Text=$2
 	ssft_yesno "${Title}" "${Text}"
+	unset -v Title
+	unset -v Text
 	return $?
 }
 
@@ -153,8 +155,6 @@ CURRENT="$(eval_gettext "The actual (active) kernel is $(uname -r)")"
 #---------------------------------------------------------------------
 remove_one_kernel()
 {
-	local Kernel
-	local str
 	Kernel=$1 
 	if [ "${Kernel}" != "${ACTUAL}" ]; then
 		apt-get remove --purge --yes $(dpkg -l | awk "/${Kernel}/{print $2}")
@@ -172,15 +172,15 @@ remove_one_kernel()
 		# do not remove activ kernel
 		:
 	fi
+	unset -v Kernel
+	unset -v str
 }
 
 #---------------------------------------------------------------------
 get_KernelList()
 {
-	local Kernel
-	pushd /boot 2>&1 >>/dev/null
-	for v in vmlinuz-*; do 
-		Kernel=$(echo $v|sed s/vmlinuz-//)
+	for v in /boot/vmlinuz-*; do 
+		Kernel=$(basename $v | sed s/vmlinuz-//)
 		if [ "${Kernel}" != "${ACTUAL}" ]; then
 			[ -z "${KernelList}" ] && KernelList="${Kernel}" ||\
 			KernelList="${KernelList} ${Kernel}"
@@ -190,7 +190,7 @@ get_KernelList()
 			# echo $Kernel
 		fi
 	done
-	popd 2>&1 >> /dev/null
+	unset -v Kernel
 }
 
 #---------------------------------------------------------------------
