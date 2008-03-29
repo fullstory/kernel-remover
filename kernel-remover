@@ -87,6 +87,17 @@ prepare()
 			SSFT_FRONTEND=${SSFT_FRONTEND:-"zenity"}
 		fi
 	fi
+
+	# the current one will not be shown in the list ....
+
+	ACTUAL=$(uname -r)
+	TITLE="$(gettext "Removing installed kernels")"
+	PAD="======="
+
+	[ "${SSFT_FRONTEND}" = "dialog" -o -z "${SSFT_FRONTEND}" ] && \
+		CURRENT="$(eval_gettext "The actual (active) kernel is ${PAD}$(uname -r)${PAD}")" || \
+		CURRENT="$(eval_gettext "The actual (active) kernel is $(uname -r)")"
+
 }
 #---------------------------------------------------------------------
 # some useful functions
@@ -133,14 +144,6 @@ yesno()
 	ssft_yesno "${Title}" "${Text}"
 	return $?
 }
-
-#---------------------------------------------------------------------
-#
-# the current one will not be shown in the list ....
-
-ACTUAL=$(uname -r)
-TITLE="$(gettext "Removing installed kernels")"
-CURRENT="$(eval_gettext "The actual (active) kernel is $(uname -r)")"
 
 #---------------------------------------------------------------------
 remove_one_kernel()
