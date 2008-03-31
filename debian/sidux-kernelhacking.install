@@ -6,4 +6,3 @@ icons/pixmaps.kernel-remover/*	usr/share/pixmaps/
 Makefile			usr/src/
 scripts				usr/share/sidux-kernelhacking/
 linux-custom-patches		usr/share/sidux-kernelhacking/
-man/kernel-remover.8		usr/share/man/man8/
