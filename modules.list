@@ -20,10 +20,10 @@ et131x-source,(>= 1.2.3-7)
 fsam7400-source,(>= 0.5.1-6)
 gspca-source,(>= 01.00.18-2+c0.sidux.1)
 kqemu-source,(>= 1.3.0~pre10-2)
-lzma-source
 ndiswrapper-source,(>= 1.50-1),amd64,i386
 omnibook-source,,i386
 qc-usb-source,(>= 0.6.6-4)
+r5u870-source
 rfswitch-source
 squashfs-source,(>= 1:3.3-1+c0.sidux.3)
 virtualbox-ose-guest-source,(>= 1.5.2-dfsg2-5),i386
