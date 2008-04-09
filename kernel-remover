@@ -168,17 +168,27 @@ remove_one_kernel()
 }
 
 #---------------------------------------------------------------------
+
+
 get_KernelList()
 {
 	for v in /boot/vmlinuz-*; do 
 		Kernel="$(basename $v | sed s/vmlinuz-//)"
-		if [ "${Kernel}" != "${ACTUAL}" ]; then
-			[ -z "${KernelList}" ] && KernelList="${Kernel}" ||\
-			KernelList="${KernelList} ${Kernel}"
-			# echo KernelList="$KernelList"
+		meta_package="$(echo $(grep-available -F Depends linux-image-${Kernel} \
+			-s Package) | cut -d: -f 2)"
+
+		[ -n "${meta_package}" ] && \
+			meta_status="$(dpkg-query  -f='${STATUS}\n' -W  ${meta_package}|\
+				 cut -d ' ' -f 3)" || \
+			meta_status="not-installed"
+
+		if [ "${Kernel}" != "${ACTUAL}" -a \
+			 "${meta_status}" = "not-installed" ]; then
+				[ -z "${KernelList}" ] && KernelList="${Kernel}" ||\
+				KernelList="${KernelList} ${Kernel}"
+				# echo KernelList="$KernelList"
 		else
 			:
-			# echo $Kernel
 		fi
 	done
 }

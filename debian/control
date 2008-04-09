@@ -10,7 +10,7 @@ Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/sidux-kernelhacking/trunk/
 
 Package: sidux-kernelhacking
 Architecture: all
-Depends: ssft
+Depends: ssft, dctrl-tools
 Suggests: make
 Recommends: sidux-modules, dpatch, dpkg-dev, fakeroot, kernel-package, menu
 Description: various tools for kernel hacking
