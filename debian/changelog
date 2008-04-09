@@ -1,15 +1,9 @@
-sidux-kernelhacking (2.6.24.15+nmu1) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.24.15) unstable; urgency=low
 
   * kernel-remover: do not offer latest kernel if the metapackage is still
     installed.
 
  -- Joaquim Boura <x-un-i@sidux.com>  Wed, 09 Apr 2008 11:02:05 +0200
-
-sidux-kernelhacking (2.6.24.15) UNRELEASED; urgency=low
-
-  * NOT RELEASED YET
-
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 31 Mar 2008 14:47:37 +0200
 
 sidux-kernelhacking (2.6.24.14) unstable; urgency=low
 
