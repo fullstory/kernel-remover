@@ -1,8 +1,10 @@
-sidux-kernelhacking (2.6.24.16) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.25.0) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * drop acer-acpi, merged upstream.
+  * drop kqemu, obsolete and broken.
+  * adapt dependencies for 2.6.25.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 09 Apr 2008 15:57:14 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 28 Apr 2008 22:45:56 +0200
 
 sidux-kernelhacking (2.6.24.15) unstable; urgency=low
 
