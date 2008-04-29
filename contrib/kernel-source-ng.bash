@@ -419,9 +419,9 @@ download_patches() {
 	local WGET_OPTS WGET_RETVAL
 
 	if [[ $VERBOSITY ]]; then
-		WGET_OPTS=( -N -c -v )
+		WGET_OPTS=( -Ncv )
 	else
-		WGET_OPTS=( -N -c -q )
+		WGET_OPTS=( -Ncq )
 	fi
 
 	for patch in ${@}; do
@@ -557,7 +557,7 @@ if [[ -d $SRCDIR/linux-$KERNEL || -d $SRCDIR/linux-$KMV ]]; then
 fi
 
 printf "${A}Downloading ${I}${TARBALL##*/}${N}..."
-if wget -Ncq -O $SRCDIR/${TARBALL##*/} $TARBALL; then
+if wget -cq -O $SRCDIR/${TARBALL##*/} $TARBALL; then
 	printf "\n"
 else
 	printf " ${F}Failed!${N}\n"
