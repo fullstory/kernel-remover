@@ -177,6 +177,12 @@ get_KernelList()
 		meta_package="$(echo $(grep-available -F Depends linux-image-${Kernel} \
 			-s Package) | cut -d: -f 2)"
 
+		case $meta_package in
+			*$Kernel* ) # this is an old style kernel
+				KernelList="${KernelList} ${Kernel}"
+				continue
+				;;
+		esac
 		[ -n "${meta_package}" ] && \
 			meta_status="$(dpkg-query  -f='${STATUS}\n' -W  ${meta_package}|\
 				 cut -d ' ' -f 3)" || \

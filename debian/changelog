@@ -1,3 +1,9 @@
+sidux-kernelhacking (2.6.25.1+nmu1) UNRELEASED; urgency=low
+
+  * do not ignore old style kernels 
+
+ -- Joaquim Boura <x-un-i@sidux.com>  Thu, 01 May 2008 22:33:11 +0200
+
 sidux-kernelhacking (2.6.25.1) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
