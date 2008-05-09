@@ -1,15 +1,14 @@
-sidux-kernelhacking (2.6.25.1+nmu1) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.25.1) unstable; urgency=low
 
+  [ Joaquim Boura ]
   * do not ignore old style kernels 
 
- -- Joaquim Boura <x-un-i@sidux.com>  Thu, 01 May 2008 22:33:11 +0200
-
-sidux-kernelhacking (2.6.25.1) UNRELEASED; urgency=low
-
-  * NOT RELEASED YET
+  [ Stefan Lippers-Hollmann ]
   * fix kernel-source-ng.bash use of wget.
+  * make build-kernel-modules POSIX compliant
+  * add x-un-i to uploaders.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 29 Apr 2008 22:01:13 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 09 May 2008 13:56:17 +0200
 
 sidux-kernelhacking (2.6.25.0) unstable; urgency=low
 

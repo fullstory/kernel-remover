@@ -28,7 +28,7 @@ do
         esac
 done
 
-if ((UID)); then
+if [ $(id -u) -ne 0 ] ; then
 	# not root
 	if [ ! "${BASE_DIR}" ]; then
 		BASE_DIR="$PWD"
@@ -55,7 +55,8 @@ if ((UID)); then
 
 	[ -z "${KERNEL_VERSION}" ] && KERNEL_VERSION="$(uname -r)"
 
-	pushd "${BASE_DIR}" >/dev/null
+	POPD="$(pwd)"
+	cd "${BASE_DIR}"
 		if [ -z "${NO_BUILD}" ]; then
 			if [ -e "${BASE_DIR}/modules" ] || ! /usr/bin/unp-kernel-modules; then
 				echo "Cannot extract kernel modules to: \"$BASE_DIR\""
@@ -95,7 +96,7 @@ if ((UID)); then
 				fi
 			done
 		fi
-	popd >/dev/null
+	[ -n "${POPD}" ] && cd "${POPD}"
 else
 	# root
 	BASE_DIR="/usr/src"
