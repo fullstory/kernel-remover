@@ -22,7 +22,7 @@ Package: sidux-modules
 Architecture: any
 Depends: bzip2, unp, zip, gawk, ${module:Depends}
 Suggests: sidux-kernelhacking
-Description: meta package for sidux kernel modules
+Description: metapackage for sidux kernel modules
  Depend on commonly used kernel module sources for easy kernel hacking and
  provide easy scripts to unpack those or remove older kernels.
 
