@@ -1,10 +1,6 @@
-sidux-kernelhacking (2.6.25.3) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.25.3) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Joaquim Boura ]
-  * do not include actual kernel in the list of the offered kernels.
+  * do not include current kernel in the list of the offered kernels.
 
  -- Joaquim Boura <x-un-i@sidux.com>  Tue, 13 May 2008 18:29:53 +0200
 
