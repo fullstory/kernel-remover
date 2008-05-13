@@ -1,8 +1,12 @@
 sidux-kernelhacking (2.6.25.3) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 11 May 2008 22:07:13 +0200
+  [ Joaquim Boura ]
+  * do not include actual kernel in the list of the offered kernels.
+
+ -- Joaquim Boura <x-un-i@sidux.com>  Tue, 13 May 2008 18:29:53 +0200
 
 sidux-kernelhacking (2.6.25.2) unstable; urgency=low
 
