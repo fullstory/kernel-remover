@@ -3,7 +3,7 @@ Section: misc
 Priority: extra
 Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Uploaders: Kel Modderman <kel@otaku42.de>, Joaquim Boura <x-un-i@sidux.com>
-Build-Depends: debhelper (>= 7)
+Build-Depends: cdbs, debhelper (>= 6)
 Standards-Version: 3.7.3
 Vcs-Svn: svn://svn.berlios.de/fullstory/sidux-kernelhacking/trunk
 Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/sidux-kernelhacking/trunk/

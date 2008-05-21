@@ -1,8 +1,8 @@
-sidux-kernelhacking (2.6.25.4) unstable; urgency=low
+sidux-kernelhacking (2.6.25.4) UNRELEASED; urgency=low
 
-  * switch to the new dh implementation of debhelper 7.
+  * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 21 May 2008 20:28:26 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 13 May 2008 23:42:20 +0200
 
 sidux-kernelhacking (2.6.25.3) unstable; urgency=low
 
