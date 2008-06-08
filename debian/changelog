@@ -1,8 +1,8 @@
-sidux-kernelhacking (2.6.25.4) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.25.4) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * bump standards version to 3.8.0, no changes necessary.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 13 May 2008 23:42:20 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 08 Jun 2008 19:35:32 +0200
 
 sidux-kernelhacking (2.6.25.3) unstable; urgency=low
 
