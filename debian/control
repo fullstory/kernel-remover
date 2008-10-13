@@ -3,7 +3,7 @@ Section: misc
 Priority: extra
 Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Uploaders: Kel Modderman <kel@otaku42.de>, Joaquim Boura <x-un-i@sidux.com>
-Build-Depends: cdbs, debhelper (>= 6)
+Build-Depends: cdbs, debhelper (>= 7)
 Standards-Version: 3.8.0
 Vcs-Svn: svn://svn.berlios.de/fullstory/sidux-kernelhacking/trunk
 Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/sidux-kernelhacking/trunk/
@@ -12,17 +12,9 @@ Package: sidux-kernelhacking
 Architecture: all
 Depends: ssft, dctrl-tools
 Suggests: make
-Recommends: sidux-modules, dpatch, dpkg-dev, fakeroot, kernel-package, menu
+Recommends: dpkg-dev, fakeroot, kernel-package, menu
 Description: various tools for kernel hacking
  These tools script common tasks while testing kernels, like creating kbuild 
  symlinks, removal of deprecated kernel images and associated drivers or a 
  custom Makefile for /usr/src/.
-
-Package: sidux-modules
-Architecture: any
-Depends: bzip2, unp, zip, gawk, ${module:Depends}
-Suggests: sidux-kernelhacking
-Description: metapackage for sidux kernel modules
- Depend on commonly used kernel module sources for easy kernel hacking and
- provide easy scripts to unpack those or remove older kernels.
 

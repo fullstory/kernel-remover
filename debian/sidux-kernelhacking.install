@@ -1,8 +1,7 @@
 kernel-remover			usr/sbin/
 kernel-remover.desktop		usr/share/applications/sidux/
 icons/kernel-remover.svg	usr/share/icons/hicolor/scalable/apps/
-icons/hicolor.kernel-remover/*	usr/share/icons/hicolor/
-icons/pixmaps.kernel-remover/*	usr/share/pixmaps/
-Makefile			usr/src/
-scripts				usr/share/sidux-kernelhacking/
-linux-custom-patches		usr/share/sidux-kernelhacking/
+icons/hicolor			usr/share/icons
+icons/pixmaps			usr/share/
+po/locale			usr/share/
+src/Makefile			usr/src/

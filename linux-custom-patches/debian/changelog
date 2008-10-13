@@ -1,6 +1,0 @@
-linux-custom-patches-%VER% (%REVISION%) unstable; urgency=low
-
-  * Initial release.
-
- -- %DEBFULLNAME% <%DEBEMAIL%>  %DATE%
-
