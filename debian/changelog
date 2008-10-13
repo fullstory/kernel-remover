@@ -1,3 +1,9 @@
+sidux-kernelhacking (2.6.27.3) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 14 Oct 2008 01:46:25 +0200
+
 sidux-kernelhacking (2.6.27.2) unstable; urgency=low
 
   * Touch up kernel-source-ng.bash for change in bash regular expression
