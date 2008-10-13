@@ -248,7 +248,8 @@ if [[ $KERNEL =~ $KREGEXP ]]; then
 	KMM=${BASH_REMATCH[6]} # MM Version
 
 	# Extra Version
-	if [[ $LAZY && $KERNEL =~ '^[0-9]+\.[0-9]+\.[0-9]+(\.?[0-9]*-?.*)?$' ]]; then
+	KREGEXPEXTRA='^[0-9]+\.[0-9]+\.[0-9]+(\.?[0-9]*-?.*)?$'
+	if [[ $LAZY && $KERNEL =~ $KREGEXPEXTRA ]]; then
 		# cpu based name modifier
 		CPU=$(uname -m)
 		case $CPU in
@@ -275,7 +276,7 @@ if [[ $KERNEL =~ $KREGEXP ]]; then
 		KERNEL=${KERNEL}-${NAME}-${REVISION}
 	fi
 
-	if [[ $KERNEL =~ '^[0-9]+\.[0-9]+\.[0-9]+(\.?[0-9]*-?.*)?$' ]]; then
+	if [[ $KERNEL =~ $KREGEXPEXTRA ]]; then
 		KEV=${BASH_REMATCH[1]}
 	fi
 else
@@ -349,11 +350,6 @@ if [[ $NOACT || $VERBOSITY ]]; then
 fi
 
 [[ $NOACT ]] && exit 0
-
-#=============================================================================#
-#	GPL compliance
-#=============================================================================#
-DPKG_PATCH_DIR=$SRCDIR/linux-custom-patches-${KERNEL}-1
 
 download_patches() {
 	local WGET_OPTS WGET_RETVAL
@@ -488,7 +484,7 @@ mkdir -p $SRCDIR
 printf "${A}Create ${I}linux-$KERNEL${N} @ ${A}$SRCDIR${N}\n\n"
 
 if [[ -d $SRCDIR/linux-$KERNEL || -d $SRCDIR/linux-$KMV ]]; then
-	rm -rf $SRCDIR/linux-$KERNEL $SRCDIR/$DPKG_PATCH_DIR
+	rm -rf $SRCDIR/linux-$KERNEL
 	if [[ $KRC && ! $KSV ]]; then
 		rm -rf $SRCDIR/linux-$KMV.$[$KRV-1]
 	else
