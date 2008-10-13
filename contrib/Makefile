@@ -5,17 +5,19 @@ ifeq ($(shell id -u),0)
 LINUX      := /usr/src/linux
 MODULE_LOC := /usr/src/modules
 MODULE_CLN := make-kpkg --rootcmd fakeroot modules_clean
+MAKE_KPKG  := make-kpkg --rootcmd fakeroot --revision $(REV) $(INITRD) --us --uc
 else
 LINUX      := $(CURDIR)/linux
 MODULE_LOC := $(CURDIR)/modules
 MODULE_CLN := fakeroot make-kpkg modules_clean
+MAKE_KPKG  := fakeroot make-kpkg --revision $(REV) $(INITRD) --us --uc
 endif
 
 export LANG=C
 export LC_ALL=C
+export MODULE_LOC
 
 PUSHLINUX := cd $(LINUX) &&
-MAKE_KPKG := make-kpkg --rootcmd fakeroot --revision $(REV) $(INITRD) --us --uc
 CONFIGURE := $(MAKE_KPKG) configure
 
 .PHONY: all
@@ -31,15 +33,18 @@ buildpackage: clean oldconfig
 
 .PHONY: fast
 fast: clean oldconfig
-	$(PUSHLINUX) $(MAKE_KPKG) kernel_image kernel_headers modules
+	$(PUSHLINUX) $(MAKE_KPKG) kernel_image kernel_headers modules_image
 
 .PHONY: modules_clean
 modules_clean:
 	-$(PUSHLINUX) $(MODULE_CLN) $(@)
 
-.PHONY: modules
-modules: modules_clean
+.PHONY: modules_image
+modules_image: modules_clean
 	$(PUSHLINUX) $(MAKE_KPKG) $(@)
+
+.PHONY: modules
+modules: modules_image
 
 .PHONY: oldconfig
 oldconfig:

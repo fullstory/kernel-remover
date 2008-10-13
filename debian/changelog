@@ -1,8 +1,12 @@
 sidux-kernelhacking (2.6.27.1) UNRELEASED; urgency=low
 
   * Remove a bit of old unused cruft from kernel-source-ng.bash.
+  * Make sure MODULE_LOC is exported.
+  * Run make-kpkg as fakeroot when invoked as user, to avoid differences
+    in its behaviour.
+  * Tweak modules targets
 
- -- Kel Modderman <kel@otaku42.de>  Tue, 14 Oct 2008 07:11:18 +1000
+ -- Kel Modderman <kel@otaku42.de>  Tue, 14 Oct 2008 07:29:58 +1000
 
 sidux-kernelhacking (2.6.27) unstable; urgency=low
 
