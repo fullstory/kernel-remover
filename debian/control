@@ -12,9 +12,8 @@ Package: sidux-kernelhacking
 Architecture: all
 Depends: ssft, dctrl-tools
 Suggests: make
-Recommends: dpkg-dev, fakeroot, kernel-package, menu
-Description: various tools for kernel hacking
- These tools script common tasks while testing kernels, like creating kbuild 
- symlinks, removal of deprecated kernel images and associated drivers or a 
+Recommends: dpkg-dev, fakeroot, kernel-package (>= 11.009), menu
+Description: tools for creation, installation and removal of the Linux kernel packages
+ These tools script common tasks while testing kernels, like creating kbuild
+ symlinks, removal of deprecated kernel images and associated drivers or a
  custom Makefile for /usr/src/.
-
