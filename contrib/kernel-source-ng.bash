@@ -19,7 +19,7 @@ REVISION="1"
 # staging directory
 if ((UID)); then
 	# user
-	SRCDIR=~/src
+	SRCDIR=$HOME/src
 else
 	# root
 	SRCDIR=/usr/src
@@ -29,9 +29,6 @@ fi
 if [[ -s $HOME/.kernel-sourcerc ]]; then
 	source $HOME/.kernel-sourcerc
 fi
-
-#%STATIC_VERSION%
-[[ $STATIC_VERSION ]] && KERNEL="$STATIC_VERSION"
 
 # regular expression use to match kernel string
 KREGEXP="^([0-9]+\.[0-9]+)\.([0-9]+)\.?([0-9]+)?-?(rc[0-9]+)?-?(git[0-9]+)?-?(mm[0-9]+)?$"
