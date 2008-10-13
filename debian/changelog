@@ -1,4 +1,4 @@
-sidux-kernelhacking (2.6.27.1) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.27.1) unstable; urgency=low
 
   * Remove a bit of old unused cruft from kernel-source-ng.bash.
   * Make sure MODULE_LOC is exported.
