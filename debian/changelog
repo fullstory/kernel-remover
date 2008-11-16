@@ -1,9 +1,5 @@
-sidux-kernelhacking (2.6.27.3) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.27.3) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Joaquim Boura ]
   * when using su the DISPLAY variable remains in the environment but root 
     is not allowed to open windows in the display so unset it to allow
     fallback to dialog
