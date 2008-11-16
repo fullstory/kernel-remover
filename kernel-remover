@@ -72,6 +72,9 @@ prepare()
 		esac
 	fi
 
+	if [ -z "$DISPLAY" ] &&  ! /usr/bin/xdpyinfo >/dev/null 2&>1 ; then
+		unset DISPLAY
+	fi
 	if [ -z "$DISPLAY" ]; then
 		[ -x /usr/bin/dialog ] && SSFT_FRONTEND=${SSFT_FRONTEND:-"dialog"} || \
 			SSFT_FRONTEND=${SSFT_FRONTEND:-"text"}
