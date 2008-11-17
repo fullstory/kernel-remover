@@ -1,8 +1,8 @@
-sidux-kernelhacking (2.6.27.4) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.27.4) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * fix 2>&1.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 16 Nov 2008 15:00:44 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 17 Nov 2008 01:36:47 +0100
 
 sidux-kernelhacking (2.6.27.3) unstable; urgency=low
 

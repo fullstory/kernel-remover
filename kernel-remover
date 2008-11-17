@@ -72,7 +72,7 @@ prepare()
 		esac
 	fi
 
-	if [ -z "$DISPLAY" ] &&  ! /usr/bin/xdpyinfo >/dev/null 2&>1 ; then
+	if [ -z "$DISPLAY" ] &&  ! /usr/bin/xdpyinfo >/dev/null 2>&1 ; then
 		unset DISPLAY
 	fi
 	if [ -z "$DISPLAY" ]; then
