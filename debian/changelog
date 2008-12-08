@@ -1,8 +1,9 @@
 sidux-kernelhacking (2.6.27.5) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * make lintian happy and depend on ${misc:Depends}.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 17 Nov 2008 01:37:55 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 08 Dec 2008 03:03:58 +0100
 
 sidux-kernelhacking (2.6.27.4) unstable; urgency=low
 
