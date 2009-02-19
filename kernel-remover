@@ -29,7 +29,7 @@ usage()
 	echo  "$(basename $0)"
 	echo  "     -F parameter    use parameter as the graphical frontend"
 	echo  "                     one of text | dialog | kdialog | zenity "
-	echo  "     -f              do it withou asking anything"
+	echo  "     -f              proceed without asking, do complete cleanup"
 	echo  "     -h              show this usage"
 	exit 1
 }
