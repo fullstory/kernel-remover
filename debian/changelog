@@ -1,8 +1,8 @@
-sidux-kernelhacking (2.6.28.1) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.28.1) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * fix groff syntax.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 20 Feb 2009 18:06:33 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 20 Feb 2009 18:08:26 +0100
 
 sidux-kernelhacking (2.6.28.0) unstable; urgency=low
 
