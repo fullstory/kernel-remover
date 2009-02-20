@@ -1,8 +1,8 @@
-sidux-kernelhacking (2.6.27.7) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.28.0) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * fix desktop-entry-contains-encoding-key.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 20 Feb 2009 13:57:31 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 20 Feb 2009 18:05:34 +0100
 
 sidux-kernelhacking (2.6.27.6) unstable; urgency=low
 
