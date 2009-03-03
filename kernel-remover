@@ -233,7 +233,11 @@ get_KernelList
 
 if [ -z "${KernelList}" ]; then
 	MSG="$(gettext "There is only one kernel installed on this system. Nothing to be done!")"
-	msgbox "${TITLE}" "${MSG}"
+	if [ "${force}" -eq 1 ]; then
+		echo "${MSG}"
+	else
+		msgbox "${TITLE}" "${MSG}"
+	fi
 	exit 0
 fi
 
