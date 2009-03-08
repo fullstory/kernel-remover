@@ -1,9 +1,5 @@
-sidux-kernelhacking (2.6.28.2) UNRELEASED; urgency=low
+sidux-kernelhacking (2.6.28.2) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Joaquim Boura ]
   * ssft is not loaded when using force. so do not use it. (thks ffws|hathe)
 
  -- Joaquim Boura <x-un-i@sidux.com>  Tue, 03 Mar 2009 21:28:10 +0100
