@@ -5,8 +5,9 @@ sidux-kernelhacking (2.6.28.3) UNRELEASED; urgency=low
 
   [ Bernard Gray ]
   * update art for 2009-02 -- do not release
+  * vacuum defs for svg icon
 
- -- Bernard Gray <bernard.gray@gmail.com>  Thu, 02 Jul 2009 19:00:35 +1000
+ -- Bernard Gray <bernard.gray@gmail.com>  Thu, 02 Jul 2009 21:14:43 +1000
 
 sidux-kernelhacking (2.6.28.2) unstable; urgency=low
 
