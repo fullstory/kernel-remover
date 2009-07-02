@@ -7,9 +7,10 @@ sidux-kernelhacking (2.6.28.3) UNRELEASED; urgency=low
   * update art for 2009-02
   * vacuum defs for svg icon
   * update copyright
-  * convert all bitmaps to new svg art -- do not release
+  * convert all bitmaps to new svg art 
+  * ready for release
 
- -- Bernard Gray <bernard.gray@gmail.com>  Thu, 02 Jul 2009 21:17:48 +1000
+ -- Bernard Gray <bernard.gray@gmail.com>  Thu, 02 Jul 2009 21:49:17 +1000
 
 sidux-kernelhacking (2.6.28.2) unstable; urgency=low
 
