@@ -4,21 +4,21 @@ Priority: extra
 Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Uploaders: Kel Modderman <kel@otaku42.de>, Joaquim Boura <x-un-i@sidux.com>
 Build-Depends: cdbs,
-               debhelper (>= 7)
-Standards-Version: 3.8.0
+ debhelper (>= 7)
+Standards-Version: 3.8.2
 Vcs-Svn: svn://svn.berlios.de/fullstory/sidux-kernelhacking/trunk
 Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/sidux-kernelhacking/trunk/
 
 Package: sidux-kernelhacking
 Architecture: all
 Depends: ${misc:Depends},
-         ssft,
-         dctrl-tools
+ ssft,
+ dctrl-tools
 Suggests: make
 Recommends: dpkg-dev,
-            fakeroot,
-            kernel-package (>= 11.009),
-            menu
+ fakeroot,
+ kernel-package (>= 11.009),
+ menu
 Description: tools for creation, installation and removal of the Linux kernel packages
  These tools script common tasks while testing kernels, like creating kbuild
  symlinks, removal of deprecated kernel images and associated drivers or a

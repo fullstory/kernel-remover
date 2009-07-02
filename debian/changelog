@@ -1,7 +1,4 @@
-sidux-kernelhacking (2.6.28.3) UNRELEASED; urgency=low
-
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
+sidux-kernelhacking (2.6.28.3) unstable; urgency=low
 
   [ Bernard Gray ]
   * update art for 2009-02
@@ -10,7 +7,12 @@ sidux-kernelhacking (2.6.28.3) UNRELEASED; urgency=low
   * convert all bitmaps to new svg art 
   * ready for release
 
- -- Bernard Gray <bernard.gray@gmail.com>  Thu, 02 Jul 2009 21:49:17 +1000
+  [ Stefan Lippers-Hollmann ]
+  * write new create-icons target.
+  * generate binary artwork.
+  * bump standards version to 3.8.2, no changes necessary.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 03 Jul 2009 00:04:59 +0200
 
 sidux-kernelhacking (2.6.28.2) unstable; urgency=low
 
