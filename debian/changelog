@@ -1,8 +1,13 @@
 sidux-kernelhacking (2.6.28.4) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 03 Jul 2009 00:06:33 +0200
+  [ Joaquim Boura ]
+  * when using su the DISPLAY can be set but root can not access it.
+    so we unset it
+
+ -- Joaquim Boura <x-un-i@sidux.com>  Fri, 25 Sep 2009 11:47:14 +0200
 
 sidux-kernelhacking (2.6.28.3) unstable; urgency=low
 
