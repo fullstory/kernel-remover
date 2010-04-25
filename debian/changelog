@@ -1,8 +1,9 @@
-sidux-kernelhacking (3.0.1) UNRELEASED; urgency=low
+sidux-kernelhacking (3.0.1) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * bump standards version to 3.8.4, no changes necessary.
+  * refresh generated icons.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 26 Nov 2009 15:08:11 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 26 Apr 2010 01:17:37 +0200
 
 sidux-kernelhacking (3.0.0) unstable; urgency=low
 
