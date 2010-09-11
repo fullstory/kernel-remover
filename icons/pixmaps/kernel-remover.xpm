@@ -1,7 +1,7 @@
 /* XPM */
 static char *kernel_remover[] = {
 /* columns rows colors chars-per-pixel */
-"32 32 256 2",
+"32 32 256 2 ",
 "   c #010101",
 ".  c #090909",
 "X  c #070C13",

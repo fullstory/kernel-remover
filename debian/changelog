@@ -1,8 +1,12 @@
-sidux-kernelhacking (3.0.2) UNRELEASED; urgency=low
+kernelhacking-remover (3.0.2) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * bump standards version to 3.9.1, no changes necessary.
+  * rename package to kernel-remover, all other functionality has been dropped
+    ages ago.
+  * elaborate long description a bit further, to make lintian happy.
+  * regenerate icons.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 26 Apr 2010 01:21:19 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 04 Aug 2010 03:49:26 +0200
 
 sidux-kernelhacking (3.0.1) unstable; urgency=low
 

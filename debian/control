@@ -1,21 +1,42 @@
-Source: sidux-kernelhacking
+Source: kernel-remover
 Section: misc
 Priority: extra
 Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Uploaders: Kel Modderman <kel@otaku42.de>,
  Joaquim Boura <x-un-i@sidux.com>
 Build-Depends: debhelper (>= 7)
-Standards-Version: 3.8.4
-Vcs-Svn: svn://svn.berlios.de/fullstory/sidux-kernelhacking/trunk
-Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/sidux-kernelhacking/trunk/
+Standards-Version: 3.9.1
+Vcs-Svn: svn://svn.berlios.de/fullstory/kernel-remover/trunk
+Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/kernel-remover/trunk/
 
-Package: sidux-kernelhacking
+Package: kernel-remover
 Architecture: all
 Depends: ${misc:Depends},
  gettext-base,
  dctrl-tools,
  ssft
 Recommends: menu
+Breaks: sidux-kernelhacking (<< 3.0.2)
+Replaces: sidux-kernelhacking (<< 3.0.2)
 Description: tool for the removal of the Linux kernel packages
  This tool handles the common tasks while handling testing kernels, the removal
- of deprecated kernel images, symlinks and associated drivers.
+ of deprecated kernel images, headers, depending packages, symlinks and 
+ associated drivers. unpackaged cruft below /lib/modules/$KVERS will be nuked.
+ .
+ Neither the currently running-, nor the newest kernels will be offered for
+ removal.
+
+Package: sidux-kernelhacking
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends},
+ kernel-remover
+Description: tool for the removal of the Linux kernel packages
+ This tool handles the common tasks while handling testing kernels, the removal
+ of deprecated kernel images, headers, depending packages, symlinks and 
+ associated drivers. unpackaged cruft below /lib/modules/$KVERS will be nuked.
+ .
+ Neither the currently running-, nor the newest kernels will be offered for
+ removal.
+ .
+ transitional metapackage to pull in kernel-remover
