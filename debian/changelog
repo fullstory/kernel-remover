@@ -1,3 +1,9 @@
+kernel-remover (3.0.4) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 08 Aug 2010 04:47:05 +0200
+
 kernel-remover (3.0.3) unstable; urgency=low
 
   * switch to compat level 8.
