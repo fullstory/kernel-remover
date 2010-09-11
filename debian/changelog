@@ -1,4 +1,4 @@
-kernelhacking-remover (3.0.2) unstable; urgency=low
+kernel-remover (3.0.2) unstable; urgency=low
 
   * bump standards version to 3.9.1, no changes necessary.
   * rename package to kernel-remover, all other functionality has been dropped
