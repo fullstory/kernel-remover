@@ -1,4 +1,4 @@
-?package(sidux-kernelhacking): \
+?package(kernel-remover): \
 	needs="X11" \
 	section="Applications/System/Administration" \
 	hints="sidux,Config" \
