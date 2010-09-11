@@ -1,5 +1,5 @@
 kernel-remover			usr/sbin/
-kernel-remover.desktop		usr/share/applications/sidux/
+kernel-remover.desktop		usr/share/applications/aptosid/
 icons/kernel-remover.svg	usr/share/icons/hicolor/scalable/apps/
 icons/hicolor			usr/share/icons
 icons/pixmaps			usr/share/

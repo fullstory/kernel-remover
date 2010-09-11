@@ -1,8 +1,11 @@
-kernel-remover (3.0.5) UNRELEASED; urgency=low
+kernel-remover (3.1.0) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * adapt for aptosid, drop no longer required quirks.
+  * drop kelmo from debian/copyright, the kernelhacking tools have been removed
+    from this package.
+  * update copyrights, fix eMail addresses.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 21 Aug 2010 23:25:02 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 27 Aug 2010 18:48:06 +0200
 
 kernel-remover (3.0.4) unstable; urgency=low
 

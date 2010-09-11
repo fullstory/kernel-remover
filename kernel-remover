@@ -157,10 +157,10 @@ remove_one_kernel()
 	if [ "${Kernel}" != "${ACTUAL}" ]; then
 		apt-get remove --purge --yes $(dpkg -l | awk "/${Kernel}/{print \$2}")
 
-		dpkg -l "linux-headers-$(echo $Kernel | sed 's/\-sidux.*$//')-common" >/dev/null 2>&1 && \
-			apt-get remove --purge --yes "linux-headers-$(echo $Kernel | sed 's/\-sidux.*$//')-common"
-		dpkg -l "linux-support-$(echo $Kernel | sed 's/\-sidux.*$//')" >/dev/null 2>&1 && \
-			apt-get remove --purge --yes "linux-support-$(echo $Kernel | sed 's/\-sidux.*$//')"
+		dpkg -l "linux-headers-${Kernel}-common" >/dev/null 2>&1 && \
+			apt-get remove --purge --yes "linux-headers-${Kernel}-common"
+		dpkg -l "linux-support-${Kernel}" >/dev/null 2>&1 && \
+			apt-get remove --purge --yes "linux-support-${Kernel}"
 
 		# dispose make install artefacts
 		if [ ! -e "/boot/vmlinuz-${Kernel}" ]; then
