@@ -1,3 +1,9 @@
+kernel-remover (3.1.1) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 27 Aug 2010 18:49:28 +0200
+
 kernel-remover (3.1.0) unstable; urgency=low
 
   * adapt for aptosid, drop no longer required quirks.
