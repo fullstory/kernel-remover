@@ -208,12 +208,6 @@ get_KernelList()
 }
 
 #---------------------------------------------------------------------
-actualize_the_grub()
-{
-	[ -r /boot/grub/menu.lst -a -x /usr/sbin/update-grub ] && /usr/sbin/update-grub
-}
-
-#---------------------------------------------------------------------
 # Main
 #---------------------------------------------------------------------
 if [ "${xtra}" -eq 1 ]; then
@@ -225,8 +219,7 @@ if [ "${xtra}" -eq 1 ]; then
     done
     MSG="$(eval_gettext "the following kernels have been removed: \"${KernelList}\"")"
     echo $MSG
-    actualize_the_grub
-	exit 0
+    exit 0
 fi
 
 prepare
@@ -253,7 +246,6 @@ if [ "${force}" -eq 1 ]; then
 	done
 	MSG="$(eval_gettext "the following kernels have been removed: \"${KernelList}\"")"
 	echo $MSG
-	actualize_the_grub
 else
 	select_more "${TITLE}" "${CURRENT}" ${KernelList} 
 	if [ "$?" -ne 0 ]; then
@@ -275,10 +267,6 @@ else
 			msgbox "${TiTLE}" "$(gettext "Kernel not removed:") $i"
 		fi
 	done
-	if [ "$one_removed" = "true" ]; then
-		actualize_the_grub
-	fi
 fi
 
 exit 0
-

@@ -1,8 +1,9 @@
-kernel-remover (3.0.4) UNRELEASED; urgency=low
+kernel-remover (3.0.4) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * drop recommends on menu.
+  * drop conditional update-grub call, it's no longer required.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 08 Aug 2010 04:47:05 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 21 Aug 2010 23:23:19 +0200
 
 kernel-remover (3.0.3) unstable; urgency=low
 

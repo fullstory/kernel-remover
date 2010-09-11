@@ -15,7 +15,6 @@ Depends: ${misc:Depends},
  gettext-base,
  dctrl-tools,
  ssft
-Recommends: menu
 Breaks: sidux-kernelhacking (<< 3.0.2)
 Replaces: sidux-kernelhacking (<< 3.0.2)
 Description: tool for the removal of the Linux kernel packages
