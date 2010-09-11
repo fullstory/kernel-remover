@@ -51,7 +51,7 @@ sidux-kernelhacking (2.6.28.3) unstable; urgency=low
   * update art for 2009-02
   * vacuum defs for svg icon
   * update copyright
-  * convert all bitmaps to new svg art 
+  * convert all bitmaps to new svg art
   * ready for release
 
   [ Stefan Lippers-Hollmann ]
@@ -99,7 +99,7 @@ sidux-kernelhacking (2.6.27.4) unstable; urgency=low
 
 sidux-kernelhacking (2.6.27.3) unstable; urgency=low
 
-  * when using su the DISPLAY variable remains in the environment but root 
+  * when using su the DISPLAY variable remains in the environment but root
     is not allowed to open windows in the display so unset it to allow
     fallback to dialog
 
@@ -158,7 +158,7 @@ sidux-kernelhacking (2.6.25.2) unstable; urgency=low
 sidux-kernelhacking (2.6.25.1) unstable; urgency=low
 
   [ Joaquim Boura ]
-  * do not ignore old style kernels 
+  * do not ignore old style kernels
 
   [ Stefan Lippers-Hollmann ]
   * fix kernel-source-ng.bash use of wget.
@@ -311,7 +311,7 @@ sidux-kernelhacking (2.6.24.2) unstable; urgency=low
   * kernel 2.6.23 is obsolete.
 
   [ Joaquim Boura ]
-  * use ssft_frontend "text" when neither zenity nor dialog are installed. 
+  * use ssft_frontend "text" when neither zenity nor dialog are installed.
 
  -- Joaquim Boura <x-un-i@sidux.com>  Tue, 12 Feb 2008 22:32:30 +0100
 
@@ -1264,7 +1264,7 @@ sidux-kernelhacking (2.6.20.1) unstable; urgency=low
 
 sidux-kernelhacking (2.6.19.13) unstable; urgency=low
 
-  * removed debug messages, 
+  * removed debug messages,
   * update-the grub if some kernel is removed
 
  -- Joaquim Boura <x-un-i@sidux.com>  Wed, 17 Jan 2007 22:46:57 +0100
@@ -1603,7 +1603,7 @@ kanotix-kernelhacking (2.6.16.13) unstable; urgency=low
 
 kanotix-kernelhacking (2.6.16.12) unstable; urgency=low
 
-  * finally add lirc-modules-source again. 
+  * finally add lirc-modules-source again.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 18 May 2006 15:11:08 +0200
 
@@ -1732,14 +1732,14 @@ kanotix-kernelhacking (2.6.15.6) unstable; urgency=low
 kanotix-kernelhacking (2.6.15.5) unstable; urgency=low
 
   * Bugfix: don't attempt to clean up modules in a directory that does not
-    exist. [unp-kernel-modules] 
+    exist. [unp-kernel-modules]
 
  -- Kel Modderman <kelrin@tpg.com.au>  Sun, 15 Jan 2006 22:46:03 +1000
 
 kanotix-kernelhacking (2.6.15.4) unstable; urgency=low
 
   * Drop btsco, its broken with current alsa
-  * Reinstate sl-modem, new upstream fixed it for linux (>=2.6.13) 
+  * Reinstate sl-modem, new upstream fixed it for linux (>=2.6.13)
 
  -- Kel Modderman <kelrin@tpg.com.au>  Sun, 15 Jan 2006 01:13:19 +1000
 
