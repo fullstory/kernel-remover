@@ -1,8 +1,8 @@
-kernel-remover (3.1.1) UNRELEASED; urgency=low
+kernel-remover (3.1.1) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * fix x-un-i's mail address.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 27 Aug 2010 18:49:28 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 06 Oct 2010 15:01:07 +0200
 
 kernel-remover (3.1.0) unstable; urgency=low
 
@@ -65,7 +65,7 @@ sidux-kernelhacking (2.6.28.4) unstable; urgency=low
   * when using su the DISPLAY can be set but root can not access it.
     so we unset it
 
- -- Joaquim Boura <x-un-i@sidux.com>  Fri, 25 Sep 2009 11:47:14 +0200
+ -- Joaquim Boura <x-un-i@berlios.de>  Fri, 25 Sep 2009 11:47:14 +0200
 
 sidux-kernelhacking (2.6.28.3) unstable; urgency=low
 
@@ -87,7 +87,7 @@ sidux-kernelhacking (2.6.28.2) unstable; urgency=low
 
   * ssft is not loaded when using force. so do not use it. (thks ffws|hathe)
 
- -- Joaquim Boura <x-un-i@sidux.com>  Tue, 03 Mar 2009 21:28:10 +0100
+ -- Joaquim Boura <x-un-i@berlios.de>  Tue, 03 Mar 2009 21:28:10 +0100
 
 sidux-kernelhacking (2.6.28.1) unstable; urgency=low
 
@@ -105,7 +105,7 @@ sidux-kernelhacking (2.6.27.6) unstable; urgency=low
 
   * fixed  mispelling
 
- -- Joaquim Boura <x-un-i@sidux.com>  Thu, 19 Feb 2009 22:54:22 +0100
+ -- Joaquim Boura <x-un-i@berlios.de>  Thu, 19 Feb 2009 22:54:22 +0100
 
 sidux-kernelhacking (2.6.27.5) unstable; urgency=low
 
@@ -125,7 +125,7 @@ sidux-kernelhacking (2.6.27.3) unstable; urgency=low
     is not allowed to open windows in the display so unset it to allow
     fallback to dialog
 
- -- Joaquim Boura <x-un-i@sidux.com>  Sun, 16 Nov 2008 13:35:49 +0100
+ -- Joaquim Boura <x-un-i@berlios.de>  Sun, 16 Nov 2008 13:35:49 +0100
 
 sidux-kernelhacking (2.6.27.2) unstable; urgency=low
 
@@ -169,7 +169,7 @@ sidux-kernelhacking (2.6.25.3) unstable; urgency=low
 
   * do not include current kernel in the list of the offered kernels.
 
- -- Joaquim Boura <x-un-i@sidux.com>  Tue, 13 May 2008 18:29:53 +0200
+ -- Joaquim Boura <x-un-i@berlios.de>  Tue, 13 May 2008 18:29:53 +0200
 
 sidux-kernelhacking (2.6.25.2) unstable; urgency=low
 
@@ -202,7 +202,7 @@ sidux-kernelhacking (2.6.24.15) unstable; urgency=low
   * kernel-remover: do not offer latest kernel if the metapackage is still
     installed.
 
- -- Joaquim Boura <x-un-i@sidux.com>  Wed, 09 Apr 2008 11:02:05 +0200
+ -- Joaquim Boura <x-un-i@berlios.de>  Wed, 09 Apr 2008 11:02:05 +0200
 
 sidux-kernelhacking (2.6.24.14) unstable; urgency=low
 
@@ -297,7 +297,7 @@ sidux-kernelhacking (2.6.24.4) unstable; urgency=low
 
   * fixed mispelling of var
 
- -- Joaquim Boura <x-un-i@sidux.com>  Sun, 17 Feb 2008 01:12:20 +0100
+ -- Joaquim Boura <x-un-i@berlios.de>  Sun, 17 Feb 2008 01:12:20 +0100
 
 sidux-kernelhacking (2.6.24.3) unstable; urgency=low
 
@@ -335,7 +335,7 @@ sidux-kernelhacking (2.6.24.2) unstable; urgency=low
   [ Joaquim Boura ]
   * use ssft_frontend "text" when neither zenity nor dialog are installed.
 
- -- Joaquim Boura <x-un-i@sidux.com>  Tue, 12 Feb 2008 22:32:30 +0100
+ -- Joaquim Boura <x-un-i@berlios.de>  Tue, 12 Feb 2008 22:32:30 +0100
 
 sidux-kernelhacking (2.6.24.1) unstable; urgency=low
 
@@ -1226,7 +1226,7 @@ sidux-kernelhacking (2.6.20.8) unstable; urgency=low
 
   * we need to "read" the gettext otherwise we get an missing error
 
- -- Joaquim Boura <x-un-i@sidux.com>  Sun, 25 Feb 2007 13:41:20 +0100
+ -- Joaquim Boura <x-un-i@berlios.de>  Sun, 25 Feb 2007 13:41:20 +0100
 
 sidux-kernelhacking (2.6.20.7) unstable; urgency=low
 
@@ -1238,13 +1238,13 @@ sidux-kernelhacking (2.6.20.6) unstable; urgency=low
 
   * missing " on newly code
 
- -- Joaquim Boura <x-un-i@sidux.com>  Mon, 19 Feb 2007 19:59:16 +0100
+ -- Joaquim Boura <x-un-i@berlios.de>  Mon, 19 Feb 2007 19:59:16 +0100
 
 sidux-kernelhacking (2.6.20.5) unstable; urgency=low
 
   * not documented option -x to be used when called by siduxcc.
 
- -- Joaquim Boura <x-un-i@sidux.com>  Sat, 17 Feb 2007 23:06:56 +0100
+ -- Joaquim Boura <x-un-i@berlios.de>  Sat, 17 Feb 2007 23:06:56 +0100
 
 sidux-kernelhacking (2.6.20.4) unstable; urgency=low
 
@@ -1289,7 +1289,7 @@ sidux-kernelhacking (2.6.19.13) unstable; urgency=low
   * removed debug messages,
   * update-the grub if some kernel is removed
 
- -- Joaquim Boura <x-un-i@sidux.com>  Wed, 17 Jan 2007 22:46:57 +0100
+ -- Joaquim Boura <x-un-i@berlios.de>  Wed, 17 Jan 2007 22:46:57 +0100
 
 sidux-kernelhacking (2.6.19.12) unstable; urgency=low
 
@@ -1301,7 +1301,7 @@ sidux-kernelhacking (2.6.19.11) unstable; urgency=low
 
   * fixed typo
 
- -- Joaquim Boura <x-un-i@sidux.com>  Mon, 15 Jan 2007 07:21:25 +0100
+ -- Joaquim Boura <x-un-i@berlios.de>  Mon, 15 Jan 2007 07:21:25 +0100
 
 sidux-kernelhacking (2.6.19.10) unstable; urgency=low
 
