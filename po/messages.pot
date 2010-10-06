@@ -1,5 +1,5 @@
 # Fancy skript to remove the installed aptosid kernels
-# Copyright (C) 2007-2010 Joaquim Boura <x-un-i@sidux.com>
+# Copyright (C) 2007-2010 Joaquim Boura <x-un-i@berlios.de>
 # This file is distributed under the same license as the PACKAGE package.
 #
 #, fuzzy

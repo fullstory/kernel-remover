@@ -1,5 +1,5 @@
 # Fancy skript to remove the installed aptosid kernels
-# Copyright (C) 2007-2010 Joaquim Boura <x-un-i@sidux.com>
+# Copyright (C) 2007-2010 Joaquim Boura <x-un-i@berlios.de>
 # This file is distributed under the same license as the PACKAGE package.
 #
 #, fuzzy
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kernel-remover.sh 0.00.1\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2008-03-29 00:01+0000\n"
-"Last-Translator: Joaquim Boura <x-un-i@sidux.com>\n"
+"Last-Translator: Joaquim Boura <x-un-i@berlios.de>\n"
 "Language-Team: aptosid <translation-team@aptosid.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
