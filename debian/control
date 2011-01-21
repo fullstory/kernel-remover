@@ -15,8 +15,6 @@ Depends: ${misc:Depends},
  gettext-base,
  dctrl-tools,
  ssft
-Breaks: sidux-kernelhacking (<< 3.0.2)
-Replaces: sidux-kernelhacking (<< 3.0.2)
 Description: tool for the removal of the Linux kernel packages
  This tool handles the common tasks while handling testing kernels, the removal
  of deprecated kernel images, headers, depending packages, symlinks and 
@@ -24,18 +22,3 @@ Description: tool for the removal of the Linux kernel packages
  .
  Neither the currently running-, nor the newest kernels will be offered for
  removal.
-
-Package: sidux-kernelhacking
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends},
- kernel-remover
-Description: tool for the removal of the Linux kernel packages
- This tool handles the common tasks while handling testing kernels, the removal
- of deprecated kernel images, headers, depending packages, symlinks and 
- associated drivers. unpackaged cruft below /lib/modules/$KVERS will be nuked.
- .
- Neither the currently running-, nor the newest kernels will be offered for
- removal.
- .
- transitional metapackage to pull in kernel-remover
