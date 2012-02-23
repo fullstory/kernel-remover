@@ -1,8 +1,8 @@
-kernel-remover (3.1.6) UNRELEASED; urgency=low
+kernel-remover (3.1.6) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * bump standards version to 3.9.3, no changes necessary.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 16 Jan 2012 03:49:13 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 23 Feb 2012 16:48:51 +0100
 
 kernel-remover (3.1.5) unstable; urgency=low
 
