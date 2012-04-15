@@ -1,0 +1,47 @@
+# Fancy skript to remove the installed aptosid kernels
+# Copyright (C) 2007-2010 Joaquim Boura <x-un-i@berlios.de>
+# This file is distributed under the same license as the PACKAGE package.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kernel-remover.sh 0.00.1\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2008-03-29 00:01+0000\n"
+"Last-Translator: Pavlo Libovych <polosravros@googlemail.com>\n"
+"Language-Team: aptosid <translation-team@aptosid.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: kernel-remover:94
+msgid "Removing installed kernels"
+msgstr "Видалення встановленого ядра"
+
+#: kernel-remover:98
+msgid "The actual (active) kernel is ${PAD}$(uname -r)${PAD}"
+msgstr "Aктивнe ядро є ${PAD}$(uname -r)${PAD}"
+
+#: kernel-remover:99
+msgid "The actual (active) kernel is $(uname -r)"
+msgstr "Aктивнe ядро є $(uname -r)"
+
+#: kernel-remover:213
+msgid "There is only one kernel installed on this system. Nothing to be done!"
+msgstr "Iснує тільки одне встановлене ядро на цій системі. Нічого не поробиш!"
+
+#: kernel-remover:222
+msgid "removing kernel ${i}"
+msgstr "Ядро ${i} буде видалено."
+
+#: kernel-remover:226
+msgid "The following kernels have been removed: \"${KernelList}\""
+msgstr "Такі ядра були видалені: \"${KernelList}\""
+
+#: kernel-remover:240
+msgid "Should I remove this kernel?"
+msgstr "Видалити це ядро?"
+
+#: kernel-remover:247
+msgid "Kernel not removed:"
+msgstr "Ядро не було видалене:"
