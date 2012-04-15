@@ -16,6 +16,18 @@ License: GPL-2
   The Debian packaging information is licensed under the GNU General
   Public License, version 2.
 
+File: po/ru.po:
+Copyright: © 2012 Roland Engert <Roland.Engert@web.de>
+License: GPL-2
+  The Debian packaging information is licensed under the GNU General
+  Public License, version 2. 
+
+File: po/uk.po:
+Copyright: © 2012 Pavlo Libovych <polosravros@googlemail.com>
+License: GPL-2
+  The Debian packaging information is licensed under the GNU General
+  Public License, version 2. 
+
 Files: icons/*
 Copyright: © 2008 Bernard Gray <bernard.gray@gmail.com>
            © 2007 David Vignoni <david@icon-king.com>
