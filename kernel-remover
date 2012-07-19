@@ -76,11 +76,22 @@ prepare()
 
 	if [ -n "${frontend}" ]; then
 		case $frontend in
-			text)  SSFT_FRONTEND="${frontend}";;
-			dialog)  SSFT_FRONTEND="${frontend}";;
-			kdialog)  SSFT_FRONTEND="${frontend}";;
-			zenity) SSFT_FRONTEND="${frontend}";;
-			*)  echo unknown frontend && exit 1;;
+			text)
+				SSFT_FRONTEND="${frontend}"
+				;;
+			dialog)
+				SSFT_FRONTEND="${frontend}"
+				;;
+			kdialog)
+				SSFT_FRONTEND="${frontend}"
+				;;
+			zenity)
+				SSFT_FRONTEND="${frontend}"
+				;;
+			*)
+				echo unknown frontend
+				exit 1
+				;;
 		esac
 	fi
 
@@ -105,7 +116,6 @@ prepare()
 	fi
 
 	# the current one will not be shown in the list ....
-
 	ACTUAL=$(uname -r)
 	TITLE="$(gettext "Removing installed kernels")"
 	PAD="======="
@@ -128,6 +138,7 @@ inputbox()
 	# $3 not used
 	# The default value if used
 	SSFT_DEFAULT=$4
+
 	ssft_read_string "${Title}" "${Text}";
 }
 
@@ -147,6 +158,7 @@ select_more()
 	Title=$1
 	Text=$2
 	shift 2
+
 	if ssft_select_multiple "$Title" "$Text" $@ ; then
 		Selected=$SSFT_RESULT
 		return 0
@@ -161,7 +173,9 @@ yesno()
 	# yesno title text width
 	Title=$1
 	Text=$2
+
 	ssft_yesno "${Title}" "${Text}"
+
 	return $?
 }
 
@@ -202,6 +216,7 @@ get_KernelList()
 				*$Kernel* )
 					# this is an old style kernel
 					KernelList="${KernelList} ${Kernel}"
+
 					continue
 					;;
 			esac
@@ -246,6 +261,7 @@ get_KernelList
 
 if [ -z "${KernelList}" ]; then
 	MSG="$(gettext "There is only one kernel installed on this system. Nothing to be done!")"
+
 	if [ "${force}" -eq 1 ]; then
 		echo "${MSG}"
 	else
