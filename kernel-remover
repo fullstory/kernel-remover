@@ -1,11 +1,12 @@
 #!/bin/sh
-#
+
 # we need gettext (is loaded in ssft.sh or cloned...)
 if [ -f /usr/bin/gettext.sh ]; then
 	. /usr/bin/gettext.sh || exit 1
 else
 	exit 1
 fi
+
 #---------------------------------------------------------------------
 # we need root rights
 #---------------------------------------------------------------------
@@ -36,18 +37,27 @@ usage()
 	exit 1
 }
 #---------------------------------------------------------------------
+
 force=0
 xtra=0
 unset frontend
-while getopts fhxF: name
-do
-case $name in
-	f)  force=1;;
-	F)  frontend="$OPTARG";;
-	h)  usage;;
-	x)	xtra=1;;
-	*)  usage;;
-esac
+while getopts fhxF: name; do
+	case $name in
+	f)
+		force=1
+		;;
+	F)
+		frontend="$OPTARG"
+		;;
+	h)	usage
+		;;
+	x)
+		xtra=1
+		;;
+	*)
+		usage
+		;;
+	esac
 done
 shift $(($OPTIND - 1))
 
@@ -77,6 +87,7 @@ prepare()
 	if [ -z "$DISPLAY" ] &&  ! /usr/bin/xdpyinfo >/dev/null 2>&1 ; then
 		unset DISPLAY
 	fi
+
 	if [ -z "$DISPLAY" ]; then
 		[ -x /usr/bin/dialog ] && SSFT_FRONTEND=${SSFT_FRONTEND:-"dialog"} || \
 			SSFT_FRONTEND=${SSFT_FRONTEND:-"text"}
@@ -104,6 +115,7 @@ prepare()
 		CURRENT="$(eval_gettext "The actual (active) kernel is $(uname -r)")"
 
 }
+
 #---------------------------------------------------------------------
 # some useful functions
 #---------------------------------------------------------------------
@@ -112,6 +124,7 @@ inputbox()
 	# inputbox Title Text dummy default
 	Title="$1"
 	Text="$2"
+
 	# $3 not used
 	# The default value if used
 	SSFT_DEFAULT=$4
@@ -126,6 +139,7 @@ msgbox()
 	Text="$2"
 	ssft_display_message "${Title}" "${Text}"
 }
+
 #---------------------------------------------------------------------
 select_more()
 {
@@ -140,6 +154,7 @@ select_more()
 		return 1 
 	fi
 }
+
 #---------------------------------------------------------------------
 yesno()
 {
@@ -174,7 +189,6 @@ remove_one_kernel()
 
 #---------------------------------------------------------------------
 
-
 get_KernelList()
 {
 	for v in /boot/vmlinuz-*; do 
@@ -185,11 +199,13 @@ get_KernelList()
 				-s Package) | cut -d: -f 2)"
 
 			case $meta_package in
-				*$Kernel* ) # this is an old style kernel
+				*$Kernel* )
+					# this is an old style kernel
 					KernelList="${KernelList} ${Kernel}"
 					continue
 					;;
 			esac
+
 			[ -n "${meta_package}" ] && \
 				meta_status="$(dpkg-query  -f='${STATUS}\n' \
 					-W  ${meta_package}|\
@@ -212,14 +228,16 @@ get_KernelList()
 #---------------------------------------------------------------------
 if [ "${xtra}" -eq 1 ]; then
 	KernelList="$@"
-    for i in  ${KernelList} ; do
-        removing="$(eval_gettext "removing kernel ${i}")"
-        echo $removing
-        remove_one_kernel "$i"
-    done
-    MSG="$(eval_gettext "the following kernels have been removed: \"${KernelList}\"")"
-    echo $MSG
-    exit 0
+	for i in  ${KernelList} ; do
+		removing="$(eval_gettext "removing kernel ${i}")"
+		echo $removing
+		remove_one_kernel "$i"
+	done
+
+	MSG="$(eval_gettext "the following kernels have been removed: \"${KernelList}\"")"
+	echo $MSG
+
+	exit 0
 fi
 
 prepare
@@ -233,17 +251,20 @@ if [ -z "${KernelList}" ]; then
 	else
 		msgbox "${TITLE}" "${MSG}"
 	fi
+
 	exit 0
 fi
 
 if [ "${force}" -eq 1 ]; then
 	current="$(eval_gettext "The actual (active) kernel is $(uname -r)")"
 	echo ${current}
+
 	for i in  ${KernelList} ; do
 		removing="$(eval_gettext "removing kernel ${i}")"
 		echo $removing
 		remove_one_kernel "$i"
 	done
+
 	MSG="$(eval_gettext "the following kernels have been removed: \"${KernelList}\"")"
 	echo $MSG
 else
@@ -251,6 +272,7 @@ else
 	if [ "$?" -ne 0 ]; then
 		exit 10
 	fi
+
 	if [ -z "${SSFT_RESULT}" ]; then
 		exit 12
 	fi
@@ -270,3 +292,4 @@ else
 fi
 
 exit 0
+

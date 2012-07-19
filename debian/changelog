@@ -1,14 +1,14 @@
-kernel-remover (3.1.7) UNRELEASED; urgency=low
-
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
+kernel-remover (3.1.7) unstable; urgency=low
 
   [ Joaquim Boura ]
   * added new language translations ( uk+ru thks to RoEn)
     fixed my email
   * added RoEn (ru) and polix (uk) to the copyright file
 
- -- Joaquim Boura <x-un-i@sapo.pt>  Sun, 15 Apr 2012 21:13:07 +0200
+  [ Stefan Lippers-Hollmann ]
+  * fix whitespace/ coding style.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 19 Jul 2012 02:10:07 +0200
 
 kernel-remover (3.1.6) unstable; urgency=low
 
