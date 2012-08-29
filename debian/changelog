@@ -1,6 +1,10 @@
 kernel-remover (3.1.8) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
+
+  [ Joaquim Boura ]
+  * use -G as the option to define the graphics frontend instead of -F
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 19 Jul 2012 02:10:55 +0200
 

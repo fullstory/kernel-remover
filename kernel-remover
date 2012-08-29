@@ -30,7 +30,7 @@ export TEXTDOMAINDIR
 usage()
 {
 	echo  "$(basename $0)"
-	echo  "     -F parameter    use parameter as the graphical frontend"
+	echo  "     -G parameter    use parameter as the graphical frontend"
 	echo  "                     one of text | dialog | kdialog | zenity "
 	echo  "     -f              proceed without asking, do complete cleanup"
 	echo  "     -h              show this usage"
@@ -41,12 +41,12 @@ usage()
 force=0
 xtra=0
 unset frontend
-while getopts fhxF: name; do
+while getopts fhxG: name; do
 	case $name in
 	f)
 		force=1
 		;;
-	F)
+	G)
 		frontend="$OPTARG"
 		;;
 	h)	usage
