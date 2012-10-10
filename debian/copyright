@@ -12,11 +12,11 @@ Files: debian/*
 Copyright: 2005-2012, Stefan Lippers-Hollmann <s.l-h@gmx.de>
 License: GPL-2
 
-File: po/ru.po
+Files: po/ru.po
 Copyright: 2012, Roland Engert <Roland.Engert@web.de>
 License: GPL-2
 
-File: po/uk.po
+Files: po/uk.po
 Copyright: 2012, Pavlo Libovych <polosravros@googlemail.com>
 License: GPL-2
 
