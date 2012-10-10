@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kernel-remover.sh 0.00.1\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2008-03-29 00:01+0000\n"
-"Last-Translator: Pavlo Libovych <polosravros@googlemail.com>\n"
+"Last-Translator: Pavlo Libovych <polosravros@gmail.com>\n"
 "Language-Team: aptosid <translation-team@aptosid.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,19 +16,19 @@ msgstr ""
 
 #: kernel-remover:94
 msgid "Removing installed kernels"
-msgstr "Видалення встановленого ядра"
+msgstr "Видалення встановлених ядрів"
 
 #: kernel-remover:98
 msgid "The actual (active) kernel is ${PAD}$(uname -r)${PAD}"
-msgstr "Aктивнe ядро є ${PAD}$(uname -r)${PAD}"
+msgstr "Струмове ядро є ${PAD}$(uname -r)${PAD}"
 
 #: kernel-remover:99
 msgid "The actual (active) kernel is $(uname -r)"
-msgstr "Aктивнe ядро є $(uname -r)"
+msgstr "Струмове ядро є  $(uname -r)"
 
 #: kernel-remover:213
 msgid "There is only one kernel installed on this system. Nothing to be done!"
-msgstr "Iснує тільки одне встановлене ядро на цій системі. Нічого не поробиш!"
+msgstr "Iснує тільки одне встановлене ядро на цій системі.Нічого не поробиш!"
 
 #: kernel-remover:222
 msgid "removing kernel ${i}"
@@ -45,3 +45,4 @@ msgstr "Видалити це ядро?"
 #: kernel-remover:247
 msgid "Kernel not removed:"
 msgstr "Ядро не було видалене:"
+   
