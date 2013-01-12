@@ -1,8 +1,9 @@
-kernel-remover (3.1.10) UNRELEASED; urgency=low
+kernel-remover (3.1.10) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * update FSF postal address to be URLs.
+  * bump standards version to 3.9.4, no changes necessary.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 10 Oct 2012 03:35:48 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 12 Jan 2013 03:20:52 +0100
 
 kernel-remover (3.1.9) unstable; urgency=low
 
