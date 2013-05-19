@@ -19,11 +19,11 @@ msgid "Removing installed kernels"
 msgstr "Удаление установленного ядра"
 
 #: kernel-remover:98
-msgid "The actual (active) kernel is ${PAD}$(uname -r)${PAD}"
+msgid "The current (active) kernel is ${PAD}$(uname -r)${PAD}"
 msgstr "Aктивноe ядро ${PAD}$(uname -r)${PAD}"
 
 #: kernel-remover:99
-msgid "The actual (active) kernel is $(uname -r)"
+msgid "The current (active) kernel is $(uname -r)"
 msgstr "Aктивноe ядро $(uname -r)"
 
 #: kernel-remover:213

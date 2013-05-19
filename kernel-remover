@@ -116,13 +116,13 @@ prepare()
 	fi
 
 	# the current one will not be shown in the list ....
-	ACTUAL=$(uname -r)
+	CURRENTKERNEL=$(uname -r)
 	TITLE="$(gettext "Removing installed kernels")"
 	PAD="======="
 
 	[ "${SSFT_FRONTEND}" = "dialog" -o -z "${SSFT_FRONTEND}" ] && \
-		CURRENT="$(eval_gettext "The actual (active) kernel is ${PAD}$(uname -r)${PAD}")" || \
-		CURRENT="$(eval_gettext "The actual (active) kernel is $(uname -r)")"
+		CURRENT="$(eval_gettext "The current (active) kernel is ${PAD}$(uname -r)${PAD}")" || \
+		CURRENT="$(eval_gettext "The current (active) kernel is $(uname -r)")"
 
 }
 
@@ -183,7 +183,7 @@ yesno()
 remove_one_kernel()
 {
 	Kernel=$1 
-	if [ "${Kernel}" != "${ACTUAL}" ]; then
+	if [ "${Kernel}" != "${CURRENTKERNEL}" ]; then
 		apt-get remove --purge --yes $(dpkg -l | awk "/${Kernel}/{print \$2}")
 
 		dpkg -l "linux-headers-${Kernel}-common" >/dev/null 2>&1 && \
@@ -207,7 +207,7 @@ get_KernelList()
 {
 	for v in /boot/vmlinuz-*; do 
 		Kernel="$(basename $v | sed s/vmlinuz-//)"
-		if [ "${Kernel}" != "${ACTUAL}" ]; then
+		if [ "${Kernel}" != "${CURRENTKERNEL}" ]; then
 			meta_package="$(echo $(grep-available \
 				-F Depends linux-image-${Kernel} \
 				-s Package) | cut -d: -f 2)"
@@ -272,7 +272,7 @@ if [ -z "${KernelList}" ]; then
 fi
 
 if [ "${force}" -eq 1 ]; then
-	current="$(eval_gettext "The actual (active) kernel is $(uname -r)")"
+	current="$(eval_gettext "The current (active) kernel is $(uname -r)")"
 	echo ${current}
 
 	for i in  ${KernelList} ; do

@@ -19,12 +19,12 @@ msgid "Removing installed kernels"
 msgstr "Remoção de kernel instalados e nâo activos"
 
 #: kernel-remover:98
-msgid "The actual (active) kernel is ${PAD}$(uname -r)${PAD}"
-msgstr "O kernel actualmente activo é ${PAD}$(uname -r)${PAD}"
+msgid "The current (active) kernel is ${PAD}$(uname -r)${PAD}"
+msgstr "O kernel currentmente activo é ${PAD}$(uname -r)${PAD}"
 
 #: kernel-remover:99
-msgid "The actual (active) kernel is $(uname -r)"
-msgstr "O kernel actualmente activo é $(uname -r)"
+msgid "The current (active) kernel is $(uname -r)"
+msgstr "O kernel currentmente activo é $(uname -r)"
 
 #: kernel-remover:213
 msgid "There is only one kernel installed on this system. Nothing to be done!"
