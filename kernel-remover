@@ -196,9 +196,6 @@ remove_one_kernel()
 		if [ ! -e "/boot/vmlinuz-${Kernel}" ]; then
 			rm -rf /lib/modules/${Kernel}
 		fi
-	else
-		# do not remove active kernel
-		:
 	fi
 }
 
@@ -232,8 +229,6 @@ get_KernelList()
 				[ -z "${KernelList}" ] && KernelList="${Kernel}" ||\
 				KernelList="${KernelList} ${Kernel}"
 				# echo KernelList="$KernelList"
-			else
-				:
 			fi
 		fi
 	done

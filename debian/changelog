@@ -2,6 +2,7 @@ kernel-remover (3.1.11) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
   * s/actual/current/
+  * remove empty if leaves.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 12 Jan 2013 03:21:54 +0100
 
