@@ -186,7 +186,7 @@ remove_one_kernel()
 {
 	Kernel=$1 
 	if [ "${Kernel}" != "${CURRENTKERNEL}" ]; then
-		apt-get remove --purge --yes $(dpkg -l | awk "/${Kernel}/{print \$2}")
+		apt-get remove --purge --yes $(dpkg -l | grep ${Kernel} | awk '{print $2}')
 
 		dpkg -l "linux-headers-${Kernel}-common" >/dev/null 2>&1 && \
 			apt-get remove --purge --yes "linux-headers-${Kernel}-common"
