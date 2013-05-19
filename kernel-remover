@@ -121,10 +121,11 @@ prepare()
 	TITLE="$(gettext "Removing installed kernels")"
 	PAD="======="
 
-	[ "${SSFT_FRONTEND}" = "dialog" -o -z "${SSFT_FRONTEND}" ] && \
-		CURRENT="$(eval_gettext "The current (active) kernel is ${PAD}$(uname -r)${PAD}")" || \
+	if [ "${SSFT_FRONTEND}" = "dialog" ] || [ -z "${SSFT_FRONTEND}" ]; then
+		CURRENT="$(eval_gettext "The current (active) kernel is ${PAD}$(uname -r)${PAD}")"
+	else
 		CURRENT="$(eval_gettext "The current (active) kernel is $(uname -r)")"
-
+	fi
 }
 
 #---------------------------------------------------------------------
