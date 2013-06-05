@@ -1,6 +1,5 @@
-kernel-remover (3.1.11) UNRELEASED; urgency=low
+kernel-remover (3.1.11) unstable; urgency=low
 
-  * NOT RELEASED YET
   * s/actual/current/
   * remove empty if leaves.
   * fix bashism.
