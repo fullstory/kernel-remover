@@ -1,3 +1,10 @@
+kernel-remover (3.1.12) unstable; urgency=medium
+
+  * bump standards version to 3.9.5, no changes necessary.
+  * debian/control: switch Vcs tags to github.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 13 Apr 2014 23:36:39 +0200
+
 kernel-remover (3.1.11) unstable; urgency=low
 
   * s/actual/current/
