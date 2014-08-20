@@ -1,3 +1,9 @@
+kernel-remover (3.1.14) UNRELEASED; urgency=medium
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 20 Aug 2014 07:07:23 +0200
+
 kernel-remover (3.1.13) unstable; urgency=medium
 
   * switch from grep-available to grep-status, in order to actually query the
