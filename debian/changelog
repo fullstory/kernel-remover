@@ -1,3 +1,11 @@
+kernel-remover (3.1.13) unstable; urgency=medium
+
+  * switch from grep-available to grep-status, in order to actually query the
+    current system state; this fixes identifying obsolete kernel packages with
+    the current dpkg.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 20 Aug 2014 07:05:00 +0200
+
 kernel-remover (3.1.12) unstable; urgency=medium
 
   * bump standards version to 3.9.5, no changes necessary.

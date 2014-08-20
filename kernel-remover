@@ -207,9 +207,9 @@ get_KernelList()
 	for v in /boot/vmlinuz-*; do 
 		Kernel="$(basename $v | sed s/vmlinuz-//)"
 		if [ "${Kernel}" != "${CURRENTKERNEL}" ]; then
-			meta_package="$(echo $(grep-available \
-				-F Depends linux-image-${Kernel} \
-				-s Package) | cut -d: -f 2)"
+			meta_package="$(echo $(grep-status \
+				-F Depends -s Package \
+				linux-image-${Kernel}) | cut -d: -f 2)"
 
 			case $meta_package in
 				*$Kernel* )
