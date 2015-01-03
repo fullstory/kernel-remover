@@ -1,8 +1,9 @@
 kernel-remover (3.1.14) unstable; urgency=medium
 
   * fix debian/copyright to properly validate against the final specification.
+  * bump standards version to 3.9.6, no changes necessary.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 03 Jan 2015 23:56:14 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 03 Jan 2015 23:59:26 +0100
 
 kernel-remover (3.1.13) unstable; urgency=medium
 
