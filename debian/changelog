@@ -1,8 +1,8 @@
-kernel-remover (3.1.14) UNRELEASED; urgency=medium
+kernel-remover (3.1.14) unstable; urgency=medium
 
-  * NOT RELEASED YET
+  * fix debian/copyright to properly validate against the final specification.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 20 Aug 2014 07:07:23 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 03 Jan 2015 23:56:14 +0100
 
 kernel-remover (3.1.13) unstable; urgency=medium
 
