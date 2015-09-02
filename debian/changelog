@@ -1,8 +1,10 @@
-kernel-remover (3.1.15) UNRELEASED; urgency=medium
+kernel-remover (3.1.15) unstable; urgency=medium
 
-  * NOT RELEASED YET
+  * use parallel building.
+  * apply the CTTE decision and remove support for the obsolete "Debian Menu
+    System" (#741573).
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 04 Jan 2015 00:00:07 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 02 Sep 2015 20:11:16 +0200
 
 kernel-remover (3.1.14) unstable; urgency=medium
 
