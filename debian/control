@@ -4,16 +4,18 @@ Priority: extra
 Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Uploaders: Joaquim Boura <x-un-i@sapo.pt>
 Build-Depends: debhelper (>= 9.20120115)
-Standards-Version: 3.9.6
+Standards-Version: 3.9.8
 Vcs-git: git://github.com/fullstory/kernel-remover.git
 Vcs-Browser: https://github.com/fullstory/kernel-remover
 
 Package: kernel-remover
 Architecture: all
 Depends: ${misc:Depends},
- gettext-base,
- dctrl-tools,
- ssft
+         gettext-base,
+         dctrl-tools,
+         menu,
+         ssft
+Recommends: zenity 
 Description: tool for the removal of the Linux kernel packages
  This tool handles the common tasks while handling testing kernels, the removal
  of deprecated kernel images, headers, depending packages, symlinks and 
