@@ -8,8 +8,9 @@ kernel-remover (3.1.16) unstable; urgency=medium
   * make lintian a little happier:
     - source: vcs-field-uses-insecure-uri Git
     - source: cute-field Vcs-git vs Vcs-Git
+    - source: insecure-copyright-format-uri
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Nov 2024 19:42:27 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Nov 2024 19:52:37 +0100
 
 kernel-remover (3.1.15) unstable; urgency=medium
 

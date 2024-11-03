@@ -1,4 +1,4 @@
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: kernel-remover
 Upstream-Contact: Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Source: git://github.com/fullstory/kernel-remover.git
