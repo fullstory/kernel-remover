@@ -1,12 +1,9 @@
-kernel-remover (3.1.16) UNRELEASED; urgency=medium
-
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
+kernel-remover (3.1.16) unstable; urgency=medium
 
   [ Kel Modderman ]
   * Use pkexec to gain root.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 02 Sep 2015 20:13:10 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Nov 2024 19:38:17 +0100
 
 kernel-remover (3.1.15) unstable; urgency=medium
 
