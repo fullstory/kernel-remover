@@ -23,9 +23,8 @@ fi
 # we need root rights
 #---------------------------------------------------------------------
 if [ "$(id -u)" -ne 0 ]; then
-	if [ -x "$(which su-to-root)" ]; then
-		[ -n "$DISPLAY" ] &&  exec su-to-root -X -c "${0} $@"
-		exec su-to-root -c "${0} $@"
+	if [ -x "$(which pkexec)" ]; then
+		exec pkexec ${0} $@
 	fi
 
 	printf "ERROR: $0 needs root capabilities, please start it as root.\n\n" >&2

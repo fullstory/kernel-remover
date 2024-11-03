@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=su-to-root -X -c /usr/sbin/kernel-remover
+Exec=pkexec /usr/sbin/kernel-remover
 Icon=kernel-remover
 Name=kernel-remover
 GenericName=delete old kernels
