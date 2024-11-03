@@ -7,3 +7,5 @@ GenericName=delete old kernels
 GenericName[de]=entferne alte Kernel
 Categories=System;
 Keywords=Kernel;remover;removal;
+Terminal=true
+TerminalOptions=
