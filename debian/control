@@ -1,6 +1,6 @@
 Source: kernel-remover
 Section: misc
-Priority: extra
+Priority: optional
 Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Uploaders: Kel Modderman <kelvmod@gmail.com>
 Rules-Requires-Root: no

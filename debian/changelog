@@ -14,9 +14,9 @@ kernel-remover (3.1.16) unstable; urgency=medium
     - source: silent-on-rules-requiring-root
     - source: trailing-whitespace [debian/changelog:2141]
     - source: trailing-whitespace [debian/control:21]
+    - priority-extra-is-replaced-by-priority-optional
 
-
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Nov 2024 19:57:55 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Nov 2024 19:58:46 +0100
 
 kernel-remover (3.1.15) unstable; urgency=medium
 
