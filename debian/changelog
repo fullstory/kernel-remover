@@ -3,7 +3,10 @@ kernel-remover (3.1.16) unstable; urgency=medium
   [ Kel Modderman ]
   * Use pkexec to gain root.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Nov 2024 19:38:17 +0100
+  [ Stefan Lippers-Hollmann ]
+  * bump standards version to 4.7.0, no changes necessary.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Nov 2024 19:39:26 +0100
 
 kernel-remover (3.1.15) unstable; urgency=medium
 
