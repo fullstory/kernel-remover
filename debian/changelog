@@ -15,8 +15,9 @@ kernel-remover (3.1.16) unstable; urgency=medium
     - source: trailing-whitespace [debian/changelog:2141]
     - source: trailing-whitespace [debian/control:21]
     - priority-extra-is-replaced-by-priority-optional
+    - source: tab-in-license-text
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Nov 2024 19:58:46 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Nov 2024 20:01:06 +0100
 
 kernel-remover (3.1.15) unstable; urgency=medium
 
