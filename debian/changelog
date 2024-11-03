@@ -5,12 +5,14 @@ kernel-remover (3.1.16) unstable; urgency=medium
 
   [ Stefan Lippers-Hollmann ]
   * bump standards version to 4.7.0, no changes necessary.
+  * add Kel to Uploaders.
   * make lintian a little happier:
     - source: vcs-field-uses-insecure-uri Git
     - source: cute-field Vcs-git vs Vcs-Git
     - source: insecure-copyright-format-uri
+    - source: silent-on-rules-requiring-root
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Nov 2024 19:52:37 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Nov 2024 19:55:13 +0100
 
 kernel-remover (3.1.15) unstable; urgency=medium
 
