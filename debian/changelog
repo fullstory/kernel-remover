@@ -12,8 +12,11 @@ kernel-remover (3.1.16) unstable; urgency=medium
     - source: cute-field Vcs-git vs Vcs-Git
     - source: insecure-copyright-format-uri
     - source: silent-on-rules-requiring-root
+    - source: trailing-whitespace [debian/changelog:2141]
+    - source: trailing-whitespace [debian/control:21]
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Nov 2024 19:56:38 +0100
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Nov 2024 19:57:55 +0100
 
 kernel-remover (3.1.15) unstable; urgency=medium
 
@@ -2138,4 +2141,3 @@ kanotix-modules (2.6.13.1) unstable; urgency=low
   * Initial Release.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat,  6 Aug 2005 13:30:47 +0200
-

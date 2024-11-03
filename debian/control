@@ -18,7 +18,7 @@ Depends: ${misc:Depends},
 Recommends: pkexec
 Description: tool for the removal of the Linux kernel packages
  This tool handles the common tasks while handling testing kernels, the removal
- of deprecated kernel images, headers, depending packages, symlinks and 
+ of deprecated kernel images, headers, depending packages, symlinks and
  associated drivers. unpackaged cruft below /lib/modules/$KVERS will be nuked.
  .
  Neither the currently running-, nor the newest kernels will be offered for
