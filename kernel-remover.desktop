@@ -2,8 +2,8 @@
 Type=Application
 Exec=pkexec /usr/sbin/kernel-remover
 Icon=kernel-remover
-Name=kernel-remover
-GenericName=delete old kernels
+Name=Kernel Remover
+GenericName=Delete Old Kernels
 GenericName[de]=entferne alte Kernel
 Categories=System;
 Keywords=Kernel;remover;removal;
