@@ -1,8 +1,9 @@
-kernel-remover (3.1.17) UNRELEASED; urgency=medium
+kernel-remover (3.1.17) unstable; urgency=medium
 
+  [ Kel Modderman ]
   * kernel-remover.desktop: set Name=Kernel Remover
 
- -- Kel Modderman <kelvmod@gmail.com>  Mon, 09 Dec 2024 19:44:45 +1000
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 09 Dec 2024 10:55:49 +0100
 
 kernel-remover (3.1.16) unstable; urgency=medium
 
