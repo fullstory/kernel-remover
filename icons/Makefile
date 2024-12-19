@@ -14,7 +14,8 @@ all: $(ICONS)
 	inkscape $(SVG) --without-gui \
 		--export-width=$(word 1,$(subst x, ,$(@:.png=)))  \
 	        --export-height=$(word 2,$(subst x, ,$(@:.png=))) \
-		--export-png=hicolor/$(@:.png=)/apps/$(NAME).png
+		--export-type="png" \
+		--export-filename=hicolor/$(@:.png=)/apps/$(NAME).png
 
 $(NAME).xpm:
 	mkdir -p pixmaps/
