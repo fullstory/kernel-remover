@@ -1,3 +1,9 @@
+kernel-remover (3.1.19) UNRELEASED; urgency=medium
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 19 Dec 2024 03:55:40 +0100
+
 kernel-remover (3.1.18) unstable; urgency=medium
 
   * refresh SVG graphics, shut up inkscape's migration from old versions.
